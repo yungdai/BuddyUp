@@ -1,0 +1,426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246CB1B1E20650020C81E /* AppDelegate.swift */; };
+		1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246CD1B1E20650020C81E /* ViewController.swift */; };
+		1A7246D11B1E20650020C81E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246CF1B1E20650020C81E /* Main.storyboard */; };
+		1A7246D31B1E20650020C81E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246D21B1E20650020C81E /* Images.xcassets */; };
+		1A7246D61B1E20650020C81E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246D41B1E20650020C81E /* LaunchScreen.xib */; };
+		1A7246E21B1E20650020C81E /* BuddyUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246E11B1E20650020C81E /* BuddyUpTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A7246DC1B1E20650020C81E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A7246BE1B1E20650020C81E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A7246C51B1E20650020C81E;
+			remoteInfo = BuddyUp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A7246C61B1E20650020C81E /* BuddyUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuddyUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7246CA1B1E20650020C81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A7246CB1B1E20650020C81E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1A7246CD1B1E20650020C81E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1A7246D01B1E20650020C81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1A7246D21B1E20650020C81E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1A7246D51B1E20650020C81E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1A7246DB1B1E20650020C81E /* BuddyUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuddyUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7246E01B1E20650020C81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A7246E11B1E20650020C81E /* BuddyUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyUpTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A7246C31B1E20650020C81E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7246D81B1E20650020C81E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A7246BD1B1E20650020C81E = {
+			isa = PBXGroup;
+			children = (
+				1A7246C81B1E20650020C81E /* BuddyUp */,
+				1A7246DE1B1E20650020C81E /* BuddyUpTests */,
+				1A7246C71B1E20650020C81E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A7246C71B1E20650020C81E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A7246C61B1E20650020C81E /* BuddyUp.app */,
+				1A7246DB1B1E20650020C81E /* BuddyUpTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A7246C81B1E20650020C81E /* BuddyUp */ = {
+			isa = PBXGroup;
+			children = (
+				1A7246CB1B1E20650020C81E /* AppDelegate.swift */,
+				1A7246CD1B1E20650020C81E /* ViewController.swift */,
+				1A7246CF1B1E20650020C81E /* Main.storyboard */,
+				1A7246D21B1E20650020C81E /* Images.xcassets */,
+				1A7246D41B1E20650020C81E /* LaunchScreen.xib */,
+				1A7246C91B1E20650020C81E /* Supporting Files */,
+			);
+			path = BuddyUp;
+			sourceTree = "<group>";
+		};
+		1A7246C91B1E20650020C81E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A7246CA1B1E20650020C81E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A7246DE1B1E20650020C81E /* BuddyUpTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A7246E11B1E20650020C81E /* BuddyUpTests.swift */,
+				1A7246DF1B1E20650020C81E /* Supporting Files */,
+			);
+			path = BuddyUpTests;
+			sourceTree = "<group>";
+		};
+		1A7246DF1B1E20650020C81E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A7246E01B1E20650020C81E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A7246C51B1E20650020C81E /* BuddyUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7246E51B1E20650020C81E /* Build configuration list for PBXNativeTarget "BuddyUp" */;
+			buildPhases = (
+				1A7246C21B1E20650020C81E /* Sources */,
+				1A7246C31B1E20650020C81E /* Frameworks */,
+				1A7246C41B1E20650020C81E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BuddyUp;
+			productName = BuddyUp;
+			productReference = 1A7246C61B1E20650020C81E /* BuddyUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A7246DA1B1E20650020C81E /* BuddyUpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7246E81B1E20650020C81E /* Build configuration list for PBXNativeTarget "BuddyUpTests" */;
+			buildPhases = (
+				1A7246D71B1E20650020C81E /* Sources */,
+				1A7246D81B1E20650020C81E /* Frameworks */,
+				1A7246D91B1E20650020C81E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A7246DD1B1E20650020C81E /* PBXTargetDependency */,
+			);
+			name = BuddyUpTests;
+			productName = BuddyUpTests;
+			productReference = 1A7246DB1B1E20650020C81E /* BuddyUpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A7246BE1B1E20650020C81E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Yung Dai";
+				TargetAttributes = {
+					1A7246C51B1E20650020C81E = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					1A7246DA1B1E20650020C81E = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 1A7246C51B1E20650020C81E;
+					};
+				};
+			};
+			buildConfigurationList = 1A7246C11B1E20650020C81E /* Build configuration list for PBXProject "BuddyUp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A7246BD1B1E20650020C81E;
+			productRefGroup = 1A7246C71B1E20650020C81E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A7246C51B1E20650020C81E /* BuddyUp */,
+				1A7246DA1B1E20650020C81E /* BuddyUpTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A7246C41B1E20650020C81E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7246D11B1E20650020C81E /* Main.storyboard in Resources */,
+				1A7246D61B1E20650020C81E /* LaunchScreen.xib in Resources */,
+				1A7246D31B1E20650020C81E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7246D91B1E20650020C81E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A7246C21B1E20650020C81E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */,
+				1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7246D71B1E20650020C81E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7246E21B1E20650020C81E /* BuddyUpTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A7246DD1B1E20650020C81E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A7246C51B1E20650020C81E /* BuddyUp */;
+			targetProxy = 1A7246DC1B1E20650020C81E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1A7246CF1B1E20650020C81E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A7246D01B1E20650020C81E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1A7246D41B1E20650020C81E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A7246D51B1E20650020C81E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1A7246E31B1E20650020C81E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A7246E41B1E20650020C81E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A7246E61B1E20650020C81E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BuddyUp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1A7246E71B1E20650020C81E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BuddyUp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1A7246E91B1E20650020C81E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BuddyUpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuddyUp.app/BuddyUp";
+			};
+			name = Debug;
+		};
+		1A7246EA1B1E20650020C81E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BuddyUpTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuddyUp.app/BuddyUp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A7246C11B1E20650020C81E /* Build configuration list for PBXProject "BuddyUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7246E31B1E20650020C81E /* Debug */,
+				1A7246E41B1E20650020C81E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7246E51B1E20650020C81E /* Build configuration list for PBXNativeTarget "BuddyUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7246E61B1E20650020C81E /* Debug */,
+				1A7246E71B1E20650020C81E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1A7246E81B1E20650020C81E /* Build configuration list for PBXNativeTarget "BuddyUpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7246E91B1E20650020C81E /* Debug */,
+				1A7246EA1B1E20650020C81E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A7246BE1B1E20650020C81E /* Project object */;
+}
