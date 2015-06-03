@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B68AD904-FBEC-4F06-86F2-E1C5DB4288A6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BuddyUp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>81114B235EF98D07BE1C25B6AAA78D31942A90AF</key>
+		<string>https://github.com/yungdai/BuddyUp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BuddyUp.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>81114B235EF98D07BE1C25B6AAA78D31942A90AF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yungdai/BuddyUp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>81114B235EF98D07BE1C25B6AAA78D31942A90AF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>81114B235EF98D07BE1C25B6AAA78D31942A90AF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BuddyUp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
