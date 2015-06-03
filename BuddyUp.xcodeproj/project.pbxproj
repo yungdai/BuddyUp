@@ -13,6 +13,7 @@
 		1A7246D31B1E20650020C81E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246D21B1E20650020C81E /* Images.xcassets */; };
 		1A7246D61B1E20650020C81E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246D41B1E20650020C81E /* LaunchScreen.xib */; };
 		1A7246E21B1E20650020C81E /* BuddyUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246E11B1E20650020C81E /* BuddyUpTests.swift */; };
+		1A7246F31B1E32720020C81E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246F21B1E32720020C81E /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,9 @@
 		1A7246DB1B1E20650020C81E /* BuddyUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BuddyUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7246E01B1E20650020C81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A7246E11B1E20650020C81E /* BuddyUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyUpTests.swift; sourceTree = "<group>"; };
+		1A7246F01B1E32710020C81E /* BuddyUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BuddyUp-Bridging-Header.h"; sourceTree = "<group>"; };
+		1A7246F11B1E32720020C81E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		1A7246F21B1E32720020C81E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		1A7246BD1B1E20650020C81E = {
 			isa = PBXGroup;
 			children = (
+				1A7246EB1B1E20910020C81E /* Frameworks */,
 				1A7246C81B1E20650020C81E /* BuddyUp */,
 				1A7246DE1B1E20650020C81E /* BuddyUpTests */,
 				1A7246C71B1E20650020C81E /* Products */,
@@ -77,6 +82,8 @@
 		1A7246C81B1E20650020C81E /* BuddyUp */ = {
 			isa = PBXGroup;
 			children = (
+				1A7246EE1B1E20B10020C81E /* Models */,
+				1A7246EC1B1E209F0020C81E /* ViewControllers */,
 				1A7246CB1B1E20650020C81E /* AppDelegate.swift */,
 				1A7246CD1B1E20650020C81E /* ViewController.swift */,
 				1A7246CF1B1E20650020C81E /* Main.storyboard */,
@@ -90,6 +97,7 @@
 		1A7246C91B1E20650020C81E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1A7246F01B1E32710020C81E /* BuddyUp-Bridging-Header.h */,
 				1A7246CA1B1E20650020C81E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +118,37 @@
 				1A7246E01B1E20650020C81E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1A7246EB1B1E20910020C81E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A7246EC1B1E209F0020C81E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A7246EF1B1E32350020C81E /* Side Menu Controller */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1A7246EE1B1E20B10020C81E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1A7246EF1B1E32350020C81E /* Side Menu Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1A7246F11B1E32720020C81E /* SWRevealViewController.h */,
+				1A7246F21B1E32720020C81E /* SWRevealViewController.m */,
+			);
+			name = "Side Menu Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +253,7 @@
 			files = (
 				1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */,
 				1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */,
+				1A7246F31B1E32720020C81E /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,9 +382,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BuddyUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BuddyUp/BuddyUp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -352,9 +395,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = BuddyUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BuddyUp/BuddyUp-Bridging-Header.h";
 			};
 			name = Release;
 		};
