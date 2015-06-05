@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0F071C1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */; };
 		1A45AB471B1F70D2008A080C /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB461B1F70D2008A080C /* MainAppViewController.swift */; };
-		1A45AB491B1F7153008A080C /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB481B1F7153008A080C /* MainMenuTableViewController.swift */; };
 		1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */; };
 		1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */; };
 		1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4E1B1F7214008A080C /* ChatViewController.swift */; };
@@ -32,8 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB461B1F70D2008A080C /* MainAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
-		1A45AB481B1F7153008A080C /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4E1B1F7214008A080C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -140,10 +140,10 @@
 			isa = PBXGroup;
 			children = (
 				1A7246EF1B1E32350020C81E /* Side Menu Controller */,
-				1A45AB481B1F7153008A080C /* MainMenuTableViewController.swift */,
 				1A7246CD1B1E20650020C81E /* ViewController.swift */,
 				1A45AB461B1F70D2008A080C /* MainAppViewController.swift */,
 				1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */,
+				1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */,
 				1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */,
 				1A45AB4E1B1F7214008A080C /* ChatViewController.swift */,
 			);
@@ -153,6 +153,7 @@
 		1A7246EE1B1E20B10020C81E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1A9A06FD1B2223D60086879B /* UIElements */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -164,6 +165,13 @@
 				1A7246F21B1E32720020C81E /* SWRevealViewController.m */,
 			);
 			name = "Side Menu Controller";
+			sourceTree = "<group>";
+		};
+		1A9A06FD1B2223D60086879B /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UIElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,10 +278,10 @@
 				1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */,
 				1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */,
 				1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */,
-				1A45AB491B1F7153008A080C /* MainMenuTableViewController.swift in Sources */,
 				1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */,
 				1A7246F31B1E32720020C81E /* SWRevealViewController.m in Sources */,
 				1A45AB471B1F70D2008A080C /* MainAppViewController.swift in Sources */,
+				1A0F071C1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

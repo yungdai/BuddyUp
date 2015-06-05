@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jCJ-hx-Vgu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -34,7 +34,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhG-hM-xiF">
+                            <view alpha="0.84999999999999987" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fhG-hM-xiF">
                                 <rect key="frame" x="8" y="247" width="584" height="52"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="Fvf-1N-xNt">
@@ -57,7 +57,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5MH-7P-jhz">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5MH-7P-jhz">
                                 <rect key="frame" x="8" y="309" width="584" height="42"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -81,9 +81,15 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="jCJ-hx-Vgu" kind="presentation" id="cTc-2J-uZg"/>
+                                    <segue destination="jCJ-hx-Vgu" kind="presentation" modalPresentationStyle="fullScreen" id="cTc-2J-uZg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eU-y8-WK8">
+                                <rect key="frame" x="291" y="359" width="19" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rm0-Na-vO7" userLabel="Sign Up Burron">
                                 <rect key="frame" x="8" y="388" width="584" height="42"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,12 +105,6 @@
                                     <segue destination="CqZ-hD-fV2" kind="presentation" id="u71-xv-3p5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eU-y8-WK8">
-                                <rect key="frame" x="291" y="359" width="19" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="-359"/>
+            <point key="canvasLocation" x="1380" y="-565"/>
         </scene>
         <!--Sign Up Controller-->
         <scene sceneID="oJ5-J6-cba">
@@ -154,6 +154,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="friendship-day-gifts-ideas-20121" translatesAutoresizingMaskIntoConstraints="NO" id="kAt-1t-nPY">
+                                <rect key="frame" x="0.0" y="22" width="600" height="578"/>
+                            </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-BC-lRt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <constraints>
@@ -179,7 +182,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-Ae-Qew">
+                            <view alpha="0.84999999999999987" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-Ae-Qew">
                                 <rect key="frame" x="8" y="245" width="584" height="52"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="Ckg-YS-TLI">
@@ -193,7 +196,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvT-ex-3jy">
+                            <view alpha="0.85000002384185791" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qvT-ex-3jy">
                                 <rect key="frame" x="8" y="305" width="584" height="52"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="a8K-Ia-jWI">
@@ -222,19 +225,13 @@
                                     <segue destination="jCJ-hx-Vgu" kind="presentation" id="IMg-u5-0gS"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friendship-day-gifts-ideas-20121" translatesAutoresizingMaskIntoConstraints="NO" id="kAt-1t-nPY">
-                                <rect key="frame" x="0.0" y="53" width="600" height="556"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="kAt-1t-nPY" firstAttribute="leading" secondItem="zhd-BC-lRt" secondAttribute="leading" id="5CK-zy-BSy"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="kAt-1t-nPY" secondAttribute="bottom" constant="-9" id="84k-kd-tUB"/>
                             <constraint firstItem="nWy-zO-ICT" firstAttribute="top" secondItem="qvT-ex-3jy" secondAttribute="bottom" constant="31" id="8cT-9Q-db2"/>
                             <constraint firstItem="zhd-BC-lRt" firstAttribute="top" secondItem="3SX-vn-Taq" secondAttribute="top" id="CJg-B9-rWC"/>
                             <constraint firstItem="8uW-rZ-PcS" firstAttribute="top" secondItem="3SX-vn-Taq" secondAttribute="top" constant="185" id="Ftx-8r-5M2"/>
                             <constraint firstItem="OvQ-Ae-Qew" firstAttribute="top" secondItem="3SX-vn-Taq" secondAttribute="top" constant="245" id="Iuv-g9-WgY"/>
-                            <constraint firstItem="qvT-ex-3jy" firstAttribute="centerY" secondItem="kAt-1t-nPY" secondAttribute="centerY" id="Qxn-10-CQ2"/>
                             <constraint firstItem="8uW-rZ-PcS" firstAttribute="leading" secondItem="OvQ-Ae-Qew" secondAttribute="leading" id="RiA-3F-jFH"/>
                             <constraint firstItem="OvQ-Ae-Qew" firstAttribute="trailing" secondItem="8uW-rZ-PcS" secondAttribute="trailing" id="S7v-Je-V2o"/>
                             <constraint firstItem="qvT-ex-3jy" firstAttribute="top" secondItem="OvQ-Ae-Qew" secondAttribute="bottom" constant="8" symbolic="YES" id="SDU-Ba-yde"/>
@@ -247,15 +244,13 @@
                             <constraint firstItem="hj2-JB-d3m" firstAttribute="top" secondItem="nWy-zO-ICT" secondAttribute="bottom" constant="170" id="fOm-Lw-Uem"/>
                             <constraint firstAttribute="trailing" secondItem="zhd-BC-lRt" secondAttribute="trailing" id="hRN-Og-TKe"/>
                             <constraint firstItem="OvQ-Ae-Qew" firstAttribute="trailing" secondItem="qvT-ex-3jy" secondAttribute="trailing" id="hkS-Es-K3c"/>
-                            <constraint firstItem="kAt-1t-nPY" firstAttribute="trailing" secondItem="zhd-BC-lRt" secondAttribute="trailing" id="jpt-zb-k0i"/>
-                            <constraint firstItem="kAt-1t-nPY" firstAttribute="top" secondItem="zhd-BC-lRt" secondAttribute="bottom" constant="9" id="qBa-4N-uZ8"/>
                             <constraint firstItem="OvQ-Ae-Qew" firstAttribute="leading" secondItem="qvT-ex-3jy" secondAttribute="leading" id="sfy-gb-G0b"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KS-JH-kiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832" y="-359"/>
+            <point key="canvasLocation" x="2212" y="-565"/>
         </scene>
         <!--mainScreen-->
         <scene sceneID="jrj-06-La8">
@@ -271,12 +266,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="9U2-Uf-igQ" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="naQ-vS-SWT"/>
+                        <segue destination="5ux-Vo-Al2" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="RiC-pL-4PQ"/>
+                        <segue destination="9U2-Uf-igQ" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="gKD-OO-HM1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6YK-HA-rTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550" y="389"/>
+            <point key="canvasLocation" x="1380" y="389"/>
         </scene>
         <!--Main Menu Table View Controller-->
         <scene sceneID="Aye-qy-Atj">
@@ -318,7 +314,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="5ux-Vo-Al2" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="siQ-ge-dYB"/>
+                                            <segue destination="5ux-Vo-Al2" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSeguePushController" id="siQ-ge-dYB"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="l1m-eU-u29">
@@ -352,7 +348,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="0o7-x4-53L" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="Kvr-GS-FHU"/>
+                                            <segue destination="0o7-x4-53L" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="Kvr-GS-FHU"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6Ce-Ci-cro">
@@ -383,7 +379,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cnB-yB-riD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2288" y="389"/>
+            <point key="canvasLocation" x="2212" y="389"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tlb-Pb-Vas">
@@ -395,12 +391,11 @@
                     </navigationBar>
                     <connections>
                         <segue destination="Msz-ti-LBA" kind="relationship" relationship="rootViewController" id="0dj-H1-8Ei"/>
-                        <segue destination="jCJ-hx-Vgu" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="vIV-Fp-LVO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vW5-mg-1Bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2975" y="389"/>
+            <point key="canvasLocation" x="3029" y="389"/>
         </scene>
         <!--What do you want to do?-->
         <scene sceneID="URo-X0-jL1">
@@ -503,7 +498,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rR6-FN-Sux" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3795" y="1848"/>
+            <point key="canvasLocation" x="3788" y="1829"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fg3-Il-e7T">
@@ -519,7 +514,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1M-zV-lpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2975" y="1829"/>
+            <point key="canvasLocation" x="3035" y="1829"/>
         </scene>
         <!--My New Activity-->
         <scene sceneID="0N8-Jw-DUx">
@@ -759,7 +754,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBn-hM-x59" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4532" y="1848"/>
+            <point key="canvasLocation" x="4532" y="1829"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VUy-Z4-htx">
@@ -775,7 +770,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zzc-hX-ZjI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2975" y="1141"/>
+            <point key="canvasLocation" x="3029" y="1146"/>
         </scene>
         <!--Main App-->
         <scene sceneID="mD2-Qr-FXg">
@@ -811,5 +806,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IMg-u5-0gS"/>
+        <segue reference="RiC-pL-4PQ"/>
     </inferredMetricsTieBreakers>
 </document>
