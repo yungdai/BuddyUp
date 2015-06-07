@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jCJ-hx-Vgu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jCJ-hx-Vgu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -34,7 +34,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view alpha="0.84999999999999987" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fhG-hM-xiF">
+                            <view alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhG-hM-xiF">
                                 <rect key="frame" x="8" y="247" width="584" height="52"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="Fvf-1N-xNt">
@@ -57,7 +57,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5MH-7P-jhz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5MH-7P-jhz">
                                 <rect key="frame" x="8" y="309" width="584" height="42"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -104,7 +104,7 @@
                                     <segue destination="CqZ-hD-fV2" kind="presentation" id="u71-xv-3p5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eU-y8-WK8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eU-y8-WK8">
                                 <rect key="frame" x="291" y="359" width="19" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -163,7 +163,7 @@
         <!--Sign Up Controller-->
         <scene sceneID="oJ5-J6-cba">
             <objects>
-                <viewController id="CqZ-hD-fV2" userLabel="Sign Up Controller" sceneMemberID="viewController">
+                <viewController id="CqZ-hD-fV2" userLabel="Sign Up Controller" customClass="SignUpViewController" customModule="BuddyUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ybn-sJ-s4I"/>
                         <viewControllerLayoutGuide type="bottom" id="hj2-JB-d3m"/>
@@ -172,9 +172,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friendship-day-gifts-ideas-20121" translatesAutoresizingMaskIntoConstraints="NO" id="kAt-1t-nPY">
-                                <rect key="frame" x="0.0" y="22" width="600" height="578"/>
-                            </imageView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-BC-lRt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <constraints>
@@ -237,6 +234,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="createAccountButtonPressed:" destination="CqZ-hD-fV2" eventType="touchUpInside" id="Z2u-5D-pSV"/>
                                     <segue destination="jCJ-hx-Vgu" kind="presentation" id="IMg-u5-0gS"/>
                                 </connections>
                             </button>
@@ -251,6 +249,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="friendship-day-gifts-ideas-20121" translatesAutoresizingMaskIntoConstraints="NO" id="kAt-1t-nPY">
+                                <rect key="frame" x="0.0" y="22" width="600" height="578"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -278,6 +279,12 @@
                             <constraint firstItem="qvT-ex-3jy" firstAttribute="top" secondItem="3SX-vn-Taq" secondAttribute="top" constant="305" id="wqG-KJ-3rw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailAddressField" destination="dXo-3z-ZmE" id="tFW-0W-0Sm"/>
+                        <outlet property="passwordConfirmationField" destination="Yc4-5V-5uI" id="3ph-Ew-5gF"/>
+                        <outlet property="passwordField" destination="RKd-Gc-r70" id="w04-s4-EGV"/>
+                        <outlet property="usernameField" destination="7s8-xL-q8R" id="yEu-Mw-FAy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KS-JH-kiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -308,7 +315,6 @@
         <!--Main Menu Table View Controller-->
         <scene sceneID="Aye-qy-Atj">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cnB-yB-riD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="9U2-Uf-igQ" customClass="MainMenuTableViewController" customModule="BuddyUp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="p6m-9B-tx1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -409,13 +415,13 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cnB-yB-riD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2212" y="389"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tlb-Pb-Vas">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vW5-mg-1Bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="5ux-Vo-Al2" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q73-fw-h4y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -425,6 +431,7 @@
                         <segue destination="Msz-ti-LBA" kind="relationship" relationship="rootViewController" id="0dj-H1-8Ei"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vW5-mg-1Bk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3029" y="389"/>
         </scene>
@@ -806,7 +813,6 @@
         <!--Main App-->
         <scene sceneID="mD2-Qr-FXg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IJk-AM-9Sw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Msz-ti-LBA" userLabel="Main App" customClass="MainAppViewController" customModule="BuddyUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zbj-z9-d64"/>
@@ -824,6 +830,7 @@
                         <outlet property="menuButton" destination="fxg-aj-j0h" id="5nc-lL-gIX"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IJk-AM-9Sw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3788" y="389"/>
         </scene>
@@ -836,7 +843,7 @@
         <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cTc-2J-uZg"/>
+        <segue reference="IMg-u5-0gS"/>
         <segue reference="siQ-ge-dYB"/>
     </inferredMetricsTieBreakers>
 </document>
