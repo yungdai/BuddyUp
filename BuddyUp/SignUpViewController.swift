@@ -88,17 +88,23 @@ class SignUpViewController: UIViewController {
         var parseUser = PFUser()
         parseUser.username = usernameField.text
         parseUser.password = passwordField.text
-        parseUser.signUpInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
+        parseUser.signUpInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in
             
             if error == nil {
                 println("signed up user to Parse")
+                // send them over to the main app
+                
             } else {
                 println(error)
+                self.usernameField.becomeFirstResponder()
+                let alert = UIAlertController(title: "Alert", message: "That username is taken", preferredStyle: UIAlertControllerStyle.Alert)
+                return
             }
-        }
-    
-   
+        })
+        
     }
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
