@@ -13,5 +13,3 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-// sliding menu API
-#import "SWRevealViewController.h"

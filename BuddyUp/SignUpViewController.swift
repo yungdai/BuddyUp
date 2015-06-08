@@ -97,14 +97,12 @@ class SignUpViewController: UIViewController {
             } else {
                 println(error)
                 self.usernameField.becomeFirstResponder()
-                let alert = UIAlertController(title: "Alert", message: "That username is taken", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
                 return
             }
         })
         
     }
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,16 +120,4 @@ class SignUpViewController: UIViewController {
         
         
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
