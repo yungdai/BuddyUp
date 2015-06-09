@@ -1,19 +1,23 @@
 //
-//  ActivitiesTableViewController.swift
+//  SettingsTableViewController.swift
 //  BuddyUp
 //
-//  Created by Yung Dai on 2015-06-03.
+//  Created by Yung Dai on 2015-06-09.
 //  Copyright (c) 2015 Yung Dai. All rights reserved.
 //
 
 import UIKit
 
-class ActivitiesTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController {
 
-    var activityArray: [String] = []
-    
+    @IBAction func logoutButtonPressed(sender: UIButton) {
+        PFUser.logOut()
+        self.performSegueWithIdentifier("goToLogin", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        println("View was loaded")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,24 +36,24 @@ class ActivitiesTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return 5
     }
 
-
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
 
         return cell
     }
-
+    */
 
     /*
     // Override to support conditional editing of the table view.

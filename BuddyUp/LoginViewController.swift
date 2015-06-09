@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
+    
+    // var mainAppViewController = MainAppViewController()
 
     
     let permissions = ["public_profile", "email", "user_friends"]
@@ -79,7 +81,14 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsernameInBackground(username, password: password) {
             (user: PFUser?, error: NSError?) -> Void in
             if error != nil {
-                println("user is logged in")
+                // save the user's location to parse before you save the information
+                PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
+                    if let user = PFUser.currentUser() {
+                        user["currentLocation"] = geoPoint
+                        user.saveInBackground()
+                    }
+                println("user is logged in and location is updated")
+                }
             } else {
                 println("log in failed")
                 self.errorMessage.text = "Log in failed"
@@ -99,6 +108,7 @@ class LoginViewController: UIViewController {
         if PFUser.currentUser()?.sessionToken != nil {
             println("sending user to the main app screen because he's a current user")
             
+            self.performSegueWithIdentifier("mainApp", sender: self)
         } else {
             // Show the signup or login screen
             return
@@ -142,16 +152,7 @@ class LoginViewController: UIViewController {
                                 parseUser["first_name"] = result["first_name"]
                                 parseUser["gender"] = result["gender"]
                                 
-                                // test to make sure that the moreAboutMe column is empty before it's init
-                                if parseUser["moreAboutMe"] != nil {
-                                    println("didn't erase moreAboutme")
-                                } else {
-                                    parseUser["moreAboutMe"] = ""
-                                    println("moreAboutMe reset")
-                                }
-                                
-                                // sending the data to NSUserDefaults as well
-                                
+
                                 // sending the facebook picture to parse as a string
                                 if let pictureResult = result["picture"] as? NSDictionary,
                                     pictureData = pictureResult["data"] as? NSDictionary,
@@ -169,17 +170,31 @@ class LoginViewController: UIViewController {
                                 }
                                 parseUser.saveInBackground()
                                 println("Parse User Saved")
-                                self.performSegueWithIdentifier("signUp", sender: nil)
+                                self.performSegueWithIdentifier("mainApp", sender: nil)
                             }
                         })
                     } else {
                         println("You are already a user, I'll just send you the main page")
-                        self.performSegueWithIdentifier("mainPage", sender: nil)
+                        // save the user's location to parse before you save the information
+                        PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
+                            if let user = PFUser.currentUser() {
+                                user["currentLocation"] = geoPoint
+                                user.saveInBackground()
+                            }
+                        }
+
+                        self.performSegueWithIdentifier("mainApp", sender: nil)
                     }
                 }
             }
     }
 
-
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    }
 
 }

@@ -1,22 +1,23 @@
 //
-//  MainAppViewController.swift
+//  NewActivityViewController.swift
 //  BuddyUp
 //
-//  Created by Yung Dai on 2015-06-08.
+//  Created by Yung Dai on 2015-06-09.
 //  Copyright (c) 2015 Yung Dai. All rights reserved.
 //
 
 import UIKit
 
-class MainAppViewController: UIViewController {
-    
-    let currentUser = PFUser.currentUser()
-    
+class NewActivityViewController: UIViewController {
 
-    @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBAction func cancelButtonPressewd(sender: UIBarButtonItem) {
+        
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

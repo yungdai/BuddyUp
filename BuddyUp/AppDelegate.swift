@@ -15,6 +15,10 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    // instantiate the network and user model
+    var networkController = NetworkController()
+    var userModelController = UserModelController()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -69,17 +73,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let types = UIUserNotificationType.Badge | UIUserNotificationType.Alert | UIUserNotificationType.Sound
             application.registerForRemoteNotifications()
             
-            // reveal the main app if you are a current user
-//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//            if PFUser.currentUser()?.sessionToken != nil {
-//                let revealVC = storyBoard.instantiateViewControllerWithIdentifier("mainScreen") as! UIViewController
-//                self.window?.rootViewController = revealVC
-//            } else {
-//                self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as! UIViewController)
-//            }
+
         }
         
-
+        // reveal the main app if you are a current user
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if PFUser.currentUser()?.sessionToken != nil {
+            println("Your session token is valid")
+            let revealVC = storyBoard.instantiateViewControllerWithIdentifier("buddyUpTabBarController") as! UIViewController
+            self.window?.rootViewController = revealVC
+        } else {
+            self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as! UIViewController)
+        }
         return true
     }
     
