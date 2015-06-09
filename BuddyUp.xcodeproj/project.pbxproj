@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A05173D1B2600910091ECF5 /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05173C1B2600910091ECF5 /* MainAppViewController.swift */; };
 		1A0F071C1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */; };
-		1A45AB471B1F70D2008A080C /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB461B1F70D2008A080C /* MainAppViewController.swift */; };
 		1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */; };
 		1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */; };
 		1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4E1B1F7214008A080C /* ChatViewController.swift */; };
@@ -18,7 +18,20 @@
 		1A7246D31B1E20650020C81E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246D21B1E20650020C81E /* Images.xcassets */; };
 		1A7246D61B1E20650020C81E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246D41B1E20650020C81E /* LaunchScreen.xib */; };
 		1A7246E21B1E20650020C81E /* BuddyUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246E11B1E20650020C81E /* BuddyUpTests.swift */; };
-		1A7246F31B1E32720020C81E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246F21B1E32720020C81E /* SWRevealViewController.m */; };
+		1A9A072D1B222D0F0086879B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A072C1B222D0F0086879B /* AudioToolbox.framework */; };
+		1A9A072F1B222D1F0086879B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A072E1B222D1F0086879B /* MobileCoreServices.framework */; };
+		1A9A07311B222D280086879B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A07301B222D280086879B /* libsqlite3.dylib */; };
+		1A9A07331B222D380086879B /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A07321B222D380086879B /* libstdc++.6.dylib */; };
+		1A9A07371B222DC60086879B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A07341B222DC60086879B /* Bolts.framework */; };
+		1A9A07381B222DC60086879B /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A07351B222DC60086879B /* FBSDKCoreKit.framework */; };
+		1A9A07391B222DC60086879B /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A07361B222DC60086879B /* FBSDKLoginKit.framework */; };
+		1A9A073B1B222DDA0086879B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A073A1B222DDA0086879B /* SystemConfiguration.framework */; };
+		1A9A07401B222EEA0086879B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A073C1B222EEA0086879B /* Parse.framework */; };
+		1A9A07411B222EEA0086879B /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A073D1B222EEA0086879B /* ParseCrashReporting.framework */; };
+		1A9A07421B222EEA0086879B /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A073E1B222EEA0086879B /* ParseFacebookUtilsV4.framework */; };
+		1A9A07431B222EEA0086879B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A073F1B222EEA0086879B /* ParseUI.framework */; };
+		1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07441B2238940086879B /* SignUpViewController.swift */; };
+		1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07461B2238C90086879B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A05173C1B2600910091ECF5 /* MainAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
 		1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
-		1A45AB461B1F70D2008A080C /* MainAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
 		1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4E1B1F7214008A080C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -48,8 +61,20 @@
 		1A7246E01B1E20650020C81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A7246E11B1E20650020C81E /* BuddyUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyUpTests.swift; sourceTree = "<group>"; };
 		1A7246F01B1E32710020C81E /* BuddyUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BuddyUp-Bridging-Header.h"; sourceTree = "<group>"; };
-		1A7246F11B1E32720020C81E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		1A7246F21B1E32720020C81E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		1A9A072C1B222D0F0086879B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1A9A072E1B222D1F0086879B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1A9A07301B222D280086879B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		1A9A07321B222D380086879B /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		1A9A07341B222DC60086879B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		1A9A07351B222DC60086879B /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		1A9A07361B222DC60086879B /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		1A9A073A1B222DDA0086879B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1A9A073C1B222EEA0086879B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		1A9A073D1B222EEA0086879B /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		1A9A073E1B222EEA0086879B /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		1A9A073F1B222EEA0086879B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		1A9A07441B2238940086879B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		1A9A07461B2238C90086879B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +82,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A9A073B1B222DDA0086879B /* SystemConfiguration.framework in Frameworks */,
+				1A9A07411B222EEA0086879B /* ParseCrashReporting.framework in Frameworks */,
+				1A9A07401B222EEA0086879B /* Parse.framework in Frameworks */,
+				1A9A07371B222DC60086879B /* Bolts.framework in Frameworks */,
+				1A9A07381B222DC60086879B /* FBSDKCoreKit.framework in Frameworks */,
+				1A9A07311B222D280086879B /* libsqlite3.dylib in Frameworks */,
+				1A9A07331B222D380086879B /* libstdc++.6.dylib in Frameworks */,
+				1A9A07431B222EEA0086879B /* ParseUI.framework in Frameworks */,
+				1A9A07391B222DC60086879B /* FBSDKLoginKit.framework in Frameworks */,
+				1A9A072F1B222D1F0086879B /* MobileCoreServices.framework in Frameworks */,
+				1A9A072D1B222D0F0086879B /* AudioToolbox.framework in Frameworks */,
+				1A9A07421B222EEA0086879B /* ParseFacebookUtilsV4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +110,6 @@
 		1A7246BD1B1E20650020C81E = {
 			isa = PBXGroup;
 			children = (
-				1A7246EB1B1E20910020C81E /* Frameworks */,
 				1A7246C81B1E20650020C81E /* BuddyUp */,
 				1A7246DE1B1E20650020C81E /* BuddyUpTests */,
 				1A7246C71B1E20650020C81E /* Products */,
@@ -92,6 +128,7 @@
 		1A7246C81B1E20650020C81E /* BuddyUp */ = {
 			isa = PBXGroup;
 			children = (
+				1A7246EB1B1E20910020C81E /* Frameworks */,
 				1A7246EE1B1E20B10020C81E /* Models */,
 				1A7246EC1B1E209F0020C81E /* ViewControllers */,
 				1A7246CB1B1E20650020C81E /* AppDelegate.swift */,
@@ -132,20 +169,34 @@
 		1A7246EB1B1E20910020C81E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A9A073C1B222EEA0086879B /* Parse.framework */,
+				1A9A073D1B222EEA0086879B /* ParseCrashReporting.framework */,
+				1A9A073E1B222EEA0086879B /* ParseFacebookUtilsV4.framework */,
+				1A9A073F1B222EEA0086879B /* ParseUI.framework */,
+				1A9A073A1B222DDA0086879B /* SystemConfiguration.framework */,
+				1A9A07341B222DC60086879B /* Bolts.framework */,
+				1A9A07351B222DC60086879B /* FBSDKCoreKit.framework */,
+				1A9A07361B222DC60086879B /* FBSDKLoginKit.framework */,
+				1A9A07321B222D380086879B /* libstdc++.6.dylib */,
+				1A9A07301B222D280086879B /* libsqlite3.dylib */,
+				1A9A072E1B222D1F0086879B /* MobileCoreServices.framework */,
+				1A9A072C1B222D0F0086879B /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		1A7246EC1B1E209F0020C81E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1A7246EF1B1E32350020C81E /* Side Menu Controller */,
 				1A7246CD1B1E20650020C81E /* ViewController.swift */,
-				1A45AB461B1F70D2008A080C /* MainAppViewController.swift */,
 				1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */,
 				1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */,
 				1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */,
 				1A45AB4E1B1F7214008A080C /* ChatViewController.swift */,
+				1A9A07441B2238940086879B /* SignUpViewController.swift */,
+				1A9A07461B2238C90086879B /* LoginViewController.swift */,
+				1A05173C1B2600910091ECF5 /* MainAppViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -156,15 +207,6 @@
 				1A9A06FD1B2223D60086879B /* UIElements */,
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		1A7246EF1B1E32350020C81E /* Side Menu Controller */ = {
-			isa = PBXGroup;
-			children = (
-				1A7246F11B1E32720020C81E /* SWRevealViewController.h */,
-				1A7246F21B1E32720020C81E /* SWRevealViewController.m */,
-			);
-			name = "Side Menu Controller";
 			sourceTree = "<group>";
 		};
 		1A9A06FD1B2223D60086879B /* UIElements */ = {
@@ -279,9 +321,10 @@
 				1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */,
 				1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */,
 				1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */,
-				1A7246F31B1E32720020C81E /* SWRevealViewController.m in Sources */,
-				1A45AB471B1F70D2008A080C /* MainAppViewController.swift in Sources */,
+				1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */,
+				1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */,
 				1A0F071C1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift in Sources */,
+				1A05173D1B2600910091ECF5 /* MainAppViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +454,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BuddyUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -424,6 +471,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = BuddyUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

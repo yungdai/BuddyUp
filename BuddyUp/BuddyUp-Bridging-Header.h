@@ -4,14 +4,12 @@
 
 
 // Parse API
-//#import <Parse/Parse.h>
-//#import <Bolts/Bolts.h>
-//#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <Parse/Parse.h>
+#import <Bolts/Bolts.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 
 // Facebook API
-//#import <FBSDKCoreKit/FBSDKCoreKit.h>
-//#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-// sliding menu API
-#import "SWRevealViewController.h"
