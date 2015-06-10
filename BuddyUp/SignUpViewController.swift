@@ -18,12 +18,26 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var errorMessageLabel: UILabel!
 
     @IBAction func createAccountButtonPressed(sender: UIButton) {
+        processFieldEntries()
         
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.activityIndicator.hidden = true
+
+        // Do any additional setup after loading the view.
+    }
+
+    
+    func processFieldEntries() {
         // setup the fields for the sign up page
         let username = usernameField.text
         let password = passwordField.text
         let passwordConfirmation = passwordConfirmationField.text
-        let emailAddress = emailAddressField.text
+        let emailAddress = emailAddressField.text.lowercaseString
+        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
         
         
         var errorText = "Please "
@@ -52,7 +66,7 @@ class SignUpViewController: UIViewController {
             if count(passwordConfirmation) == 0 {
                 passwordConfirmationField.becomeFirstResponder()
             }
-
+            
             if count(emailAddress) == 0 {
                 emailAddressField.becomeFirstResponder()
             }
@@ -118,24 +132,6 @@ class SignUpViewController: UIViewController {
                 return
             }
         })
-        
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.activityIndicator.hidden = true
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func processFieldEntries() {
-    
-        
         
     }
     
