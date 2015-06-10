@@ -187,7 +187,7 @@ class LoginViewController: UIViewController {
                 if let parseUser = user {
                     if parseUser.isNew {
                         println("User signed up and logged in through Facebook!")
-                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=first_name,gender,email,name,picture.width(300).height(300)", parameters: nil)
+                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=first_name,friends,gender,email,name,picture.width(300).height(300)", parameters: nil)
                         graphRequest.startWithCompletionHandler({
                             (connection, result, error) -> Void in
                             if (error != nil)
@@ -232,8 +232,8 @@ class LoginViewController: UIViewController {
                                 println("Saving User's Location In Background")
                                 user.saveInBackground()
                             }
+                            
                         }
-
                         self.performSegueWithIdentifier("mainApp", sender: nil)
                     }
                 }

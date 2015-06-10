@@ -1,50 +1,81 @@
 //
-//  MainMenuTableViewController.swift
+//  BuddiesTableViewController.swift
 //  BuddyUp
 //
-//  Created by Yung Dai on 2015-06-03.
+//  Created by Yung Dai on 2015-06-10.
 //  Copyright (c) 2015 Yung Dai. All rights reserved.
 //
 
 import UIKit
 
-class MainMenuTableViewController: UITableViewController {
+class BuddiesTableViewController: UITableViewController {
 
+    var userArray: [String] = []
+    var isAscending = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .whiteColor()
+
+        // set up the refresh controls for this table
+        var refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: Selector("sortArray"), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refreshControl
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        var query = PFUser.query()
+        query?.whereKey("username", notEqualTo: PFUser.currentUser()!.username!)
+        var users = query?.findObjects()
+        if let buddies = users {
+            for user in users! {
+                userArray.append(user.username!!)
+                tableView.reloadData()
+            }
+        }
     }
     
-    
+    func sortArray() {
+        var sortedAlphabetically = userArray.reverse()
+        
+        for(index,element) in enumerate(sortedAlphabetically) {
+            userArray[index] = element
+        }
+        
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
     // MARK: - Table view data source
 
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Potentially incomplete method implementation.
-//        // Return the number of sections.
-//        return 0
-//    }
-//
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete method implementation.
-//        // Return the number of rows in the section.
-//        return 0
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 1
+    }
 
-    /*
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete method implementation.
+        // Return the number of rows in the section.
+        return userArray.count
+    }
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
+        cell.textLabel?.text = userArray[indexPath.row]
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

@@ -10,8 +10,6 @@ import UIKit
 
 class NetworkController: NSObject {
    
-    func getUserModel() -> UserModel {
-        return UserModel()
-    }
+
     
 }

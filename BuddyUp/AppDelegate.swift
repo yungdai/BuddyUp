@@ -18,10 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // instantiate the network and user model
     var networkController = NetworkController()
-    var userModelController = UserModelController()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // register subclasses for parsae
+        Friendship.registerSubclass()
+        
         // Enable storing and querying data from Local Datastore.
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
         Parse.enableLocalDatastore()

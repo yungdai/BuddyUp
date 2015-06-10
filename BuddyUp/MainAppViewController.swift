@@ -16,6 +16,25 @@ class MainAppViewController: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let query = PFUser.query()
+        query?.findObjectsInBackgroundWithBlock({ (results:[AnyObject]?, error:NSError?) -> Void in
+            if let resultsUser = results as? [PFUser],
+                let currentUser = PFUser.currentUser(){
+                for user in resultsUser{
+//                    if user != currentUser{
+                        let relation = user.relationForKey("Request")
+                        //                    relation.addObject(currentUser)
+                        ////                    let otherRelation = user.relationForKey("Request");
+                        //                    user.saveInBackground()
+                        let relationQuery = relation.query()
+                        relationQuery?.whereKey("username", equalTo: user["username"]!)
+                        relationQuery?.findObjectsInBackgroundWithBlock({ (results2:[AnyObject]?, error2:NSError?) -> Void in
+                            println("FOUND  USER!")
+                        })
+//                    }
+                }
+            }
+        })
 
     }
 
