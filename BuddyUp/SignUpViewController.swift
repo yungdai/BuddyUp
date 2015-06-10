@@ -13,6 +13,9 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordConfirmationField: UITextField!
     @IBOutlet weak var emailAddressField: UITextField!
+    var activityIndicator = UIActivityIndicatorView()
+
+    @IBOutlet weak var errorMessageLabel: UILabel!
 
     @IBAction func createAccountButtonPressed(sender: UIButton) {
         
@@ -20,7 +23,10 @@ class SignUpViewController: UIViewController {
         let username = usernameField.text
         let password = passwordField.text
         let passwordConfirmation = passwordConfirmationField.text
-        let emailAddress = emailAddressField.text
+        let emailAddress = emailAddressField.text.lowercaseString
+        activityIndicator.hidden = false
+        activityIndicator.startAnimating()
+        
         
         var errorText = "Please "
         let usernameBlankText = "enter a username"
@@ -85,6 +91,8 @@ class SignUpViewController: UIViewController {
         
         // if those conditions clear you will create a new user and log in
         
+        
+
         var parseUser = PFUser()
         parseUser.username = usernameField.text
         parseUser.password = passwordField.text
@@ -93,11 +101,25 @@ class SignUpViewController: UIViewController {
             if error == nil {
                 println("signed up user to Parse")
                 // send them over to the main app
+                // User needs to verify email address before continuing
+                let alertController = UIAlertController(title: "Email address verification",
+                    message: "We have sent you an email that contains a link - you must click this link before you can continue.",
+                    preferredStyle: UIAlertControllerStyle.Alert
+                )
+                alertController.addAction(UIAlertAction(title: "OKAY",
+                    style: UIAlertActionStyle.Default,
+                    handler: { alertController in self.processSignOut()})
+                )
+                // Display alert
+                self.presentViewController(alertController, animated: true, completion: nil)
                 
             } else {
-                println(error)
-                self.usernameField.becomeFirstResponder()
-                let alert = UIAlertController(title: "Alert", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.Alert)
+                
+                self.activityIndicator.stopAnimating()
+                
+                if let message: AnyObject = error!.userInfo!["error"] {
+                    self.errorMessageLabel.text = "\(message)"
+                }
                 return
             }
         })
@@ -106,6 +128,7 @@ class SignUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityIndicator.hidden = true
 
         // Do any additional setup after loading the view.
     }
@@ -120,4 +143,17 @@ class SignUpViewController: UIViewController {
         
         
     }
+    
+    // Sign the current user out of the app
+    func processSignOut() {
+        
+        // // Sign out
+        PFUser.logOut()
+        
+        // Display sign in / up view controller
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyboard.instantiateViewControllerWithIdentifier("Login") as! UIViewController
+        self.presentViewController(loginViewController, animated: true, completion: nil)
+    }
 }
+

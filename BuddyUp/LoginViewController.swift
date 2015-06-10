@@ -80,6 +80,44 @@ class LoginViewController: UIViewController {
         // log in the user with Parse
         PFUser.logInWithUsernameInBackground(username, password: password) {
             (user: PFUser?, error: NSError?) -> Void in
+            
+            // check for email verification
+            if user!["emailVerified"] as! Bool == true {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier(
+                        "mainApp",
+                        sender: self
+                    )
+                    // save the user's location to parse before you save the information
+                    PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
+                        if let user = PFUser.currentUser() {
+                            user["currentLocation"] = geoPoint
+                            user.saveInBackground()
+                        }
+                        println("user is logged in and location is updated")
+                    }
+                    self.performSegueWithIdentifier("mainApp", sender: nil)
+                }
+            } else {
+                // User needs to verify email address before continuing
+                let alertController = UIAlertController(
+                    title: "Email address verification",
+                    message: "We have sent you an email that contains a link - you must click this link before you can continue.",
+                    preferredStyle: UIAlertControllerStyle.Alert
+                )
+                alertController.addAction(UIAlertAction(title: "OKAY",
+                    style: UIAlertActionStyle.Default,
+                    handler: { alertController in self.processSignOut()})
+                )
+                // Display alert
+                self.presentViewController(
+                    alertController,
+                    animated: true,
+                    completion: nil
+                )
+            }
+            
+            // check for error messages
             if error != nil {
                 // save the user's location to parse before you save the information
                 PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
@@ -89,15 +127,28 @@ class LoginViewController: UIViewController {
                     }
                 println("user is logged in and location is updated")
                 }
+                self.performSegueWithIdentifier("mainApp", sender: nil)
+                
             } else {
                 println("log in failed")
                 self.errorMessage.text = "Log in failed"
+                return
             }
         }
-    
-        
-        
     }
+    
+    // Sign the current user out of the app
+    func processSignOut() {
+        
+        // // Sign out
+        PFUser.logOut()
+        
+        // Display sign in / up view controller
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewControllerWithIdentifier("Login") as! UIViewController
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+
     
     @IBAction func signupButtonPressed(sender: AnyObject) {
         
