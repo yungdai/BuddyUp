@@ -80,6 +80,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if PFUser.currentUser()?.sessionToken != nil {
             println("Your session token is valid")
+            // save the user's location to parse before you save the information
+            PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
+                if let user = PFUser.currentUser() {
+                    user["currentLocation"] = geoPoint
+                    println("Saving User's Location In Background")
+                    user.saveInBackground()
+                }
+            }
             let revealVC = storyBoard.instantiateViewControllerWithIdentifier("buddyUpTabBarController") as! UIViewController
             self.window?.rootViewController = revealVC
         } else {

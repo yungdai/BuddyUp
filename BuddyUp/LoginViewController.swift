@@ -230,6 +230,7 @@ class LoginViewController: UIViewController {
                         PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
                             if let user = PFUser.currentUser() {
                                 user["currentLocation"] = geoPoint
+                                println("Saving User's Location In Background")
                                 user.saveInBackground()
                             }
                         }
