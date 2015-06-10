@@ -90,9 +90,6 @@ class SignUpViewController: UIViewController {
         }
         
         // if those conditions clear you will create a new user and log in
-        
-        
-
         var parseUser = PFUser()
         parseUser.username = usernameField.text
         parseUser.password = passwordField.text
