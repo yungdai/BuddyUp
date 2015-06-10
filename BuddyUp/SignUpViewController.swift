@@ -23,9 +23,7 @@ class SignUpViewController: UIViewController {
         let username = usernameField.text
         let password = passwordField.text
         let passwordConfirmation = passwordConfirmationField.text
-        let emailAddress = emailAddressField.text.lowercaseString
-        activityIndicator.hidden = false
-        activityIndicator.startAnimating()
+        let emailAddress = emailAddressField.text
         
         
         var errorText = "Please "
