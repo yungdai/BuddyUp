@@ -11,7 +11,6 @@ import UIKit
 class BuddiesTableViewController: UITableViewController {
 
     var userArray: [String] = []
-    var isAscending = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,18 +19,13 @@ class BuddiesTableViewController: UITableViewController {
         var refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("sortArray"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         var query = PFUser.query()
         query?.whereKey("username", notEqualTo: PFUser.currentUser()!.username!)
         var users = query?.findObjects()
         if let buddies = users {
             for user in users! {
-                userArray.append(user.username!!)
+                userArray.append(user.name)
                 tableView.reloadData()
             }
         }

@@ -16,6 +16,7 @@
 		1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4E1B1F7214008A080C /* ChatViewController.swift */; };
 		1A57D08E1B2772EB004B363C /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A57D08D1B2772EB004B363C /* NewActivityViewController.swift */; };
 		1A57D0901B2789DC004B363C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A57D08F1B2789DC004B363C /* SettingsTableViewController.swift */; };
+		1A69074F1B2939E600150F98 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A69074E1B2939E600150F98 /* ActivityTableViewCell.swift */; };
 		1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246CB1B1E20650020C81E /* AppDelegate.swift */; };
 		1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246CD1B1E20650020C81E /* ViewController.swift */; };
 		1A7246D11B1E20650020C81E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246CF1B1E20650020C81E /* Main.storyboard */; };
@@ -36,7 +37,6 @@
 		1A9A07431B222EEA0086879B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A073F1B222EEA0086879B /* ParseUI.framework */; };
 		1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07441B2238940086879B /* SignUpViewController.swift */; };
 		1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07461B2238C90086879B /* LoginViewController.swift */; };
-		1AAB448A1B27316100E96BB5 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB44891B27316100E96BB5 /* NetworkController.swift */; };
 		1AAB44931B274EF700E96BB5 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB44921B274EF700E96BB5 /* ActivityModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +60,7 @@
 		1A45AB4E1B1F7214008A080C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		1A57D08D1B2772EB004B363C /* NewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewActivityViewController.swift; sourceTree = "<group>"; };
 		1A57D08F1B2789DC004B363C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		1A69074E1B2939E600150F98 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		1A7246C61B1E20650020C81E /* BuddyUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuddyUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7246CA1B1E20650020C81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A7246CB1B1E20650020C81E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		1A9A073F1B222EEA0086879B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		1A9A07441B2238940086879B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1A9A07461B2238C90086879B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1AAB44891B27316100E96BB5 /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		1AAB44921B274EF700E96BB5 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +142,6 @@
 			children = (
 				1A7246EB1B1E20910020C81E /* Frameworks */,
 				1A7246EE1B1E20B10020C81E /* Models */,
-				1AAB448F1B2731E800E96BB5 /* Controllers */,
 				1A7246EC1B1E209F0020C81E /* ViewControllers */,
 				1A7246CB1B1E20650020C81E /* AppDelegate.swift */,
 				1A7246CF1B1E20650020C81E /* Main.storyboard */,
@@ -221,25 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				1AAB448C1B27319300E96BB5 /* Data */,
-				1AAB448B1B27317100E96BB5 /* Network */,
-				1A9A06FD1B2223D60086879B /* UIElements */,
 			);
 			name = Models;
-			sourceTree = "<group>";
-		};
-		1A9A06FD1B2223D60086879B /* UIElements */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = UIElements;
-			sourceTree = "<group>";
-		};
-		1AAB448B1B27317100E96BB5 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				1AAB44891B27316100E96BB5 /* NetworkController.swift */,
-			);
-			name = Network;
 			sourceTree = "<group>";
 		};
 		1AAB448C1B27319300E96BB5 /* Data */ = {
@@ -247,15 +229,9 @@
 			children = (
 				1A15B57C1B2883E400AAE935 /* Friendship.swift */,
 				1AAB44921B274EF700E96BB5 /* ActivityModel.swift */,
+				1A69074E1B2939E600150F98 /* ActivityTableViewCell.swift */,
 			);
 			name = Data;
-			sourceTree = "<group>";
-		};
-		1AAB448F1B2731E800E96BB5 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,12 +334,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AAB448A1B27316100E96BB5 /* NetworkController.swift in Sources */,
 				1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */,
 				1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */,
 				1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */,
 				1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */,
 				1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */,
+				1A69074F1B2939E600150F98 /* ActivityTableViewCell.swift in Sources */,
 				1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */,
 				1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */,
 				1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */,

@@ -15,6 +15,9 @@ class NewActivityViewController: UIViewController, UIPickerViewDataSource, UIPic
     @IBOutlet weak var startTimePicker: UIDatePicker!
     @IBOutlet weak var endTimePicker: UIDatePicker!
     
+    var selectedActivity = String()
+
+    
     
     let activities = ["Watch TV", "Go For Drinks", "Play Sports", "Watch a Movie", "Go To An Event"]
     
@@ -27,20 +30,23 @@ class NewActivityViewController: UIViewController, UIPickerViewDataSource, UIPic
         super.viewDidLoad()
         activityPicker.dataSource = self
         activityPicker.delegate = self
+        selectedActivity = activities[0]
         // Do any additional setup after loading the view.
     }
     
     @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
-//        var activity = PFObject(className: "Activity")
-//        activity["creator"] = PFUser.currentUser()
-//        activity["startTime"] = startTimePicker
-//        activity["endTime"] = endTimePicker
-//        activity["activityType"] = activityPicker
+        var activity = PFObject(className: "Activity")
+        activity["creator"] = PFUser.currentUser()?.username
+        activity["name"] = PFUser.currentUser()?.objectForKey("name")
+        activity["startTime"] = startTimePicker.date
+        activity["endTime"] = endTimePicker.date
+        activity["activityType"] = selectedActivity
+        
+        activity.save()
         
         
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -60,16 +66,11 @@ class NewActivityViewController: UIViewController, UIPickerViewDataSource, UIPic
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
         return activities[row]
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        var picked = activities[row]
+        selectedActivity = picked
+        
     }
-    */
 
 }

@@ -10,11 +10,20 @@ import UIKit
 
 class ActivitiesTableViewController: UITableViewController {
 
-    var activityArray: [String] = []
-    
+    var activitesArray: [String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var query = PFQuery(className: "Activity")
+        query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
+        var activities = query.findObjects()
+        if let activity = activities {
+            for activity in activities! {
+                activitesArray.append(activity.name)
+                
+            }
+        }
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -32,13 +41,13 @@ class ActivitiesTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return activitesArray.count
     }
 
 
@@ -46,7 +55,7 @@ class ActivitiesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
 
         // Configure the cell...
-
+        
         return cell
     }
 
