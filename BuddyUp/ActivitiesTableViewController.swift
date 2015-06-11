@@ -19,7 +19,7 @@ class ActivitiesTableViewController: UITableViewController {
         var activities = query.findObjects()
         if let activity = activities {
             for activity in activities! {
-                activitesArray.append(activity.name)
+//                activitesArray.append(activity.name)
                 
             }
         }

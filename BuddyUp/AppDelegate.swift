@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     // instantiate the network and user model
-    var networkController = NetworkController()
+//    var networkController = NetworkController()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

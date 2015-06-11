@@ -25,7 +25,7 @@ class BuddiesTableViewController: UITableViewController {
         var users = query?.findObjects()
         if let buddies = users {
             for user in users! {
-                userArray.append(user.name)
+                userArray.append(user.username!!)
                 tableView.reloadData()
             }
         }
