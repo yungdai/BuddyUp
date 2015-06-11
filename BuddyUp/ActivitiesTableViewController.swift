@@ -10,7 +10,10 @@ import UIKit
 
 class ActivitiesTableViewController: UITableViewController {
 
-    var activitesArray: [String] = []
+    var activitesTypeArray: [String] = []
+    var startTimeArray: [NSDate] = []
+    var endTimeArray: [NSDate] = []
+    var dateStyle = NSDateFormatterStyle.MediumStyle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +22,18 @@ class ActivitiesTableViewController: UITableViewController {
         var activities = query.findObjects()
         if let activity = activities {
             for activity in activities! {
-//                activitesArray.append(activity.name)
+                activitesTypeArray.append(activity["activityType"] as! String)
+                println(activity["activityType"] as! String)
+                startTimeArray.append(activity["startTime"] as! NSDate)
+                println(activity["startTime"] as! NSDate)
+                endTimeArray.append(activity["endTime"] as! NSDate)
+                println(activity["endTime"] as! NSDate)
                 
             }
+       
+        
         }
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,19 +52,26 @@ class ActivitiesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return activitesArray.count
+        return activitesTypeArray.count
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        return cellStyleFactory(indexPath)
+    }
 
+
+    func cellStyleFactory (indexPath: NSIndexPath) -> UITableViewCell {
+        var cellType = "ActivityCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellType, forIndexPath: indexPath) as! UITableViewCell
+        if let activityCell = cell as? ActivityTableViewCell {
+            activityCell.activityTypeLabel.text = activitesTypeArray[indexPath.row]
+        }
         // Configure the cell...
         
         return cell
     }
-
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

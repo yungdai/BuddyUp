@@ -11,6 +11,7 @@ import UIKit
 class NewActivityViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
 
+    @IBOutlet weak var activityImage: UIImageView!
     @IBOutlet weak var activityPicker: UIPickerView!
     @IBOutlet weak var startTimePicker: UIDatePicker!
     @IBOutlet weak var endTimePicker: UIDatePicker!
