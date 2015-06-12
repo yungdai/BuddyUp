@@ -65,8 +65,12 @@ class ActivitiesTableViewController: UITableViewController {
         var cellType = "ActivityCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellType, forIndexPath: indexPath) as! UITableViewCell
         if let activityCell = cell as? ActivityTableViewCell {
+            let dateFormat = NSDateFormatter()
+            dateFormat.dateStyle = NSDateFormatterStyle.MediumStyle
             activityCell.activityTypeLabel.text = activitesTypeArray[indexPath.row]
-        }
+            activityCell.startTimeLabel.text = dateFormat.stringFromDate(startTimeArray[indexPath.row])
+            activityCell.endTimeLabel.text = dateFormat.stringFromDate(endTimeArray[indexPath.row])
+                }
         // Configure the cell...
         
         return cell
