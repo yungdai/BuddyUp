@@ -30,11 +30,11 @@ class BuddiesTableViewController: UITableViewController {
                 tableView.reloadData()
             }
         }
+        
     }
     
     func sortArray() {
         var sortedAlphabetically = userArray.reverse()
-        
         for(index,element) in enumerate(sortedAlphabetically) {
             userArray[index] = element
         }

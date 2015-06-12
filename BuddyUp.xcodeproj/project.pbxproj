@@ -203,8 +203,8 @@
 			children = (
 				1A7246CD1B1E20650020C81E /* ViewController.swift */,
 				1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */,
-				1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */,
 				1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */,
+				1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */,
 				1A45AB4E1B1F7214008A080C /* ChatViewController.swift */,
 				1A9A07441B2238940086879B /* SignUpViewController.swift */,
 				1A9A07461B2238C90086879B /* LoginViewController.swift */,
