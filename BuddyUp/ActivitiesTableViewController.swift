@@ -67,6 +67,7 @@ class ActivitiesTableViewController: UITableViewController {
         if let activityCell = cell as? ActivityTableViewCell {
             let dateFormat = NSDateFormatter()
             dateFormat.dateStyle = NSDateFormatterStyle.MediumStyle
+            dateFormat.timeStyle = NSDateFormatterStyle.ShortStyle
             activityCell.activityTypeLabel.text = activitesTypeArray[indexPath.row]
             activityCell.startTimeLabel.text = dateFormat.stringFromDate(startTimeArray[indexPath.row])
             activityCell.endTimeLabel.text = dateFormat.stringFromDate(endTimeArray[indexPath.row])
