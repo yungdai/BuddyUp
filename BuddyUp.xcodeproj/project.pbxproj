@@ -38,6 +38,10 @@
 		1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07441B2238940086879B /* SignUpViewController.swift */; };
 		1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07461B2238C90086879B /* LoginViewController.swift */; };
 		1AAB44931B274EF700E96BB5 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB44921B274EF700E96BB5 /* ActivityModel.swift */; };
+		1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC6B1B2E2118009585F6 /* DatePickerPopUp.swift */; };
+		1AE5DC6E1B2E2118009585F6 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */; };
+		1AE5DC711B2E2135009585F6 /* DatePickerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AE5DC6F1B2E2135009585F6 /* DatePickerPopUp.xib */; };
+		1AE5DC721B2E2135009585F6 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC701B2E2135009585F6 /* DatePickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		1A9A07441B2238940086879B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1A9A07461B2238C90086879B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1AAB44921B274EF700E96BB5 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		1AE5DC6B1B2E2118009585F6 /* DatePickerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerPopUp.swift; sourceTree = "<group>"; };
+		1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
+		1AE5DC6F1B2E2135009585F6 /* DatePickerPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerPopUp.xib; sourceTree = "<group>"; };
+		1AE5DC701B2E2135009585F6 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +212,7 @@
 				1A7246CD1B1E20650020C81E /* ViewController.swift */,
 				1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */,
 				1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */,
+				1AE5DC701B2E2135009585F6 /* DatePickerViewController.swift */,
 				1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */,
 				1A45AB4E1B1F7214008A080C /* ChatViewController.swift */,
 				1A9A07441B2238940086879B /* SignUpViewController.swift */,
@@ -219,7 +228,7 @@
 		1A7246EE1B1E20B10020C81E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1AD32DED1B2B3A0C00429AEC /* PopUpDatePicker */,
+				1AD32DED1B2B3A0C00429AEC /* DatePickerPopUp */,
 				1AAB448C1B27319300E96BB5 /* Data */,
 			);
 			name = Models;
@@ -235,11 +244,14 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		1AD32DED1B2B3A0C00429AEC /* PopUpDatePicker */ = {
+		1AD32DED1B2B3A0C00429AEC /* DatePickerPopUp */ = {
 			isa = PBXGroup;
 			children = (
+				1AE5DC6B1B2E2118009585F6 /* DatePickerPopUp.swift */,
+				1AE5DC6F1B2E2135009585F6 /* DatePickerPopUp.xib */,
+				1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */,
 			);
-			name = PopUpDatePicker;
+			name = DatePickerPopUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE5DC711B2E2135009585F6 /* DatePickerPopUp.xib in Resources */,
 				1A7246D11B1E20650020C81E /* Main.storyboard in Resources */,
 				1A7246D61B1E20650020C81E /* LaunchScreen.xib in Resources */,
 				1A7246D31B1E20650020C81E /* Images.xcassets in Resources */,
@@ -342,10 +355,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */,
 				1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */,
+				1AE5DC721B2E2135009585F6 /* DatePickerViewController.swift in Sources */,
 				1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */,
 				1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */,
 				1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */,
+				1AE5DC6E1B2E2118009585F6 /* DateFormat.swift in Sources */,
 				1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */,
 				1A69074F1B2939E600150F98 /* ActivityTableViewCell.swift in Sources */,
 				1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */,
