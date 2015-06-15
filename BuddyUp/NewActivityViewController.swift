@@ -95,11 +95,19 @@ class NewActivityViewController: UIViewController, UIPickerViewDataSource, UIPic
     }
     
     @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
+        
+        // format the date for the TextField's Text
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        let initStartDate : NSDate? = dateFormatter.dateFromString(startTimeTextField.text)
+        let initEndDate : NSDate? = dateFormatter.dateFromString(endTimeTextField.text)
+        
         var activity = PFObject(className: "Activity")
         activity["creator"] = PFUser.currentUser()?.username
         activity["name"] = PFUser.currentUser()?.objectForKey("name")
-        activity["startTime"] = startTimeTextField.text
-        activity["endTime"] = endTimeTextField.text
+        activity["startTime"] = initStartDate
+        activity["endTime"] = initEndDate
         activity["activityType"] = selectedActivity
         
         activity.save()
