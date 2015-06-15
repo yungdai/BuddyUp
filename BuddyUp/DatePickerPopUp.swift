@@ -57,11 +57,11 @@ class DatePickerPopUp: NSObject, UIPopoverPresentationControllerDelegate, DatePi
     
     func datePickerVCDismissed(date : NSDate?) {
         
-        if let dataChanged = dataChanged {
+        if let _dataChanged = dataChanged {
             
-            if let date = date {
+            if let _date = date {
                 
-                dataChanged(newDate: date, forTextField: textField)
+                _dataChanged(newDate: _date, forTextField: textField)
                 
             }
         }

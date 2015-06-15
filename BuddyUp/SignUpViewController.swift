@@ -93,6 +93,7 @@ class SignUpViewController: UIViewController {
         var parseUser = PFUser()
         parseUser.username = usernameField.text
         parseUser.password = passwordField.text
+        parseUser["name"] = usernameField.text
         parseUser.signUpInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in
             
             if error == nil {
