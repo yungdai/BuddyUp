@@ -39,6 +39,8 @@ class NewActivityViewController: UIViewController, UIPickerViewDataSource, UIPic
         endDatePickerPopUp = DatePickerPopUp(forTextField: endTimeTextField)
         activityPicker.dataSource = self
         activityPicker.delegate = self
+        startTimeTextField.delegate = self
+        endTimeTextField.delegate = self
         selectedActivity = activities[0]
         // Do any additional setup after loading the view.
     }
