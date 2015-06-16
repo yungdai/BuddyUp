@@ -8,42 +8,37 @@
 
 import UIKit
 
-class NewActivityViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var startDatePickerPopUp : DatePickerPopUp?
     var endDatePickerPopUp : DatePickerPopUp?
+    var activityPickerPopUp : PickerViewPickerPopUp?
     
-    
-    @IBOutlet weak var activityImage: UIImageView!
-    @IBOutlet weak var activityPicker: UIPickerView!
-    
-    @IBOutlet weak var startTimeTextField: UITextField!
-    @IBOutlet weak var endTimeTextField: UITextField!
-    
-    
-    var selectedActivity = String()
+    @IBOutlet var addPictureButton: UIButton!
+    @IBOutlet var startTimeTextField: UITextField!
+    @IBOutlet var activityImage: UIImageView!
+    @IBOutlet var endTimeTextField: UITextField!
+    @IBOutlet var activityTypeTextField: UITextField!
 
-    
-    
-    let activities = ["Watch TV", "Go For Drinks", "Play Sports", "Watch a Movie", "Go To An Event"]
-    
 
-    @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
-        
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         startDatePickerPopUp = DatePickerPopUp(forTextField: startTimeTextField)
         endDatePickerPopUp = DatePickerPopUp(forTextField: endTimeTextField)
-        activityPicker.dataSource = self
-        activityPicker.delegate = self
+        activityPickerPopUp = PickerViewPickerPopUp(forTextField: activityTypeTextField)
         startTimeTextField.delegate = self
         endTimeTextField.delegate = self
-        selectedActivity = activities[0]
-        // Do any additional setup after loading the view.
+        activityTypeTextField.delegate = self
+        imagePicker.delegate = self
+        
     }
+    
+    
+    @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if (textField == startTimeTextField) {
@@ -80,22 +75,31 @@ class NewActivityViewController: UIViewController, UIPickerViewDataSource, UIPic
             endDatePickerPopUp!.pick(self, initDate: initDate, dataChanged: dataChangeCallBack)
             return false
             
-        } else {
+        } else if (textField == activityTypeTextField) {
+            resign()
+            let initString : String = activityTypeTextField.text
+            let dataChangedCallBack : PickerViewPickerPopUp.PickerViewPickerPopUpCallBack = {(newText : String, forTextField: UITextField) ->() in
+                
+                forTextField.text = newText
+            }
+            
+            activityPickerPopUp!.pick(self, initString: initString, dataChanged: dataChangedCallBack)
+            return false
+            
+        }else {
             return true
         }
-        
-            
-            
     }
     
     
     func resign() {
         startTimeTextField.resignFirstResponder()
         endTimeTextField.resignFirstResponder()
+        activityTypeTextField.resignFirstResponder()
     }
     
     @IBAction func saveButtonPressed(sender: UIBarButtonItem) {
-        
+
         // format the date for the TextField's Text
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
@@ -108,37 +112,42 @@ class NewActivityViewController: UIViewController, UIPickerViewDataSource, UIPic
         activity["name"] = PFUser.currentUser()?.objectForKey("name")
         activity["startTime"] = initStartDate
         activity["endTime"] = initEndDate
-        activity["activityType"] = selectedActivity
+        activity["activityType"] = activityTypeTextField.text
+
         
         activity.save()
         
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    
+    
+    // image picker variables
+    let imagePicker = UIImagePickerController()
+    // choose from the library of photos
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        activityImage.contentMode = .ScaleAspectFit
+        activityImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+
     }
     
-    // returns the number of 'columns' to display.
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // returns the # of rows in each component..
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return activities.count
-    }
     
-    //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return activities[row]
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        var picked = activities[row]
-        selectedActivity = picked
+    @IBAction func addPictureButtonPressed(sender: UIButton) {
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.allowsEditing = false
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
         
     }
+    
 
 }
