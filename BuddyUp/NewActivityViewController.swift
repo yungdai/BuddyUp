@@ -113,8 +113,8 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         activity["startTime"] = initStartDate
         activity["endTime"] = initEndDate
         activity["activityType"] = activityTypeTextField.text
+        activity["image"] = PFFile(name: "image.jpg", data: UIImageJPEGRepresentation(activityImage.image, 0.5) )
 
-        
         activity.save()
         
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
@@ -126,6 +126,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     // image picker variables
     let imagePicker = UIImagePickerController()
+
     // choose from the library of photos
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {

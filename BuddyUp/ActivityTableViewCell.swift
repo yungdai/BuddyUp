@@ -13,6 +13,7 @@ class ActivityTableViewCell: UITableViewCell {
     @IBOutlet weak var activityTypeLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var endTimeLabel: UILabel!
+    @IBOutlet weak var activityImage: UIImageView!
    
     override func awakeFromNib() {
         super.awakeFromNib()

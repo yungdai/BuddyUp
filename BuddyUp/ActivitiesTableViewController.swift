@@ -13,8 +13,9 @@ class ActivitiesTableViewController: UITableViewController {
     var activitesTypeArray: [String] = []
     var startTimeArray: [NSDate] = []
     var endTimeArray: [NSDate] = []
+    var activityImageArray : [UIImage] = []
     var dateStyle = NSDateFormatterStyle.MediumStyle
-
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         var query = PFQuery(className: "Activity")
@@ -28,10 +29,15 @@ class ActivitiesTableViewController: UITableViewController {
                 println(activity["startTime"] as! NSDate)
                 endTimeArray.append(activity["endTime"] as! NSDate)
                 println(activity["endTime"] as! NSDate)
+                let activityImageFile = activity["image"] as? PFFile
+                activityImageFile!.getDataInBackgroundWithBlock({ ( imageData: NSData?, error: NSError?) -> Void in
+                    if (error != nil) {
+                        let image = UIImage(data: imageData!)
+                        self.activityImageArray.append(image!)
+                    }
+                })
                 
             }
-       
-        
         }
         
     }
