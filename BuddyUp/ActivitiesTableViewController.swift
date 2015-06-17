@@ -30,16 +30,14 @@ class ActivitiesTableViewController: UITableViewController {
                 endTimeArray.append(activity["endTime"] as! NSDate)
                 println(activity["endTime"] as! NSDate)
                 let activityImageFile = activity["image"] as? PFFile
-                activityImageFile!.getDataInBackgroundWithBlock({ ( imageData: NSData?, error: NSError?) -> Void in
+                activityImageFile!.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
                     if (error != nil) {
                         let image = UIImage(data: imageData!)
                         self.activityImageArray.append(image!)
-                    }
+                    } 
                 })
-                
             }
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +75,7 @@ class ActivitiesTableViewController: UITableViewController {
             activityCell.activityTypeLabel.text = activitesTypeArray[indexPath.row]
             activityCell.startTimeLabel.text = dateFormat.stringFromDate(startTimeArray[indexPath.row])
             activityCell.endTimeLabel.text = dateFormat.stringFromDate(endTimeArray[indexPath.row])
+            activityCell.activityImage.image = activityImageArray[indexPath.row]
                 }
         // Configure the cell...
         
