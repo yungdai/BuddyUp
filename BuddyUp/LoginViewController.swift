@@ -225,6 +225,7 @@ class LoginViewController: UIViewController {
                         })
                     } else {
                         println("You are already a user, I'll just send you the main page")
+                        
                         // save the user's location to parse before you save the information
                         PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
                             if let user = PFUser.currentUser() {

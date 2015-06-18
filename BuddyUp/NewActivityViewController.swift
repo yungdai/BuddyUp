@@ -107,18 +107,25 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         let initStartDate : NSDate? = dateFormatter.dateFromString(startTimeTextField.text)
         let initEndDate : NSDate? = dateFormatter.dateFromString(endTimeTextField.text)
         
+        // save the object in the background
         var activity = PFObject(className: "Activity")
         activity["creator"] = PFUser.currentUser()?.username
         activity["name"] = PFUser.currentUser()?.objectForKey("name")
         activity["startTime"] = initStartDate
         activity["endTime"] = initEndDate
         activity["activityType"] = activityTypeTextField.text
-        activity["image"] = PFFile(name: "image.jpg", data: UIImageJPEGRepresentation(activityImage.image, 0.5) )
+        activity["image"] = PFFile(name: "image.jpg", data: UIImageJPEGRepresentation(activityImage.image, 0.5))
 
-        activity.save()
-        
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-        
+        activity.saveInBackgroundWithBlock { (success, error: NSError?) -> Void in
+            if (error != nil) {
+                // TODO: set up alert
+                println(error)
+            } else {
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            }
+            
+            
+        }
     }
     
 

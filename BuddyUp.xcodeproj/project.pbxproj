@@ -38,6 +38,8 @@
 		1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07441B2238940086879B /* SignUpViewController.swift */; };
 		1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07461B2238C90086879B /* LoginViewController.swift */; };
 		1AAB44931B274EF700E96BB5 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB44921B274EF700E96BB5 /* ActivityModel.swift */; };
+		1ABB8FB71B31E33400102C71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB8FB61B31E33400102C71 /* User.swift */; };
+		1ABB8FBB1B3200BA00102C71 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB8FBA1B3200BA00102C71 /* APIKeys.swift */; };
 		1ACAA3DC1B30B97F00C527CA /* PickerViewPickerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACAA3DA1B30B97F00C527CA /* PickerViewPickerPopUp.swift */; };
 		1ACAA3E01B30B9C600C527CA /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACAA3DF1B30B9C600C527CA /* PickerViewController.swift */; };
 		1ACAA3E31B30C7DC00C527CA /* DatePickerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACAA3E11B30C7DC00C527CA /* DatePickerPopUp.xib */; };
@@ -94,6 +96,8 @@
 		1A9A07441B2238940086879B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1A9A07461B2238C90086879B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1AAB44921B274EF700E96BB5 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		1ABB8FB61B31E33400102C71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1ABB8FBA1B3200BA00102C71 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		1ACAA3DA1B30B97F00C527CA /* PickerViewPickerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewPickerPopUp.swift; sourceTree = "<group>"; };
 		1ACAA3DF1B30B9C600C527CA /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		1ACAA3E11B30C7DC00C527CA /* DatePickerPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerPopUp.xib; sourceTree = "<group>"; };
@@ -243,6 +247,8 @@
 		1AAB448C1B27319300E96BB5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1ABB8FBA1B3200BA00102C71 /* APIKeys.swift */,
+				1ABB8FB61B31E33400102C71 /* User.swift */,
 				1A15B57C1B2883E400AAE935 /* Friendship.swift */,
 				1AAB44921B274EF700E96BB5 /* ActivityModel.swift */,
 				1A69074E1B2939E600150F98 /* ActivityTableViewCell.swift */,
@@ -373,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABB8FBB1B3200BA00102C71 /* APIKeys.swift in Sources */,
 				1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */,
 				1ACAA3DC1B30B97F00C527CA /* PickerViewPickerPopUp.swift in Sources */,
 				1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */,
@@ -393,6 +400,7 @@
 				1A57D0901B2789DC004B363C /* SettingsTableViewController.swift in Sources */,
 				1A05173D1B2600910091ECF5 /* MainAppViewController.swift in Sources */,
 				1AAB44931B274EF700E96BB5 /* ActivityModel.swift in Sources */,
+				1ABB8FB71B31E33400102C71 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

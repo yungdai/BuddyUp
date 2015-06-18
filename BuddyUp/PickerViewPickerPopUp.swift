@@ -10,7 +10,7 @@ import UIKit
 
 class PickerViewPickerPopUp: NSObject, UIPopoverPresentationControllerDelegate, PickerViewControllerDelegate {
    
-    typealias PickerViewPickerPopUpCallBack = (newText : String, forTextField: UITextField) -> ()
+    internal typealias PickerViewPickerPopUpCallBack = (newText : String, forTextField: UITextField) -> ()
     
     var pickerViewVC : PickerViewController
     var popover : UIPopoverPresentationController?

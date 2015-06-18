@@ -10,7 +10,7 @@ import UIKit
 
 class DatePickerPopUp: NSObject, UIPopoverPresentationControllerDelegate, DatePickerViewControllerDelgate {
     
-    typealias DatePickerPopUpCallBack = (newDate : NSDate, forTextField : UITextField)->()
+    internal typealias DatePickerPopUpCallBack = (newDate : NSDate, forTextField : UITextField)->()
     
     var datePickerVC : DatePickerViewController
     var popover : UIPopoverPresentationController?

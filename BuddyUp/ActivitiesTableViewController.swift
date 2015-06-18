@@ -15,34 +15,41 @@ class ActivitiesTableViewController: UITableViewController {
     var endTimeArray: [NSDate] = []
     var activityImageArray : [UIImage] = []
     var dateStyle = NSDateFormatterStyle.MediumStyle
- 
+    
+    var activities: [PFObject]  = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // setup the refresh controls for this table
+        var refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: ("refreshPage"), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refreshControl
+        
         var query = PFQuery(className: "Activity")
         query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
-        var activities = query.findObjects()
-        if let activity = activities {
-            for activity in activities! {
-                activitesTypeArray.append(activity["activityType"] as! String)
-                println(activity["activityType"] as! String)
-                startTimeArray.append(activity["startTime"] as! NSDate)
-                println(activity["startTime"] as! NSDate)
-                endTimeArray.append(activity["endTime"] as! NSDate)
-                println(activity["endTime"] as! NSDate)
-                let activityImageFile = activity["image"] as? PFFile
-                activityImageFile!.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
-                    if (error != nil) {
-                        let image = UIImage(data: imageData!)
-                        self.activityImageArray.append(image!)
-                    } 
-                })
+        
+        // getting the data asynchronously in the background
+        query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+            if let activities = result as? [PFObject] {
+                self.activities = activities
+                self.tableView.reloadData()
             }
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func refreshPage() {
+        var query = PFQuery(className: "Activity")
+        query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
+        
+        // getting the data asynchronously in the background
+        query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+            if let activities = result as? [PFObject] {
+                self.activities = activities
+                self.tableView.reloadData()
+            }
+        }
+        
     }
 
     // MARK: - Table view data source
@@ -56,27 +63,57 @@ class ActivitiesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return activitesTypeArray.count
+        return self.activities.count
     }
-
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         return cellStyleFactory(indexPath)
     }
 
-
     func cellStyleFactory (indexPath: NSIndexPath) -> UITableViewCell {
         var cellType = "ActivityCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellType, forIndexPath: indexPath) as! UITableViewCell
+        
+        // make sure that when you select the cell it doesn't have a style
+        cell.selectionStyle = .None
+        
+        
         if let activityCell = cell as? ActivityTableViewCell {
             let dateFormat = NSDateFormatter()
             dateFormat.dateStyle = NSDateFormatterStyle.MediumStyle
             dateFormat.timeStyle = NSDateFormatterStyle.ShortStyle
-            activityCell.activityTypeLabel.text = activitesTypeArray[indexPath.row]
-            activityCell.startTimeLabel.text = dateFormat.stringFromDate(startTimeArray[indexPath.row])
-            activityCell.endTimeLabel.text = dateFormat.stringFromDate(endTimeArray[indexPath.row])
-            activityCell.activityImage.image = activityImageArray[indexPath.row]
+
+
+            let activity = self.activities[indexPath.row];
+            
+            if let type = activity["activityType"] as? String{
+                activityCell.activityTypeLabel.text = type
+            }
+            
+            if let startTime = activity["startTime"] as? NSDate {
+                activityCell.startTimeLabel.text = dateFormat.stringFromDate(startTime)
+            }
+            
+            if let endTime = activity["endTime"] as? NSDate {
+                activityCell.endTimeLabel.text = dateFormat.stringFromDate(endTime)
+            }
+            
+            if let file = activity["image"] as? PFFile {
+                file.getDataInBackgroundWithBlock{ data, error in
+                    if (error != nil){
+                        
+                        return;
+                    }
+                    
+                    if let newData = data{
+                        println("imagehere")
+                        activityCell.activityImage.image = UIImage(data: newData)
+                    }
                 }
+            }
+            
+
+        }
         // Configure the cell...
         
         return cell

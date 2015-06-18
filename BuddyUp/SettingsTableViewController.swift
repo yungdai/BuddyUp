@@ -10,94 +10,69 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
+    
+    @IBOutlet var firstNameTextField: UITextField!
+    @IBOutlet var lastNameTextField: UITextField!
+    @IBOutlet var emailAddressTextField: UITextField!
+    
+    
     @IBAction func logoutButtonPressed(sender: UIButton) {
         PFUser.logOut()
         self.performSegueWithIdentifier("goToLogin", sender: nil)
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println("View was loaded")
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        PFUser.currentUser()?.fetchInBackgroundWithBlock({ (result: PFObject?, error: NSError?) -> Void in
+           
+            if let user = result {
+                if let firstName = user["first_name"] as? String {
+                    self.firstNameTextField.text = firstName
+                }
+                
+                if let lastName = user["last_name"] as? String {
+                    self.lastNameTextField.text = lastName
+                }
+                
+                if let email = user["email"] as? String {
+                    self.emailAddressTextField.text = email
+                }
+                
+            }
+        })
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func savePressed(sender: UIBarButtonItem) {
+        resign()
+        // REMEMBER TO WRAP YOUR VARIABLES IN IF LET's!!!!
+        if let user = PFUser.currentUser() {
+            user["first_name"] = firstNameTextField.text
+            user["last_name"] = lastNameTextField.text
+            let name = "\(firstNameTextField.text) \(lastNameTextField.text)"
+            user["name"] = name
+            user["email"] = emailAddressTextField.text
+            
+            user.saveInBackgroundWithBlock({ (sucess, error: NSError?) -> Void in
+                if (error != nil) {
+                    println(error)
+                    
+                } else {
+                    // TODO: give response for saved data
+                    println("saved")
+                    
+                }
+            })
+            
+        }
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 1
+    
+    
+    // resign they keyboard
+    func resign() {
+        firstNameTextField.resignFirstResponder()
+        lastNameTextField.resignFirstResponder()
+        emailAddressTextField.resignFirstResponder()
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 5
-    }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
