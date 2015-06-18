@@ -10,7 +10,7 @@ import UIKit
 
 class User: PFUser, PFSubclassing {
     
-    
+    // TODO: impliment this as a subclass
     
     override init() {
         super.init()

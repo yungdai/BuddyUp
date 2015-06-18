@@ -16,6 +16,7 @@ class ActivitiesTableViewController: UITableViewController {
     var activityImageArray : [UIImage] = []
     var dateStyle = NSDateFormatterStyle.MediumStyle
     
+    //  The object that holds the activites
     var activities: [PFObject]  = []
     
     override func viewDidLoad() {
@@ -46,9 +47,10 @@ class ActivitiesTableViewController: UITableViewController {
         query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
             if let activities = result as? [PFObject] {
                 self.activities = activities
-                self.tableView.reloadData()
             }
         }
+        self.tableView.reloadData()
+        refreshControl?.endRefreshing()
         
     }
 
@@ -118,4 +120,14 @@ class ActivitiesTableViewController: UITableViewController {
         
         return cell
     }
+    
+    // deleting function
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            activities.removeAtIndex(indexPath.row)
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
 }
