@@ -14,6 +14,17 @@ class Friendship: PFObject, PFSubclassing {
         return "Friendship"
     }
     
+    var currentUser: User? {
+        get { return objectForKey("currentUser") as? User }
+        set { setObject(newValue!, forKey: "currentUser") }
+        
+    }
     
+    var theFriend: User? {
+        get { return objectForKey("theFriend") as? User }
+        set { setObject(newValue!, forKey: "theFriend") }
+    }
+    
+    var selected = false
     
 }

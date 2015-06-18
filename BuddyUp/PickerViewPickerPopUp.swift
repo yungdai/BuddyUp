@@ -60,8 +60,8 @@ class PickerViewPickerPopUp: NSObject, UIPopoverPresentationControllerDelegate, 
     
     func pickerVCDismissed(text: String?) {
         if let datachanged = dataChanged {
-            if let  text = text {
-                datachanged(newText: text, forTextField: textField)
+            if let  _text = text {
+                datachanged(newText: _text, forTextField: textField)
             }
         }
         presented = false

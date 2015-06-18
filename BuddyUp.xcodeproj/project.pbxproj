@@ -219,18 +219,12 @@
 		1A7246EC1B1E209F0020C81E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1ABB90211B334C1600102C71 /* Settings */,
+				1ABB90201B334C0900102C71 /* Main App */,
+				1ABB901F1B334BFD00102C71 /* Activities */,
+				1ABB901E1B334BD700102C71 /* Login and Signup */,
 				1ACAA3DE1B30B9A900C527CA /* PopUpControllers */,
 				1A7246CD1B1E20650020C81E /* ViewController.swift */,
-				1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */,
-				1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */,
-				1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */,
-				1A45AB4E1B1F7214008A080C /* ChatViewController.swift */,
-				1A9A07441B2238940086879B /* SignUpViewController.swift */,
-				1A9A07461B2238C90086879B /* LoginViewController.swift */,
-				1A05173C1B2600910091ECF5 /* MainAppViewController.swift */,
-				1A57D08D1B2772EB004B363C /* NewActivityViewController.swift */,
-				1A57D08F1B2789DC004B363C /* SettingsTableViewController.swift */,
-				1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -238,6 +232,8 @@
 		1A7246EE1B1E20B10020C81E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1ABB90231B334EAD00102C71 /* Activities */,
+				1ABB90221B334E8800102C71 /* Users and Friendship */,
 				1AD32DED1B2B3A0C00429AEC /* DatePickerPopUp */,
 				1AAB448C1B27319300E96BB5 /* Data */,
 			);
@@ -248,12 +244,64 @@
 			isa = PBXGroup;
 			children = (
 				1ABB8FBA1B3200BA00102C71 /* APIKeys.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		1ABB901E1B334BD700102C71 /* Login and Signup */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A07461B2238C90086879B /* LoginViewController.swift */,
+				1A9A07441B2238940086879B /* SignUpViewController.swift */,
+			);
+			name = "Login and Signup";
+			sourceTree = "<group>";
+		};
+		1ABB901F1B334BFD00102C71 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */,
+				1A57D08D1B2772EB004B363C /* NewActivityViewController.swift */,
+			);
+			name = Activities;
+			sourceTree = "<group>";
+		};
+		1ABB90201B334C0900102C71 /* Main App */ = {
+			isa = PBXGroup;
+			children = (
+				1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */,
+				1A05173C1B2600910091ECF5 /* MainAppViewController.swift */,
+				1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */,
+				1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */,
+			);
+			name = "Main App";
+			sourceTree = "<group>";
+		};
+		1ABB90211B334C1600102C71 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1A57D08F1B2789DC004B363C /* SettingsTableViewController.swift */,
+				1A45AB4E1B1F7214008A080C /* ChatViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		1ABB90221B334E8800102C71 /* Users and Friendship */ = {
+			isa = PBXGroup;
+			children = (
 				1ABB8FB61B31E33400102C71 /* User.swift */,
 				1A15B57C1B2883E400AAE935 /* Friendship.swift */,
+			);
+			name = "Users and Friendship";
+			sourceTree = "<group>";
+		};
+		1ABB90231B334EAD00102C71 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
 				1AAB44921B274EF700E96BB5 /* ActivityModel.swift */,
 				1A69074E1B2939E600150F98 /* ActivityTableViewCell.swift */,
 			);
-			name = Data;
+			name = Activities;
 			sourceTree = "<group>";
 		};
 		1ACAA3DE1B30B9A900C527CA /* PopUpControllers */ = {
