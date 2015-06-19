@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -74,14 +75,14 @@
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yX1-Uc-4Zg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login or Sign up with Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhB-wg-ruX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Login or Sign up with Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhB-wg-ruX">
                                 <rect key="frame" x="178" y="437" width="244" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftY-1O-SvK" userLabel="Facebook Button">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftY-1O-SvK" userLabel="Facebook Button">
                                 <rect key="frame" x="199" y="481" width="202" height="46"/>
                                 <animations/>
                                 <state key="normal" image="facebook">
@@ -91,7 +92,7 @@
                                     <action selector="facebookButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OkZ-oT-DbN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rm0-Na-vO7" userLabel="Sign Up Burron">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rm0-Na-vO7" userLabel="Sign Up Burron">
                                 <rect key="frame" x="8" y="387" width="584" height="42"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1017,20 +1018,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-qt-Cg0">
-                                <rect key="frame" x="165" y="167" width="271" height="266"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-qt-Cg0">
+                                <rect key="frame" x="16" y="88" width="568" height="357"/>
                                 <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.17254902422428131" green="0.93725496530532837" blue="0.96862751245498657" alpha="1" colorSpace="deviceRGB"/>
                             </view>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbDown" translatesAutoresizingMaskIntoConstraints="NO" id="gka-rb-IIq">
+                                <rect key="frame" x="369" y="462" width="81" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="Kfw-MR-NP6"/>
+                                    <constraint firstAttribute="height" constant="81" id="pzx-IR-E97"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pzx-IR-E97"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbUp" translatesAutoresizingMaskIntoConstraints="NO" id="LUL-Pm-7OR">
+                                <rect key="frame" x="150" y="462" width="81" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="rhy-gc-uxP"/>
+                                    <constraint firstAttribute="width" constant="81" id="xLO-IS-xvQ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.062745098040000002" green="0.46666666670000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="ggG-qt-Cg0" secondAttribute="centerY" id="JX3-01-IGb"/>
-                            <constraint firstAttribute="centerX" secondItem="ggG-qt-Cg0" secondAttribute="centerX" constant="-0.5" id="jhp-oU-uan"/>
+                            <constraint firstItem="ggG-qt-Cg0" firstAttribute="topMargin" secondItem="bML-8h-B0v" secondAttribute="bottom" constant="32" id="1bZ-br-U20"/>
+                            <constraint firstItem="Wqr-Jp-MOX" firstAttribute="top" secondItem="gka-rb-IIq" secondAttribute="bottom" constant="8" id="6w2-TH-4L6"/>
+                            <constraint firstItem="LUL-Pm-7OR" firstAttribute="top" secondItem="gka-rb-IIq" secondAttribute="bottom" constant="-81" id="DQ8-Ro-L4i"/>
+                            <constraint firstItem="gka-rb-IIq" firstAttribute="leading" secondItem="LUL-Pm-7OR" secondAttribute="trailing" constant="138" id="Fvj-4D-U4R"/>
+                            <constraint firstItem="ggG-qt-Cg0" firstAttribute="leading" secondItem="Cvv-ZP-rAp" secondAttribute="leadingMargin" id="IKm-NP-zEJ"/>
+                            <constraint firstAttribute="centerX" secondItem="gka-rb-IIq" secondAttribute="centerX" constant="-109.5" id="JaN-cQ-QgS"/>
+                            <constraint firstAttribute="centerX" secondItem="LUL-Pm-7OR" secondAttribute="centerX" constant="109.5" id="MbC-6a-kYf"/>
+                            <constraint firstItem="ggG-qt-Cg0" firstAttribute="top" secondItem="bML-8h-B0v" secondAttribute="bottom" constant="24" id="Mmf-4R-FX0"/>
+                            <constraint firstAttribute="centerY" secondItem="LUL-Pm-7OR" secondAttribute="centerY" constant="-202.5" id="bWQ-6t-brI"/>
+                            <constraint firstAttribute="centerY" secondItem="ggG-qt-Cg0" secondAttribute="centerY" constant="29.5" id="coW-mZ-quF"/>
+                            <constraint firstItem="gka-rb-IIq" firstAttribute="top" secondItem="ggG-qt-Cg0" secondAttribute="bottom" constant="17" id="hVb-aA-x39"/>
+                            <constraint firstItem="ggG-qt-Cg0" firstAttribute="trailing" secondItem="Cvv-ZP-rAp" secondAttribute="trailingMargin" id="iRU-Bk-zVt"/>
+                            <constraint firstItem="Wqr-Jp-MOX" firstAttribute="top" secondItem="LUL-Pm-7OR" secondAttribute="bottom" constant="8" id="kNu-df-KvG"/>
+                            <constraint firstAttribute="centerY" secondItem="gka-rb-IIq" secondAttribute="centerY" constant="-202.5" id="l0g-7C-RUh"/>
+                            <constraint firstAttribute="centerX" secondItem="ggG-qt-Cg0" secondAttribute="centerX" id="oq9-ic-87D"/>
+                            <constraint firstItem="LUL-Pm-7OR" firstAttribute="top" secondItem="ggG-qt-Cg0" secondAttribute="bottom" constant="17" id="rBo-bQ-xCN"/>
+                            <constraint firstItem="Wqr-Jp-MOX" firstAttribute="top" secondItem="gka-rb-IIq" secondAttribute="bottom" constant="8" id="rMl-f1-cp5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1bZ-br-U20"/>
+                                <exclude reference="coW-mZ-quF"/>
+                                <exclude reference="hVb-aA-x39"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="I'm in the mood to..." id="XQx-2y-khf"/>
+                    <navigationItem key="navigationItem" title="I'm in the mood to..." id="bxn-7h-AFe"/>
+                    <connections>
+                        <outlet property="view" destination="Cvv-ZP-rAp" id="hXy-AD-7Up"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZU-bH-zRP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1196,6 +1241,8 @@
         <image name="icon_user" width="16" height="16"/>
         <image name="noImage" width="480" height="480"/>
         <image name="settings icon" width="35" height="35"/>
+        <image name="thumbDown" width="300" height="300"/>
+        <image name="thumbUp" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N47-ue-Wgg"/>
