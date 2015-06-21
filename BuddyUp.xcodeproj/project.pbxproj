@@ -11,6 +11,7 @@
 		1A0F071C1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */; };
 		1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57C1B2883E400AAE935 /* Friendship.swift */; };
 		1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */; };
+		1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EF9911B374101008134BE /* PersonImageView.swift */; };
 		1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */; };
 		1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */; };
 		1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4E1B1F7214008A080C /* ChatViewController.swift */; };
@@ -23,6 +24,7 @@
 		1A7246D31B1E20650020C81E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246D21B1E20650020C81E /* Images.xcassets */; };
 		1A7246D61B1E20650020C81E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246D41B1E20650020C81E /* LaunchScreen.xib */; };
 		1A7246E21B1E20650020C81E /* BuddyUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246E11B1E20650020C81E /* BuddyUpTests.swift */; };
+		1A9204FA1B373F6C0046EFE7 /* ColorBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9204F91B373F6C0046EFE7 /* ColorBlockView.swift */; };
 		1A9A072D1B222D0F0086879B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A072C1B222D0F0086879B /* AudioToolbox.framework */; };
 		1A9A072F1B222D1F0086879B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A072E1B222D1F0086879B /* MobileCoreServices.framework */; };
 		1A9A07311B222D280086879B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A07301B222D280086879B /* libsqlite3.dylib */; };
@@ -68,6 +70,7 @@
 		1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		1A15B57C1B2883E400AAE935 /* Friendship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friendship.swift; sourceTree = "<group>"; };
 		1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewController.swift; sourceTree = "<group>"; };
+		1A2EF9911B374101008134BE /* PersonImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonImageView.swift; sourceTree = "<group>"; };
 		1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4E1B1F7214008A080C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		1A7246E01B1E20650020C81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A7246E11B1E20650020C81E /* BuddyUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyUpTests.swift; sourceTree = "<group>"; };
 		1A7246F01B1E32710020C81E /* BuddyUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BuddyUp-Bridging-Header.h"; sourceTree = "<group>"; };
+		1A9204F91B373F6C0046EFE7 /* ColorBlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBlockView.swift; sourceTree = "<group>"; };
 		1A9A072C1B222D0F0086879B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1A9A072E1B222D1F0086879B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1A9A07301B222D280086879B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -248,12 +252,22 @@
 		1A7246EE1B1E20B10020C81E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1A9204F81B373F510046EFE7 /* Element Design */,
 				1ABB90231B334EAD00102C71 /* Activities */,
 				1ABB90221B334E8800102C71 /* Users and Friendship */,
 				1AD32DED1B2B3A0C00429AEC /* DatePickerPopUp */,
 				1AAB448C1B27319300E96BB5 /* Data */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		1A9204F81B373F510046EFE7 /* Element Design */ = {
+			isa = PBXGroup;
+			children = (
+				1A9204F91B373F6C0046EFE7 /* ColorBlockView.swift */,
+				1A2EF9911B374101008134BE /* PersonImageView.swift */,
+			);
+			name = "Element Design";
 			sourceTree = "<group>";
 		};
 		1AAB448C1B27319300E96BB5 /* Data */ = {
@@ -450,11 +464,13 @@
 				1AE5DC721B2E2135009585F6 /* DatePickerViewController.swift in Sources */,
 				1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */,
 				1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */,
+				1A9204FA1B373F6C0046EFE7 /* ColorBlockView.swift in Sources */,
 				1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */,
 				1AE5DC6E1B2E2118009585F6 /* DateFormat.swift in Sources */,
 				1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */,
 				1A69074F1B2939E600150F98 /* ActivityTableViewCell.swift in Sources */,
 				1ACAA3E01B30B9C600C527CA /* PickerViewController.swift in Sources */,
+				1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */,
 				1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */,
 				1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */,
 				1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */,
