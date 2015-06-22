@@ -26,15 +26,18 @@ import UIKit
     
     
     override func prepareForInterfaceBuilder() {
+        personImageStyle()
+    }
+    
+    override func awakeFromNib() {
+        personImageStyle()
+    }
+    
+    func personImageStyle() {
         layer.cornerRadius = cornerRounding
         layer.borderWidth = personBorderWidth
     }
     
-    override func awakeFromNib() {
-        
-        layer.cornerRadius = cornerRounding
-        layer.borderWidth = personBorderWidth
-    }
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
