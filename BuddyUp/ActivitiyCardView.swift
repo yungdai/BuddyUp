@@ -10,23 +10,21 @@ import UIKit
 
 @IBDesignable class ActivityCardView: UIView  {
     
-
-    
     @IBInspectable var blockColour: UIColor = UIColor.grayColor() {
         didSet {
             backgroundColor = blockColour
         }
     }
     
-    @IBInspectable var activityCardBorderWidth: CGFloat  = 1 {
+    @IBInspectable var borderWidth: CGFloat  = 1 {
         didSet {
-            layer.borderWidth = activityCardBorderWidth
+            layer.borderWidth = borderWidth
         }
     }
     
-    @IBInspectable var activityBorderColour: CGColorRef = UIColor.lightGrayColor().CGColor {
+    @IBInspectable var borderColour: UIColor? {
         didSet {
-            layer.borderColor = activityBorderColour
+            layer.borderColor = borderColour?.CGColor
         }
     }
     
@@ -49,8 +47,10 @@ import UIKit
     func cardStyle() {
         backgroundColor = blockColour
         layer.cornerRadius = cornerRounding
-        layer.borderWidth = activityCardBorderWidth
-        layer.borderColor = activityBorderColour
+        layer.borderWidth = borderWidth
+        layer.borderColor = borderColour?.CGColor
+        layer.masksToBounds = true
+        
     }
     
 }

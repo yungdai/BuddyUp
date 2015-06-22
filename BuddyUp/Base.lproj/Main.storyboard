@@ -1058,15 +1058,15 @@
                                             <rect key="frame" x="433" y="303" width="59" height="24"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="date place holder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VWO-FZ-mxh">
-                                        <rect key="frame" x="8" y="329" width="185" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date place holder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VWO-FZ-mxh">
+                                        <rect key="frame" x="8" y="328" width="73" height="17"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="date place holder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vo8-bZ-7uO">
-                                        <rect key="frame" x="377" y="333" width="185" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date place holder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vo8-bZ-7uO">
+                                        <rect key="frame" x="375" y="329" width="73" height="17"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1105,7 +1105,7 @@
                                             <rect key="frame" x="355" y="156" width="68" height="54"/>
                                         </variation>
                                     </label>
-                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-zl-Uab" userLabel="personImage" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
+                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-zl-Uab" userLabel="personImage" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
                                         <rect key="frame" x="375" y="90" width="188" height="163"/>
                                         <animations/>
                                         <constraints>
@@ -1120,7 +1120,7 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="personBorderColour">
-                                                <color key="value" red="0.090196078430000007" green="0.70980392160000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.20000000000000001" green="0.48627450980392156" blue="0.55686274509803924" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
                                                 <color key="value" red="0.15294118230000001" green="0.72156864399999998" blue="0.73725491759999995" alpha="1" colorSpace="deviceRGB"/>
@@ -1161,53 +1161,70 @@
                                     <constraint firstAttribute="trailing" secondItem="WTK-zl-Uab" secondAttribute="trailing" constant="5" id="wSg-iD-0s2"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="blockColour">
+                                        <color key="value" red="0.1294117719" green="0.45490196350000001" blue="0.63137257099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="blockColour">
-                                        <color key="value" red="0.15294118230000001" green="0.72156864399999998" blue="0.73725491759999995" alpha="1" colorSpace="deviceRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="activityCardBorderWidth">
-                                        <real key="value" value="1"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                        <color key="value" red="0.20000000000000001" green="0.48627450979999998" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="gka-rb-IIq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxI-XN-xYH" userLabel="crossButton">
                                 <rect key="frame" x="340" y="462" width="81" height="81"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="81" id="Pka-V3-PYv"/>
-                                    <constraint firstAttribute="height" constant="81" id="utX-qB-9Db"/>
+                                    <constraint firstAttribute="height" constant="81" id="Ltq-nn-LYO"/>
+                                    <constraint firstAttribute="width" constant="81" id="M1Q-WD-tpv"/>
                                 </constraints>
-                            </imageView>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="LUL-Pm-7OR">
+                                <state key="normal" image="cross">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoB-7d-sa4" userLabel="checkMarkButton">
                                 <rect key="frame" x="179" y="462" width="81" height="81"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="81" id="9s0-au-IGf"/>
-                                    <constraint firstAttribute="height" constant="81" id="dSn-yU-D2Z"/>
+                                    <constraint firstAttribute="width" constant="81" id="rMS-RF-fTV"/>
+                                    <constraint firstAttribute="height" constant="81" id="wF9-bE-vWZ"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" image="checkmark">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.18431372549019609" green="0.42745098039215684" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ggG-qt-Cg0" firstAttribute="top" secondItem="bML-8h-B0v" secondAttribute="bottom" constant="16" id="7FQ-0t-8qW"/>
                             <constraint firstItem="ggG-qt-Cg0" firstAttribute="leading" secondItem="Cvv-ZP-rAp" secondAttribute="leadingMargin" id="Jtf-ZA-sOS"/>
-                            <constraint firstItem="Wqr-Jp-MOX" firstAttribute="top" secondItem="LUL-Pm-7OR" secondAttribute="bottom" constant="8" id="Qjl-5H-9du"/>
-                            <constraint firstAttribute="centerX" secondItem="gka-rb-IIq" secondAttribute="centerX" constant="-80.5" id="T0R-7r-TLn"/>
+                            <constraint firstItem="Wqr-Jp-MOX" firstAttribute="top" secondItem="nxI-XN-xYH" secondAttribute="bottom" constant="8" id="LTR-ag-cuu"/>
+                            <constraint firstAttribute="centerX" secondItem="nxI-XN-xYH" secondAttribute="centerX" constant="-80" id="MId-eY-SUK"/>
+                            <constraint firstItem="Wqr-Jp-MOX" firstAttribute="top" secondItem="YoB-7d-sa4" secondAttribute="bottom" constant="8" id="PFs-ul-EKy"/>
                             <constraint firstItem="Wqr-Jp-MOX" firstAttribute="top" secondItem="ggG-qt-Cg0" secondAttribute="bottom" constant="106" id="WQt-Uc-Vgh"/>
-                            <constraint firstItem="gka-rb-IIq" firstAttribute="leading" secondItem="LUL-Pm-7OR" secondAttribute="trailing" constant="80" id="YsM-p3-PeB"/>
                             <constraint firstItem="ggG-qt-Cg0" firstAttribute="trailing" secondItem="Cvv-ZP-rAp" secondAttribute="trailingMargin" id="dws-PY-Pd2"/>
-                            <constraint firstItem="Wqr-Jp-MOX" firstAttribute="top" secondItem="gka-rb-IIq" secondAttribute="bottom" constant="8" id="wjb-Ax-f6M"/>
+                            <constraint firstItem="nxI-XN-xYH" firstAttribute="leading" secondItem="YoB-7d-sa4" secondAttribute="trailing" constant="80" id="f1u-JL-Vef"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="I'm in the mood to..." id="bxn-7h-AFe"/>
                     <connections>
                         <outlet property="activityImageHeightConstraint" destination="hgp-uD-Pfe" id="hOU-jb-Ddq"/>
                         <outlet property="activityImageWidthConstraint" destination="h2a-ht-yZJ" id="pr7-Du-WhV"/>
+                        <outlet property="activityTypeImage" destination="089-3V-AUI" id="zb1-Qz-hZ3"/>
+                        <outlet property="activityTypeLabelText" destination="P5K-gV-kSf" id="5qr-9j-Zzk"/>
+                        <outlet property="checkButton" destination="YoB-7d-sa4" id="PFJ-iP-owA"/>
+                        <outlet property="crossButton" destination="nxI-XN-xYH" id="sfg-XC-mPC"/>
+                        <outlet property="endTimeLabelText" destination="Vo8-bZ-7uO" id="eci-wa-2dh"/>
+                        <outlet property="personImage" destination="WTK-zl-Uab" id="Lqb-Re-ySJ"/>
                         <outlet property="personImageHeightConstraint" destination="fId-5C-QHp" id="eNB-kF-xtM"/>
                         <outlet property="personImageWidthConstraint" destination="63p-zH-tR9" id="zHi-bD-pOL"/>
+                        <outlet property="personLabelText" destination="Oc6-lg-rx9" id="atf-B4-OrD"/>
+                        <outlet property="startTimeLabelText" destination="VWO-FZ-mxh" id="G7K-nY-3mA"/>
                         <outlet property="view" destination="Cvv-ZP-rAp" id="hXy-AD-7Up"/>
                     </connections>
                 </viewController>
