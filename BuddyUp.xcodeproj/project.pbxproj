@@ -252,7 +252,7 @@
 		1A7246EE1B1E20B10020C81E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1A9204F81B373F510046EFE7 /* Element Design */,
+				1A9204F81B373F510046EFE7 /* Element Design Styling */,
 				1ABB90231B334EAD00102C71 /* Activities */,
 				1ABB90221B334E8800102C71 /* Users and Friendship */,
 				1AD32DED1B2B3A0C00429AEC /* DatePickerPopUp */,
@@ -261,13 +261,13 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		1A9204F81B373F510046EFE7 /* Element Design */ = {
+		1A9204F81B373F510046EFE7 /* Element Design Styling */ = {
 			isa = PBXGroup;
 			children = (
 				1A9204F91B373F6C0046EFE7 /* ActivitiyCardView.swift */,
 				1A2EF9911B374101008134BE /* PersonImageView.swift */,
 			);
-			name = "Element Design";
+			name = "Element Design Styling";
 			sourceTree = "<group>";
 		};
 		1AAB448C1B27319300E96BB5 /* Data */ = {

@@ -9,8 +9,9 @@
 import UIKit
 
 @IBDesignable class PersonImageView: UIImageView {
+    
 
-    @IBInspectable var cornerRounding: CGFloat = 50 {
+    @IBInspectable var cornerRounding: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRounding
             
@@ -24,6 +25,13 @@ import UIKit
         }
     }
     
+ 
+    @IBInspectable var personBorderColour: UIColor = UIColor.clearColor() {
+        didSet {
+            layer.borderColor = personBorderColour.CGColor
+        }
+    }
+    
     
     override func prepareForInterfaceBuilder() {
         personImageStyle()
@@ -33,9 +41,12 @@ import UIKit
         personImageStyle()
     }
     
-    func personImageStyle() {
+     func personImageStyle() {
         layer.cornerRadius = cornerRounding
         layer.borderWidth = personBorderWidth
+        layer.borderColor = personBorderColour.CGColor
+        // binds the masking to the variables above.  This will be true for all images assigned in IB
+        layer.masksToBounds = true
     }
     
     /*

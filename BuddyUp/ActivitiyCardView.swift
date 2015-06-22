@@ -12,7 +12,7 @@ import UIKit
     
 
     
-    @IBInspectable var blockColour: UIColor = UIColor.grayColor().colorWithAlphaComponent(1.0) {
+    @IBInspectable var blockColour: UIColor = UIColor.grayColor() {
         didSet {
             backgroundColor = blockColour
         }
@@ -21,6 +21,12 @@ import UIKit
     @IBInspectable var activityCardBorderWidth: CGFloat  = 1 {
         didSet {
             layer.borderWidth = activityCardBorderWidth
+        }
+    }
+    
+    @IBInspectable var activityBorderColour: CGColorRef = UIColor.lightGrayColor().CGColor {
+        didSet {
+            layer.borderColor = activityBorderColour
         }
     }
     
@@ -44,7 +50,7 @@ import UIKit
         backgroundColor = blockColour
         layer.cornerRadius = cornerRounding
         layer.borderWidth = activityCardBorderWidth
-        
+        layer.borderColor = activityBorderColour
     }
     
 }
