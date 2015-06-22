@@ -8,13 +8,19 @@
 
 import UIKit
 
-@IBDesignable class ColorBlockView: UIView  {
+@IBDesignable class ActivityCardView: UIView  {
     
 
     
     @IBInspectable var blockColour: UIColor = UIColor.grayColor().colorWithAlphaComponent(1.0) {
         didSet {
             backgroundColor = blockColour
+        }
+    }
+    
+    @IBInspectable var activityCardBorderWidth: CGFloat  = 1 {
+        didSet {
+            layer.borderWidth = activityCardBorderWidth
         }
     }
     
@@ -26,13 +32,19 @@ import UIKit
 
     
     override func prepareForInterfaceBuilder() {
-        backgroundColor = blockColour
-        layer.cornerRadius = cornerRounding
+        cardStyle()
     }
     
     override func awakeFromNib() {
+        cardStyle()
+
+    }
+    
+    func cardStyle() {
         backgroundColor = blockColour
         layer.cornerRadius = cornerRounding
+        layer.borderWidth = activityCardBorderWidth
+        
     }
     
 }

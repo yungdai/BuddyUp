@@ -13,16 +13,27 @@ import UIKit
     @IBInspectable var cornerRounding: CGFloat = 50 {
         didSet {
             layer.cornerRadius = cornerRounding
+            
         }
     }
     
+    @IBInspectable var personBorderWidth: CGFloat = 1 {
+        didSet {
+            layer.borderWidth = personBorderWidth
+
+        }
+    }
+    
+    
     override func prepareForInterfaceBuilder() {
         layer.cornerRadius = cornerRounding
+        layer.borderWidth = personBorderWidth
     }
     
     override func awakeFromNib() {
         
         layer.cornerRadius = cornerRounding
+        layer.borderWidth = personBorderWidth
     }
     /*
     // Only override drawRect: if you perform custom drawing.
