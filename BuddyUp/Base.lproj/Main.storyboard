@@ -1183,7 +1183,7 @@
                             </imageView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.18431372549019609" green="0.42745098039215684" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ggG-qt-Cg0" firstAttribute="top" secondItem="bML-8h-B0v" secondAttribute="bottom" constant="16" id="7FQ-0t-8qW"/>
                             <constraint firstItem="ggG-qt-Cg0" firstAttribute="leading" secondItem="Cvv-ZP-rAp" secondAttribute="leadingMargin" id="Jtf-ZA-sOS"/>
