@@ -15,6 +15,7 @@ class ActivitiesTableViewController: UITableViewController {
     var endTimeArray: [NSDate] = []
     var activityImageArray : [UIImage] = []
     var dateStyle = NSDateFormatterStyle.MediumStyle
+    var activityObjectID: [String] = []
     
     //  The object that holds the activites
     var activities: [PFObject]  = []
@@ -34,9 +35,12 @@ class ActivitiesTableViewController: UITableViewController {
         query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
             if let activities = result as? [PFObject] {
                 self.activities = activities
+                
                 self.tableView.reloadData()
             }
         }
+        
+        
     }
     
     func refreshPage() {
@@ -86,7 +90,7 @@ class ActivitiesTableViewController: UITableViewController {
             dateFormat.timeStyle = NSDateFormatterStyle.ShortStyle
 
 
-            let activity = self.activities[indexPath.row];
+            let activity = self.activities[indexPath.row]
             
             if let type = activity["activityType"] as? String{
                 activityCell.activityTypeLabel.text = type
@@ -124,7 +128,14 @@ class ActivitiesTableViewController: UITableViewController {
     // deleting function
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            activities.removeAtIndex(indexPath.row)
+            activities.removeAtIndex(indexPath.row).deleteInBackgroundWithBlock({ (success, error: NSError?) -> Void in
+                if (error != nil) {
+                    println(error)
+                } else {
+                    println("Activity Deleted!")
+                }
+            })
+            
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }

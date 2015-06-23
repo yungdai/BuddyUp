@@ -14,6 +14,7 @@ class ActivityModel: NSObject {
     var endTime = NSDate()
     var selectedActivity = ""
     var activityType = ""
+    var activityID = ""
 
     
    
