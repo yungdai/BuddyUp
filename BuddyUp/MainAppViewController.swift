@@ -14,7 +14,8 @@ class MainAppViewController: UIViewController {
     let iPhoneImageDimension:CGFloat = 100.0
     let iPadImageDimension:CGFloat = 145.0
     
-    
+    // activities parse object
+    var activities: [PFObject] = []
     
     @IBOutlet var personImage: UIImageView!
     @IBOutlet var personLabelText: UILabel!
@@ -35,29 +36,26 @@ class MainAppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // get all Activity Objects that aren't yours
+        var query = PFQuery(className: "Activity")
+        query.whereKey("creator", notEqualTo: PFUser.currentUser()!.username!)
+        
+        // getting the data asynchronusly in the background
+        query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+            if let activities = result as? [PFObject] {
+                self.activities = activities
+            }
+        }
         
         configureConstraints()
-                let query = PFUser.query()
-                query?.findObjectsInBackgroundWithBlock({ (results:[AnyObject]?, error:NSError?) -> Void in
-                    if let resultsUser = results as? [PFUser],
-                        let currentUser = PFUser.currentUser(){
-                        for user in resultsUser{
-        //                    if user != currentUser{
-                                let relation = user.relationForKey("Request")
-                                //                    relation.addObject(currentUser)
-                                ////                    let otherRelation = user.relationForKey("Request");
-                                //                    user.saveInBackground()
-                                let relationQuery = relation.query()
-                                relationQuery?.whereKey("username", equalTo: user["username"]!)
-                                relationQuery?.findObjectsInBackgroundWithBlock({ (results2:[AnyObject]?, error2:NSError?) -> Void in
-                                    println("FOUND  USER!")
-                                })
-        //                    }
-                        }
-                    }
-                })
         
     }
+    
+    
+//    func cardView(cardView: UIView, activityForRowAtIndexPath indexPath: NSIndexPath) -> UIView {
+//        var activityCard = "ActivityCard"
+//        let activityCard = cardView(activityCard, activityForRowAtIndexPath: indexPath) as! UIView
+//    }
 
     
     func configureConstraints() {

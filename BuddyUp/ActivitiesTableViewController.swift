@@ -108,7 +108,7 @@ class ActivitiesTableViewController: UITableViewController {
                 file.getDataInBackgroundWithBlock{ data, error in
                     if (error != nil){
                         
-                        return;
+                        return
                     }
                     
                     if let newData = data{

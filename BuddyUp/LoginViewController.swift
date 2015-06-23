@@ -203,13 +203,16 @@ class LoginViewController: UIViewController {
                                 parseUser["gender"] = result["gender"]
                                 
 
-                                // sending the facebook picture to parse as a string
+                                // sending the facebook picture to parse as a string and saving the user image to parse userImage field
                                 if let pictureResult = result["picture"] as? NSDictionary,
                                     pictureData = pictureResult["data"] as? NSDictionary,
                                     picture = pictureData["url"] as? String {
                                         parseUser["photo"] = picture
-                                        
+                                    
                                 }
+                                
+                                
+
                                 
                                 // save the user's location to parse before you save the information
                                 PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in

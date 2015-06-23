@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -81,7 +81,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftY-1O-SvK" userLabel="Facebook Button">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftY-1O-SvK" userLabel="Facebook Button">
                                 <rect key="frame" x="199" y="488" width="202" height="46"/>
                                 <animations/>
                                 <state key="normal" image="facebook">
@@ -426,6 +426,59 @@
                         <sections>
                             <tableViewSection headerTitle="About Me" id="H6U-Zh-puI">
                                 <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="147" id="vL3-6o-5sH">
+                                        <rect key="frame" x="0.0" y="306" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vL3-6o-5sH" id="TO7-yP-TgI">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-Lt-iHD" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
+                                                    <rect key="frame" x="240" y="18" width="120" height="120"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="9Cz-9D-2kX"/>
+                                                        <constraint firstAttribute="height" constant="120" id="c16-f9-Ib3"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
+                                                            <real key="value" value="50"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="personImage" value="noImage"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="personBorderWidth">
+                                                            <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="personBorderColour">
+                                                            <color key="value" red="0.062745098040000002" green="0.46666666670000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVz-c5-knv">
+                                                    <rect key="frame" x="368" y="59" width="94" height="30"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="94" id="FZf-2Y-w6Q"/>
+                                                        <constraint firstAttribute="height" constant="30" id="HEP-EE-RiL"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Take a Photo!">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="addPictureButtonPressed:" destination="xUM-wm-hSN" eventType="touchUpInside" id="clP-Aw-FcZ"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="SVz-c5-knv" firstAttribute="top" secondItem="Jaf-Lt-iHD" secondAttribute="top" constant="41" id="87w-0W-Y0Y"/>
+                                                <constraint firstAttribute="centerX" secondItem="Jaf-Lt-iHD" secondAttribute="centerX" id="eW7-qe-nH9"/>
+                                                <constraint firstAttribute="centerY" secondItem="Jaf-Lt-iHD" secondAttribute="centerY" constant="-4.5" id="gYn-ns-xLi"/>
+                                                <constraint firstItem="SVz-c5-knv" firstAttribute="leading" secondItem="Jaf-Lt-iHD" secondAttribute="trailing" constant="8" id="s6g-sg-UU8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.090196078430000007" green="0.70980392160000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="32" id="lQH-n1-XjA">
                                         <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -456,10 +509,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVl-ka-Pt1" userLabel="First Name Text Field">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVl-ka-Pt1" userLabel="First Name Text Field">
                                                     <rect key="frame" x="8" y="7" width="584" height="30"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
@@ -504,10 +557,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jlD-OK-FEc" userLabel="Last Name Text Field">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jlD-OK-FEc" userLabel="Last Name Text Field">
                                                     <rect key="frame" x="8" y="8" width="584" height="30"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
@@ -552,10 +605,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yz0-os-vKm" userLabel="Email Address Text Field">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yz0-os-vKm" userLabel="Email Address Text Field">
                                                     <rect key="frame" x="8" y="7" width="584" height="30"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
@@ -622,6 +675,7 @@
                         <outlet property="emailAddressTextField" destination="Yz0-os-vKm" id="u48-K1-qDo"/>
                         <outlet property="firstNameTextField" destination="GVl-ka-Pt1" id="oi0-aw-Ngm"/>
                         <outlet property="lastNameTextField" destination="jlD-OK-FEc" id="deC-NG-RbY"/>
+                        <outlet property="userImageView" destination="Jaf-Lt-iHD" id="zhM-c3-xc0"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToLogin" id="jHF-Bc-Dyc"/>
                     </connections>
                 </tableViewController>
@@ -1092,7 +1146,7 @@
                                             <rect key="frame" x="433" y="329" width="185" height="24"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25000000000000006" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-gV-kSf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-gV-kSf">
                                         <rect key="frame" x="7" y="251" width="173" height="54"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="39"/>
@@ -1108,8 +1162,8 @@
                                             <rect key="frame" x="433" y="251" width="96" height="54"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B9D-xT-Sos">
-                                        <rect key="frame" x="258" y="120" width="68" height="54"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B9D-xT-Sos">
+                                        <rect key="frame" x="250" y="131" width="68" height="54"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="54" id="iq7-aq-Ksb"/>
@@ -1155,8 +1209,8 @@
                                     <constraint firstItem="089-3V-AUI" firstAttribute="leading" secondItem="P5K-gV-kSf" secondAttribute="trailing" constant="-173" id="2Ue-0Z-NS9"/>
                                     <constraint firstItem="Vo8-bZ-7uO" firstAttribute="top" secondItem="6wn-Ib-Xn8" secondAttribute="bottom" constant="3" id="2rJ-Lr-0Vn"/>
                                     <constraint firstItem="Oc6-lg-rx9" firstAttribute="leading" secondItem="Vo8-bZ-7uO" secondAttribute="leading" id="6QX-4n-NlQ"/>
-                                    <constraint firstItem="089-3V-AUI" firstAttribute="leading" secondItem="ggG-qt-Cg0" secondAttribute="leading" constant="7" id="7Gp-RY-a6O"/>
-                                    <constraint firstItem="WTK-zl-Uab" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="B9D-xT-Sos" secondAttribute="trailing" constant="10" id="7zm-MK-n0L"/>
+                                    <constraint firstItem="089-3V-AUI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ggG-qt-Cg0" secondAttribute="leading" constant="7" id="7Gp-RY-a6O"/>
+                                    <constraint firstItem="WTK-zl-Uab" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="B9D-xT-Sos" secondAttribute="trailing" constant="1" id="7zm-MK-n0L"/>
                                     <constraint firstItem="eAf-jq-bGI" firstAttribute="top" secondItem="P5K-gV-kSf" secondAttribute="bottom" constant="-2" id="BSX-bT-PSi"/>
                                     <constraint firstItem="P5K-gV-kSf" firstAttribute="top" secondItem="089-3V-AUI" secondAttribute="bottom" constant="-2" id="F2p-1C-wCz"/>
                                     <constraint firstItem="Oc6-lg-rx9" firstAttribute="leading" secondItem="6wn-Ib-Xn8" secondAttribute="leading" id="FeS-4N-yhf"/>

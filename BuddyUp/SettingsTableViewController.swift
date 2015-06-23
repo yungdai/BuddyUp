@@ -8,13 +8,14 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var emailAddressTextField: UITextField!
     
+    @IBOutlet var userImageView: UIImageView!
     
     @IBAction func logoutButtonPressed(sender: UIButton) {
         PFUser.logOut()
@@ -24,6 +25,8 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imagePicker.delegate = self
         
         PFUser.currentUser()?.fetchInBackgroundWithBlock({ (result: PFObject?, error: NSError?) -> Void in
            
@@ -40,6 +43,32 @@ class SettingsTableViewController: UITableViewController {
                     self.emailAddressTextField.text = email
                 }
                 
+                
+                // take and display the facebook image URL
+                if let userPicture = user["photo"] as? String {
+                    // parse the photo URL into data for the UIImageView
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+                        let data = NSData(contentsOfURL: NSURL(string: userPicture)!)
+                        dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+                            self.userImageView.image = UIImage(data: data!)
+                        })
+                    })
+
+                } else if let userPicture = user["userImage"] as? PFFile {
+                    userPicture.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
+                        if (error != nil) {
+                            println(error)
+                            // TODO throw error message
+                            return
+                        }
+                        
+                        if let newData = data {
+                            self.userImageView.image = UIImage(data: newData)
+                        }
+                        
+                    })
+                }
+                
             }
         })
     }
@@ -54,6 +83,9 @@ class SettingsTableViewController: UITableViewController {
             user["name"] = name
             user["email"] = emailAddressTextField.text
             
+            // get the image file name
+            user["userImage"] = PFFile(name:"image.jpg" , data: UIImageJPEGRepresentation(userImageView.image, 0.5))
+            
             user.saveInBackgroundWithBlock({ (sucess, error: NSError?) -> Void in
                 if (error != nil) {
                     println(error)
@@ -67,6 +99,33 @@ class SettingsTableViewController: UITableViewController {
             
         }
     }
+    
+    // image picker variables
+    let imagePicker = UIImagePickerController()
+    
+    // choose from the library of photos
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        userImageView.contentMode = .ScaleAspectFit
+        userImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    @IBAction func addPictureButtonPressed(sender: UIButton) {
+        imagePicker.delegate = self
+        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        imagePicker.allowsEditing = false
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+        
+    }
+
     
     
     // resign they keyboard
