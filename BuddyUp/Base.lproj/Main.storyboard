@@ -361,7 +361,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
-                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.090196078430000007" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                                 <animations/>
                             </tableViewCell>
@@ -433,7 +433,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-Lt-iHD" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-Lt-iHD" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
                                                     <rect key="frame" x="240" y="18" width="120" height="120"/>
                                                     <animations/>
                                                     <constraints>
@@ -442,7 +442,7 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
-                                                            <real key="value" value="50"/>
+                                                            <real key="value" value="60"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="personImage" value="noImage"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="personBorderWidth">
@@ -509,9 +509,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVl-ka-Pt1" userLabel="First Name Text Field">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GVl-ka-Pt1" userLabel="First Name Text Field">
                                                     <rect key="frame" x="8" y="7" width="584" height="30"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="584" id="Vt4-G6-vmv"/>
+                                                        <constraint firstAttribute="height" constant="30" id="zhJ-D4-CxP"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -557,9 +561,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jlD-OK-FEc" userLabel="Last Name Text Field">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jlD-OK-FEc" userLabel="Last Name Text Field">
                                                     <rect key="frame" x="8" y="8" width="584" height="30"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="6Zw-UT-a4O"/>
+                                                        <constraint firstAttribute="width" constant="584" id="bcV-Om-jKb"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -605,9 +613,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yz0-os-vKm" userLabel="Email Address Text Field">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yz0-os-vKm" userLabel="Email Address Text Field">
                                                     <rect key="frame" x="8" y="7" width="584" height="30"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="3Cu-J9-ZB5"/>
+                                                        <constraint firstAttribute="width" constant="584" id="ibw-Eb-yib"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -675,7 +687,7 @@
                         <outlet property="emailAddressTextField" destination="Yz0-os-vKm" id="u48-K1-qDo"/>
                         <outlet property="firstNameTextField" destination="GVl-ka-Pt1" id="oi0-aw-Ngm"/>
                         <outlet property="lastNameTextField" destination="jlD-OK-FEc" id="deC-NG-RbY"/>
-                        <outlet property="userImageView" destination="Jaf-Lt-iHD" id="zhM-c3-xc0"/>
+                        <outlet property="userImageView" destination="Jaf-Lt-iHD" id="RYn-Pp-ElS"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToLogin" id="jHF-Bc-Dyc"/>
                     </connections>
                 </tableViewController>
@@ -708,7 +720,7 @@
                                                 <constraint firstAttribute="width" constant="73" id="Slb-MD-NQR"/>
                                                 <constraint firstAttribute="height" constant="21" id="Whs-nl-kGN"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -719,7 +731,7 @@
                                                 <constraint firstAttribute="width" constant="53" id="AhL-GG-twq"/>
                                                 <constraint firstAttribute="height" constant="21" id="ld9-nI-oD5"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -730,7 +742,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="4NL-Qz-m86"/>
                                                 <constraint firstAttribute="width" constant="53" id="9X5-BD-cV1"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -741,17 +753,29 @@
                                                 <constraint firstAttribute="height" constant="23" id="Rcs-4l-kXZ"/>
                                                 <constraint firstAttribute="width" constant="428" id="RsY-qx-iGb"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="kxc-l9-BiL">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="kxc-l9-BiL" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
                                             <rect key="frame" x="13" y="25" width="77" height="89"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="89" id="UGF-62-2KT"/>
                                                 <constraint firstAttribute="width" constant="77" id="rzs-WZ-ubL"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="personBorderWidth">
+                                                    <real key="value" value="2"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="personImage" value="noImage"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="personBorderColour">
+                                                    <color key="value" red="0.062745098040000002" green="0.46666666670000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj6-ZO-vqt" userLabel="Activity Type Label">
                                             <rect key="frame" x="164" y="25" width="428" height="21"/>
@@ -760,7 +784,7 @@
                                                 <constraint firstAttribute="height" constant="21" id="0t3-Tg-Kpe"/>
                                                 <constraint firstAttribute="width" constant="428" id="P8b-9J-S07"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -771,13 +795,13 @@
                                                 <constraint firstAttribute="width" constant="428" id="R7c-zv-XdC"/>
                                                 <constraint firstAttribute="height" constant="21" id="bZV-Fp-GqO"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <animations/>
-                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.090196078430000007" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstItem="zpT-rd-5g3" firstAttribute="leading" secondItem="wRs-u3-fpo" secondAttribute="leadingMargin" constant="85" id="1bl-zN-Th9"/>
                                         <constraint firstItem="fzw-T7-DbC" firstAttribute="leading" secondItem="wRs-u3-fpo" secondAttribute="leadingMargin" constant="105" id="2K3-ni-6nI"/>
@@ -838,7 +862,7 @@
                         <viewControllerLayoutGuide type="top" id="DXP-qx-v9d"/>
                         <viewControllerLayoutGuide type="bottom" id="tUx-OE-LgO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5A8-g5-Vm5">
+                    <view key="view" contentMode="scaleToFill" id="5A8-g5-Vm5" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -891,7 +915,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxf-jG-eza" userLabel="Start Time Text">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kxf-jG-eza" userLabel="Start Time Text">
                                 <rect key="frame" x="16" y="101" width="568" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -900,7 +924,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L1c-QB-2CT" userLabel="End Time Text">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L1c-QB-2CT" userLabel="End Time Text">
                                 <rect key="frame" x="16" y="168" width="568" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -919,7 +943,7 @@
                                     <action selector="addPictureButtonPressed:" destination="O9Z-eB-0vc" eventType="touchUpInside" id="u8s-gE-sL4"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ms-8i-E8i" userLabel="Activity Type Text">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ms-8i-E8i" userLabel="Activity Type Text">
                                 <rect key="frame" x="16" y="235" width="568" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -928,7 +952,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="CBA-Mr-t2s">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="CBA-Mr-t2s" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="241" y="302" width="118" height="116"/>
                                 <animations/>
                                 <constraints>
@@ -936,6 +960,18 @@
                                     <constraint firstAttribute="width" constant="118" id="LoL-AF-QAr"/>
                                     <constraint firstAttribute="height" constant="116" id="MmE-Az-Hw4"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="personBorderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="personBorderColour">
+                                        <color key="value" red="0.090196078430000007" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="personImage" value="noImage"/>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="MmE-Az-Hw4"/>
@@ -975,6 +1011,14 @@
                             <constraint firstItem="L1c-QB-2CT" firstAttribute="top" secondItem="sSk-pV-iN4" secondAttribute="bottom" constant="8" symbolic="YES" id="xuY-st-HCg"/>
                             <constraint firstAttribute="centerX" secondItem="sSk-pV-iN4" secondAttribute="centerX" constant="-3" id="y5V-l1-JGh"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                <color key="value" red="0.090196078430000007" green="0.91376711256052634" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                <color key="value" red="0.090196078430000007" green="0.69411764710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="qsK-Xx-VCu"/>
@@ -1191,7 +1235,7 @@
                                                 <real key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="personBorderColour">
-                                                <color key="value" red="0.071049571490000005" green="0.82528379777894734" blue="0.81424840269999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.090196078430000007" green="0.69411764710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="color">
                                                 <color key="value" red="0.15294118230000001" green="0.72156864399999998" blue="0.73725491759999995" alpha="1" colorSpace="deviceRGB"/>
@@ -1327,7 +1371,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
-                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.090196078430000007" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="tintColor" red="0.086274509799999996" green="0.66274509800000003" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                                 <animations/>

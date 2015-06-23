@@ -15,7 +15,8 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var emailAddressTextField: UITextField!
     
-    @IBOutlet var userImageView: UIImageView!
+    @IBOutlet var userImageView: PersonImageView!
+
     
     @IBAction func logoutButtonPressed(sender: UIButton) {
         PFUser.logOut()
@@ -107,7 +108,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
-        userImageView.contentMode = .ScaleAspectFit
+        userImageView.contentMode = .ScaleAspectFill
         userImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         
     }
@@ -120,6 +121,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     @IBAction func addPictureButtonPressed(sender: UIButton) {
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+
         imagePicker.allowsEditing = false
         
         presentViewController(imagePicker, animated: true, completion: nil)

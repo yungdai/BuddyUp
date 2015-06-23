@@ -103,16 +103,16 @@ import UIKit
 
     
     override func prepareForInterfaceBuilder() {
-        cardStyle()
+        viewStyle()
     }
     
     override func awakeFromNib() {
-        cardStyle()
+        viewStyle()
 
     }
     
     
-    func cardStyle() {
+    func viewStyle() {
         backgroundColor = blockColour
         layer.cornerRadius = cornerRounding
         layer.borderWidth = borderWidth
