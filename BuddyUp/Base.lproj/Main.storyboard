@@ -1217,10 +1217,10 @@
                                 <color key="value" red="0.35157725750000002" green="0.82761936290000004" blue="0.98455139629999999" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
-                                <color key="value" red="0.071049571490000005" green="0.52923116619999999" blue="0.81424840269999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.35157725750000002" green="0.82761936290000004" blue="0.98455139629999999" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
-                                <color key="value" red="0.35157725750000002" green="0.82761936290000004" blue="0.98455139629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="value" red="0.1908926729" green="0.24981940150000001" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
