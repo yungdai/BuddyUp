@@ -37,13 +37,13 @@ import UIKit
     
     // MARK: Inspectable properties ******************************
     
-    @IBInspectable var startColor: UIColor = UIColor.whiteColor() {
+    @IBInspectable var gradientStartColor: UIColor = UIColor.whiteColor() {
         didSet{
             setupView()
         }
     }
     
-    @IBInspectable var endColor: UIColor = UIColor.blackColor() {
+    @IBInspectable var gradientEndColor: UIColor = UIColor.blackColor() {
         didSet{
             setupView()
         }
@@ -66,7 +66,7 @@ import UIKit
     // Setup the view appearance
     private func setupView(){
         
-        let colors:Array = [startColor.CGColor, endColor.CGColor]
+        let colors:Array = [gradientStartColor.CGColor, gradientEndColor.CGColor]
         gradientLayer.colors = colors
         gradientLayer.cornerRadius = roundness
         
