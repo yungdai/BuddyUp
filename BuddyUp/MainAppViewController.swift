@@ -25,6 +25,23 @@ class MainAppViewController: UIViewController {
     @IBOutlet var activityTypeImage: UIImageView!
     @IBOutlet var checkButton: UIButton!
     @IBOutlet var crossButton: UIButton!
+    @IBOutlet var activityCardBackground: ActivityCardView!
+    
+    // care movement
+    enum CardSelectionState {
+        case NoSelection
+        case MakingSelection
+        case SwipingLeft
+        case SwipingRight
+        case SwipedLeft
+        case SwipedRight
+    }
+    
+    var cardSelectionState: CardSelectionState = .NoSelection
+    var frame: CGRect!
+    var xFromCenter: CGFloat = 0
+    
+    
     
 //    @IBOutlet var activityImageHeightConstraint: NSLayoutConstraint!
 //    @IBOutlet var activityImageWidthConstraint: NSLayoutConstraint!
@@ -34,6 +51,8 @@ class MainAppViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        frame = CGRectZero
         
         // get all Activity Objects that aren't yours
         var query = PFQuery(className: "Activity")
@@ -49,6 +68,86 @@ class MainAppViewController: UIViewController {
 //        configureConstraints()
         
     }
+    
+    @IBAction func activityCardWasDragged(sender: UIPanGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.Began {
+            frame = sender.view?.frame
+            
+        }
+        
+        let translation = sender.translationInView(self.view)
+        
+        // get dragging information
+        var profile = sender.view!
+        xFromCenter += translation.x
+        var scale = min(100 / abs(xFromCenter), 1)
+        
+        // remove the translation along the Y access so it only moves left and right
+        profile.center = CGPoint(x: profile.center.x + translation.x, y: profile.center.y)
+        
+        // resetting translation when the card is let go
+        sender.setTranslation(CGPointZero, inView: self.view)
+        
+        // rotate the label/image
+        var rotation: CGAffineTransform = CGAffineTransformMakeRotation(translation.x / 200)
+        
+        // check for the movement along the x/y access and return the state of the card
+        if profile.center.x < 100 {
+            //not chosen
+            cardSelectionState = .SwipingLeft
+            
+            if profile.center.x < 20 {
+                cardSelectionState = .SwipedLeft
+            }
+        } else {
+            // chosen
+            
+            cardSelectionState = .SwipingRight
+            
+            if profile.center.x > 300 {
+                cardSelectionState = .SwipedRight
+            }
+            
+        }
+        
+        // once the gesture state has ended
+        if sender.state == UIGestureRecognizerState.Ended {
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+                profile.frame = self.frame
+                }, completion: {
+                    (completed) -> Void in
+                    if (completed) {
+                        
+                        switch self.cardSelectionState {
+                        case .NoSelection:
+                            println("No Selection")
+                            
+                        case .MakingSelection:
+                            println("Making Selection")
+                            
+                        case .SwipingLeft:
+                            println("Swiping Left")
+                            
+                        case .SwipedLeft:
+                            println("Swiped Left")
+                            
+                        case .SwipingRight:
+                            println("Swiping Right")
+                            
+                        case .SwipedRight:
+                            println("Swiped RIght")
+                            
+                        }
+                        self.cardSelectionState = .NoSelection
+                    }
+            })
+        }
+        // TODO: load next Image
+
+    }
+    
+
+    
     
     
 //    func cardView(cardView: UIView, activityForRowAtIndexPath indexPath: NSIndexPath) -> UIView {
