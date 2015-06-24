@@ -26,13 +26,12 @@ class MainAppViewController: UIViewController {
     @IBOutlet var checkButton: UIButton!
     @IBOutlet var crossButton: UIButton!
     
-    @IBOutlet var activityImageHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var activityImageWidthConstraint: NSLayoutConstraint!
-    @IBOutlet var personImageHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var personImageWidthConstraint: NSLayoutConstraint!
+//    @IBOutlet var activityImageHeightConstraint: NSLayoutConstraint!
+//    @IBOutlet var activityImageWidthConstraint: NSLayoutConstraint!
+//    @IBOutlet var personImageHeightConstraint: NSLayoutConstraint!
+//    @IBOutlet var personImageWidthConstraint: NSLayoutConstraint!
     
-    
-    @IBOutlet weak var menuButton: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,7 +46,7 @@ class MainAppViewController: UIViewController {
             }
         }
         
-        configureConstraints()
+//        configureConstraints()
         
     }
     
@@ -58,19 +57,24 @@ class MainAppViewController: UIViewController {
 //    }
 
     
-    func configureConstraints() {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            activityImageHeightConstraint.constant = iPhoneImageDimension
-            activityImageWidthConstraint.constant = iPhoneImageDimension
-            personImageHeightConstraint.constant = iPhoneImageDimension
-            personImageWidthConstraint.constant = iPhoneImageDimension
-        } else if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            activityImageHeightConstraint.constant = iPadImageDimension
-            activityImageWidthConstraint.constant = iPadImageDimension
-            personImageHeightConstraint.constant = iPadImageDimension
-            personImageWidthConstraint.constant = iPadImageDimension
-        }
-    }
+//    func configureConstraints() {
+//        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+//            
+//            activityImageHeightConstraint.constant = iPhoneImageDimension
+//            activityImageWidthConstraint.constant = iPhoneImageDimension
+//            personImageHeightConstraint.constant = iPhoneImageDimension
+//            personImageWidthConstraint.constant = iPhoneImageDimension
+//
+//            
+//        } else if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+//            
+//            activityImageHeightConstraint.constant = iPadImageDimension
+//            activityImageWidthConstraint.constant = iPadImageDimension
+//            personImageHeightConstraint.constant = iPadImageDimension
+//            personImageWidthConstraint.constant = iPadImageDimension
+//
+//        }
+//    }
 
 }
 

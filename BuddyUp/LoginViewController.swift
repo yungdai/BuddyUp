@@ -18,8 +18,32 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     
-    // var mainAppViewController = MainAppViewController()
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if PFUser.currentUser()?.sessionToken != nil {
+            println("sending user to the main app screen because he's a current user")
+            
+            self.performSegueWithIdentifier("mainApp", sender: self)
+        } else {
+            // Show the signup or login screen
+            return
+        }
+        
+        
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            println("User is already logged in go to the next viewcontroller")
+            
+        }// Do any additional setup after loading the view, typically from a nib.
+        
+    }
+    
+    
+    override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+        usernameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
+    }
     
     let permissions = ["public_profile", "email", "user_friends"]
     
@@ -154,24 +178,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if PFUser.currentUser()?.sessionToken != nil {
-            println("sending user to the main app screen because he's a current user")
-            
-            self.performSegueWithIdentifier("mainApp", sender: self)
-        } else {
-            // Show the signup or login screen
-            return
-        }
-        
-        
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
-            println("User is already logged in go to the next viewcontroller")
-            
-        }// Do any additional setup after loading the view, typically from a nib.
-        
-    }
+
     
     @IBAction func facebookButton
         (sender: AnyObject) {
@@ -202,17 +209,17 @@ class LoginViewController: UIViewController {
                                 parseUser["first_name"] = result["first_name"]
                                 parseUser["gender"] = result["gender"]
                                 
-
+                                
                                 // sending the facebook picture to parse as a string and saving the user image to parse userImage field
                                 if let pictureResult = result["picture"] as? NSDictionary,
                                     pictureData = pictureResult["data"] as? NSDictionary,
                                     picture = pictureData["url"] as? String {
                                         parseUser["photo"] = picture
-                                    
+                                        
                                 }
                                 
                                 
-
+                                
                                 
                                 // save the user's location to parse before you save the information
                                 PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in

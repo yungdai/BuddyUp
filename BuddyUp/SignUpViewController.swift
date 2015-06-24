@@ -142,6 +142,9 @@ class SignUpViewController: UIViewController {
         
     }
     
+    @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
     // Sign the current user out of the app
     func processSignOut() {
         

@@ -11,18 +11,9 @@ import UIKit
 
 // class for Asyncrhonously downloading a URL of a picture into a UIImageView
 /* Usage 
-    downloading: UIImageAynch.downloadImage("http://www.image-server.com/myImage.jpg")
+    downloading: UIImageView.downloadImage("http://www.image-server.com/myImage.jpg")
 */
-class UIImageAsync: UIImageView {
-    
-    override init(frame:CGRect)
-    {
-        super.init(frame:frame)
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+extension UIImageView {
     
     func getDataFromUrl(url:String, completion: ((data: NSData?) -> Void)) {
         NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!) { (data, response, error) in
