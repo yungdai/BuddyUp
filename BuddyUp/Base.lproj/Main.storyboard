@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -1198,14 +1199,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxI-XN-xYH" userLabel="crossButton">
+                                <rect key="frame" x="341" y="462" width="81" height="81"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="VVP-sE-6hU"/>
+                                    <constraint firstAttribute="height" constant="81" id="i84-lt-de7"/>
+                                </constraints>
+                                <state key="normal" image="cross">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoB-7d-sa4" userLabel="checkMarkButton">
+                                <rect key="frame" x="179" y="462" width="81" height="81"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="HhM-5I-76I"/>
+                                    <constraint firstAttribute="width" constant="81" id="ft2-DV-0PU"/>
+                                </constraints>
+                                <state key="normal" image="checkmark">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-qt-Cg0" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
-                                <rect key="frame" x="16" y="82" width="568" height="365"/>
+                                <rect key="frame" x="16" y="89" width="568" height="365"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="watchTV" translatesAutoresizingMaskIntoConstraints="NO" id="089-3V-AUI">
-                                        <rect key="frame" x="7" y="90" width="188" height="163"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="With" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="B9D-xT-Sos">
+                                        <rect key="frame" x="250" y="132" width="68" height="54"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="188" id="Yvw-2S-L3Q"/>
+                                            <constraint firstAttribute="height" constant="54" id="CaZ-mn-e2d"/>
+                                            <constraint firstAttribute="width" constant="68" id="cuJ-cm-DgT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="27"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="355" y="156" width="68" height="54"/>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="watchTV" translatesAutoresizingMaskIntoConstraints="NO" id="089-3V-AUI">
+                                        <rect key="frame" x="13" y="90" width="163" height="163"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="13c-My-M55"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="d4U-fh-y6v"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
@@ -1213,12 +1251,17 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-zl-Uab" userLabel="personImage" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-zl-Uab" userLabel="personImage" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
                                         <rect key="frame" x="375" y="90" width="163" height="163"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="21a-3E-V2T"/>
+                                            <constraint firstAttribute="width" secondItem="WTK-zl-Uab" secondAttribute="height" multiplier="1:1" id="TWk-8t-6qP"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="ot4-zb-Cnb"/>
+                                        </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
-                                                <real key="value" value="51"/>
+                                                <real key="value" value="50"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="personBorderWidth">
                                                 <real key="value" value="2"/>
@@ -1235,36 +1278,34 @@
                                             <rect key="frame" x="433" y="90" width="188" height="163"/>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="With" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="B9D-xT-Sos">
-                                        <rect key="frame" x="250" y="132" width="68" height="54"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Activity Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-gV-kSf">
+                                        <rect key="frame" x="7" y="251" width="173" height="54"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="27"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="355" y="156" width="68" height="54"/>
-                                        </variation>
-                                    </label>
-                                    <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Person" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25000000000000006" translatesAutoresizingMaskIntoConstraints="NO" id="Oc6-lg-rx9">
-                                        <rect key="frame" x="375" y="251" width="96" height="54"/>
-                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="Mtu-UT-lU8"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="nby-Gg-dIh"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="39"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" ambiguous="YES">
-                                            <rect key="frame" x="433" y="251" width="96" height="54"/>
-                                        </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eAf-jq-bGI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eAf-jq-bGI">
                                         <rect key="frame" x="8" y="303" width="64" height="24"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="64" id="2kR-2z-ccz"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="5" id="mVs-11-ZNF"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-Ib-Xn8">
-                                        <rect key="frame" x="375" y="303" width="59" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="End Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-Ib-Xn8">
+                                        <rect key="frame" x="364" y="303" width="59" height="24"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="5" id="0li-eE-QpI"/>
+                                            <constraint firstAttribute="width" constant="59" id="fRq-nU-66Y"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1272,16 +1313,24 @@
                                             <rect key="frame" x="433" y="303" width="59" height="24"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date place holder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VWO-FZ-mxh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="date place holder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VWO-FZ-mxh">
                                         <rect key="frame" x="8" y="329" width="172" height="17"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="9bD-0B-QTY"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="Y83-dn-CR7"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date place holder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vo8-bZ-7uO">
-                                        <rect key="frame" x="375" y="329" width="163" height="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="date place holder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vo8-bZ-7uO">
+                                        <rect key="frame" x="364" y="329" width="163" height="17"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="9Or-Y2-jOq"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="WtA-aG-uO3"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1289,14 +1338,63 @@
                                             <rect key="frame" x="433" y="329" width="185" height="24"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activity Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-gV-kSf">
-                                        <rect key="frame" x="7" y="251" width="173" height="54"/>
+                                    <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Person" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.25000000000000006" translatesAutoresizingMaskIntoConstraints="NO" id="Oc6-lg-rx9">
+                                        <rect key="frame" x="364" y="251" width="185" height="54"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="jjh-Hn-hCf"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="10" id="pvx-2O-P3m"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="39"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" ambiguous="YES">
+                                            <rect key="frame" x="433" y="251" width="96" height="54"/>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WTK-zl-Uab" secondAttribute="bottom" constant="10" id="05S-8M-pQs"/>
+                                    <constraint firstItem="Vo8-bZ-7uO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6wn-Ib-Xn8" secondAttribute="bottom" id="1V2-UR-wWj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vo8-bZ-7uO" secondAttribute="bottom" constant="19" id="1jh-WZ-3F2"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WTK-zl-Uab" secondAttribute="trailing" constant="5" id="1xd-q0-OV4"/>
+                                    <constraint firstAttribute="bottom" secondItem="VWO-FZ-mxh" secondAttribute="bottom" constant="19" id="29c-pw-g8h"/>
+                                    <constraint firstItem="VWO-FZ-mxh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="eAf-jq-bGI" secondAttribute="bottom" id="3as-pG-v6T"/>
+                                    <constraint firstItem="6wn-Ib-Xn8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Oc6-lg-rx9" secondAttribute="bottom" constant="5" id="4Fo-pI-YNs"/>
+                                    <constraint firstItem="P5K-gV-kSf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="089-3V-AUI" secondAttribute="bottom" constant="5" id="4hV-Az-R51"/>
+                                    <constraint firstItem="WTK-zl-Uab" firstAttribute="centerY" secondItem="B9D-xT-Sos" secondAttribute="centerY" constant="12.5" id="5Q4-7X-snu"/>
+                                    <constraint firstItem="089-3V-AUI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ggG-qt-Cg0" secondAttribute="top" constant="10" id="60W-mS-7gm"/>
+                                    <constraint firstItem="WTK-zl-Uab" firstAttribute="bottom" secondItem="089-3V-AUI" secondAttribute="bottom" id="7fv-2i-o1P"/>
+                                    <constraint firstAttribute="centerX" secondItem="089-3V-AUI" secondAttribute="centerX" constant="183" id="8rW-50-wc2"/>
+                                    <constraint firstItem="089-3V-AUI" firstAttribute="bottom" secondItem="P5K-gV-kSf" secondAttribute="bottom" constant="-52" id="AVZ-C0-B7P"/>
+                                    <constraint firstItem="B9D-xT-Sos" firstAttribute="centerY" secondItem="089-3V-AUI" secondAttribute="centerY" constant="-12.5" id="CXk-jo-09g"/>
+                                    <constraint firstItem="Oc6-lg-rx9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WTK-zl-Uab" secondAttribute="bottom" priority="750" constant="-2" id="D1e-Vz-YUB"/>
+                                    <constraint firstItem="089-3V-AUI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ggG-qt-Cg0" secondAttribute="leading" constant="10" id="Ec3-gv-9Iw"/>
+                                    <constraint firstItem="089-3V-AUI" firstAttribute="leading" secondItem="P5K-gV-kSf" secondAttribute="leading" constant="5" id="Ecj-zM-unP"/>
+                                    <constraint firstAttribute="centerX" secondItem="B9D-xT-Sos" secondAttribute="centerX" id="FqQ-YJ-Emc"/>
+                                    <constraint firstItem="6wn-Ib-Xn8" firstAttribute="leading" secondItem="Vo8-bZ-7uO" secondAttribute="leading" id="Nzt-7f-0n8"/>
+                                    <constraint firstItem="6wn-Ib-Xn8" firstAttribute="leading" secondItem="Oc6-lg-rx9" secondAttribute="leading" id="Q9t-nJ-CGj"/>
+                                    <constraint firstItem="WTK-zl-Uab" firstAttribute="top" secondItem="089-3V-AUI" secondAttribute="top" id="Qgg-iJ-Cud"/>
+                                    <constraint firstItem="Oc6-lg-rx9" firstAttribute="top" secondItem="P5K-gV-kSf" secondAttribute="top" id="TPF-iy-qiq"/>
+                                    <constraint firstItem="WTK-zl-Uab" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="089-3V-AUI" secondAttribute="trailing" constant="50" id="U2E-hX-lvt"/>
+                                    <constraint firstItem="eAf-jq-bGI" firstAttribute="bottom" secondItem="P5K-gV-kSf" secondAttribute="bottom" constant="22" id="Wo0-gs-baI"/>
+                                    <constraint firstAttribute="centerX" secondItem="WTK-zl-Uab" secondAttribute="centerX" constant="-172.5" id="XF4-tt-sdI"/>
+                                    <constraint firstItem="P5K-gV-kSf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ggG-qt-Cg0" secondAttribute="leading" id="ajN-8H-waF"/>
+                                    <constraint firstAttribute="centerY" secondItem="WTK-zl-Uab" secondAttribute="centerY" constant="11" id="chE-yd-1Ob"/>
+                                    <constraint firstItem="Oc6-lg-rx9" firstAttribute="bottom" secondItem="P5K-gV-kSf" secondAttribute="bottom" id="f5L-W6-eMY"/>
+                                    <constraint firstAttribute="centerY" secondItem="B9D-xT-Sos" secondAttribute="centerY" constant="23.5" id="gQs-mU-zwC"/>
+                                    <constraint firstItem="eAf-jq-bGI" firstAttribute="leading" secondItem="P5K-gV-kSf" secondAttribute="leading" id="h3h-gM-7gp"/>
+                                    <constraint firstItem="eAf-jq-bGI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="P5K-gV-kSf" secondAttribute="bottom" constant="5" id="hrz-8q-YoZ"/>
+                                    <constraint firstItem="VWO-FZ-mxh" firstAttribute="leading" secondItem="eAf-jq-bGI" secondAttribute="leading" id="kXi-C9-Tf4"/>
+                                    <constraint firstItem="Oc6-lg-rx9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="P5K-gV-kSf" secondAttribute="trailing" constant="35" id="ktd-Uy-lWy"/>
+                                    <constraint firstAttribute="centerY" relation="greaterThanOrEqual" secondItem="089-3V-AUI" secondAttribute="centerY" constant="11" id="tvV-sb-kKa"/>
+                                    <constraint firstItem="WTK-zl-Uab" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="B9D-xT-Sos" secondAttribute="trailing" constant="10" id="wGN-Re-uOy"/>
+                                    <constraint firstItem="VWO-FZ-mxh" firstAttribute="bottom" secondItem="eAf-jq-bGI" secondAttribute="bottom" constant="19" id="x2w-2C-QHv"/>
+                                    <constraint firstItem="Oc6-lg-rx9" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WTK-zl-Uab" secondAttribute="top" constant="5" id="z3T-Ru-iZg"/>
+                                    <constraint firstItem="Oc6-lg-rx9" firstAttribute="leading" secondItem="WTK-zl-Uab" secondAttribute="leading" constant="-11" id="z6q-5B-Cq1"/>
+                                    <constraint firstItem="B9D-xT-Sos" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="089-3V-AUI" secondAttribute="trailing" constant="10" id="zUv-H0-8eh"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -1328,28 +1426,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YoB-7d-sa4" userLabel="checkMarkButton">
-                                <rect key="frame" x="179" y="462" width="81" height="81"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="81" id="HhM-5I-76I"/>
-                                    <constraint firstAttribute="width" constant="81" id="ft2-DV-0PU"/>
-                                </constraints>
-                                <state key="normal" image="checkmark">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxI-XN-xYH" userLabel="crossButton">
-                                <rect key="frame" x="341" y="462" width="81" height="81"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="81" id="VVP-sE-6hU"/>
-                                    <constraint firstAttribute="height" constant="81" id="i84-lt-de7"/>
-                                </constraints>
-                                <state key="normal" image="cross">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.18431372549019609" green="0.42745098039215684" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
