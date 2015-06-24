@@ -1198,7 +1198,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-qt-Cg0" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-qt-Cg0" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="82" width="568" height="365"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="watchTV" translatesAutoresizingMaskIntoConstraints="NO" id="089-3V-AUI">
@@ -1354,10 +1354,14 @@
                         <animations/>
                         <color key="backgroundColor" red="0.18431372549019609" green="0.42745098039215684" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="ggG-qt-Cg0" firstAttribute="leading" secondItem="Cvv-ZP-rAp" secondAttribute="leadingMargin" constant="8" id="2IW-ED-caw"/>
                             <constraint firstItem="YoB-7d-sa4" firstAttribute="bottom" secondItem="nxI-XN-xYH" secondAttribute="bottom" id="B7p-eA-vaJ"/>
                             <constraint firstAttribute="centerX" secondItem="YoB-7d-sa4" secondAttribute="centerX" constant="80.5" id="L49-jT-Tch"/>
                             <constraint firstItem="nxI-XN-xYH" firstAttribute="leading" secondItem="YoB-7d-sa4" secondAttribute="trailing" constant="81" id="bpL-gz-NGy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ggG-qt-Cg0" secondAttribute="trailing" constant="8" id="g9P-vV-rbD"/>
                             <constraint firstItem="Wqr-Jp-MOX" firstAttribute="top" secondItem="YoB-7d-sa4" secondAttribute="bottom" constant="8" id="hbh-mo-w9W"/>
+                            <constraint firstItem="Wqr-Jp-MOX" firstAttribute="top" secondItem="ggG-qt-Cg0" secondAttribute="bottom" constant="104" id="jMo-0c-8HW"/>
+                            <constraint firstItem="ggG-qt-Cg0" firstAttribute="top" secondItem="bML-8h-B0v" secondAttribute="bottom" constant="18" id="t78-Hu-JNB"/>
                             <constraint firstItem="YoB-7d-sa4" firstAttribute="centerY" secondItem="nxI-XN-xYH" secondAttribute="centerY" id="xZs-Ol-q87"/>
                             <constraint firstItem="YoB-7d-sa4" firstAttribute="top" secondItem="nxI-XN-xYH" secondAttribute="top" id="zug-bZ-2uF"/>
                         </constraints>
