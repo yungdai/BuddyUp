@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-// class for Asyncrhonously downloading a URL of a picture into a UIImageView
+// extension for UIImageView for Asyncrhonously downloading a URL of a picture into a UIImageView
 /* Usage 
     downloading: UIImageView.downloadImage("http://www.image-server.com/myImage.jpg")
 */

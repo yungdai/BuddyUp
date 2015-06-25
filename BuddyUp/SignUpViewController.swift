@@ -18,7 +18,22 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var errorMessageLabel: UILabel!
 
     @IBAction func createAccountButtonPressed(sender: UIButton) {
-        
+        processFieldEntries()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.activityIndicator.hidden = true
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func processFieldEntries() {
         // setup the fields for the sign up page
         let username = usernameField.text
         let password = passwordField.text
@@ -54,7 +69,7 @@ class SignUpViewController: UIViewController {
             if count(passwordConfirmation) == 0 {
                 passwordConfirmationField.becomeFirstResponder()
             }
-
+            
             if count(emailAddress) == 0 {
                 emailAddressField.becomeFirstResponder()
             }
@@ -94,6 +109,7 @@ class SignUpViewController: UIViewController {
         parseUser.username = usernameField.text
         parseUser.password = passwordField.text
         parseUser["name"] = usernameField.text
+        parseUser["email"] = emailAddressField.text
         parseUser.signUpInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in
             
             if error == nil {
@@ -121,25 +137,6 @@ class SignUpViewController: UIViewController {
                 return
             }
         })
-        
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.activityIndicator.hidden = true
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func processFieldEntries() {
-    
-        
-        
     }
     
     @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {

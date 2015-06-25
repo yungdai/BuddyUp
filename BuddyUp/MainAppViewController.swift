@@ -14,6 +14,8 @@ class MainAppViewController: UIViewController {
     let iPhoneImageDimension:CGFloat = 100.0
     let iPadImageDimension:CGFloat = 145.0
     
+    let cardStack = ActivityCardStack()
+    
     // activities parse object
     var activities: [PFObject] = []
     
@@ -52,7 +54,9 @@ class MainAppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         frame = CGRectZero
+        
         
         // get all Activity Objects that aren't yours
         var query = PFQuery(className: "Activity")

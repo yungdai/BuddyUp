@@ -11,6 +11,8 @@
 		1A0F071C1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */; };
 		1A123D721B3A233500CD9D08 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A123D701B3A233500CD9D08 /* FBSDKCoreKit.framework */; };
 		1A123D731B3A233500CD9D08 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A123D711B3A233500CD9D08 /* FBSDKLoginKit.framework */; };
+		1A123D751B3B32B200CD9D08 /* ActivityCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A123D741B3B32B100CD9D08 /* ActivityCardStack.swift */; };
+		1A123D771B3B620E00CD9D08 /* ActivityCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A123D761B3B620E00CD9D08 /* ActivityCard.xib */; };
 		1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57C1B2883E400AAE935 /* Friendship.swift */; };
 		1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */; };
 		1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EF9911B374101008134BE /* PersonImageView.swift */; };
@@ -74,6 +76,8 @@
 		1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		1A123D701B3A233500CD9D08 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		1A123D711B3A233500CD9D08 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		1A123D741B3B32B100CD9D08 /* ActivityCardStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCardStack.swift; sourceTree = "<group>"; };
+		1A123D761B3B620E00CD9D08 /* ActivityCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityCard.xib; sourceTree = "<group>"; };
 		1A15B57C1B2883E400AAE935 /* Friendship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friendship.swift; sourceTree = "<group>"; };
 		1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewController.swift; sourceTree = "<group>"; };
 		1A2EF9911B374101008134BE /* PersonImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonImageView.swift; sourceTree = "<group>"; };
@@ -294,7 +298,9 @@
 			isa = PBXGroup;
 			children = (
 				1A9204F91B373F6C0046EFE7 /* ActivitiyCardView.swift */,
+				1A123D741B3B32B100CD9D08 /* ActivityCardStack.swift */,
 				1A2EF9911B374101008134BE /* PersonImageView.swift */,
+				1A123D761B3B620E00CD9D08 /* ActivityCard.xib */,
 			);
 			name = "Element Design Styling";
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 				1A7246D11B1E20650020C81E /* Main.storyboard in Resources */,
 				1A7246D61B1E20650020C81E /* LaunchScreen.xib in Resources */,
 				1ACAA3E41B30C7DC00C527CA /* PickerViewPickerPopUp.xib in Resources */,
+				1A123D771B3B620E00CD9D08 /* ActivityCard.xib in Resources */,
 				1A7246D31B1E20650020C81E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +505,7 @@
 				1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */,
 				1A69074F1B2939E600150F98 /* ActivityTableViewCell.swift in Sources */,
 				1ACAA3E01B30B9C600C527CA /* PickerViewController.swift in Sources */,
+				1A123D751B3B32B200CD9D08 /* ActivityCardStack.swift in Sources */,
 				1A7A47731B39BC5300255F3D /* UIImageAsync.swift in Sources */,
 				1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */,
 				1A451EF91B3899610094B55C /* DraggableView.swift in Sources */,

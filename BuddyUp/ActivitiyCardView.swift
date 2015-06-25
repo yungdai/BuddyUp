@@ -10,6 +10,8 @@ import UIKit
 
 @IBDesignable class ActivityCardView: UIView  {
     
+    var activityCardStack = ActivityCardStack()
+    
     
     @IBInspectable var blockColour: UIColor = UIColor.grayColor() {
         didSet {
@@ -108,6 +110,7 @@ import UIKit
     
     override func awakeFromNib() {
         viewStyle()
+
 
     }
     
