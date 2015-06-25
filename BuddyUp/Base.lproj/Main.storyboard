@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D2134" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -316,14 +316,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="584" id="AaS-Id-apE"/>
-                                    <constraint firstAttribute="height" constant="52" id="In8-fw-a2g"/>
                                     <constraint firstAttribute="height" constant="52" id="Tgm-UG-4fx"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="In8-fw-a2g"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-Jq-qfM" userLabel="Error Label">
                                 <rect key="frame" x="16" y="108" width="576" height="21"/>
@@ -363,6 +357,7 @@
                             <constraint firstItem="qvT-ex-3jy" firstAttribute="leading" secondItem="3SX-vn-Taq" secondAttribute="leadingMargin" constant="-8" id="7Y4-jv-eBj"/>
                             <constraint firstAttribute="centerX" secondItem="IyN-mx-mQW" secondAttribute="centerX" id="AyC-T4-5Tc"/>
                             <constraint firstItem="ccp-Jq-qfM" firstAttribute="leading" secondItem="3SX-vn-Taq" secondAttribute="leadingMargin" id="C9Q-su-Fxf"/>
+                            <constraint firstItem="qvT-ex-3jy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OvQ-Ae-Qew" secondAttribute="bottom" constant="5" id="Cmt-lF-lU6"/>
                             <constraint firstAttribute="centerY" secondItem="OvQ-Ae-Qew" secondAttribute="centerY" constant="29" id="H9V-Jf-d8V"/>
                             <constraint firstAttribute="centerY" secondItem="ccp-Jq-qfM" secondAttribute="centerY" constant="181.5" id="I1e-PN-Hx2"/>
                             <constraint firstAttribute="centerY" secondItem="nWy-zO-ICT" secondAttribute="centerY" constant="-163" id="IaY-cU-yQ3"/>
@@ -372,6 +367,7 @@
                             <constraint firstAttribute="centerY" secondItem="kAt-1t-nPY" secondAttribute="centerY" constant="-32" id="OTg-LO-L8k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ccp-Jq-qfM" secondAttribute="trailing" constant="-8" id="OvU-xA-xDm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qvT-ex-3jy" secondAttribute="trailing" constant="-8" id="QBd-ko-YE6"/>
+                            <constraint firstItem="IyN-mx-mQW" firstAttribute="bottom" secondItem="qvT-ex-3jy" secondAttribute="bottom" constant="60" id="SF5-5w-2Er"/>
                             <constraint firstAttribute="centerX" secondItem="OvQ-Ae-Qew" secondAttribute="centerX" id="VeN-4K-S6g"/>
                             <constraint firstItem="OvQ-Ae-Qew" firstAttribute="leading" secondItem="3SX-vn-Taq" secondAttribute="leadingMargin" constant="-8" id="WmF-ak-sQK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OvQ-Ae-Qew" secondAttribute="trailing" constant="-8" id="XU7-aY-0rT"/>
@@ -1196,7 +1192,7 @@
                         <viewControllerLayoutGuide type="top" id="bML-8h-B0v"/>
                         <viewControllerLayoutGuide type="bottom" id="Wqr-Jp-MOX"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Cvv-ZP-rAp" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Cvv-ZP-rAp" customClass="BackgroundView" customModule="BuddyUp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1507,7 +1503,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="VCx-Aw-rKX">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="VCx-Aw-rKX">
                                 <rect key="frame" x="0.0" y="110" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VCx-Aw-rKX" id="W8c-Gz-rNo">
@@ -1673,7 +1669,7 @@
         <image name="watchTV" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="N47-ue-Wgg"/>
         <segue reference="eQC-UJ-lVX"/>
-        <segue reference="FHt-kP-U4i"/>
     </inferredMetricsTieBreakers>
 </document>

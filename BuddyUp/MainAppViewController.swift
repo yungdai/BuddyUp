@@ -8,13 +8,11 @@
 
 import UIKit
 
-class MainAppViewController: UIViewController {
+class MainAppViewController: UIViewController{
     
     let currentUser = PFUser.currentUser()
     let iPhoneImageDimension:CGFloat = 100.0
     let iPadImageDimension:CGFloat = 145.0
-    
-    let cardStack = ActivityCardStack()
     
     // activities parse object
     var activities: [PFObject] = []
@@ -29,7 +27,7 @@ class MainAppViewController: UIViewController {
     @IBOutlet var crossButton: UIButton!
     @IBOutlet var activityCardBackground: ActivityCardView!
     
-    // care movement
+    // card movement
     enum CardSelectionState {
         case NoSelection
         case MakingSelection
@@ -40,6 +38,32 @@ class MainAppViewController: UIViewController {
     }
     
     var cardSelectionState: CardSelectionState = .NoSelection
+    
+    
+    // activity picture
+    enum ActivityPicture {
+        case WatchTV
+        case GoFoDrinks
+        case PlaySports
+        case WatchAMovie
+        case GoToAnEvent
+        case CustomPicture
+        case NoImage
+    }
+    
+    var activityPictureSource: ActivityPicture = .NoImage
+    
+    // user image
+    
+    enum UserImage {
+        case FacebookImage
+        case CustomImage
+        case NoImage
+    }
+    
+    var userImageType: UserImage = .NoImage
+    
+
     var frame: CGRect!
     var xFromCenter: CGFloat = 0
     
@@ -53,7 +77,7 @@ class MainAppViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        self.view.addSubview(cardStack)
         
         frame = CGRectZero
         

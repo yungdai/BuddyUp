@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var usernameField: UITextField!
@@ -18,9 +18,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     
+    var kbHeight: CGFloat!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameField.delegate = self
+        passwordField.delegate = self
+        
         if PFUser.currentUser()?.sessionToken != nil {
             println("sending user to the main app screen because he's a current user")
             
@@ -36,13 +42,64 @@ class LoginViewController: UIViewController {
             
         }// Do any additional setup after loading the view, typically from a nib.
         
+        
+        
+    }
+    
+    override func viewWillAppear(animated:Bool) {
+        super.viewWillAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                kbHeight = 20.0
+                self.animateTextField(true)
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        self.animateTextField(false)
+    }
+    
+    func animateTextField(up: Bool) {
+        var movement = (up ? -kbHeight : kbHeight)
+        
+        UIView.animateWithDuration(0.3, animations: {
+            self.view.frame = CGRectOffset(self.view.frame, 0, movement)
+        })
+    }
+
+    // if you press the return button the keyboard will dissappear
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        resign()
+        
+        return true
+    }
+    
+    
+    
+    // resigning all first responders
+    func resign() {
+        usernameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
     }
     
     
     override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
-        usernameField.resignFirstResponder()
-        passwordField.resignFirstResponder()
-        
+        resign()
+    
     }
     
     let permissions = ["public_profile", "email", "user_friends"]
@@ -99,6 +156,7 @@ class LoginViewController: UIViewController {
             let alert = UIAlertController(title: "Alert", message: errorText, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+            return
         }
         
         // log in the user with Parse
@@ -189,7 +247,7 @@ class LoginViewController: UIViewController {
                 
                 if error != nil
                 {
-                    return;
+                    return
                 }
                 if let parseUser = user {
                     if parseUser.isNew {

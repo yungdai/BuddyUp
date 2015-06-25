@@ -8,12 +8,15 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordConfirmationField: UITextField!
     @IBOutlet weak var emailAddressField: UITextField!
     var activityIndicator = UIActivityIndicatorView()
+    
+    // keyboard movement upwards value
+    var kbHeight: CGFloat!
 
     @IBOutlet weak var errorMessageLabel: UILabel!
 
@@ -24,14 +27,73 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activityIndicator.hidden = true
+        
+        usernameField.delegate = self
+        passwordField.delegate = self
+        passwordConfirmationField.delegate = self
+        emailAddressField.delegate = self
+        
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // keyboard pushing code
+    
+    override func viewWillAppear(animated:Bool) {
+        super.viewWillAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                kbHeight = 20.0
+                self.animateTextField(true)
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        self.animateTextField(false)
+    }
+    
+    func animateTextField(up: Bool) {
+        var movement = (up ? -kbHeight : kbHeight)
+        
+        UIView.animateWithDuration(0.3, animations: {
+            self.view.frame = CGRectOffset(self.view.frame, 0, movement)
+        })
+    }
+    
+    // if you press the return button the keyboard will dissappear
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        resign()
+        
+        return true
+    }
+
+    
+    // resigning of firstResponders of the textField's
+    func resign() {
+        usernameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        passwordConfirmationField.resignFirstResponder()
+        emailAddressField.resignFirstResponder()
+    }
+    
+    override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+        resign()
+
+    }
+    
     
     func processFieldEntries() {
         // setup the fields for the sign up page

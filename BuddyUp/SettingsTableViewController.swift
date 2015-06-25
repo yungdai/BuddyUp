@@ -17,6 +17,14 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     
     @IBOutlet var userImageView: PersonImageView!
 
+    // user image
+    enum UserImage {
+        case FacebookImage
+        case CustomImage
+        case NoImage
+    }
+    
+    
     
     @IBAction func logoutButtonPressed(sender: UIButton) {
         PFUser.logOut()
@@ -47,6 +55,8 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
                 
                 // take and display the facebook image URL
                 if let userPicture = user["photo"] as? String {
+                    
+                    
                     // parse the photo URL into data for the UIImageView
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
                         let data = NSData(contentsOfURL: NSURL(string: userPicture)!)
