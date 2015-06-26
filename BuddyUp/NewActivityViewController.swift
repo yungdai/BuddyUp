@@ -149,11 +149,35 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     
     @IBAction func addPictureButtonPressed(sender: UIButton) {
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        imagePicker.allowsEditing = false
+        // pop up an acdtion sheet
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
         
-        presentViewController(imagePicker, animated: true, completion: nil)
+        
+        // select from photo library
+        let photoLibrary = UIAlertAction(title: "Photo Library", style: .Default) { (alert: UIAlertAction!) -> Void in
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.imagePicker.allowsEditing = false
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        }
+        
+        let camera = UIAlertAction(title: "Use Camera", style: .Default) { (alert: UIAlertAction!) -> Void in
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            self.imagePicker.allowsEditing = false
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            println("Cancelled")
+        })
+        
+        optionMenu.addAction(photoLibrary)
+        optionMenu.addAction(camera)
+        optionMenu.addAction(cancelAction)
+        
+        presentViewController(optionMenu, animated: true, completion: nil)
         
     }
     

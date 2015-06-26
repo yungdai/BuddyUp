@@ -55,15 +55,18 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
                 
                 // take and display the facebook image URL
                 if let userPicture = user["photo"] as? String {
-                    
-                 
+
                     // parse the photo URL into data for the UIImageView
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
-                        let data = NSData(contentsOfURL: NSURL(string: userPicture)!)
-                        dispatch_sync(dispatch_get_main_queue(), { () -> Void in
-                            self.userImageView.image = UIImage(data: data!)
-                        })
-                    })
+                    self.userImageView.image = self.userImageView.downloadImage(userPicture)
+                    
+                    // old code
+//                    // parse the photo URL into data for the UIImageView
+//                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+//                        let data = NSData(contentsOfURL: NSURL(string: userPicture)!)
+//                        dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+//                            self.userImageView.image = UIImage(data: data!)
+//                        })
+//                    })
 
                 } else if let userPicture = user["userImage"] as? PFFile {
                     userPicture.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
@@ -129,12 +132,36 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     
     
     @IBAction func addPictureButtonPressed(sender: UIButton) {
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-
-        imagePicker.allowsEditing = false
         
-        presentViewController(imagePicker, animated: true, completion: nil)
+        // pop up an acdtion sheet
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
+        
+        
+        // select from photo library
+        let photoLibrary = UIAlertAction(title: "Photo Library", style: .Default) { (alert: UIAlertAction!) -> Void in
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.imagePicker.allowsEditing = false
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        }
+        
+        let camera = UIAlertAction(title: "Use Camera", style: .Default) { (alert: UIAlertAction!) -> Void in
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+            self.imagePicker.allowsEditing = false
+            self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            println("Cancelled")
+        })
+        
+        optionMenu.addAction(photoLibrary)
+        optionMenu.addAction(camera)
+        optionMenu.addAction(cancelAction)
+        
+        presentViewController(optionMenu, animated: true, completion: nil)
         
     }
 

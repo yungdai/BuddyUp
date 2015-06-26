@@ -29,7 +29,7 @@
 		1A7246D31B1E20650020C81E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246D21B1E20650020C81E /* Images.xcassets */; };
 		1A7246D61B1E20650020C81E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246D41B1E20650020C81E /* LaunchScreen.xib */; };
 		1A7246E21B1E20650020C81E /* BuddyUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246E11B1E20650020C81E /* BuddyUpTests.swift */; };
-		1A7A47731B39BC5300255F3D /* ImageAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A47721B39BC5300255F3D /* ImageAsync.swift */; };
+		1A7A47731B39BC5300255F3D /* ImageAsyncFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A47721B39BC5300255F3D /* ImageAsyncFromURL.swift */; };
 		1A9204FA1B373F6C0046EFE7 /* ActivitiyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9204F91B373F6C0046EFE7 /* ActivitiyCardView.swift */; };
 		1A9A072D1B222D0F0086879B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A072C1B222D0F0086879B /* AudioToolbox.framework */; };
 		1A9A072F1B222D1F0086879B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A072E1B222D1F0086879B /* MobileCoreServices.framework */; };
@@ -58,6 +58,7 @@
 		1AE5DC6E1B2E2118009585F6 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */; };
 		1AE5DC721B2E2135009585F6 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC701B2E2135009585F6 /* DatePickerViewController.swift */; };
 		9F86961A1B3CB257007CCF9E /* ActivityCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8696191B3CB257007CCF9E /* ActivityCard.xib */; };
+		9FD285151B3D99CC00BC5235 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD285141B3D99CC00BC5235 /* SplashScreen.swift */; };
 		9FE143961B3C89130002FD19 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE143951B3C89130002FD19 /* BackgroundView.swift */; };
 		9FE143981B3C8A440002FD19 /* ActivityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE143971B3C8A440002FD19 /* ActivityCard.swift */; };
 /* End PBXBuildFile section */
@@ -100,7 +101,7 @@
 		1A7246E01B1E20650020C81E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A7246E11B1E20650020C81E /* BuddyUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyUpTests.swift; sourceTree = "<group>"; };
 		1A7246F01B1E32710020C81E /* BuddyUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BuddyUp-Bridging-Header.h"; sourceTree = "<group>"; };
-		1A7A47721B39BC5300255F3D /* ImageAsync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAsync.swift; sourceTree = "<group>"; };
+		1A7A47721B39BC5300255F3D /* ImageAsyncFromURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAsyncFromURL.swift; sourceTree = "<group>"; };
 		1A9204F91B373F6C0046EFE7 /* ActivitiyCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiyCardView.swift; sourceTree = "<group>"; };
 		1A9A072C1B222D0F0086879B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1A9A072E1B222D1F0086879B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -129,6 +130,7 @@
 		1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		1AE5DC701B2E2135009585F6 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		9F8696191B3CB257007CCF9E /* ActivityCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityCard.xib; sourceTree = "<group>"; };
+		9FD285141B3D99CC00BC5235 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		9FE143951B3C89130002FD19 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		9FE143971B3C8A440002FD19 /* ActivityCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */,
-				1A7A47721B39BC5300255F3D /* ImageAsync.swift */,
+				1A7A47721B39BC5300255F3D /* ImageAsyncFromURL.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +274,7 @@
 		1A7246EC1B1E209F0020C81E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9FD285131B3D98B500BC5235 /* Splash Screen */,
 				1ABB90211B334C1600102C71 /* Settings */,
 				1ABB90201B334C0900102C71 /* Main App */,
 				1ABB901F1B334BFD00102C71 /* Activities */,
@@ -392,6 +395,14 @@
 			name = PickerPopUp;
 			sourceTree = "<group>";
 		};
+		9FD285131B3D98B500BC5235 /* Splash Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9FD285141B3D99CC00BC5235 /* SplashScreen.swift */,
+			);
+			name = "Splash Screen";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -441,6 +452,7 @@
 				TargetAttributes = {
 					1A7246C51B1E20650020C81E = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = W9YJQYCY2W;
 					};
 					1A7246DA1B1E20650020C81E = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -510,7 +522,8 @@
 				1A69074F1B2939E600150F98 /* ActivityTableViewCell.swift in Sources */,
 				1ACAA3E01B30B9C600C527CA /* PickerViewController.swift in Sources */,
 				9FE143981B3C8A440002FD19 /* ActivityCard.swift in Sources */,
-				1A7A47731B39BC5300255F3D /* ImageAsync.swift in Sources */,
+				1A7A47731B39BC5300255F3D /* ImageAsyncFromURL.swift in Sources */,
+				9FD285151B3D99CC00BC5235 /* SplashScreen.swift in Sources */,
 				1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */,
 				1A451EF91B3899610094B55C /* DraggableView.swift in Sources */,
 				1A451EF81B3899610094B55C /* DraggableViewBackground.swift in Sources */,
@@ -657,6 +670,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -664,6 +679,7 @@
 				INFOPLIST_FILE = BuddyUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BuddyUp/BuddyUp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -674,6 +690,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -681,6 +699,7 @@
 				INFOPLIST_FILE = BuddyUp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BuddyUp/BuddyUp-Bridging-Header.h";
 			};
 			name = Release;

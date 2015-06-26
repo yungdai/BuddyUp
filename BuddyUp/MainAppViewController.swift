@@ -14,8 +14,7 @@ class MainAppViewController: UIViewController{
     let iPhoneImageDimension:CGFloat = 100.0
     let iPadImageDimension:CGFloat = 145.0
     
-    // activities parse object
-    var activities: [PFObject] = []
+
     
     @IBOutlet var personImage: UIImageView!
     @IBOutlet var personLabelText: UILabel!
@@ -26,6 +25,12 @@ class MainAppViewController: UIViewController{
     @IBOutlet var checkButton: UIButton!
     @IBOutlet var crossButton: UIButton!
     @IBOutlet var activityCardBackground: ActivityCardView!
+    var currentActivityIndex = -1
+    // activities parse object
+    var activities: [PFObject]?
+    
+    // location setup
+    var currentLocation: PFGeoPoint?
     
     // card movement
     enum CardSelectionState {
@@ -68,16 +73,29 @@ class MainAppViewController: UIViewController{
     var xFromCenter: CGFloat = 0
     
     
-    
-//    @IBOutlet var activityImageHeightConstraint: NSLayoutConstraint!
-//    @IBOutlet var activityImageWidthConstraint: NSLayoutConstraint!
-//    @IBOutlet var personImageHeightConstraint: NSLayoutConstraint!
-//    @IBOutlet var personImageWidthConstraint: NSLayoutConstraint!
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.addSubview(cardStack)
+        
+        // some setup 
+        // get the current location and sent to Parse
+        
+        PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in if let user = PFUser.currentUser() {
+            if (error != nil) {
+                
+            }
+            self.currentLocation = geoPoint
+            if let currentLocation = self.currentLocation {
+                
+            }
+            //            user["currentLocation"] = geoPoint
+            //            user.saveInBackground()
+            //            self.checkForMatches(self.currentMatchIndex, aroundGeopoint: geoPoint!)
+            }
+            
+        }
+
         
         frame = CGRectZero
         
@@ -88,13 +106,61 @@ class MainAppViewController: UIViewController{
         
         // getting the data asynchronusly in the background
         query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
-            if let activities = result as? [PFObject] {
-                self.activities = activities
+            
+            if (error != nil) {
+                
+            }
+            
+            if let fetchedActivities = result as? [PFObject] {
+                self.activities = fetchedActivities
+                self.styleForNextActivity()
             }
         }
-        
-//        configureConstraints()
-        
+    }
+    
+    
+    func styleForNextActivity() {
+        if let currentActivities = activities {
+            currentActivityIndex++
+            if  currentActivityIndex >= currentActivities.count && currentActivities.count > 1 {
+                currentActivityIndex = 0
+            }
+            let activity = currentActivities[currentActivityIndex]
+            let dateFormat = NSDateFormatter()
+            dateFormat.dateStyle = NSDateFormatterStyle.MediumStyle
+            dateFormat.timeStyle = NSDateFormatterStyle.ShortStyle
+            if let activityType = activity["activityType"] as? String {
+                self.activityTypeLabelText.text = activityType
+            }
+            
+            if let startTime = activity["startTime"] as? NSDate {
+                self.startTimeLabelText.text = dateFormat.stringFromDate(startTime)
+            }
+            
+            if let endTime = activity["endTime"] as? NSDate {
+                self.endTimeLabelText.text = dateFormat.stringFromDate(endTime)
+            }
+            
+            if let creatorName = activity["name"] as? String {
+                self.personLabelText.text = creatorName
+            }
+            
+            if let activityImage = activity["image"] as? PFFile {
+                activityImage.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
+                    if (error != nil) {
+                        println(error)
+                        // TODO throw error message
+                        return
+                    }
+                    
+                    if let newData = data {
+                        self.activityTypeImage.image = UIImage(data: newData)
+                    }
+                    
+                })
+            }
+            
+        }
     }
     
     @IBAction func activityCardWasDragged(sender: UIPanGestureRecognizer) {
@@ -175,33 +241,15 @@ class MainAppViewController: UIViewController{
     }
     
 
+    @IBAction func checkButtonPushed(sender: UIButton) {
+        styleForNextActivity()
+        
+    }
     
     
     
-//    func cardView(cardView: UIView, activityForRowAtIndexPath indexPath: NSIndexPath) -> UIView {
-//        var activityCard = "ActivityCard"
-//        let activityCard = cardView(activityCard, activityForRowAtIndexPath: indexPath) as! UIView
-//    }
-
-    
-//    func configureConstraints() {
-//        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-//            
-//            activityImageHeightConstraint.constant = iPhoneImageDimension
-//            activityImageWidthConstraint.constant = iPhoneImageDimension
-//            personImageHeightConstraint.constant = iPhoneImageDimension
-//            personImageWidthConstraint.constant = iPhoneImageDimension
-//
-//            
-//        } else if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-//            
-//            activityImageHeightConstraint.constant = iPadImageDimension
-//            activityImageWidthConstraint.constant = iPadImageDimension
-//            personImageHeightConstraint.constant = iPadImageDimension
-//            personImageWidthConstraint.constant = iPadImageDimension
-//
-//        }
-//    }
-
+    @IBAction func crossButtonPushed(sender: UIButton) {
+        styleForNextActivity()
+    }
 }
 
