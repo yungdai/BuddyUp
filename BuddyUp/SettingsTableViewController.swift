@@ -56,6 +56,10 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
                 // take and display the facebook image URL
                 if let userPicture = user["photo"] as? String {
                     
+                    let picture: UIImageView
+                    
+                    picture.
+        
                     
                     // parse the photo URL into data for the UIImageView
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
