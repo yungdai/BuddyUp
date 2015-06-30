@@ -10,19 +10,52 @@ import UIKit
 
 class ActivitiesTableViewController: UITableViewController {
 
+    var activitesTypeArray: [String] = []
+    var startTimeArray: [NSDate] = []
+    var endTimeArray: [NSDate] = []
+    var activityImageArray : [UIImage] = []
+    var dateStyle = NSDateFormatterStyle.MediumStyle
+    var activityObjectID: [String] = []
+    
+    //  The object that holds the activites
+    var activities: [PFObject]  = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        // setup the refresh controls for this table
+        var refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: ("refreshPage"), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refreshControl
+        
+        var query = PFQuery(className: "Activity")
+        query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
+        
+        // getting the data asynchronously in the background
+        query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+            if let activities = result as? [PFObject] {
+                self.activities = activities
+                
+                self.tableView.reloadData()
+            }
+        }
+        
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func refreshPage() {
+        var query = PFQuery(className: "Activity")
+        query.whereKey("creator", equalTo: PFUser.currentUser()!)
+        
+        // getting the data asynchronously in the background
+        query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+            if let activities = result as? [PFObject] {
+                self.activities = activities
+            }
+        }
+        self.tableView.reloadData()
+        refreshControl?.endRefreshing()
+        
     }
 
     // MARK: - Table view data source
@@ -30,68 +63,82 @@ class ActivitiesTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.activities.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        return cellStyleFactory(indexPath)
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+    func cellStyleFactory (indexPath: NSIndexPath) -> UITableViewCell {
+        var cellType = "ActivityCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellType, forIndexPath: indexPath) as! UITableViewCell
+        
+        // make sure that when you select the cell it doesn't have a style
+        cell.selectionStyle = .None
+        
+        
+        if let activityCell = cell as? ActivityTableViewCell {
+            let dateFormat = NSDateFormatter()
+            dateFormat.dateStyle = NSDateFormatterStyle.MediumStyle
+            dateFormat.timeStyle = NSDateFormatterStyle.ShortStyle
 
+
+            let activity = self.activities[indexPath.row]
+            
+            if let type = activity["activityType"] as? String{
+                activityCell.activityTypeLabel.text = type
+            }
+            
+            if let startTime = activity["startTime"] as? NSDate {
+                activityCell.startTimeLabel.text = dateFormat.stringFromDate(startTime)
+            }
+            
+            if let endTime = activity["endTime"] as? NSDate {
+                activityCell.endTimeLabel.text = dateFormat.stringFromDate(endTime)
+            }
+            
+            if let file = activity["image"] as? PFFile {
+                file.getDataInBackgroundWithBlock{ data, error in
+                    if (error != nil){
+                        
+                        return
+                    }
+                    
+                    if let newData = data{
+                        println("imagehere")
+                        activityCell.activityImage.image = UIImage(data: newData)
+                    }
+                }
+            }
+            
+
+        }
         // Configure the cell...
-
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
+    // deleting function
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            activities.removeAtIndex(indexPath.row).deleteInBackgroundWithBlock({ (success, error: NSError?) -> Void in
+                if (error != nil) {
+                    println(error)
+                } else {
+                    println("Activity Deleted!")
+                }
+            })
+            
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
