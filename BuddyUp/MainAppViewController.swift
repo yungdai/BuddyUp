@@ -82,25 +82,45 @@ class MainAppViewController: UIViewController{
         // some setup 
         // get the current location and sent to Parse
         
-        PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in if let user = PFUser.currentUser() {
+//        PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in if let user = PFUser.currentUser() {
+//            if (error != nil) {
+//                
+//            }
+//            self.currentLocation = geoPoint
+//            if let currentLocation = self.currentLocation {
+//                
+//            }
+//                        user["currentLocation"] = geoPoint
+//                        user.saveInBackground()
+////                        self.checkForMatches(self.currentMatchIndex, aroundGeopoint: geoPoint!)
+//            }
+//            
+//        }
+
+        frame = CGRectZero
+        
+        // get all Activity Objects that aren't yours
+        var query = PFQuery(className: "Activity")
+        query.includeKey("createdBy")
+        query.whereKey("createdBy", notEqualTo: PFUser.currentUser()!)
+        
+        
+        // getting the data asynchronusly in the background
+        query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+            
             if (error != nil) {
                 
             }
-            self.currentLocation = geoPoint
-            if let currentLocation = self.currentLocation {
-                
-            }
-            //            user["currentLocation"] = geoPoint
-            //            user.saveInBackground()
-            //            self.checkForMatches(self.currentMatchIndex, aroundGeopoint: geoPoint!)
-            }
             
+            if let fetchedActivities = result as? [PFObject] {
+                self.activities = fetchedActivities
+                self.styleForNextActivity()
+            }
         }
+        
 
         
-        frame = CGRectZero
-        
-        getActivites()
+//        getActivites()
         
 
     
@@ -170,9 +190,25 @@ class MainAppViewController: UIViewController{
                     
                 })
             }
-            if let userID = activity["createdBy"] as? String {
-                self.currentUserID = userID
+            
+            
+            if let activityOwner: PFFile = activity["createdBy"]?.objectForKey("userImage") as? PFFile {
+                //self.currentUserID = userID.
+                println("hello")
+                activityOwner.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
+                    if (error != nil) {
+                        println(error)
+                        return
+                    }
+                    
+                    if let newData = data {
+                        self.personImage.image = UIImage(data: newData)                    }
+                })
+                
+//                println(otherUserInformation["objectID"]?.name)
             }
+            
+            
         }
     }
     

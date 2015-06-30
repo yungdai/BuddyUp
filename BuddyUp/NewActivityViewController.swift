@@ -19,6 +19,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBOutlet var activityImage: UIImageView!
     @IBOutlet var endTimeTextField: UITextField!
     @IBOutlet var activityTypeTextField: UITextField!
+    var currentUser = PFUser.currentUser()
 
 
     override func viewDidLoad() {
@@ -117,6 +118,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         activity["activityType"] = activityTypeTextField.text
         activity["image"] = PFFile(name: "image.jpg", data: UIImageJPEGRepresentation(activityImage.image, 0.5))
         activity["createdBy"] = PFUser.currentUser()
+//        activity["userImage"] =  
 
         activity.saveInBackgroundWithBlock { (success, error: NSError?) -> Void in
             if (error != nil) {
