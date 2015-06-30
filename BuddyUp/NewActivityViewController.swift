@@ -108,13 +108,15 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         let initEndDate : NSDate? = dateFormatter.dateFromString(endTimeTextField.text)
         
         // save the object in the background
-        var activity = PFObject(className: "Activity")
+        let activity = PFObject(className: "Activity")
+        let user = PFUser.currentUser()
         activity["creator"] = PFUser.currentUser()?.username
         activity["name"] = PFUser.currentUser()?.objectForKey("name")
         activity["startTime"] = initStartDate
         activity["endTime"] = initEndDate
         activity["activityType"] = activityTypeTextField.text
         activity["image"] = PFFile(name: "image.jpg", data: UIImageJPEGRepresentation(activityImage.image, 0.5))
+        activity["createdBy"] = PFUser.currentUser()
 
         activity.saveInBackgroundWithBlock { (success, error: NSError?) -> Void in
             if (error != nil) {

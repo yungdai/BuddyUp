@@ -45,7 +45,7 @@ class ActivitiesTableViewController: UITableViewController {
     
     func refreshPage() {
         var query = PFQuery(className: "Activity")
-        query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
+        query.whereKey("creator", equalTo: PFUser.currentUser()!)
         
         // getting the data asynchronously in the background
         query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
