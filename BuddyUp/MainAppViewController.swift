@@ -192,8 +192,6 @@ class MainAppViewController: UIViewController{
             }
             
             
-            
-            // get the user model and get the associated image for that user for this activity
             if let activityOwner: PFFile = activity["createdBy"]?.objectForKey("userImage") as? PFFile {
                 //self.currentUserID = userID.
                 println("hello")
@@ -206,7 +204,11 @@ class MainAppViewController: UIViewController{
                     if let newData = data {
                         self.personImage.image = UIImage(data: newData)                    }
                 })
+                
+//                println(otherUserInformation["objectID"]?.name)
             }
+            
+            
         }
     }
     
