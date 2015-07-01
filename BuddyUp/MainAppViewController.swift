@@ -26,6 +26,7 @@ class MainAppViewController: UIViewController{
     @IBOutlet var crossButton: UIButton!
     @IBOutlet var activityCardBackground: ActivityCardView!
     var currentActivityIndex = -1
+    
     // activities parse object
     var activities: [PFObject]?
     var currentUserID: String?
@@ -117,21 +118,13 @@ class MainAppViewController: UIViewController{
                 self.styleForNextActivity()
             }
         }
-        
-
-        
-//        getActivites()
-        
-
-    
     }
     
     func getActivites() {
+        
         // get all Activity Objects that aren't yours
         var query = PFQuery(className: "Activity")
         query.whereKey("creator", notEqualTo: PFUser.currentUser()!.username!)
-        
-        
         
         // getting the data asynchronusly in the background
         query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
@@ -156,6 +149,7 @@ class MainAppViewController: UIViewController{
             if  currentActivityIndex >= currentActivities.count && currentActivities.count > 1 {
                 currentActivityIndex = 0
             }
+            
             let activity = currentActivities[currentActivityIndex]
             let dateFormat = NSDateFormatter()
             dateFormat.dateStyle = NSDateFormatterStyle.MediumStyle
@@ -192,77 +186,22 @@ class MainAppViewController: UIViewController{
             }
             
             
-            
             // get the user model and get the associated image for that user for this activity
-            if let activityOwner: PFFile = activity["createdBy"]?.objectForKey("userImage") as? PFFile {
-                //self.currentUserID = userID.
-                println("hello")
-                activityOwner.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
+            if let activityOwnerImage: PFFile = activity["createdBy"]?.objectForKey("userImage") as? PFFile {
+
+                activityOwnerImage.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
                     if (error != nil) {
                         println(error)
                         return
                     }
                     
-                    if let newData = data {
-                        self.personImage.image = UIImage(data: newData)                    }
+                    if let imageData = data {
+                        self.personImage.image = UIImage(data: imageData)                    }
                 })
             }
         }
     }
     
-    func getUserImage() {
-        
-        // get all Activity Objects that aren't yours
-        var query = PFUser.query()
-        query?.whereKey(currentUserID!, equalTo: "objectId")
-        
-        // getting the data asynchronusly in the background
-//        query.findObjectsInBackgroundWithBlock({ (result: PFObject?, error: NSError?) -> Void in
-//            
-//            if (error != nil) {
-//                
-//            } else {
-//                return
-//            }
-//            
-//            if let user = result {
-//                // take and display the facebook image URL
-//                if let userPicture = user["photo"] as? String {
-//                    
-//                    // parse the photo URL into data for the UIImageView
-//                    self.personImage.image = self.personImage.downloadImage(userPicture)
-//                    
-//                    // old code
-//                    //                    // parse the photo URL into data for the UIImageView
-//                    //                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
-//                    //                        let data = NSData(contentsOfURL: NSURL(string: userPicture)!)
-//                    //                        dispatch_sync(dispatch_get_main_queue(), { () -> Void in
-//                    //                            self.userImageView.image = UIImage(data: data!)
-//                    //                        })
-//                    //                    })
-//                    
-//                } else if let userPicture = user["userImage"] as? PFFile {
-//                    userPicture.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
-//                        if (error != nil) {
-//                            println(error)
-//                            // TODO throw error message
-//                            return
-//                        }
-//                        
-//                        if let newData = data {
-//                            self.personImage.image = UIImage(data: newData)
-//                        }
-//                        
-//                    })
-//                }
-//            }
-//        })
-        
-        //TODO: Get user image
-
-
-        
-    }
     
     @IBAction func activityCardWasDragged(sender: UIPanGestureRecognizer) {
         if sender.state == UIGestureRecognizerState.Began {
