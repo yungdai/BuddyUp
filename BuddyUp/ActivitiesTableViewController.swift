@@ -22,6 +22,8 @@ class ActivitiesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // referesh the data
+        tableView.reloadData()
         
         // setup the refresh controls for this table
         var refreshControl = UIRefreshControl()

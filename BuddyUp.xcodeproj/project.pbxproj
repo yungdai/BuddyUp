@@ -13,6 +13,7 @@
 		1A123D731B3A233500CD9D08 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A123D711B3A233500CD9D08 /* FBSDKLoginKit.framework */; };
 		1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57C1B2883E400AAE935 /* Friendship.swift */; };
 		1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */; };
+		1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D46041B44663F00270C0B /* SearchTableViewController.swift */; };
 		1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EF9911B374101008134BE /* PersonImageView.swift */; };
 		1A451EF81B3899610094B55C /* DraggableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A451EF51B3899610094B55C /* DraggableViewBackground.swift */; };
 		1A451EF91B3899610094B55C /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A451EF61B3899610094B55C /* DraggableView.swift */; };
@@ -80,6 +81,7 @@
 		1A123D711B3A233500CD9D08 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		1A15B57C1B2883E400AAE935 /* Friendship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friendship.swift; sourceTree = "<group>"; };
 		1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewController.swift; sourceTree = "<group>"; };
+		1A2D46041B44663F00270C0B /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		1A2EF9911B374101008134BE /* PersonImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonImageView.swift; sourceTree = "<group>"; };
 		1A451EF51B3899610094B55C /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewBackground.swift; sourceTree = "<group>"; };
 		1A451EF61B3899610094B55C /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,14 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		1A2D46031B44661100270C0B /* Search Bar */ = {
+			isa = PBXGroup;
+			children = (
+				1A2D46041B44663F00270C0B /* SearchTableViewController.swift */,
+			);
+			name = "Search Bar";
+			sourceTree = "<group>";
+		};
 		1A451EEB1B3895100094B55C /* Card Dragging */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +284,7 @@
 		1A7246EC1B1E209F0020C81E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1A2D46031B44661100270C0B /* Search Bar */,
 				9FD285131B3D98B500BC5235 /* Splash Screen */,
 				1ABB90211B334C1600102C71 /* Settings */,
 				1ABB90201B334C0900102C71 /* Main App */,
@@ -531,6 +542,7 @@
 				1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */,
 				1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */,
 				1A451EFA1B3899610094B55C /* OverlayView.swift in Sources */,
+				1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */,
 				1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */,
 				1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */,
 				1A0F071C1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift in Sources */,
