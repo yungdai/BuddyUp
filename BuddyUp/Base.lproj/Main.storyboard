@@ -239,6 +239,17 @@
                                     <constraint firstAttribute="width" constant="600" id="X8P-gu-gfi"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-Jq-qfM" userLabel="Error Label">
+                                <rect key="frame" x="16" y="108" width="576" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="16Y-ES-1IB"/>
+                                    <constraint firstAttribute="width" constant="576" id="mi1-9I-y7M"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uW-rZ-PcS">
                                 <rect key="frame" x="8" y="185" width="584" height="52"/>
                                 <subviews>
@@ -247,7 +258,7 @@
                                         <animations/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7s8-xL-q8R">
-                                        <rect key="frame" x="51" y="14" width="584" height="30"/>
+                                        <rect key="frame" x="51" y="14" width="525" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -268,7 +279,7 @@
                                         <animations/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKd-Gc-r70">
-                                        <rect key="frame" x="51" y="11" width="476" height="30"/>
+                                        <rect key="frame" x="51" y="11" width="525" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -289,7 +300,7 @@
                                         <animations/>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password Confirmation" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-5V-5uI">
-                                        <rect key="frame" x="51" y="11" width="476" height="30"/>
+                                        <rect key="frame" x="51" y="11" width="525" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -306,7 +317,7 @@
                                 <rect key="frame" x="8" y="365" width="584" height="52"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXo-3z-ZmE">
-                                        <rect key="frame" x="54" y="11" width="476" height="30"/>
+                                        <rect key="frame" x="54" y="11" width="522" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -319,17 +330,6 @@
                                     <constraint firstAttribute="height" constant="52" id="Tgm-UG-4fx"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-Jq-qfM" userLabel="Error Label">
-                                <rect key="frame" x="16" y="108" width="576" height="21"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="16Y-ES-1IB"/>
-                                    <constraint firstAttribute="width" constant="576" id="mi1-9I-y7M"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWy-zO-ICT">
                                 <rect key="frame" x="8" y="442" width="584" height="42"/>
                                 <animations/>
@@ -372,18 +372,27 @@
                             <constraint firstItem="OvQ-Ae-Qew" firstAttribute="leading" secondItem="3SX-vn-Taq" secondAttribute="leadingMargin" constant="-8" id="WmF-ak-sQK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OvQ-Ae-Qew" secondAttribute="trailing" constant="-8" id="XU7-aY-0rT"/>
                             <constraint firstAttribute="centerX" secondItem="qvT-ex-3jy" secondAttribute="centerX" id="Xyp-2I-lJN"/>
+                            <constraint firstItem="OvQ-Ae-Qew" firstAttribute="bottom" secondItem="8uW-rZ-PcS" secondAttribute="bottom" constant="60" id="ZzS-CQ-c5O"/>
                             <constraint firstAttribute="centerX" secondItem="ccp-Jq-qfM" secondAttribute="centerX" constant="-4" id="aHm-6C-HBd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8uW-rZ-PcS" secondAttribute="trailing" constant="-8" id="bNp-Id-aJo"/>
                             <constraint firstAttribute="centerX" secondItem="kAt-1t-nPY" secondAttribute="centerX" id="cQ9-4H-F0J"/>
+                            <constraint firstItem="8uW-rZ-PcS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ybn-sJ-s4I" secondAttribute="bottom" constant="75" id="d7a-vW-OAI"/>
                             <constraint firstAttribute="centerX" secondItem="nWy-zO-ICT" secondAttribute="centerX" id="dKA-D8-hfg"/>
                             <constraint firstItem="nWy-zO-ICT" firstAttribute="leading" secondItem="3SX-vn-Taq" secondAttribute="leadingMargin" constant="-8" id="dSj-jz-NjV"/>
                             <constraint firstItem="kAt-1t-nPY" firstAttribute="leading" secondItem="3SX-vn-Taq" secondAttribute="leadingMargin" constant="-16" id="fkX-Oy-Uwi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kAt-1t-nPY" secondAttribute="trailing" constant="-16" id="qA8-XE-glg"/>
+                            <constraint firstItem="8uW-rZ-PcS" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ccp-Jq-qfM" secondAttribute="bottom" constant="25" id="suq-Jj-V4s"/>
                             <constraint firstItem="IyN-mx-mQW" firstAttribute="leading" secondItem="3SX-vn-Taq" secondAttribute="leadingMargin" constant="-8" id="ts8-Dl-wHc"/>
                             <constraint firstAttribute="centerY" secondItem="8uW-rZ-PcS" secondAttribute="centerY" constant="89" id="uos-xa-JhP"/>
                             <constraint firstItem="kAt-1t-nPY" firstAttribute="top" secondItem="Ybn-sJ-s4I" secondAttribute="bottom" id="wNG-pI-G1a"/>
                             <constraint firstAttribute="centerY" secondItem="IyN-mx-mQW" secondAttribute="centerY" constant="-91" id="z0f-fW-oiB"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="d7a-vW-OAI"/>
+                                <exclude reference="ZzS-CQ-c5O"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="0at-yU-pwe">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="iIP-XX-Z11">
