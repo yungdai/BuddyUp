@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var usernameField: UITextField!
@@ -17,7 +17,90 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
+    
+    var kbHeight: CGFloat!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        usernameField.delegate = self
+        passwordField.delegate = self
+        
+        if PFUser.currentUser()?.sessionToken != nil {
+            println("sending user to the main app screen because he's a current user")
+            
+            self.performSegueWithIdentifier("mainApp", sender: self)
+        } else {
+            // Show the signup or login screen
+            return
+        }
+        
+        
+        if (FBSDKAccessToken.currentAccessToken() != nil) {
+            println("User is already logged in go to the next viewcontroller")
+            
+        }// Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
+    }
+    
+    override func viewWillAppear(animated:Bool) {
+        super.viewWillAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                kbHeight = 20.0
+                self.animateTextField(true)
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        self.animateTextField(false)
+    }
+    
+    func animateTextField(up: Bool) {
+        var movement = (up ? -kbHeight : kbHeight)
+        
+        UIView.animateWithDuration(0.3, animations: {
+            self.view.frame = CGRectOffset(self.view.frame, 0, movement)
+        })
+    }
 
+    // if you press the return button the keyboard will dissappear
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        resign()
+        
+        return true
+    }
+    
+    
+    
+    // resigning all first responders
+    func resign() {
+        usernameField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
+    }
+    
+    
+    override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+        resign()
+    
+    }
     
     let permissions = ["public_profile", "email", "user_friends"]
     
@@ -73,45 +156,87 @@ class LoginViewController: UIViewController {
             let alert = UIAlertController(title: "Alert", message: errorText, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+            return
         }
         
         // log in the user with Parse
         PFUser.logInWithUsernameInBackground(username, password: password) {
             (user: PFUser?, error: NSError?) -> Void in
+            
+            // check for email verification
+            if user!["emailVerified"] as! Bool == true {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier(
+                        "mainApp",
+                        sender: self
+                    )
+                    // save the user's location to parse before you save the information
+                    PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
+                        if let user = PFUser.currentUser() {
+                            user["currentLocation"] = geoPoint
+                            user.saveInBackground()
+                        }
+                        println("user is logged in and location is updated")
+                    }
+                    self.performSegueWithIdentifier("mainApp", sender: nil)
+                }
+            } else {
+                // User needs to verify email address before continuing
+                let alertController = UIAlertController(
+                    title: "Email address verification",
+                    message: "We have sent you an email that contains a link - you must click this link before you can continue.",
+                    preferredStyle: UIAlertControllerStyle.Alert
+                )
+                alertController.addAction(UIAlertAction(title: "OKAY",
+                    style: UIAlertActionStyle.Default,
+                    handler: { alertController in self.processSignOut()})
+                )
+                // Display alert
+                self.presentViewController(
+                    alertController,
+                    animated: true,
+                    completion: nil
+                )
+            }
+            
+            // check for error messages
             if error != nil {
-                println("user is logged in")
+                // save the user's location to parse before you save the information
+                PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
+                    if let user = PFUser.currentUser() {
+                        user["currentLocation"] = geoPoint
+                        user.saveInBackground()
+                    }
+                println("user is logged in and location is updated")
+                }
+                self.performSegueWithIdentifier("mainApp", sender: nil)
+                
             } else {
                 println("log in failed")
                 self.errorMessage.text = "Log in failed"
+                return
             }
         }
-    
-        
-        
     }
+    
+    // Sign the current user out of the app
+    func processSignOut() {
+        
+        // // Sign out
+        PFUser.logOut()
+        
+        // Display sign in / up view controller
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewControllerWithIdentifier("Login") as! UIViewController
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+
     
     @IBAction func signupButtonPressed(sender: AnyObject) {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if PFUser.currentUser()?.sessionToken != nil {
-            println("sending user to the main app screen because he's a current user")
-            
-        } else {
-            // Show the signup or login screen
-            return
-        }
-        
-        
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
-            println("User is already logged in go to the next viewcontroller")
-            
-        }// Do any additional setup after loading the view, typically from a nib.
-        
-    }
-    
+
     
     @IBAction func facebookButton
         (sender: AnyObject) {
@@ -122,12 +247,12 @@ class LoginViewController: UIViewController {
                 
                 if error != nil
                 {
-                    return;
+                    return
                 }
                 if let parseUser = user {
                     if parseUser.isNew {
                         println("User signed up and logged in through Facebook!")
-                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=first_name,gender,email,name,picture.width(300).height(300)", parameters: nil)
+                        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=first_name,friends,gender,email,name,picture.width(300).height(300)", parameters: nil)
                         graphRequest.startWithCompletionHandler({
                             (connection, result, error) -> Void in
                             if (error != nil)
@@ -142,23 +267,17 @@ class LoginViewController: UIViewController {
                                 parseUser["first_name"] = result["first_name"]
                                 parseUser["gender"] = result["gender"]
                                 
-                                // test to make sure that the moreAboutMe column is empty before it's init
-                                if parseUser["moreAboutMe"] != nil {
-                                    println("didn't erase moreAboutme")
-                                } else {
-                                    parseUser["moreAboutMe"] = ""
-                                    println("moreAboutMe reset")
-                                }
                                 
-                                // sending the data to NSUserDefaults as well
-                                
-                                // sending the facebook picture to parse as a string
+                                // sending the facebook picture to parse as a string and saving the user image to parse userImage field
                                 if let pictureResult = result["picture"] as? NSDictionary,
                                     pictureData = pictureResult["data"] as? NSDictionary,
                                     picture = pictureData["url"] as? String {
                                         parseUser["photo"] = picture
                                         
                                 }
+                                
+                                
+                                
                                 
                                 // save the user's location to parse before you save the information
                                 PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
@@ -169,17 +288,24 @@ class LoginViewController: UIViewController {
                                 }
                                 parseUser.saveInBackground()
                                 println("Parse User Saved")
-                                self.performSegueWithIdentifier("signUp", sender: nil)
+                                self.performSegueWithIdentifier("mainApp", sender: nil)
                             }
                         })
                     } else {
                         println("You are already a user, I'll just send you the main page")
-                        self.performSegueWithIdentifier("mainPage", sender: nil)
+                        
+                        // save the user's location to parse before you save the information
+                        PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
+                            if let user = PFUser.currentUser() {
+                                user["currentLocation"] = geoPoint
+                                println("Saving User's Location In Background")
+                                user.saveInBackground()
+                            }
+                            
+                        }
+                        self.performSegueWithIdentifier("mainApp", sender: nil)
                     }
                 }
             }
     }
-
-
-
 }

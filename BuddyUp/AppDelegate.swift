@@ -15,9 +15,16 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    // instantiate the network and user model
+//    var networkController = NetworkController()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // register subclasses for parsae
+        Friendship.registerSubclass()
+        // User.registerSubclass()
         // Enable storing and querying data from Local Datastore.
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
         Parse.enableLocalDatastore()
@@ -69,17 +76,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let types = UIUserNotificationType.Badge | UIUserNotificationType.Alert | UIUserNotificationType.Sound
             application.registerForRemoteNotifications()
             
-            // reveal the main app if you are a current user
-//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//            if PFUser.currentUser()?.sessionToken != nil {
-//                let revealVC = storyBoard.instantiateViewControllerWithIdentifier("mainScreen") as! UIViewController
-//                self.window?.rootViewController = revealVC
-//            } else {
-//                self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as! UIViewController)
-//            }
+
         }
         
-
+        // reveal the main app if you are a current user
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if PFUser.currentUser()?.sessionToken != nil {
+            println("Your session token is valid")
+            // save the user's location to parse before you save the information
+            PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
+                if let user = PFUser.currentUser() {
+                    user["currentLocation"] = geoPoint
+                    println("Saving User's Location In Background")
+                    user.saveInBackground()
+                }
+            }
+            let revealVC = storyBoard.instantiateViewControllerWithIdentifier("buddyUpTabBarController") as! UIViewController
+            self.window?.rootViewController = revealVC
+        } else {
+            self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as! UIViewController)
+        }
         return true
     }
     
