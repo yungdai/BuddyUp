@@ -117,7 +117,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         var errorText = "Please "
         let usernameBlankText = "enter a username"
         let passwordBlankText = "enter a password"
-        let emailBlankText = "eat an email address"
+        let emailBlankText = "enter an email address"
         let jointText = ", and "
         let passwordMismatchText = "enter the same password twice"
         
