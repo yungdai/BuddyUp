@@ -10,6 +10,8 @@ import UIKit
 
 class Friendship: PFObject, PFSubclassing {
    
+    
+    // TODO: get the class object working
     class func parseClassName() -> String {
         return "Friendship"
     }
