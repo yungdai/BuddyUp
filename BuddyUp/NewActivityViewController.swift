@@ -179,6 +179,9 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
             println("Cancelled")
         })
         
+        // make it work on an iPad
+        optionMenu.popoverPresentationController?.sourceView = sender as UIView
+        
         optionMenu.addAction(photoLibrary)
         optionMenu.addAction(camera)
         optionMenu.addAction(cancelAction)
