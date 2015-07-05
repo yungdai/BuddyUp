@@ -50,14 +50,13 @@ class ActivitiesTableViewController: UITableViewController {
         query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
             if let activities = result as? [PFObject] {
                 self.activities = activities
-                
                 println("found something")
             }
         }
         println("got more data")
+        tableView.reloadData()
         refreshControl?.endRefreshing()
-        self.tableView.reloadData()
-        
+
     }
 
     // MARK: - Table view data source
