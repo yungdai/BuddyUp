@@ -15,10 +15,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     
 
+
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     
+    // keyboard movement upwards value
     var kbHeight: CGFloat!
+    var keyboardWasShown = false
     
     
     override func viewDidLoad() {
@@ -40,10 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             println("User is already logged in go to the next viewcontroller")
             
-        }// Do any additional setup after loading the view, typically from a nib.
-        
-        
-        
+        }
     }
     
     override func viewWillAppear(animated:Bool) {
@@ -60,17 +60,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        if let userInfo = notification.userInfo {
-            if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                kbHeight = 20.0
-                self.animateTextField(true)
+        if keyboardWasShown {
+            return
+        } else {
+            if let userInfo = notification.userInfo {
+                if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                    kbHeight = 60.0
+                    animateTextField(true)
+                    keyboardWasShown = true
+                    
+                }
             }
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        self.animateTextField(false)
+        animateTextField(false)
+        
+        // reset the state of the keyboard
+        keyboardWasShown = false
     }
+    
     
     func animateTextField(up: Bool) {
         var movement = (up ? -kbHeight : kbHeight)
@@ -83,11 +93,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // if you press the return button the keyboard will dissappear
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         resign()
-        
         return true
     }
-    
-    
     
     // resigning all first responders
     func resign() {
@@ -235,8 +242,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signupButtonPressed(sender: AnyObject) {
         
     }
-    
-
     
     @IBAction func facebookButton
         (sender: AnyObject) {

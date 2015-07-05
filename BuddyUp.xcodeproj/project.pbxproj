@@ -15,9 +15,9 @@
 		1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */; };
 		1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D46041B44663F00270C0B /* SearchTableViewController.swift */; };
 		1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EF9911B374101008134BE /* PersonImageView.swift */; };
-		1A451EF81B3899610094B55C /* DraggableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A451EF51B3899610094B55C /* DraggableViewBackground.swift */; };
-		1A451EF91B3899610094B55C /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A451EF61B3899610094B55C /* DraggableView.swift */; };
-		1A451EFA1B3899610094B55C /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A451EF71B3899610094B55C /* OverlayView.swift */; };
+		1A3EB67B1B46DC79008A81FE /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */; };
+		1A3EB67D1B46E099008A81FE /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */; };
+		1A3EB67F1B473351008A81FE /* LabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67E1B473351008A81FE /* LabelStyle.swift */; };
 		1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */; };
 		1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */; };
 		1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4E1B1F7214008A080C /* ChatViewController.swift */; };
@@ -83,9 +83,9 @@
 		1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewController.swift; sourceTree = "<group>"; };
 		1A2D46041B44663F00270C0B /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		1A2EF9911B374101008134BE /* PersonImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonImageView.swift; sourceTree = "<group>"; };
-		1A451EF51B3899610094B55C /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewBackground.swift; sourceTree = "<group>"; };
-		1A451EF61B3899610094B55C /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
-		1A451EF71B3899610094B55C /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
+		1A3EB67E1B473351008A81FE /* LabelStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelStyle.swift; sourceTree = "<group>"; };
 		1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4E1B1F7214008A080C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -186,16 +186,6 @@
 				1A2D46041B44663F00270C0B /* SearchTableViewController.swift */,
 			);
 			name = "Search Bar";
-			sourceTree = "<group>";
-		};
-		1A451EEB1B3895100094B55C /* Card Dragging */ = {
-			isa = PBXGroup;
-			children = (
-				1A451EF51B3899610094B55C /* DraggableViewBackground.swift */,
-				1A451EF61B3899610094B55C /* DraggableView.swift */,
-				1A451EF71B3899610094B55C /* OverlayView.swift */,
-			);
-			name = "Card Dragging";
 			sourceTree = "<group>";
 		};
 		1A7246BD1B1E20650020C81E = {
@@ -301,7 +291,6 @@
 			children = (
 				1A123D6F1B3A17D900CD9D08 /* Extensions */,
 				1ABB90231B334EAD00102C71 /* Activities */,
-				1A451EEB1B3895100094B55C /* Card Dragging */,
 				1A9204F81B373F510046EFE7 /* Element Design Styling */,
 				1ABB90221B334E8800102C71 /* Users and Friendship */,
 				1AD32DED1B2B3A0C00429AEC /* PickerPopUp */,
@@ -317,6 +306,9 @@
 				9FE143951B3C89130002FD19 /* BackgroundView.swift */,
 				1A2EF9911B374101008134BE /* PersonImageView.swift */,
 				9F8696191B3CB257007CCF9E /* ActivityCard.xib */,
+				1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */,
+				1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */,
+				1A3EB67E1B473351008A81FE /* LabelStyle.swift */,
 			);
 			name = "Element Design Styling";
 			sourceTree = "<group>";
@@ -520,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ABB8FBB1B3200BA00102C71 /* APIKeys.swift in Sources */,
+				1A3EB67D1B46E099008A81FE /* TextFieldStyle.swift in Sources */,
 				1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */,
 				1ACAA3DC1B30B97F00C527CA /* PickerViewPickerPopUp.swift in Sources */,
 				1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */,
@@ -528,6 +521,7 @@
 				1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */,
 				1A9204FA1B373F6C0046EFE7 /* ActivitiyCardView.swift in Sources */,
 				1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */,
+				1A3EB67B1B46DC79008A81FE /* ButtonStyle.swift in Sources */,
 				9FE143961B3C89130002FD19 /* BackgroundView.swift in Sources */,
 				1AE5DC6E1B2E2118009585F6 /* DateFormat.swift in Sources */,
 				1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */,
@@ -537,17 +531,15 @@
 				1A7A47731B39BC5300255F3D /* ImageAsyncFromURL.swift in Sources */,
 				9FD285151B3D99CC00BC5235 /* SplashScreen.swift in Sources */,
 				1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */,
-				1A451EF91B3899610094B55C /* DraggableView.swift in Sources */,
-				1A451EF81B3899610094B55C /* DraggableViewBackground.swift in Sources */,
 				1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */,
 				1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */,
-				1A451EFA1B3899610094B55C /* OverlayView.swift in Sources */,
 				1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */,
 				1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */,
 				1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */,
 				1A0F071C1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift in Sources */,
 				1A57D08E1B2772EB004B363C /* NewActivityViewController.swift in Sources */,
 				1A57D0901B2789DC004B363C /* SettingsTableViewController.swift in Sources */,
+				1A3EB67F1B473351008A81FE /* LabelStyle.swift in Sources */,
 				1A05173D1B2600910091ECF5 /* MainAppViewController.swift in Sources */,
 				1AAB44931B274EF700E96BB5 /* ActivityModel.swift in Sources */,
 				1ABB8FB71B31E33400102C71 /* User.swift in Sources */,
