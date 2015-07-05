@@ -847,7 +847,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twW-B0-7zD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twW-B0-7zD">
                                                     <rect key="frame" x="8" y="8" width="584" height="21"/>
                                                     <animations/>
                                                     <constraints>
@@ -862,8 +862,8 @@
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.70980392160000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="twW-B0-7zD" firstAttribute="centerX" secondItem="EAp-NV-Gc3" secondAttribute="centerX" id="Duy-Xj-ifR"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="twW-B0-7zD" secondAttribute="bottom" constant="-12" id="OFe-cV-ELZ"/>
-                                                <constraint firstItem="twW-B0-7zD" firstAttribute="top" secondItem="EAp-NV-Gc3" secondAttribute="topMargin" constant="3" id="ReS-GZ-dFw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="twW-B0-7zD" secondAttribute="bottom" constant="-9" id="OFe-cV-ELZ"/>
+                                                <constraint firstItem="twW-B0-7zD" firstAttribute="top" secondItem="EAp-NV-Gc3" secondAttribute="topMargin" id="ReS-GZ-dFw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
