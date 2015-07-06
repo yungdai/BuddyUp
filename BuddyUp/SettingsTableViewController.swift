@@ -17,7 +17,11 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     
     @IBOutlet var userImageView: PersonImageView!
 
+    // image picker variables
+    let imagePicker = UIImagePickerController()
+    
     // user image
+    // TODO impliment enum for the image
     enum UserImage {
         case FacebookImage
         case CustomImage
@@ -38,8 +42,11 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         imagePicker.delegate = self
         
         PFUser.currentUser()?.fetchInBackgroundWithBlock({ (result: PFObject?, error: NSError?) -> Void in
-           
+            if error != nil {
+                // throws error
+            }
             if let user = result {
+                
                 if let firstName = user["first_name"] as? String {
                     self.firstNameTextField.text = firstName
                 }
@@ -114,8 +121,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         }
     }
     
-    // image picker variables
-    let imagePicker = UIImagePickerController()
+
     
     // choose from the library of photos
     
@@ -133,7 +139,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     
     @IBAction func addPictureButtonPressed(sender: UIButton) {
         
-        // pop up an acdtion sheet
+        // pop up an action sheet
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .ActionSheet)
         
         
@@ -159,7 +165,6 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         
         // make it work on an iPad
         optionMenu.popoverPresentationController?.sourceView = sender as UIView
-        
         optionMenu.addAction(photoLibrary)
         optionMenu.addAction(camera)
         optionMenu.addAction(cancelAction)

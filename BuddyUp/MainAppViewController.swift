@@ -30,6 +30,9 @@ class MainAppViewController: UIViewController{
     var activities: [PFObject]?
     var currentUserID: String?
     
+    // like boolean
+
+    
     // location setup
     var currentLocation: PFGeoPoint?
     
@@ -47,6 +50,7 @@ class MainAppViewController: UIViewController{
     
     
     // activity picture
+    // TODO do fast enum based on the picture
     enum ActivityPicture {
         case WatchTV
         case GoFoDrinks

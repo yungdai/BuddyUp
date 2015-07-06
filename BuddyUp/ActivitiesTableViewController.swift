@@ -42,6 +42,26 @@ class ActivitiesTableViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        // setup the refresh controls for this table
+        var refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: ("refreshPage"), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refreshControl
+        
+        var query = PFQuery(className: "Activity")
+        query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
+        
+        // getting the data asynchronously in the background
+        query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+            if let activities = result as? [PFObject] {
+                self.activities = activities
+                self.tableView.reloadData()
+            }
+        }
+
+    }
+    
     func refreshPage() {
         var query = PFQuery(className: "Activity")
         query.whereKey("creator", equalTo: PFUser.currentUser()!)

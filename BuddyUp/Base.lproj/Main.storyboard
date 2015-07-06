@@ -1066,7 +1066,7 @@
                                             <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj6-ZO-vqt" userLabel="Activity Type Label">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj6-ZO-vqt" userLabel="Activity Type Label">
                                             <rect key="frame" x="164" y="26" width="428" height="21"/>
                                             <animations/>
                                             <constraints>
@@ -1166,7 +1166,7 @@
                                 <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picture:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dal-ol-eEB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Picture:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dal-ol-eEB">
                                 <rect key="frame" x="271" y="273" width="59" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -1210,7 +1210,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deJ-BP-ACe">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deJ-BP-ACe">
                                 <rect key="frame" x="370" y="345" width="81" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
@@ -1236,7 +1236,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="CBA-Mr-t2s" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="CBA-Mr-t2s" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="241" y="302" width="118" height="116"/>
                                 <animations/>
                                 <constraints>
@@ -1246,7 +1246,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
-                                        <real key="value" value="50"/>
+                                        <real key="value" value="60"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="personBorderWidth">
                                         <real key="value" value="2"/>
@@ -1284,7 +1284,6 @@
                             <constraint firstItem="DEp-sR-Zac" firstAttribute="top" secondItem="DXP-qx-v9d" secondAttribute="bottom" constant="8" symbolic="YES" id="E5N-aA-fQE"/>
                             <constraint firstItem="deJ-BP-ACe" firstAttribute="top" secondItem="0Ms-8i-E8i" secondAttribute="bottom" constant="80" id="EMZ-2j-XeI"/>
                             <constraint firstItem="DEp-sR-Zac" firstAttribute="centerX" secondItem="kxf-jG-eza" secondAttribute="centerX" id="FIQ-TF-Nf0"/>
-                            <constraint firstItem="tUx-OE-LgO" firstAttribute="top" secondItem="CBA-Mr-t2s" secondAttribute="bottom" constant="182" id="MUn-j5-Tvu"/>
                             <constraint firstItem="ziA-Mh-lrq" firstAttribute="centerX" secondItem="L1c-QB-2CT" secondAttribute="centerX" id="PW6-gT-GZ5"/>
                             <constraint firstItem="kxf-jG-eza" firstAttribute="leading" secondItem="L1c-QB-2CT" secondAttribute="leading" id="PWf-2B-onE"/>
                             <constraint firstItem="ziA-Mh-lrq" firstAttribute="top" secondItem="L1c-QB-2CT" secondAttribute="bottom" constant="8" symbolic="YES" id="TZG-8c-oRL"/>
@@ -1448,7 +1447,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
-                                                <real key="value" value="80"/>
+                                                <real key="value" value="60"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="personBorderWidth">
                                                 <real key="value" value="2"/>
@@ -1469,7 +1468,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
-                                                <real key="value" value="80"/>
+                                                <real key="value" value="60"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="personBorderWidth">
                                                 <real key="value" value="2"/>
@@ -1913,7 +1912,7 @@
         <image name="watchTV" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="N47-ue-Wgg"/>
+        <segue reference="FHt-kP-U4i"/>
         <segue reference="eQC-UJ-lVX"/>
     </inferredMetricsTieBreakers>
 </document>
