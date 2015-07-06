@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class PersonImageView: UIImageView {
+@IBDesignable class ImageView: UIImageView {
     
 
     @IBInspectable var cornerRounding: CGFloat = 0 {

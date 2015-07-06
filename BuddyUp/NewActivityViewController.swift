@@ -20,7 +20,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBOutlet var activityTypeTextField: UITextField!
     var currentUser = PFUser.currentUser()
 
-    @IBOutlet var activityImageView: PersonImageView!
+    @IBOutlet var activityImageView: ImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

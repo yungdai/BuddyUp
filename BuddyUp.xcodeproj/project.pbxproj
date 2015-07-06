@@ -14,7 +14,7 @@
 		1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57C1B2883E400AAE935 /* Friendship.swift */; };
 		1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */; };
 		1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D46041B44663F00270C0B /* SearchTableViewController.swift */; };
-		1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EF9911B374101008134BE /* PersonImageView.swift */; };
+		1A2EF9921B374101008134BE /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EF9911B374101008134BE /* ImageView.swift */; };
 		1A3EB67B1B46DC79008A81FE /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */; };
 		1A3EB67D1B46E099008A81FE /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */; };
 		1A3EB67F1B473351008A81FE /* LabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67E1B473351008A81FE /* LabelStyle.swift */; };
@@ -82,7 +82,7 @@
 		1A15B57C1B2883E400AAE935 /* Friendship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friendship.swift; sourceTree = "<group>"; };
 		1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewController.swift; sourceTree = "<group>"; };
 		1A2D46041B44663F00270C0B /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
-		1A2EF9911B374101008134BE /* PersonImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonImageView.swift; sourceTree = "<group>"; };
+		1A2EF9911B374101008134BE /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
 		1A3EB67E1B473351008A81FE /* LabelStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelStyle.swift; sourceTree = "<group>"; };
@@ -304,7 +304,7 @@
 			children = (
 				1A9204F91B373F6C0046EFE7 /* ActivitiyCardView.swift */,
 				9FE143951B3C89130002FD19 /* BackgroundView.swift */,
-				1A2EF9911B374101008134BE /* PersonImageView.swift */,
+				1A2EF9911B374101008134BE /* ImageView.swift */,
 				9F8696191B3CB257007CCF9E /* ActivityCard.xib */,
 				1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */,
 				1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */,
@@ -530,7 +530,7 @@
 				9FE143981B3C8A440002FD19 /* ActivityCard.swift in Sources */,
 				1A7A47731B39BC5300255F3D /* ImageAsyncFromURL.swift in Sources */,
 				9FD285151B3D99CC00BC5235 /* SplashScreen.swift in Sources */,
-				1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */,
+				1A2EF9921B374101008134BE /* ImageView.swift in Sources */,
 				1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */,
 				1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */,
 				1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */,
