@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate {
     
     var startDatePickerPopUp : DatePickerPopUp?
     var endDatePickerPopUp : DatePickerPopUp?
@@ -16,10 +16,11 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     @IBOutlet var addPictureButton: UIButton!
     @IBOutlet var startTimeTextField: UITextField!
-    @IBOutlet var activityImage: UIImageView!
     @IBOutlet var endTimeTextField: UITextField!
     @IBOutlet var activityTypeTextField: UITextField!
+    var currentUser = PFUser.currentUser()
 
+    @IBOutlet var activityImageView: PictureImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,9 +116,10 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         activity["startTime"] = initStartDate
         activity["endTime"] = initEndDate
         activity["activityType"] = activityTypeTextField.text
-        activity["image"] = PFFile(name: "image.jpg", data: UIImageJPEGRepresentation(activityImage.image, 0.5))
+        activity["image"] = PFFile(name: "image.jpg", data: UIImageJPEGRepresentation(activityImageView.image, 0.5))
         activity["createdBy"] = PFUser.currentUser()
-
+        
+        // save the user activity
         activity.saveInBackgroundWithBlock { (success, error: NSError?) -> Void in
             if (error != nil) {
                 // TODO: set up alert
@@ -129,10 +131,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
             
         }
     }
-    
-
-    
-    
+ 
     // image picker variables
     let imagePicker = UIImagePickerController()
 
@@ -140,8 +139,8 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
-        activityImage.contentMode = .ScaleAspectFit
-        activityImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        activityImageView.contentMode = .ScaleAspectFit
+        activityImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
 
     }
     
@@ -174,6 +173,9 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
             (alert: UIAlertAction!) -> Void in
             println("Cancelled")
         })
+        
+        // make it work on an iPad
+        optionMenu.popoverPresentationController?.sourceView = sender as UIView
         
         optionMenu.addAction(photoLibrary)
         optionMenu.addAction(camera)

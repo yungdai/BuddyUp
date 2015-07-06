@@ -13,10 +13,11 @@
 		1A123D731B3A233500CD9D08 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A123D711B3A233500CD9D08 /* FBSDKLoginKit.framework */; };
 		1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57C1B2883E400AAE935 /* Friendship.swift */; };
 		1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */; };
-		1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EF9911B374101008134BE /* PersonImageView.swift */; };
-		1A451EF81B3899610094B55C /* DraggableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A451EF51B3899610094B55C /* DraggableViewBackground.swift */; };
-		1A451EF91B3899610094B55C /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A451EF61B3899610094B55C /* DraggableView.swift */; };
-		1A451EFA1B3899610094B55C /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A451EF71B3899610094B55C /* OverlayView.swift */; };
+		1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D46041B44663F00270C0B /* SearchTableViewController.swift */; };
+		1A2EF9921B374101008134BE /* PictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EF9911B374101008134BE /* PictureImageView.swift */; };
+		1A3EB67B1B46DC79008A81FE /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */; };
+		1A3EB67D1B46E099008A81FE /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */; };
+		1A3EB67F1B473351008A81FE /* LabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67E1B473351008A81FE /* LabelStyle.swift */; };
 		1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */; };
 		1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */; };
 		1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4E1B1F7214008A080C /* ChatViewController.swift */; };
@@ -30,7 +31,7 @@
 		1A7246D61B1E20650020C81E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A7246D41B1E20650020C81E /* LaunchScreen.xib */; };
 		1A7246E21B1E20650020C81E /* BuddyUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7246E11B1E20650020C81E /* BuddyUpTests.swift */; };
 		1A7A47731B39BC5300255F3D /* ImageAsyncFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A47721B39BC5300255F3D /* ImageAsyncFromURL.swift */; };
-		1A9204FA1B373F6C0046EFE7 /* ActivitiyCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9204F91B373F6C0046EFE7 /* ActivitiyCardView.swift */; };
+		1A9204FA1B373F6C0046EFE7 /* ActivityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9204F91B373F6C0046EFE7 /* ActivityCardView.swift */; };
 		1A9A072D1B222D0F0086879B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A072C1B222D0F0086879B /* AudioToolbox.framework */; };
 		1A9A072F1B222D1F0086879B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A072E1B222D1F0086879B /* MobileCoreServices.framework */; };
 		1A9A07311B222D280086879B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9A07301B222D280086879B /* libsqlite3.dylib */; };
@@ -57,7 +58,6 @@
 		1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC6B1B2E2118009585F6 /* DatePickerPopUp.swift */; };
 		1AE5DC6E1B2E2118009585F6 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */; };
 		1AE5DC721B2E2135009585F6 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC701B2E2135009585F6 /* DatePickerViewController.swift */; };
-		9F86961A1B3CB257007CCF9E /* ActivityCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F8696191B3CB257007CCF9E /* ActivityCard.xib */; };
 		9FD285151B3D99CC00BC5235 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD285141B3D99CC00BC5235 /* SplashScreen.swift */; };
 		9FE143961B3C89130002FD19 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE143951B3C89130002FD19 /* BackgroundView.swift */; };
 		9FE143981B3C8A440002FD19 /* ActivityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE143971B3C8A440002FD19 /* ActivityCard.swift */; };
@@ -80,10 +80,11 @@
 		1A123D711B3A233500CD9D08 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		1A15B57C1B2883E400AAE935 /* Friendship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friendship.swift; sourceTree = "<group>"; };
 		1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewController.swift; sourceTree = "<group>"; };
-		1A2EF9911B374101008134BE /* PersonImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonImageView.swift; sourceTree = "<group>"; };
-		1A451EF51B3899610094B55C /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewBackground.swift; sourceTree = "<group>"; };
-		1A451EF61B3899610094B55C /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
-		1A451EF71B3899610094B55C /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		1A2D46041B44663F00270C0B /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		1A2EF9911B374101008134BE /* PictureImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureImageView.swift; sourceTree = "<group>"; };
+		1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
+		1A3EB67E1B473351008A81FE /* LabelStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelStyle.swift; sourceTree = "<group>"; };
 		1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4E1B1F7214008A080C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +103,7 @@
 		1A7246E11B1E20650020C81E /* BuddyUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyUpTests.swift; sourceTree = "<group>"; };
 		1A7246F01B1E32710020C81E /* BuddyUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BuddyUp-Bridging-Header.h"; sourceTree = "<group>"; };
 		1A7A47721B39BC5300255F3D /* ImageAsyncFromURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAsyncFromURL.swift; sourceTree = "<group>"; };
-		1A9204F91B373F6C0046EFE7 /* ActivitiyCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiyCardView.swift; sourceTree = "<group>"; };
+		1A9204F91B373F6C0046EFE7 /* ActivityCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCardView.swift; sourceTree = "<group>"; };
 		1A9A072C1B222D0F0086879B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1A9A072E1B222D1F0086879B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		1A9A07301B222D280086879B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -129,7 +130,6 @@
 		1AE5DC6B1B2E2118009585F6 /* DatePickerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerPopUp.swift; sourceTree = "<group>"; };
 		1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		1AE5DC701B2E2135009585F6 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
-		9F8696191B3CB257007CCF9E /* ActivityCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityCard.xib; sourceTree = "<group>"; };
 		9FD285141B3D99CC00BC5235 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		9FE143951B3C89130002FD19 /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		9FE143971B3C8A440002FD19 /* ActivityCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCard.swift; sourceTree = "<group>"; };
@@ -178,14 +178,12 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		1A451EEB1B3895100094B55C /* Card Dragging */ = {
+		1A2D46031B44661100270C0B /* Search Bar */ = {
 			isa = PBXGroup;
 			children = (
-				1A451EF51B3899610094B55C /* DraggableViewBackground.swift */,
-				1A451EF61B3899610094B55C /* DraggableView.swift */,
-				1A451EF71B3899610094B55C /* OverlayView.swift */,
+				1A2D46041B44663F00270C0B /* SearchTableViewController.swift */,
 			);
-			name = "Card Dragging";
+			name = "Search Bar";
 			sourceTree = "<group>";
 		};
 		1A7246BD1B1E20650020C81E = {
@@ -274,6 +272,7 @@
 		1A7246EC1B1E209F0020C81E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				1A2D46031B44661100270C0B /* Search Bar */,
 				9FD285131B3D98B500BC5235 /* Splash Screen */,
 				1ABB90211B334C1600102C71 /* Settings */,
 				1ABB90201B334C0900102C71 /* Main App */,
@@ -290,7 +289,6 @@
 			children = (
 				1A123D6F1B3A17D900CD9D08 /* Extensions */,
 				1ABB90231B334EAD00102C71 /* Activities */,
-				1A451EEB1B3895100094B55C /* Card Dragging */,
 				1A9204F81B373F510046EFE7 /* Element Design Styling */,
 				1ABB90221B334E8800102C71 /* Users and Friendship */,
 				1AD32DED1B2B3A0C00429AEC /* PickerPopUp */,
@@ -302,10 +300,12 @@
 		1A9204F81B373F510046EFE7 /* Element Design Styling */ = {
 			isa = PBXGroup;
 			children = (
-				1A9204F91B373F6C0046EFE7 /* ActivitiyCardView.swift */,
+				1A9204F91B373F6C0046EFE7 /* ActivityCardView.swift */,
 				9FE143951B3C89130002FD19 /* BackgroundView.swift */,
-				1A2EF9911B374101008134BE /* PersonImageView.swift */,
-				9F8696191B3CB257007CCF9E /* ActivityCard.xib */,
+				1A2EF9911B374101008134BE /* PictureImageView.swift */,
+				1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */,
+				1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */,
+				1A3EB67E1B473351008A81FE /* LabelStyle.swift */,
 			);
 			name = "Element Design Styling";
 			sourceTree = "<group>";
@@ -489,7 +489,6 @@
 				1A7246D11B1E20650020C81E /* Main.storyboard in Resources */,
 				1A7246D61B1E20650020C81E /* LaunchScreen.xib in Resources */,
 				1ACAA3E41B30C7DC00C527CA /* PickerViewPickerPopUp.xib in Resources */,
-				9F86961A1B3CB257007CCF9E /* ActivityCard.xib in Resources */,
 				1A7246D31B1E20650020C81E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,14 +508,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1ABB8FBB1B3200BA00102C71 /* APIKeys.swift in Sources */,
+				1A3EB67D1B46E099008A81FE /* TextFieldStyle.swift in Sources */,
 				1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */,
 				1ACAA3DC1B30B97F00C527CA /* PickerViewPickerPopUp.swift in Sources */,
 				1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */,
 				1AE5DC721B2E2135009585F6 /* DatePickerViewController.swift in Sources */,
 				1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */,
 				1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */,
-				1A9204FA1B373F6C0046EFE7 /* ActivitiyCardView.swift in Sources */,
+				1A9204FA1B373F6C0046EFE7 /* ActivityCardView.swift in Sources */,
 				1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */,
+				1A3EB67B1B46DC79008A81FE /* ButtonStyle.swift in Sources */,
 				9FE143961B3C89130002FD19 /* BackgroundView.swift in Sources */,
 				1AE5DC6E1B2E2118009585F6 /* DateFormat.swift in Sources */,
 				1A7246CC1B1E20650020C81E /* AppDelegate.swift in Sources */,
@@ -525,17 +526,16 @@
 				9FE143981B3C8A440002FD19 /* ActivityCard.swift in Sources */,
 				1A7A47731B39BC5300255F3D /* ImageAsyncFromURL.swift in Sources */,
 				9FD285151B3D99CC00BC5235 /* SplashScreen.swift in Sources */,
-				1A2EF9921B374101008134BE /* PersonImageView.swift in Sources */,
-				1A451EF91B3899610094B55C /* DraggableView.swift in Sources */,
-				1A451EF81B3899610094B55C /* DraggableViewBackground.swift in Sources */,
+				1A2EF9921B374101008134BE /* PictureImageView.swift in Sources */,
 				1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */,
 				1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */,
-				1A451EFA1B3899610094B55C /* OverlayView.swift in Sources */,
+				1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */,
 				1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */,
 				1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */,
 				1A0F071C1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift in Sources */,
 				1A57D08E1B2772EB004B363C /* NewActivityViewController.swift in Sources */,
 				1A57D0901B2789DC004B363C /* SettingsTableViewController.swift in Sources */,
+				1A3EB67F1B473351008A81FE /* LabelStyle.swift in Sources */,
 				1A05173D1B2600910091ECF5 /* MainAppViewController.swift in Sources */,
 				1AAB44931B274EF700E96BB5 /* ActivityModel.swift in Sources */,
 				1ABB8FB71B31E33400102C71 /* User.swift in Sources */,

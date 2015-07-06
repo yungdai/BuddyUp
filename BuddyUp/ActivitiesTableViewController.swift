@@ -35,7 +35,6 @@ class ActivitiesTableViewController: UITableViewController {
         query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
             if let activities = result as? [PFObject] {
                 self.activities = activities
-                
                 self.tableView.reloadData()
             }
         }
@@ -51,10 +50,13 @@ class ActivitiesTableViewController: UITableViewController {
         query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
             if let activities = result as? [PFObject] {
                 self.activities = activities
+                
+                println("found something")
             }
         }
-        self.tableView.reloadData()
+        println("got more data")
         refreshControl?.endRefreshing()
+        self.tableView.reloadData()
         
     }
 
@@ -117,11 +119,7 @@ class ActivitiesTableViewController: UITableViewController {
                     }
                 }
             }
-            
-
         }
-        // Configure the cell...
-        
         return cell
     }
     
@@ -135,8 +133,6 @@ class ActivitiesTableViewController: UITableViewController {
                     println("Activity Deleted!")
                 }
             })
-            
-            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }

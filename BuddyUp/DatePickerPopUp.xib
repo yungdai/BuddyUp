@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A178w" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerViewController" customModule="DatePickerPopUpMechanic" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerViewController" customModule="BuddyUp" customModuleProvider="target">
             <connections>
                 <outlet property="container" destination="iN0-l3-epB" id="q7P-H4-Wdu"/>
                 <outlet property="datePicker" destination="4wm-tI-A6V" id="UmC-3e-w7f"/>
@@ -20,15 +21,20 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="162" id="PMg-RI-P3l"/>
+                        <constraint firstAttribute="width" constant="320" id="L0x-Rt-lu0"/>
+                        <constraint firstAttribute="height" constant="162" id="mas-nD-6z0"/>
                     </constraints>
                     <date key="date" timeIntervalSinceReferenceDate="455820221.30613798">
                         <!--2015-06-12 16:43:41 +0000-->
                     </date>
                 </datePicker>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLH-Ly-cMq">
-                    <rect key="frame" x="145" y="170" width="30" height="30"/>
+                    <rect key="frame" x="8" y="165" width="320" height="30"/>
                     <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="tAQ-yF-dXW"/>
+                        <constraint firstAttribute="height" constant="30" id="yAo-pa-rKk"/>
+                    </constraints>
                     <state key="normal" title="OK">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -40,10 +46,12 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="4wm-tI-A6V" firstAttribute="centerX" secondItem="jLH-Ly-cMq" secondAttribute="centerX" id="DJm-aU-hWM"/>
-                <constraint firstAttribute="trailing" secondItem="4wm-tI-A6V" secondAttribute="trailing" id="Fmc-at-A6Q"/>
-                <constraint firstItem="jLH-Ly-cMq" firstAttribute="top" secondItem="4wm-tI-A6V" secondAttribute="bottom" constant="8" id="gOf-LL-1Y5"/>
-                <constraint firstItem="4wm-tI-A6V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="i7U-h4-EJJ"/>
+                <constraint firstItem="4wm-tI-A6V" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IaR-oN-rqm"/>
+                <constraint firstItem="4wm-tI-A6V" firstAttribute="bottom" secondItem="jLH-Ly-cMq" secondAttribute="bottom" constant="-33" id="RPJ-lI-kfO"/>
+                <constraint firstAttribute="trailing" secondItem="4wm-tI-A6V" secondAttribute="trailing" id="SbX-Xg-IVB"/>
+                <constraint firstAttribute="trailing" secondItem="jLH-Ly-cMq" secondAttribute="trailingMargin" id="ZLk-lw-wi2"/>
+                <constraint firstItem="4wm-tI-A6V" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eBL-Ab-PRO"/>
+                <constraint firstItem="jLH-Ly-cMq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="wdP-8Y-dM6"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="978" y="470"/>

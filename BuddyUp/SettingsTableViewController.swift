@@ -15,7 +15,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var emailAddressTextField: UITextField!
     
-    @IBOutlet var userImageView: PersonImageView!
+    @IBOutlet var userImageView: PictureImageView!
 
     // user image
     enum UserImage {
@@ -156,6 +156,9 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
             (alert: UIAlertAction!) -> Void in
             println("Cancelled")
         })
+        
+        // make it work on an iPad
+        optionMenu.popoverPresentationController?.sourceView = sender as UIView
         
         optionMenu.addAction(photoLibrary)
         optionMenu.addAction(camera)

@@ -9,6 +9,8 @@
 import UIKit
 
 class SplashScreen: UIView {
+    
+    // TODO make a splash screen and make it look interesting
 
     /*
     // Only override drawRect: if you perform custom drawing.
