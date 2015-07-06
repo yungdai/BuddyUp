@@ -20,7 +20,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     @IBOutlet var activityTypeTextField: UITextField!
     var currentUser = PFUser.currentUser()
 
-    @IBOutlet var activityImageView: PersonImageView!
+    @IBOutlet var activityImageView: PictureImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,8 +118,8 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         activity["activityType"] = activityTypeTextField.text
         activity["image"] = PFFile(name: "image.jpg", data: UIImageJPEGRepresentation(activityImageView.image, 0.5))
         activity["createdBy"] = PFUser.currentUser()
-//        activity["userImage"] =  
-
+        
+        // save the user activity
         activity.saveInBackgroundWithBlock { (success, error: NSError?) -> Void in
             if (error != nil) {
                 // TODO: set up alert
@@ -131,12 +131,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
             
         }
     }
-    
-
-//    func prepareForPopoverPresentation(popoverPresentationController: UIPopoverPresentationController) {
-//        <#code#>
-//    }
-    
+ 
     // image picker variables
     let imagePicker = UIImagePickerController()
 

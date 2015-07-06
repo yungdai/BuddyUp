@@ -15,7 +15,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var emailAddressTextField: UITextField!
     
-    @IBOutlet var userImageView: PersonImageView!
+    @IBOutlet var userImageView: PictureImageView!
 
     // user image
     enum UserImage {
