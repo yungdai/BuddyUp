@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable class ImageView: UIImageView {
     
-
+    // set corner rouding in IB
     @IBInspectable var cornerRounding: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRounding
@@ -18,6 +18,7 @@ import UIKit
         }
     }
     
+    // set border width in IB
     @IBInspectable var personBorderWidth: CGFloat = 1 {
         didSet {
             layer.borderWidth = personBorderWidth
@@ -25,6 +26,7 @@ import UIKit
         }
     }
     
+    // set image in IB
     @IBInspectable var personImage: UIImage? {
         didSet {
             layer.contents = personImage?.CGImage
