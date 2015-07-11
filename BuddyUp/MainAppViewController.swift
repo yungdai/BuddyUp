@@ -285,8 +285,36 @@ class MainAppViewController: UIViewController{
 
     }
     
+    func likedActivity() {
+        
+        if let currentActivities = activities {
+
+            
+            let currentActivity = currentActivities[currentActivityIndex]
+
+            let activityId = PFObject(withoutDataWithClassName:"Activity", objectId: currentActivity.objectId)
+            let likedActivity = PFObject(className: "Liked")
+            let user = PFUser.currentUser()
+            likedActivity["user"] = PFUser.currentUser()
+            likedActivity["activityID"] = activityId
+            
+//            likedActivity["activity"] = currentActivity.relationForKey("objectId")
+            
+            likedActivity.saveInBackgroundWithBlock({ (success, error: NSError?) -> Void in
+                if (error != nil) {
+                    //TODO: Set up Alert
+                    println(error)
+                    
+                } else {
+                    println("completed")
+                }
+            })
+        }
+    }
+    
 
     @IBAction func checkButtonPushed(sender: UIButton) {
+        likedActivity()
         styleForNextActivity()
         
     }
