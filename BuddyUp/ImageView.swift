@@ -19,40 +19,40 @@ import UIKit
     }
     
     // set border width in IB
-    @IBInspectable var personBorderWidth: CGFloat = 1 {
+    @IBInspectable var borderWidth: CGFloat = 1 {
         didSet {
-            layer.borderWidth = personBorderWidth
+            layer.borderWidth = borderWidth
 
         }
     }
     
     // set image in IB
-    @IBInspectable var personImage: UIImage? {
+    @IBInspectable var imageFile: UIImage? {
         didSet {
-            layer.contents = personImage?.CGImage
+            layer.contents = imageFile?.CGImage
         }
     }
  
-    @IBInspectable var personBorderColour: UIColor? {
+    @IBInspectable var borderColour: UIColor? {
         didSet {
-            layer.borderColor = personBorderColour?.CGColor
+            layer.borderColor = borderColour?.CGColor
         }
     }
     
     
     override func prepareForInterfaceBuilder() {
-        personImageStyle()
+        imageStyle()
     }
     
     override func awakeFromNib() {
-        personImageStyle()
+        imageStyle()
     }
     
-     func personImageStyle() {
+     func imageStyle() {
         layer.cornerRadius = cornerRounding
-        layer.borderWidth = personBorderWidth
-        layer.borderColor = personBorderColour?.CGColor
-        layer.contents = personImage!.CGImage
+        layer.borderWidth = borderWidth
+        layer.borderColor = borderColour?.CGColor
+        layer.contents = imageFile!.CGImage
         // binds the masking to the variables above.  This will be true for all images assigned in IB
         layer.masksToBounds = true
     }
