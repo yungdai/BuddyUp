@@ -14,8 +14,6 @@ class MainAppViewController: UIViewController{
     let iPhoneImageDimension:CGFloat = 100.0
     let iPadImageDimension:CGFloat = 145.0
     
-
-    
     @IBOutlet var personImage: UIImageView!
     @IBOutlet var personLabelText: UILabel!
     @IBOutlet var activityTypeLabelText: UILabel!
@@ -288,25 +286,21 @@ class MainAppViewController: UIViewController{
     func likedActivity() {
         
         if let currentActivities = activities {
-
-            
             let currentActivity = currentActivities[currentActivityIndex]
-
-            let activityId = PFObject(withoutDataWithClassName:"Activity", objectId: currentActivity.objectId)
+            let currentActivityId = PFObject(withoutDataWithClassName:"Activity", objectId: currentActivity.objectId)
             let likedActivity = PFObject(className: "Liked")
             let user = PFUser.currentUser()
             likedActivity["user"] = PFUser.currentUser()
-            likedActivity["activityID"] = activityId
+            likedActivity["activityID"] = currentActivityId
             
-//            likedActivity["activity"] = currentActivity.relationForKey("objectId")
-            
+            // save the liked activity in background
             likedActivity.saveInBackgroundWithBlock({ (success, error: NSError?) -> Void in
                 if (error != nil) {
                     //TODO: Set up Alert
                     println(error)
                     
                 } else {
-                    println("completed")
+                    println("liked activity added")
                 }
             })
         }
