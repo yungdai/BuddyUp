@@ -187,8 +187,6 @@ class MainAppViewController: UIViewController{
             
             
             if let activityOwner = activity["createdBy"]?.objectForKey("userImage") as? PFFile {
-                //self.currentUserID = userID.
-                println("hello")
                 activityOwner.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
                     if (error != nil) {
                         println(error)
@@ -287,19 +285,20 @@ class MainAppViewController: UIViewController{
         
         if let currentActivities = activities {
             let currentActivity = currentActivities[currentActivityIndex]
+            
+            // activity ID object ID pointer value
             let currentActivityId = PFObject(withoutDataWithClassName:"Activity", objectId: currentActivity.objectId)
             
-            // TODO need to figure out why this cannot create a relationship
-//            let currentActivityCreator = PFObject(withoutDataWithClassName: "Activity", objectId: currentActivity.objectForKey("createdBy") as? String)
-            
-            
+            // activity user creator pointer from User Class
+            let currentActivityCreator: PFUser = currentActivity["createdBy"] as! PFUser
+
+            // save the data for liked activity
             let likedActivity = PFObject(className: "Liked")
             let user = PFUser.currentUser()
-            likedActivity["user"] = PFUser.currentUser()
             likedActivity["activityID"] = currentActivityId
-            
-            // trying to save the activity owner....issues still
-//            likedActivity["activityOwner"] = currentActivityCreator
+            likedActivity["activityLikeUser"] = PFUser.currentUser()
+            likedActivity["activityID"] = currentActivityId
+            likedActivity["activityOwner"] = currentActivityCreator
             
             
             // save the liked activity in background
