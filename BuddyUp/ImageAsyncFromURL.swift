@@ -13,7 +13,7 @@ import UIKit
 /* Usage 
     downloading: UIImageView.downloadImage("http://www.image-server.com/myImage.jpg")
 */
-public extension UIImageView {
+extension UIImageView {
     
     func getDataFromUrl(url:String, completion: ((data: NSData?) -> Void)) {
         NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: url)!) { (data, response, error) in

@@ -14,6 +14,7 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
     var searchActive: Bool = false
     var data: [PFObject]!
     var filtered: [PFObject]!
+    var userArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

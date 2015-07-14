@@ -10,14 +10,14 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var errorMessage: UILabel!
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet var errorMessage: UILabel!
+    @IBOutlet var usernameField: UITextField!
+    @IBOutlet var passwordField: UITextField!
     
 
 
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var signupButton: UIButton!
     
     // keyboard movement upwards value
     var kbHeight: CGFloat!

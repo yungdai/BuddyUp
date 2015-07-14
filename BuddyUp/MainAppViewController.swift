@@ -14,8 +14,6 @@ class MainAppViewController: UIViewController{
     let iPhoneImageDimension:CGFloat = 100.0
     let iPadImageDimension:CGFloat = 145.0
     
-
-    
     @IBOutlet var personImage: UIImageView!
     @IBOutlet var personLabelText: UILabel!
     @IBOutlet var activityTypeLabelText: UILabel!
@@ -29,6 +27,9 @@ class MainAppViewController: UIViewController{
     // activities parse object
     var activities: [PFObject]?
     var currentUserID: String?
+    
+    // like boolean
+
     
     // location setup
     var currentLocation: PFGeoPoint?
@@ -47,6 +48,7 @@ class MainAppViewController: UIViewController{
     
     
     // activity picture
+    // TODO do fast enum based on the picture
     enum ActivityPicture {
         case WatchTV
         case GoFoDrinks
@@ -185,8 +187,6 @@ class MainAppViewController: UIViewController{
             
             
             if let activityOwner = activity["createdBy"]?.objectForKey("userImage") as? PFFile {
-                //self.currentUserID = userID.
-                println("hello")
                 activityOwner.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
                     if (error != nil) {
                         println(error)
@@ -281,8 +281,42 @@ class MainAppViewController: UIViewController{
 
     }
     
+    func likedActivity() {
+        
+        if let currentActivities = activities {
+            let currentActivity = currentActivities[currentActivityIndex]
+            
+            // activity ID object ID pointer value
+            let currentActivityId = PFObject(withoutDataWithClassName:"Activity", objectId: currentActivity.objectId)
+            
+            // activity user creator pointer from User Class
+            let currentActivityCreator: PFUser = currentActivity["createdBy"] as! PFUser
+
+            // save the data for liked activity
+            let likedActivity = PFObject(className: "Liked")
+            let user = PFUser.currentUser()
+            likedActivity["activityID"] = currentActivityId
+            likedActivity["activityLikeUser"] = PFUser.currentUser()
+            likedActivity["activityID"] = currentActivityId
+            likedActivity["activityOwner"] = currentActivityCreator
+            
+            
+            // save the liked activity in background
+            likedActivity.saveInBackgroundWithBlock({ (success, error: NSError?) -> Void in
+                if (error != nil) {
+                    //TODO: Set up Alert
+                    println(error)
+                    
+                } else {
+                    println("liked activity added")
+                }
+            })
+        }
+    }
+    
 
     @IBAction func checkButtonPushed(sender: UIButton) {
+        likedActivity()
         styleForNextActivity()
         
     }
