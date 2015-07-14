@@ -45,6 +45,7 @@
 		1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07441B2238940086879B /* SignUpViewController.swift */; };
 		1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07461B2238C90086879B /* LoginViewController.swift */; };
 		1AAB44931B274EF700E96BB5 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB44921B274EF700E96BB5 /* ActivityModel.swift */; };
+		1ABB71F31B556AE7009070FD /* PictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB71F21B556AE7009070FD /* PictureImageView.swift */; };
 		1ABB8FB71B31E33400102C71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB8FB61B31E33400102C71 /* User.swift */; };
 		1ABB8FBB1B3200BA00102C71 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB8FBA1B3200BA00102C71 /* APIKeys.swift */; };
 		1ABB90281B33555300102C71 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABB90241B33551000102C71 /* Social.framework */; };
@@ -118,6 +119,7 @@
 		1A9A07441B2238940086879B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1A9A07461B2238C90086879B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1AAB44921B274EF700E96BB5 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		1ABB71F21B556AE7009070FD /* PictureImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureImageView.swift; sourceTree = "<group>"; };
 		1ABB8FB61B31E33400102C71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1ABB8FBA1B3200BA00102C71 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		1ABB90241B33551000102C71 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -302,6 +304,7 @@
 		1A9204F81B373F510046EFE7 /* Element Design Styling */ = {
 			isa = PBXGroup;
 			children = (
+				1ABB71F21B556AE7009070FD /* PictureImageView.swift */,
 				1A9204F91B373F6C0046EFE7 /* ActivitiyCardView.swift */,
 				9FE143951B3C89130002FD19 /* BackgroundView.swift */,
 				1A2EF9911B374101008134BE /* ImageView.swift */,
@@ -516,6 +519,7 @@
 				1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */,
 				1ACAA3DC1B30B97F00C527CA /* PickerViewPickerPopUp.swift in Sources */,
 				1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */,
+				1ABB71F31B556AE7009070FD /* PictureImageView.swift in Sources */,
 				1AE5DC721B2E2135009585F6 /* DatePickerViewController.swift in Sources */,
 				1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */,
 				1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */,
