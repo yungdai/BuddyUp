@@ -15,7 +15,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     @IBOutlet var lastNameTextField: UITextField!
     @IBOutlet var emailAddressTextField: UITextField!
     
-    @IBOutlet var userImageView: ImageView!
+    @IBOutlet var userImageView: PictureImageView!
 
     // image picker variables
     let imagePicker = UIImagePickerController()
