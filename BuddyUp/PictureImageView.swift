@@ -18,22 +18,22 @@ import UIKit
         }
     }
     
-    @IBInspectable var personBorderWidth: CGFloat = 1 {
+    @IBInspectable var borderWidth: CGFloat = 1 {
         didSet {
-            layer.borderWidth = personBorderWidth
+            layer.borderWidth = borderWidth
 
         }
     }
     
-    @IBInspectable var personImage: UIImage? {
+    @IBInspectable var customImage: UIImage? {
         didSet {
-            layer.contents = personImage?.CGImage
+            layer.contents = customImage?.CGImage
         }
     }
  
-    @IBInspectable var personBorderColour: UIColor? {
+    @IBInspectable var borderColour: UIColor? {
         didSet {
-            layer.borderColor = personBorderColour?.CGColor
+            layer.borderColor = borderColour?.CGColor
         }
     }
     
@@ -48,9 +48,9 @@ import UIKit
     
      func personImageStyle() {
         layer.cornerRadius = cornerRounding
-        layer.borderWidth = personBorderWidth
-        layer.borderColor = personBorderColour?.CGColor
-        layer.contents = personImage!.CGImage
+        layer.borderWidth = borderWidth
+        layer.borderColor = borderColour?.CGColor
+        layer.contents = customImage!.CGImage
         // binds the masking to the variables above.  This will be true for all images assigned in IB
         layer.masksToBounds = true
     }
