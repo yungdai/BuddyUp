@@ -312,7 +312,7 @@
                                 <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.89999999999999991" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uW-rZ-PcS" userLabel="Username" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view alpha="0.89999999999999991" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uW-rZ-PcS" userLabel="Username" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="10" y="142" width="584" height="52"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="mUN-kg-2HM">
@@ -347,7 +347,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.89999999999999991" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vk9-kR-SFB" userLabel="First Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view alpha="0.89999999999999991" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vk9-kR-SFB" userLabel="First Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="9" y="202" width="288" height="52"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7f-OT-cZW">
@@ -376,7 +376,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.89999997615814209" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-VP-vp5" userLabel="Last Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-VP-vp5" userLabel="Last Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="304" y="202" width="288" height="52"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxC-Yf-OVY">
