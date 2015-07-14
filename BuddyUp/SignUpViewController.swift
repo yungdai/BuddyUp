@@ -13,6 +13,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordConfirmationField: UITextField!
     @IBOutlet weak var emailAddressField: UITextField!
+    @IBOutlet weak var firstNameField: UITextField!
+    @IBOutlet weak var lastNameField: UITextField!
+
+    
+    
     var activityIndicator = UIActivityIndicatorView()
     
     // keyboard movement upwards value
@@ -30,9 +35,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.activityIndicator.hidden = true
         
         usernameField.delegate = self
+        firstNameField.delegate = self
+        lastNameField.delegate = self
         passwordField.delegate = self
         passwordConfirmationField.delegate = self
         emailAddressField.delegate = self
+        
         
 
         // Do any additional setup after loading the view.
@@ -96,6 +104,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         passwordField.resignFirstResponder()
         passwordConfirmationField.resignFirstResponder()
         emailAddressField.resignFirstResponder()
+        lastNameField.resignFirstResponder()
+        firstNameField.resignFirstResponder()
     }
     
     override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
@@ -107,6 +117,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     func processFieldEntries() {
         // setup the fields for the sign up page
         let username = usernameField.text
+        let firstName = firstNameField.text
+        let lastName = lastNameField.text
         let password = passwordField.text
         let passwordConfirmation = passwordConfirmationField.text
         let emailAddress = emailAddressField.text.lowercaseString
@@ -116,6 +128,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         var errorText = "Please "
         let usernameBlankText = "enter a username"
+        let firstNameBlankText = "enter a first name"
+        let lastNameBlankText = "enter a last name"
         let passwordBlankText = "enter a password"
         let emailBlankText = "enter an email address"
         let jointText = ", and "
@@ -130,8 +144,20 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             
             // Set up the keyboard for the first field missing input:
             if count(username) == 0 {
+                errorText += usernameBlankText
                 usernameField.becomeFirstResponder()
             }
+            
+            if count(firstName) == 0 {
+                errorText += firstNameBlankText
+                firstNameField.becomeFirstResponder()
+            }
+            
+            if count(lastName) == 0 {
+                errorText += lastNameBlankText
+                lastNameField.becomeFirstResponder()
+            }
+            
             
             if count(password) == 0 {
                 passwordField.becomeFirstResponder()
@@ -142,15 +168,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             }
             
             if count(emailAddress) == 0 {
+                errorText += emailBlankText
                 emailAddressField.becomeFirstResponder()
             }
             
-            // error text feedback
-            if count(username) == 0 {
-                errorText += usernameBlankText
-            }
-            
-            if count(password) == 0 || count(passwordConfirmation) == 0 {
+            // error text feedback for the password boxes
+           if count(password) == 0 || count(passwordConfirmation) == 0 {
                 if count(username) == 0 {
                     // we need some joining text in the error
                     errorText += jointText
@@ -158,9 +181,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 errorText += passwordBlankText
             }
             
-            if count(emailAddress) == 0 {
-                errorText += emailBlankText
-            }
+
             
         } else if password != passwordConfirmation {
             textError = true
@@ -178,8 +199,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         // if those conditions clear you will create a new user and log in
         var parseUser = PFUser()
         parseUser.username = usernameField.text
+        parseUser["first_name"] = firstNameField.text
+        parseUser["last_name"] = lastNameField.text
         parseUser.password = passwordField.text
-        parseUser["name"] = usernameField.text
+        parseUser["name"] = "\(firstNameField.text) \(lastNameField.text)"
         parseUser["email"] = emailAddressField.text
         parseUser.signUpInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in
             
