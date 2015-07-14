@@ -14,13 +14,13 @@
 		1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57C1B2883E400AAE935 /* Friendship.swift */; };
 		1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */; };
 		1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D46041B44663F00270C0B /* SearchTableViewController.swift */; };
-		1A2EF9921B374101008134BE /* PictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2EF9911B374101008134BE /* PictureImageView.swift */; };
 		1A3EB67B1B46DC79008A81FE /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */; };
 		1A3EB67D1B46E099008A81FE /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */; };
 		1A3EB67F1B473351008A81FE /* LabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67E1B473351008A81FE /* LabelStyle.swift */; };
 		1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */; };
 		1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */; };
 		1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4E1B1F7214008A080C /* ChatViewController.swift */; };
+		1A54CC351B5574BB00A2A586 /* PictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A54CC341B5574BB00A2A586 /* PictureImageView.swift */; };
 		1A57D08E1B2772EB004B363C /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A57D08D1B2772EB004B363C /* NewActivityViewController.swift */; };
 		1A57D0901B2789DC004B363C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A57D08F1B2789DC004B363C /* SettingsTableViewController.swift */; };
 		1A69074F1B2939E600150F98 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A69074E1B2939E600150F98 /* ActivityTableViewCell.swift */; };
@@ -45,7 +45,6 @@
 		1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07441B2238940086879B /* SignUpViewController.swift */; };
 		1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07461B2238C90086879B /* LoginViewController.swift */; };
 		1AAB44931B274EF700E96BB5 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB44921B274EF700E96BB5 /* ActivityModel.swift */; };
-		1ABB71F31B556AE7009070FD /* PictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB71F21B556AE7009070FD /* PictureImageView.swift */; };
 		1ABB8FB71B31E33400102C71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB8FB61B31E33400102C71 /* User.swift */; };
 		1ABB8FBB1B3200BA00102C71 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB8FBA1B3200BA00102C71 /* APIKeys.swift */; };
 		1ABB90281B33555300102C71 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABB90241B33551000102C71 /* Social.framework */; };
@@ -56,7 +55,6 @@
 		1ACAA3E01B30B9C600C527CA /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACAA3DF1B30B9C600C527CA /* PickerViewController.swift */; };
 		1ACAA3E31B30C7DC00C527CA /* DatePickerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACAA3E11B30C7DC00C527CA /* DatePickerPopUp.xib */; };
 		1ACAA3E41B30C7DC00C527CA /* PickerViewPickerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACAA3E21B30C7DC00C527CA /* PickerViewPickerPopUp.xib */; };
-		1AD63B3F1B556664004FE71A /* PictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD63B3E1B556664004FE71A /* PictureImageView.swift */; };
 		1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC6B1B2E2118009585F6 /* DatePickerPopUp.swift */; };
 		1AE5DC6E1B2E2118009585F6 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */; };
 		1AE5DC721B2E2135009585F6 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC701B2E2135009585F6 /* DatePickerViewController.swift */; };
@@ -83,13 +81,13 @@
 		1A15B57C1B2883E400AAE935 /* Friendship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friendship.swift; sourceTree = "<group>"; };
 		1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewController.swift; sourceTree = "<group>"; };
 		1A2D46041B44663F00270C0B /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
-		1A2EF9911B374101008134BE /* PictureImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureImageView.swift; sourceTree = "<group>"; };
 		1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
 		1A3EB67E1B473351008A81FE /* LabelStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelStyle.swift; sourceTree = "<group>"; };
 		1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4E1B1F7214008A080C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		1A54CC341B5574BB00A2A586 /* PictureImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureImageView.swift; sourceTree = "<group>"; };
 		1A57D08D1B2772EB004B363C /* NewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewActivityViewController.swift; sourceTree = "<group>"; };
 		1A57D08F1B2789DC004B363C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		1A69074E1B2939E600150F98 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 		1A9A07441B2238940086879B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1A9A07461B2238C90086879B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1AAB44921B274EF700E96BB5 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
-		1ABB71F21B556AE7009070FD /* PictureImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureImageView.swift; sourceTree = "<group>"; };
 		1ABB8FB61B31E33400102C71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1ABB8FBA1B3200BA00102C71 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		1ABB90241B33551000102C71 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -130,7 +127,6 @@
 		1ACAA3DF1B30B9C600C527CA /* PickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		1ACAA3E11B30C7DC00C527CA /* DatePickerPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerPopUp.xib; sourceTree = "<group>"; };
 		1ACAA3E21B30C7DC00C527CA /* PickerViewPickerPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PickerViewPickerPopUp.xib; sourceTree = "<group>"; };
-		1AD63B3E1B556664004FE71A /* PictureImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureImageView.swift; sourceTree = "<group>"; };
 		1AE5DC6B1B2E2118009585F6 /* DatePickerPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerPopUp.swift; sourceTree = "<group>"; };
 		1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		1AE5DC701B2E2135009585F6 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
@@ -304,11 +300,9 @@
 		1A9204F81B373F510046EFE7 /* Element Design Styling */ = {
 			isa = PBXGroup;
 			children = (
-				1ABB71F21B556AE7009070FD /* PictureImageView.swift */,
-				1A9204F91B373F6C0046EFE7 /* ActivitiyCardView.swift */,
+				1A54CC341B5574BB00A2A586 /* PictureImageView.swift */,
+				1A9204F91B373F6C0046EFE7 /* ActivityCardView.swift */,
 				9FE143951B3C89130002FD19 /* BackgroundView.swift */,
-				1AD63B3E1B556664004FE71A /* PictureImageView.swift */,
-				9F8696191B3CB257007CCF9E /* ActivityCard.xib */,
 				1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */,
 				1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */,
 				1A3EB67E1B473351008A81FE /* LabelStyle.swift */,
@@ -518,7 +512,7 @@
 				1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */,
 				1ACAA3DC1B30B97F00C527CA /* PickerViewPickerPopUp.swift in Sources */,
 				1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */,
-				1AD63B3F1B556664004FE71A /* PictureImageView.swift in Sources */,
+				1A54CC351B5574BB00A2A586 /* PictureImageView.swift in Sources */,
 				1AE5DC721B2E2135009585F6 /* DatePickerViewController.swift in Sources */,
 				1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */,
 				1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */,
@@ -533,7 +527,6 @@
 				9FE143981B3C8A440002FD19 /* ActivityCard.swift in Sources */,
 				1A7A47731B39BC5300255F3D /* ImageAsyncFromURL.swift in Sources */,
 				9FD285151B3D99CC00BC5235 /* SplashScreen.swift in Sources */,
-				1A2EF9921B374101008134BE /* PictureImageView.swift in Sources */,
 				1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */,
 				1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */,
 				1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */,

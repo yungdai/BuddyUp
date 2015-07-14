@@ -37,7 +37,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Vf-Ev-a3s" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Vf-Ev-a3s" userLabel="Username" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="8" y="187" width="584" height="52"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="h9p-Vy-ck1">
@@ -72,7 +72,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhG-hM-xiF" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhG-hM-xiF" userLabel="Password" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="8" y="247" width="584" height="52"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="Fvf-1N-xNt">
@@ -137,6 +137,9 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="BorderColour">
                                         <color key="value" red="0.062745098040000002" green="0.46666666670000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="BorderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yX1-Uc-4Zg"/>
@@ -192,7 +195,7 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
-                                        <real key="value" value="10"/>
+                                        <real key="value" value="11"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="BorderColour">
                                         <color key="value" red="0.062745098040000002" green="0.46666666670000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -312,14 +315,14 @@
                                 <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.89999999999999991" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uW-rZ-PcS" userLabel="Username" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8uW-rZ-PcS" userLabel="Username" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="10" y="142" width="584" height="52"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="mUN-kg-2HM">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="mUN-kg-2HM">
                                         <rect key="frame" x="8" y="9" width="35" height="35"/>
                                         <animations/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7s8-xL-q8R">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7s8-xL-q8R">
                                         <rect key="frame" x="51" y="11" width="525" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
@@ -347,10 +350,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.89999999999999991" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vk9-kR-SFB" userLabel="First Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vk9-kR-SFB" userLabel="First Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="9" y="202" width="288" height="52"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7f-OT-cZW">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7f-OT-cZW">
                                         <rect key="frame" x="8" y="11" width="272" height="30"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -376,10 +379,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.89999997615814209" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-VP-vp5" userLabel="Last Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-VP-vp5" userLabel="Last Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="304" y="202" width="288" height="52"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxC-Yf-OVY">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxC-Yf-OVY">
                                         <rect key="frame" x="8" y="11" width="272" height="30"/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -405,10 +408,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.85000002384185791" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IyN-mx-mQW" userLabel="Email Address" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IyN-mx-mQW" userLabel="Email Address" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="9" y="262" width="583" height="52"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXo-3z-ZmE">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXo-3z-ZmE">
                                         <rect key="frame" x="7" y="11" width="568" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
@@ -439,13 +442,13 @@
                             <view alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-Ae-Qew" userLabel="Password" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="9" y="322" width="583" height="52"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKd-Gc-r70">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKd-Gc-r70">
                                         <rect key="frame" x="51" y="11" width="524" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="Ckg-YS-TLI">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="Ckg-YS-TLI">
                                         <rect key="frame" x="8" y="8" width="35" height="35"/>
                                         <animations/>
                                     </imageView>
@@ -471,14 +474,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.85000002384185791" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qvT-ex-3jy" userLabel="Password Confirm" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvT-ex-3jy" userLabel="Password Confirm" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="9" y="382" width="583" height="52"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="a8K-Ia-jWI">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="a8K-Ia-jWI">
                                         <rect key="frame" x="8" y="6" width="35" height="35"/>
                                         <animations/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password Confirmation" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-5V-5uI">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password Confirmation" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-5V-5uI">
                                         <rect key="frame" x="51" y="11" width="525" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
@@ -506,7 +509,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWy-zO-ICT" customClass="ButtonStyle" customModule="BuddyUp" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWy-zO-ICT" customClass="ButtonStyle" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="9" y="461" width="583" height="52"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -700,8 +703,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVz-c5-knv">
+                                                    <rect key="frame" x="368" y="59" width="94" height="30"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="94" id="FZf-2Y-w6Q"/>
+                                                        <constraint firstAttribute="height" constant="30" id="HEP-EE-RiL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
+                                                    <state key="normal" title="Change Photo">
+                                                        <color key="titleColor" red="0.22745098039215686" green="0.23921568627450979" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="addPictureButtonPressed:" destination="xUM-wm-hSN" eventType="touchUpInside" id="clP-Aw-FcZ"/>
+                                                    </connections>
+                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-Lt-iHD" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
-                                                    <rect key="frame" x="240" y="18" width="120" height="120"/>
+                                                    <rect key="frame" x="240" y="19" width="120" height="120"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="9Cz-9D-2kX"/>
@@ -720,22 +739,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVz-c5-knv">
-                                                    <rect key="frame" x="368" y="59" width="94" height="30"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="94" id="FZf-2Y-w6Q"/>
-                                                        <constraint firstAttribute="height" constant="30" id="HEP-EE-RiL"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
-                                                    <state key="normal" title="Change Photo">
-                                                        <color key="titleColor" red="0.22745098039215686" green="0.23921568627450979" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="addPictureButtonPressed:" destination="xUM-wm-hSN" eventType="touchUpInside" id="clP-Aw-FcZ"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.70980392160000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -1121,7 +1124,7 @@
                                             <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj6-ZO-vqt" userLabel="Activity Type Label">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hj6-ZO-vqt" userLabel="Activity Type Label">
                                             <rect key="frame" x="164" y="26" width="428" height="21"/>
                                             <animations/>
                                             <constraints>
@@ -1221,7 +1224,7 @@
                                 <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Picture:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dal-ol-eEB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Picture:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dal-ol-eEB">
                                 <rect key="frame" x="271" y="275" width="59" height="17"/>
                                 <animations/>
                                 <constraints>
@@ -1265,7 +1268,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deJ-BP-ACe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deJ-BP-ACe">
                                 <rect key="frame" x="370" y="345" width="81" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="15"/>
@@ -1291,7 +1294,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="CBA-Mr-t2s" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="CBA-Mr-t2s" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="241" y="302" width="118" height="116"/>
                                 <animations/>
                                 <constraints>
@@ -1489,10 +1492,10 @@
                                     <action selector="crossButtonPushed:" destination="W6l-cx-eXg" eventType="touchUpInside" id="PYx-7F-VHX"/>
                                 </connections>
                             </button>
-                            <view alpha="0.89999999999999991" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-qt-Cg0" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                            <view alpha="0.89999999999999991" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggG-qt-Cg0" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="89" width="568" height="365"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="watchTV" translatesAutoresizingMaskIntoConstraints="NO" id="089-3V-AUI" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="watchTV" translatesAutoresizingMaskIntoConstraints="NO" id="089-3V-AUI" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
                                         <rect key="frame" x="25" y="90" width="163" height="163"/>
                                         <animations/>
                                         <constraints>
@@ -1513,7 +1516,7 @@
                                             <userDefinedRuntimeAttribute type="image" keyPath="customImage" value="watchTV"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-zl-Uab" userLabel="personImage" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WTK-zl-Uab" userLabel="personImage" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
                                         <rect key="frame" x="373" y="90" width="162" height="163"/>
                                         <animations/>
                                         <constraints>
@@ -1542,7 +1545,7 @@
                                             <rect key="frame" x="433" y="90" width="188" height="163"/>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="With" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="B9D-xT-Sos">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="B9D-xT-Sos">
                                         <rect key="frame" x="261" y="156" width="47" height="54"/>
                                         <animations/>
                                         <constraints>
@@ -1556,7 +1559,7 @@
                                             <rect key="frame" x="355" y="156" width="68" height="54"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Activity Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-gV-kSf">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-gV-kSf">
                                         <rect key="frame" x="25" y="28" width="163" height="54"/>
                                         <animations/>
                                         <constraints>
@@ -1567,7 +1570,7 @@
                                         <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="date place holder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="VWO-FZ-mxh">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date place holder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="VWO-FZ-mxh">
                                         <rect key="frame" x="111" y="327" width="163" height="17"/>
                                         <animations/>
                                         <constraints>
@@ -1578,7 +1581,7 @@
                                         <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="End Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-Ib-Xn8" customClass="LabelStyle" customModule="BuddyUp" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="End Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="6wn-Ib-Xn8" customClass="LabelStyle" customModule="BuddyUp" customModuleProvider="target">
                                         <rect key="frame" x="296" y="295" width="162" height="24"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1604,7 +1607,7 @@
                                             <rect key="frame" x="433" y="303" width="59" height="24"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="date place holder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="Vo8-bZ-7uO">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date place holder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="Vo8-bZ-7uO">
                                         <rect key="frame" x="296" y="327" width="162" height="17"/>
                                         <animations/>
                                         <constraints>
@@ -1618,7 +1621,7 @@
                                             <rect key="frame" x="433" y="329" width="185" height="24"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Start Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="eAf-jq-bGI" customClass="LabelStyle" customModule="BuddyUp" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="eAf-jq-bGI" customClass="LabelStyle" customModule="BuddyUp" customModuleProvider="target">
                                         <rect key="frame" x="111" y="295" width="163" height="24"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1641,7 +1644,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Person" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="Oc6-lg-rx9">
+                                    <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Person" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000007" translatesAutoresizingMaskIntoConstraints="NO" id="Oc6-lg-rx9">
                                         <rect key="frame" x="373" y="28" width="162" height="54"/>
                                         <animations/>
                                         <constraints>
