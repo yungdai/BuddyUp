@@ -8,9 +8,9 @@
 
 import UIKit
 
-@IBDesignable class ImageView: UIImageView {
+@IBDesignable class PictureImageView: UIImageView {
     
-    // set corner rouding in IB
+
     @IBInspectable var cornerRounding: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRounding
@@ -18,7 +18,6 @@ import UIKit
         }
     }
     
-    // set border width in IB
     @IBInspectable var borderWidth: CGFloat = 1 {
         didSet {
             layer.borderWidth = borderWidth
@@ -26,10 +25,9 @@ import UIKit
         }
     }
     
-    // set image in IB
-    @IBInspectable var imageFile: UIImage? {
+    @IBInspectable var customImage: UIImage? {
         didSet {
-            layer.contents = imageFile?.CGImage
+            layer.contents = customImage?.CGImage
         }
     }
  
@@ -41,18 +39,18 @@ import UIKit
     
     
     override func prepareForInterfaceBuilder() {
-        imageStyle()
+        personImageStyle()
     }
     
     override func awakeFromNib() {
-        imageStyle()
+        personImageStyle()
     }
     
-     func imageStyle() {
+     func personImageStyle() {
         layer.cornerRadius = cornerRounding
         layer.borderWidth = borderWidth
         layer.borderColor = borderColour?.CGColor
-        layer.contents = imageFile!.CGImage
+        layer.contents = customImage!.CGImage
         // binds the masking to the variables above.  This will be true for all images assigned in IB
         layer.masksToBounds = true
     }
