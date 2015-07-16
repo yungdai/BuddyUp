@@ -60,10 +60,10 @@ typedef void(^PFGeoPointResultBlock)(PFGeoPoint *PF_NULLABLE_S geoPoint, NSError
 /*!
  @abstract Fetches the current device location and executes a block with a new `PFGeoPoint` object.
 
- @param resultBlock A block which takes the newly created `PFGeoPoint` as an argument.
+ @param geoPointHandler A block which takes the newly created `PFGeoPoint` as an argument.
  It should have the following argument signature: `^(PFGeoPoint *geoPoint, NSError *error)`
  */
-+ (void)geoPointForCurrentLocationInBackground:(PF_NULLABLE PFGeoPointResultBlock)resultBlock;
++ (void)geoPointForCurrentLocationInBackground:(PF_NULLABLE PFGeoPointResultBlock)geoPointHandler;
 
 ///--------------------------------------
 /// @name Controlling Position
