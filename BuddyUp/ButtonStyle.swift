@@ -24,8 +24,6 @@ import UIKit
         }
     }
     
-
-    
     @IBInspectable var BorderColour: UIColor? {
         didSet {
             layer.borderColor = BorderColour?.CGColor
