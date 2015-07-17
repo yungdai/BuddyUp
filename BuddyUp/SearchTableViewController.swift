@@ -46,13 +46,32 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
         }
         
     }
+    
+    // Define the query that will provide the data for the table view
+    
+    override func queryForTable() -> PFQuery {
+        search()
+        // Start the query object
+        var query = PFUser.query()
+        
+        // Add a where clause if there is a search criteria
+        if searchBar.text != "" {
+            query!.whereKey("name", containsString: searchBar.text.lowercaseString)
+        }
+        
+        // Order the results
+        query!.orderByAscending("name")
+        
+        // Return the qwuery object
+        return query!
+        
+    }
 
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
+
         return 1
     }
 
@@ -121,24 +140,7 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
         self.loadObjects()
     }
     
-    // Define the query that will provide the data for the table view
-    
-    override func queryForTable() -> PFQuery {
-        // Start the query object
-        var query = PFUser.query()
-        
-        // Add a where clause if there is a search criteria
-        if searchBar.text != "" {
-            query!.whereKey("searchText", containsString: searchBar.text.lowercaseString)
-        }
-        
-        // Order the results
-        query!.orderByAscending("username")
-        
-        // Return the qwuery object
-        return query!
-
-    }
+  
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;

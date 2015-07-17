@@ -10,3 +10,5 @@ BuddyUp.xcodeproj/project.xcworkspace/xcshareddata/BuddyUp.xccheckout
 BuddyUp.xcodeproj/project.xcworkspace/xcuserdata/yungdai.xcuserdatad/UserInterfaceState.xcuserstate
 
 *.xcuserstate
+
+*.xcbkptlist
