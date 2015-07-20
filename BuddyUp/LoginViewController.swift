@@ -31,7 +31,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordField.delegate = self
         
         if PFUser.currentUser()?.sessionToken != nil {
-            println("sending user to the main app screen because he's a current user")
+            print("sending user to the main app screen because he's a current user")
             
             self.performSegueWithIdentifier("mainApp", sender: self)
         } else {
@@ -41,7 +41,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         
         if (FBSDKAccessToken.currentAccessToken() != nil) {
-            println("User is already logged in go to the next viewcontroller")
+            print("User is already logged in go to the next viewcontroller")
             
         }
     }
@@ -83,7 +83,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     func animateTextField(up: Bool) {
-        var movement = (up ? -kbHeight : kbHeight)
+        let movement = (up ? -kbHeight : kbHeight)
         
         UIView.animateWithDuration(0.3, animations: {
             self.view.frame = CGRectOffset(self.view.frame, 0, movement)
@@ -234,7 +234,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         // Display sign in / up view controller
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewControllerWithIdentifier("Login") as! UIViewController
+        let viewController = storyboard.instantiateViewControllerWithIdentifier("Login") as UIViewController
         self.presentViewController(viewController, animated: true, completion: nil)
     }
 
@@ -256,14 +256,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
                 if let parseUser = user {
                     if parseUser.isNew {
-                        println("User signed up and logged in through Facebook!")
+                        print("User signed up and logged in through Facebook!")
                         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=first_name,friends,gender,email,name,picture.width(300).height(300)", parameters: nil)
                         graphRequest.startWithCompletionHandler({
                             (connection, result, error) -> Void in
                             if (error != nil)
                             {
                                 // display the error message
-                                println("Error: \(error)")
+                                print("Error: \(error)")
                             } else {
                                 // parsing the facebook data from the graph API and saving it to parse
                                 // save the facebook name and email data to parseUser
@@ -292,18 +292,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                     }
                                 }
                                 parseUser.saveInBackground()
-                                println("Parse User Saved")
+                                print("Parse User Saved")
                                 self.performSegueWithIdentifier("mainApp", sender: nil)
                             }
                         })
                     } else {
-                        println("You are already a user, I'll just send you the main page")
+                        print("You are already a user, I'll just send you the main page")
                         
                         // save the user's location to parse before you save the information
                         PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
                             if let user = PFUser.currentUser() {
                                 user["currentLocation"] = geoPoint
-                                println("Saving User's Location In Background")
+                                print("Saving User's Location In Background")
                                 user.saveInBackground()
                             }
                             

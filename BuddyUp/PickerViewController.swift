@@ -43,8 +43,8 @@ class PickerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     @IBAction func okAction(sender: AnyObject) {
         self.dismissViewControllerAnimated(true) {
-            var selectedRow = self.textPicker.selectedRowInComponent(0)
-            var activityString = self.activities[selectedRow]
+            let selectedRow = self.textPicker.selectedRowInComponent(0)
+            let activityString = self.activities[selectedRow]
             self.delegate?.pickerVCDismissed(activityString)
         }
         
@@ -64,7 +64,7 @@ class PickerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     }
     
     //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return activities[row]
     }
 }

@@ -123,7 +123,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         activity.saveInBackgroundWithBlock { (success, error: NSError?) -> Void in
             if (error != nil) {
                 // TODO: set up alert
-                println(error)
+                print(error)
             } else {
                 self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
             }
@@ -171,7 +171,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
             (alert: UIAlertAction!) -> Void in
-            println("Cancelled")
+            print("Cancelled")
         })
         
         // make it work on an iPad

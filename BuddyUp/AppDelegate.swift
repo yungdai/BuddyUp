@@ -82,16 +82,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // reveal the main app if you are a current user
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         if PFUser.currentUser()?.sessionToken != nil {
-            println("Your session token is valid")
+            print("Your session token is valid")
             // save the user's location to parse before you save the information
             PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
                 if let user = PFUser.currentUser() {
                     user["currentLocation"] = geoPoint
-                    println("Saving User's Location In Background")
+                    print("Saving User's Location In Background")
                     user.saveInBackground()
                 }
             }
-            let revealVC = storyBoard.instantiateViewControllerWithIdentifier("buddyUpTabBarController") as! UIViewController
+            let revealVC = storyBoard.instantiateViewControllerWithIdentifier("buddyUpTabBarController") as UIViewController
             self.window?.rootViewController = revealVC
         } else {
             self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as! UIViewController)
@@ -110,18 +110,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         PFPush.subscribeToChannelInBackground("", block: { (succeeded: Bool, error: NSError?) -> Void in
             if succeeded {
-                println("ParseStarterProject successfully subscribed to push notifications on the broadcast channel.");
+                print("ParseStarterProject successfully subscribed to push notifications on the broadcast channel.");
             } else {
-                println("ParseStarterProject failed to subscribe to push notifications on the broadcast channel with error = %@.", error)
+                print("ParseStarterProject failed to subscribe to push notifications on the broadcast channel with error = %@.", error)
             }
         })
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         if error.code == 3010 {
-            println("Push notifications are not supported in the iOS Simulator.")
+            print("Push notifications are not supported in the iOS Simulator.")
         } else {
-            println("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
+            print("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
         }
     }
     
@@ -133,12 +133,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func application(application: UIApplication,
-        openURL url: NSURL,
+    func application(application: UIApplication, openURL url: NSURL,
         sourceApplication: String?,
-        annotation: AnyObject?) -> Bool {
+        annotation: AnyObject-> Bool {
             return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
-            //            return FBAppCall.handleOpenURL(url, sourceApplication:sourceApplication, session:PFFacebookUtils.session())
+
     }
 
 

@@ -78,7 +78,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
                 } else if let userPicture = user["userImage"] as? PFFile {
                     userPicture.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
                         if (error != nil) {
-                            println(error)
+                            print(error)
                             // TODO throw error message
                             return
                         }
@@ -109,11 +109,11 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
             
             user.saveInBackgroundWithBlock({ (sucess, error: NSError?) -> Void in
                 if (error != nil) {
-                    println(error)
+                    print(error)
                     
                 } else {
                     // TODO: give response for saved data
-                    println("saved")
+                    print("saved")
                     
                 }
             })
@@ -160,7 +160,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
             (alert: UIAlertAction!) -> Void in
-            println("Cancelled")
+            print("Cancelled")
         })
         
         // make it work on an iPad

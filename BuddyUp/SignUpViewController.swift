@@ -84,7 +84,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func animateTextField(up: Bool) {
-        var movement = (up ? -kbHeight : kbHeight)
+        let movement = (up ? -kbHeight : kbHeight)
         
         UIView.animateWithDuration(0.3, animations: {
             self.view.frame = CGRectOffset(self.view.frame, 0, movement)
@@ -207,7 +207,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         parseUser.signUpInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in
             
             if error == nil {
-                println("signed up user to Parse")
+                print("signed up user to Parse")
                 // send them over to the main app
                 // User needs to verify email address before continuing
                 let alertController = UIAlertController(title: "Email address verification",
@@ -225,7 +225,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 
                 self.activityIndicator.stopAnimating()
                 
-                if let message: AnyObject = error!.userInfo!["error"] {
+                if let message: AnyObject = error!.userInfo["error"] {
                     self.errorMessageLabel.text = "\(message)"
                 }
                 return
@@ -244,7 +244,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         // Display sign in / up view controller
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = storyboard.instantiateViewControllerWithIdentifier("Login") as! UIViewController
+        let loginViewController = storyboard.instantiateViewControllerWithIdentifier("Login") as UIViewController
         self.presentViewController(loginViewController, animated: true, completion: nil)
     }
 }

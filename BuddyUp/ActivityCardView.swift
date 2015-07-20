@@ -96,8 +96,8 @@ import UIKit
         setupView()
     }
     
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    required init?(coder aDecoder: NSCoder) {
+        super.init?(coder: aDecoder)
         setupView()
     }
     
