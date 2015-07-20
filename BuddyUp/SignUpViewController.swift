@@ -139,42 +139,42 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         
         // Messaging nil will return 0, so these checks implicitly check for nil text.
-        if count(username) == 0 || count(password) == 0 || count(passwordConfirmation) == 0 {
+        if username.count == 0 || count(password) == 0 || count(passwordConfirmation) == 0 {
             textError = true
             
             // Set up the keyboard for the first field missing input:
-            if count(username) == 0 {
+            if username.count == 0 {
                 errorText += usernameBlankText
                 usernameField.becomeFirstResponder()
             }
             
-            if count(firstName) == 0 {
+            if firstName.count == 0 {
                 errorText += firstNameBlankText
                 firstNameField.becomeFirstResponder()
             }
             
-            if count(lastName) == 0 {
+            if lastName.charactors.count == 0 {
                 errorText += lastNameBlankText
                 lastNameField.becomeFirstResponder()
             }
             
             
-            if count(password) == 0 {
+            if password.count == 0 {
                 passwordField.becomeFirstResponder()
             }
             
-            if count(passwordConfirmation) == 0 {
+            if passwordConfirmation.count == 0 {
                 passwordConfirmationField.becomeFirstResponder()
             }
             
-            if count(emailAddress) == 0 {
+            if emailAddress.count == 0 {
                 errorText += emailBlankText
                 emailAddressField.becomeFirstResponder()
             }
             
             // error text feedback for the password boxes
-           if count(password) == 0 || count(passwordConfirmation) == 0 {
-                if count(username) == 0 {
+           if password.count == 0 || passwordConfirmation.count == 0 {
+                if username.count   == 0 {
                     // we need some joining text in the error
                     errorText += jointText
                 }

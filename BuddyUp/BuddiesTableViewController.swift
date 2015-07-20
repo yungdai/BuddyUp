@@ -15,11 +15,6 @@ class BuddiesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // set up the refresh controls for this table
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: Selector("sortArray"), forControlEvents: UIControlEvents.ValueChanged)
-        self.refreshControl = refreshControl
-
         let query = PFUser.query()
         query?.whereKey("username", notEqualTo: PFUser.currentUser()!.username!)
         let users = query?.findObjects()
@@ -30,18 +25,9 @@ class BuddiesTableViewController: UITableViewController {
                 tableView.reloadData()
             }
         }
-        
     }
     
-    func sortArray() {
-        var sortedAlphabetically = userArray.reverse()
-        for(index,element) in enumerate(sortedAlphabetically) {
-            userArray[index] = element
-        }
-        
-        tableView.reloadData()
-        refreshControl?.endRefreshing()
-    }
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
