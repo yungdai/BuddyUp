@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerForRemoteNotificationTypes(types)
         }
 
-        }
+    
         
         // reveal the main app if you are a current user
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -95,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let revealVC = storyBoard.instantiateViewControllerWithIdentifier("buddyUpTabBarController") as! UIViewController
             self.window?.rootViewController = revealVC
         } else {
-            self.window.rootViewController = (storyBoard.instantiateInitialViewController() as! UIViewController!)
+            self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as! UIViewController!)
         }
         return true
     }
@@ -136,7 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, _openURL url: NSURL,
         sourceApplication: String?,
-        annotation: AnyObject-> Bool {
+        annotation: AnyObject) -> Bool {
             return FBSDKApplicationDelegate.sharedInstance().application(application, _openURL: url, sourceApplication: sourceApplication, annotation: annotation)
 
     }
@@ -163,7 +163,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
+
 

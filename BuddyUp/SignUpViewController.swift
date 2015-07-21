@@ -149,7 +149,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 usernameField.becomeFirstResponder()
             }
             
-            if firstName.count.characters== 0 {
+            if firstName.count.characters == 0 {
                 errorText += firstNameBlankText
                 firstNameField.becomeFirstResponder()
             }
