@@ -132,22 +132,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             textError = true
             
             // set up the keyboard for the first field missing input
-            if count(password) == 0 {
+            if password.count.characters == 0 {
                 passwordField.becomeFirstResponder()
             }
             
-            if count(username) == 0 {
+            if username.count.characters == 0 {
                 usernameField.becomeFirstResponder()
             }
         }
         
         // if the username entered text box lenth is 0
-        if count(username) == 0 {
+        if username.count.characters == 0 {
             textError = true
             errorText += noUsernameText
         }
         
-        if count(password) == 0 {
+        if password.count.characters == 0 {
             textError = true
             if count(username) == 0 {
                 errorText += errorTextJoin

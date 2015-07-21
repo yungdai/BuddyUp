@@ -108,6 +108,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         firstNameField.resignFirstResponder()
     }
     
+
     override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
         resign()
 
@@ -139,42 +140,42 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         
         // Messaging nil will return 0, so these checks implicitly check for nil text.
-        if username.count == 0 || count(password) == 0 || count(passwordConfirmation) == 0 {
+        if username.count.characters == 0 || password.count.characters == 0 || passwordConfirmation.count.characters == 0 {
             textError = true
             
             // Set up the keyboard for the first field missing input:
-            if username.count == 0 {
+            if username.count.characters == 0 {
                 errorText += usernameBlankText
                 usernameField.becomeFirstResponder()
             }
             
-            if firstName.count == 0 {
+            if firstName.count.characters== 0 {
                 errorText += firstNameBlankText
                 firstNameField.becomeFirstResponder()
             }
             
-            if lastName.charactors.count == 0 {
+            if lastName.count.characters == 0 {
                 errorText += lastNameBlankText
                 lastNameField.becomeFirstResponder()
             }
             
             
-            if password.count == 0 {
+            if password.count.characters == 0 {
                 passwordField.becomeFirstResponder()
             }
             
-            if passwordConfirmation.count == 0 {
+            if passwordConfirmation.count.characters == 0 {
                 passwordConfirmationField.becomeFirstResponder()
             }
             
-            if emailAddress.count == 0 {
+            if emailAddress.count.characters == 0 {
                 errorText += emailBlankText
                 emailAddressField.becomeFirstResponder()
             }
             
             // error text feedback for the password boxes
-           if password.count == 0 || passwordConfirmation.count == 0 {
-                if username.count   == 0 {
+           if password.count.characters == 0 || passwordConfirmation.count.characters == 0 {
+                if username.count.characters   == 0 {
                     // we need some joining text in the error
                     errorText += jointText
                 }
