@@ -88,7 +88,7 @@ class MainAppViewController: UIViewController{
                 
             }
             self.currentLocation = geoPoint
-            if let currentLocation = self.currentLocation {
+            if let _ = self.currentLocation {
                 
             }
                         user["currentLocation"] = geoPoint

@@ -128,28 +128,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         // Messaging nil will return 0, so these checks impicity check for nil text.
         
-        if count(username) == 0 || count(password) == 0 {
+        if username!.characters.count == 0 || password!.characters.count == 0 {
             textError = true
             
             // set up the keyboard for the first field missing input
-            if password.count.characters == 0 {
+            if password!.characters.count == 0 {
                 passwordField.becomeFirstResponder()
             }
             
-            if username.count.characters == 0 {
+            if username!.characters.count == 0 {
                 usernameField.becomeFirstResponder()
             }
         }
         
         // if the username entered text box lenth is 0
-        if username.count.characters == 0 {
+        if username!.characters.count == 0 {
             textError = true
             errorText += noUsernameText
         }
         
-        if password.count.characters == 0 {
+        if password!.characters.count == 0 {
             textError = true
-            if count(username) == 0 {
+            if username!.characters.count == 0 {
                 errorText += errorTextJoin
             }
             errorText += noPasswordText
@@ -167,7 +167,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         // log in the user with Parse
-        PFUser.logInWithUsernameInBackground(username, password: password) {
+        PFUser.logInWithUsernameInBackground(username!, password: password!) {
             (user: PFUser?, error: NSError?) -> Void in
             
             // check for email verification
@@ -183,7 +183,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             user["currentLocation"] = geoPoint
                             user.saveInBackground()
                         }
-                        println("user is logged in and location is updated")
+                        print("user is logged in and location is updated")
                     }
                     self.performSegueWithIdentifier("mainApp", sender: nil)
                 }
@@ -214,12 +214,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         user["currentLocation"] = geoPoint
                         user.saveInBackground()
                     }
-                println("user is logged in and location is updated")
+                print("user is logged in and location is updated")
                 }
                 self.performSegueWithIdentifier("mainApp", sender: nil)
                 
             } else {
-                println("log in failed")
+                print("log in failed")
                 self.errorMessage.text = "Log in failed"
                 return
             }

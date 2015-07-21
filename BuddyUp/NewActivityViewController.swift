@@ -50,7 +50,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
             dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-            let initDate : NSDate? = dateFormatter.dateFromString(startTimeTextField.text)
+            let initDate : NSDate? = dateFormatter.dateFromString(startTimeTextField.text!)
             
             // execute the callback
             let dataChangeCallBack : DatePickerPopUp.DatePickerPopUpCallBack = { (newDate : NSDate, forTextField : UITextField) ->() in forTextField.text = (newDate.ToDateMediumString() ?? "?") as String
@@ -67,7 +67,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
             dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-            let initDate : NSDate? = dateFormatter.dateFromString(endTimeTextField.text)
+            let initDate : NSDate? = dateFormatter.dateFromString(endTimeTextField.text!)
             
             // execute the callback
             let dataChangeCallBack : DatePickerPopUp.DatePickerPopUpCallBack = { (newDate : NSDate, forTextField : UITextField) ->() in forTextField.text = (newDate.ToDateMediumString() ?? "?") as String
@@ -78,7 +78,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
             
         } else if (textField == activityTypeTextField) {
             resign()
-            let initString : String = activityTypeTextField.text
+            let initString : String = activityTypeTextField.text!
             let dataChangedCallBack : PickerViewPickerPopUp.PickerViewPickerPopUpCallBack = {(newText : String, forTextField: UITextField) ->() in
                 
                 forTextField.text = newText
@@ -105,8 +105,8 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        let initStartDate : NSDate? = dateFormatter.dateFromString(startTimeTextField.text)
-        let initEndDate : NSDate? = dateFormatter.dateFromString(endTimeTextField.text)
+        let initStartDate : NSDate? = dateFormatter.dateFromString(startTimeTextField.text!)
+        let initEndDate : NSDate? = dateFormatter.dateFromString(endTimeTextField.text!)
         
         // save the object in the background
         let activity = PFObject(className: "Activity")
@@ -116,7 +116,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         activity["startTime"] = initStartDate
         activity["endTime"] = initEndDate
         activity["activityType"] = activityTypeTextField.text
-        activity["image"] = PFFile(name: "image.jpg", data: UIImageJPEGRepresentation(activityImageView.image, 0.5))
+        activity["image"] = PFFile(name: "image.jpg", data: UIImageJPEGRepresentation(activityImageView.image!, 0.5)!)
         activity["createdBy"] = PFUser.currentUser()
         
         // save the user activity
@@ -136,7 +136,6 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     let imagePicker = UIImagePickerController()
 
     // choose from the library of photos
-    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         activityImageView.contentMode = .ScaleAspectFit
