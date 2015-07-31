@@ -14,6 +14,28 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     var endDatePickerPopUp : DatePickerPopUp?
     var activityPickerPopUp : PickerViewPickerPopUp?
     
+    @IBOutlet weak var newActivityImage: PictureImageView!
+    
+    
+    // activity picture
+    // TODO do fast enum based on the picture
+    enum ActivityPicture {
+        case WatchTV
+        case GoFoDrinks
+        case PlaySports
+        case WatchAMovie
+        case GoToAnEvent
+        case CustomPicture
+        case NoImage
+    }
+    
+    var activityImage: ActivityPicture = .NoImage
+    
+
+    
+    // image picker variables
+    let imagePicker = UIImagePickerController()
+    
     @IBOutlet var addPictureButton: UIButton!
     @IBOutlet var startTimeTextField: UITextField!
     @IBOutlet var endTimeTextField: UITextField!
@@ -132,8 +154,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         }
     }
  
-    // image picker variables
-    let imagePicker = UIImagePickerController()
+
 
     // choose from the library of photos
     
