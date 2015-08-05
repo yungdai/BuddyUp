@@ -16,6 +16,13 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     @IBOutlet weak var newActivityImage: PictureImageView!
     
+    var customImageChosen: Bool = false
+    var customImageFileName = ""
+    
+    let customImageSelected = "A custom image was selected"
+    
+    
+    
     
     // activity picture
     // TODO do fast enum based on the picture
@@ -29,8 +36,34 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         case NoImage
     }
     
-    var activityImage: ActivityPicture = .NoImage
+    var activityPicture: ActivityPicture = .NoImage
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("imageToDisplay"), name: customImageSelected, object: nil)
+    
+    }
+    
+    func imageToDisplay(notification: NSNotification) {
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(customImageSelected, object: self)
+        
+        switch activityPicture {
+        case .WatchTV:
+            newActivityImage.image = UIImage(named: "watchTV")
+        case .GoFoDrinks:
+            newActivityImage.image = UIImage(named: "beer-mug-hi")
+        case .PlaySports:
+            newActivityImage.image = UIImage(named: "Soccer_Ball")
+        case .WatchAMovie:
+            newActivityImage.image = UIImage(named: "filmReel")
+        case .GoToAnEvent:
+            newActivityImage.image = UIImage(named: "eventIcon")
+        default:
+            newActivityImage.image = UIImage(named: "noImage")
+            
+        }
+    }
 
     
     // image picker variables
