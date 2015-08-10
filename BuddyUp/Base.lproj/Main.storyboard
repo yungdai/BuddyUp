@@ -1400,6 +1400,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityImageView" destination="CBA-Mr-t2s" id="pSS-xf-jf5"/>
+                        <outlet property="activityTypeSelected" destination="0Ms-8i-E8i" id="3en-lc-ATU"/>
                         <outlet property="activityTypeTextField" destination="0Ms-8i-E8i" id="GWZ-iY-fKW"/>
                         <outlet property="addPictureButton" destination="deJ-BP-ACe" id="aN5-jf-tnB"/>
                         <outlet property="endTimeTextField" destination="L1c-QB-2CT" id="IPe-Zi-W0O"/>

@@ -15,7 +15,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     var activityPickerPopUp : PickerViewPickerPopUp?
     
     @IBOutlet weak var newActivityImage: PictureImageView!
-    
+    @IBOutlet weak var activityTypeSelected: TextFieldStyle!
     var customImageChosen: Bool = false
     var customImageFileName = ""
     
@@ -40,14 +40,39 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        // add observer for custom image
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("imageToDisplay"), name: customImageSelected, object: nil)
     
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        
+        // change
+        switch activityPicture {
+        case .WatchTV:
+            newActivityImage.image = UIImage(named: "watchTV")
+        case .GoFoDrinks:
+            newActivityImage.image = UIImage(named: "beer-mug-hi")
+        case .PlaySports:
+            newActivityImage.image = UIImage(named: "Soccer_Ball")
+        case .WatchAMovie:
+            newActivityImage.image = UIImage(named: "filmReel")
+        case .GoToAnEvent:
+            newActivityImage.image = UIImage(named: "eventIcon")
+        default:
+            newActivityImage.image = UIImage(named: "noImage")
+            
+        }
+        
+    }
+    
+    
+    // function to change the image to display for a default images for default activities.
     func imageToDisplay(notification: NSNotification) {
         
         NSNotificationCenter.defaultCenter().postNotificationName(customImageSelected, object: self)
         
+        // change
         switch activityPicture {
         case .WatchTV:
             newActivityImage.image = UIImage(named: "watchTV")
