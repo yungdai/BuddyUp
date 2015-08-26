@@ -22,7 +22,7 @@ class PickerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     @IBOutlet weak var textPicker: UIPickerView!
     
     // the picker values
-    let activities = ["Watch TV", "Go For Drinks", "Go for a Meal", "Play Sports", "Watch a Movie", "Go To An Event"]
+    let activities = ["Watch TV", "Go for Drinks", "Go for a Meal", "Play Sports", "Watch a Movie", "Go to an Event"]
     
     weak var delegate: PickerViewControllerDelegate?
     

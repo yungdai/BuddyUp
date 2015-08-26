@@ -19,20 +19,16 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     var customImageChosen: Bool = false
     var customImageFileName = ""
     
-    let customImageSelected = "A custom image was selected"
+    let checkForActivityType = "A custom image was selected"
     
-    
-    
-    
-    // activity picture
-    // TODO do fast enum based on the picture
     enum ActivityPicture {
         case WatchTV
         case GoFoDrinks
         case PlaySports
         case WatchAMovie
         case GoToAnEvent
-        case CustomPicture
+        case GoForAMeal
+//        case CustomPicture
         case NoImage
     }
     
@@ -41,13 +37,16 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         // add observer for custom image
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("imageToDisplay"), name: customImageSelected, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("imageToDisplay"), name: checkForActivityType, object: nil)
     
     }
     
+    // TODO:  This is most likely the wrong function to use due to the pop up.  Need to troubleshoot
     func textFieldDidEndEditing(textField: UITextField) {
+        // Let NS Notification Center know that you want to check the activityType Text Field
+        NSNotificationCenter.defaultCenter().postNotificationName(checkForActivityType, object: self)
         
-        // change
+        // change the image based on the current activity type and if a custom image is selected or not
         switch activityPicture {
         case .WatchTV:
             newActivityImage.image = UIImage(named: "watchTV")
@@ -59,6 +58,11 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
             newActivityImage.image = UIImage(named: "filmReel")
         case .GoToAnEvent:
             newActivityImage.image = UIImage(named: "eventIcon")
+        case .GoForAMeal:
+            // no image for the meal yet
+            newActivityImage.image = UIImage(named: "noImage")
+//        case .CustomPicture:
+//            print("A custom picture was already chosen")
         default:
             newActivityImage.image = UIImage(named: "noImage")
             
@@ -69,25 +73,41 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     // function to change the image to display for a default images for default activities.
     func imageToDisplay(notification: NSNotification) {
+
+        let activityText : String? = activityTypeTextField.text
         
-        NSNotificationCenter.defaultCenter().postNotificationName(customImageSelected, object: self)
+        // Text for the activites are as followed
+        // "Watch TV", "Go For Drinks", "Go for a Meal", "Play Sports", "Watch a Movie", "Go To An Event"
         
-        // change
-        switch activityPicture {
-        case .WatchTV:
-            newActivityImage.image = UIImage(named: "watchTV")
-        case .GoFoDrinks:
-            newActivityImage.image = UIImage(named: "beer-mug-hi")
-        case .PlaySports:
-            newActivityImage.image = UIImage(named: "Soccer_Ball")
-        case .WatchAMovie:
-            newActivityImage.image = UIImage(named: "filmReel")
-        case .GoToAnEvent:
-            newActivityImage.image = UIImage(named: "eventIcon")
-        default:
-            newActivityImage.image = UIImage(named: "noImage")
+        // check to see if a custom image is already chosen if not then go ahead with changing to the default activity pictures
+        if !customImageChosen {
+            if let activityText : String? = "Watch TV" as String? {
+                self.activityPicture = .WatchTV
+            }
             
+            if let activityText : String? = "Go for Drinks" as String? {
+                self.activityPicture = .GoFoDrinks
+            }
+            
+            if let activityText : String? = "Go for a Meal" as String? {
+                self.activityPicture = .GoForAMeal
+            }
+            
+            if let activityText : String? = "Play Sports" as String? {
+                self.activityPicture = .PlaySports
+            }
+            
+            if let activityText : String? = "Watch a Movie" as String? {
+                self.activityPicture = .WatchAMovie
+            }
+            
+            if let activityText : String? = "Go to an Event" as String? {
+                self.activityPicture = .GoToAnEvent
+            }
+        } else {
+            self.activityPicture = .NoImage
         }
+        
     }
 
     
@@ -220,6 +240,8 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         activityImageView.contentMode = .ScaleAspectFit
         activityImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        customImageChosen = true
+        
 
     }
     
