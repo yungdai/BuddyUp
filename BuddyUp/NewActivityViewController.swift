@@ -13,13 +13,12 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     var startDatePickerPopUp : DatePickerPopUp?
     var endDatePickerPopUp : DatePickerPopUp?
     var activityPickerPopUp : PickerViewPickerPopUp?
-    
-    @IBOutlet weak var newActivityImage: PictureImageView!
-    @IBOutlet weak var activityTypeSelected: TextFieldStyle!
     var customImageChosen: Bool = false
     var customImageFileName = ""
-    
-    let checkForActivityType = "A custom image was selected"
+
+    @IBOutlet var activityImageView: PictureImageView!
+    @IBOutlet weak var newActivityImage: PictureImageView!
+    @IBOutlet weak var activityTypeSelected: TextFieldStyle!
     
     enum ActivityPicture {
         case WatchTV
@@ -28,25 +27,34 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         case WatchAMovie
         case GoToAnEvent
         case GoForAMeal
-//        case CustomPicture
         case NoImage
     }
     
     var activityPicture: ActivityPicture = .NoImage
     
+    
+    // image picker variables
+    let imagePicker = UIImagePickerController()
+    @IBOutlet var addPictureButton: UIButton!
+    @IBOutlet var startTimeTextField: UITextField!
+    @IBOutlet var endTimeTextField: UITextField!
+    @IBOutlet var activityTypeTextField: UITextField!
+    var currentUser = PFUser.currentUser()
+
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        // add observer for custom image
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("imageToDisplay"), name: checkForActivityType, object: nil)
     
     }
     
     // TODO:  This is most likely the wrong function to use due to the pop up.  Need to troubleshoot
     func textFieldDidEndEditing(textField: UITextField) {
-        // Let NS Notification Center know that you want to check the activityType Text Field
-        NSNotificationCenter.defaultCenter().postNotificationName(checkForActivityType, object: self)
+
+    }
+    
+    // change the image based on the current activity type and if a custom image is selected or not
+    func changeDefaultPicture() {
         
-        // change the image based on the current activity type and if a custom image is selected or not
         switch activityPicture {
         case .WatchTV:
             newActivityImage.image = UIImage(named: "watchTV")
@@ -61,66 +69,56 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         case .GoForAMeal:
             // no image for the meal yet
             newActivityImage.image = UIImage(named: "noImage")
-//        case .CustomPicture:
-//            print("A custom picture was already chosen")
         default:
             newActivityImage.image = UIImage(named: "noImage")
             
         }
-        
     }
     
     
     // function to change the image to display for a default images for default activities.
-    func imageToDisplay(notification: NSNotification) {
+    func imageToDisplay() {
 
         let activityText : String? = activityTypeTextField.text
-        
-        // Text for the activites are as followed
-        // "Watch TV", "Go For Drinks", "Go for a Meal", "Play Sports", "Watch a Movie", "Go To An Event"
-        
+      
         // check to see if a custom image is already chosen if not then go ahead with changing to the default activity pictures
         if !customImageChosen {
             if let activityText : String? = "Watch TV" as String? {
                 self.activityPicture = .WatchTV
+                changeDefaultPicture()
             }
             
             if let activityText : String? = "Go for Drinks" as String? {
                 self.activityPicture = .GoFoDrinks
+                changeDefaultPicture()
+                
             }
             
             if let activityText : String? = "Go for a Meal" as String? {
                 self.activityPicture = .GoForAMeal
+                changeDefaultPicture()
             }
             
             if let activityText : String? = "Play Sports" as String? {
                 self.activityPicture = .PlaySports
+                changeDefaultPicture()
             }
             
             if let activityText : String? = "Watch a Movie" as String? {
                 self.activityPicture = .WatchAMovie
+                changeDefaultPicture()
             }
             
             if let activityText : String? = "Go to an Event" as String? {
                 self.activityPicture = .GoToAnEvent
+                changeDefaultPicture()
             }
         } else {
             self.activityPicture = .NoImage
+            changeDefaultPicture()
         }
         
     }
-
-    
-    // image picker variables
-    let imagePicker = UIImagePickerController()
-    
-    @IBOutlet var addPictureButton: UIButton!
-    @IBOutlet var startTimeTextField: UITextField!
-    @IBOutlet var endTimeTextField: UITextField!
-    @IBOutlet var activityTypeTextField: UITextField!
-    var currentUser = PFUser.currentUser()
-
-    @IBOutlet var activityImageView: PictureImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -180,18 +178,21 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
             resign()
             let initString : String = activityTypeTextField.text
             let dataChangedCallBack : PickerViewPickerPopUp.PickerViewPickerPopUpCallBack = {(newText : String, forTextField: UITextField) ->() in
-                
                 forTextField.text = newText
             }
             
             activityPickerPopUp!.pick(self, initString: initString, dataChanged: dataChangedCallBack)
+            // ensures that when the text is put on to the textField the keyboard is not there.
+            resign()
             return false
             
         }else {
             return true
         }
+        
     }
     
+
     
     func resign() {
         startTimeTextField.resignFirstResponder()

@@ -13,9 +13,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var errorMessage: UILabel!
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
-    
-
-
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var signupButton: UIButton!
     

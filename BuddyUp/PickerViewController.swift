@@ -8,13 +8,12 @@
 
 import UIKit
 
-// create a deleate for the PickerViewController
+// create a delegate for the PickerViewController
 
 protocol PickerViewControllerDelegate : class {
     func pickerVCDismissed(text : String?)
 
 }
-
 
 class PickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
@@ -40,7 +39,6 @@ class PickerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         */
     }
     
-    
     @IBAction func okAction(sender: AnyObject) {
         self.dismissViewControllerAnimated(true) {
             var selectedRow = self.textPicker.selectedRowInComponent(0)
@@ -49,9 +47,6 @@ class PickerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
         
     }
-    
-    
-
 
     // returns the number of 'columns' to display.
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

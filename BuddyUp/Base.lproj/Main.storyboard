@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F19a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -138,7 +138,7 @@
                                         <color key="value" red="0.062745098040000002" green="0.46666666670000001" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="BorderWidth">
-                                        <real key="value" value="3"/>
+                                        <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -305,7 +305,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-Jq-qfM" userLabel="Error Label">
-                                <rect key="frame" x="16" y="83" width="576" height="21"/>
+                                <rect key="frame" x="16" y="74" width="576" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="16Y-ES-1IB"/>
@@ -315,8 +315,8 @@
                                 <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.89999999999999991" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uW-rZ-PcS" userLabel="Username" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
-                                <rect key="frame" x="10" y="142" width="584" height="52"/>
+                            <view alpha="0.89999999999999991" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8uW-rZ-PcS" userLabel="Username" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                                <rect key="frame" x="10" y="109" width="584" height="52"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="mUN-kg-2HM">
                                         <rect key="frame" x="8" y="9" width="35" height="35"/>
@@ -350,8 +350,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.89999999999999991" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vk9-kR-SFB" userLabel="First Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
-                                <rect key="frame" x="9" y="202" width="288" height="52"/>
+                            <view alpha="0.89999999999999991" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vk9-kR-SFB" userLabel="First Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                                <rect key="frame" x="9" y="169" width="288" height="52"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M7f-OT-cZW">
                                         <rect key="frame" x="8" y="11" width="272" height="30"/>
@@ -379,8 +379,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.89999997615814209" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-VP-vp5" userLabel="Last Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
-                                <rect key="frame" x="304" y="202" width="288" height="52"/>
+                            <view alpha="0.89999997615814209" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwA-VP-vp5" userLabel="Last Name" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                                <rect key="frame" x="304" y="169" width="288" height="52"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxC-Yf-OVY">
                                         <rect key="frame" x="8" y="11" width="272" height="30"/>
@@ -408,8 +408,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.85000002384185791" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IyN-mx-mQW" userLabel="Email Address" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
-                                <rect key="frame" x="9" y="262" width="583" height="52"/>
+                            <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IyN-mx-mQW" userLabel="Email Address" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                                <rect key="frame" x="9" y="229" width="583" height="52"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXo-3z-ZmE">
                                         <rect key="frame" x="7" y="11" width="568" height="30"/>
@@ -439,43 +439,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-Ae-Qew" userLabel="Password" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
-                                <rect key="frame" x="9" y="322" width="583" height="52"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKd-Gc-r70">
-                                        <rect key="frame" x="51" y="11" width="524" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="Ckg-YS-TLI">
-                                        <rect key="frame" x="8" y="8" width="35" height="35"/>
-                                        <animations/>
-                                    </imageView>
-                                </subviews>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="3rK-Lf-hHq"/>
-                                    <constraint firstAttribute="width" constant="583" id="WBO-dg-rsR"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
-                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
-                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
-                                        <color key="value" red="0.20000000000000001" green="0.48627450979999998" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <view alpha="0.85000002384185791" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qvT-ex-3jy" userLabel="Password Confirm" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
-                                <rect key="frame" x="9" y="382" width="583" height="52"/>
+                            <view alpha="0.85000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvT-ex-3jy" userLabel="Password Confirm" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                                <rect key="frame" x="9" y="289" width="583" height="52"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="a8K-Ia-jWI">
                                         <rect key="frame" x="8" y="6" width="35" height="35"/>
@@ -509,13 +474,13 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWy-zO-ICT" customClass="ButtonStyle" customModule="BuddyUp" customModuleProvider="target">
-                                <rect key="frame" x="9" y="461" width="583" height="52"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWy-zO-ICT" customClass="ButtonStyle" customModule="BuddyUp" customModuleProvider="target">
+                                <rect key="frame" x="9" y="422" width="583" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="583" id="ED6-2U-fER"/>
-                                    <constraint firstAttribute="height" constant="52" id="wNJ-vP-iA5"/>
+                                    <constraint firstAttribute="height" constant="44" id="wNJ-vP-iA5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="23"/>
                                 <state key="normal" title="Create Account">
@@ -534,6 +499,41 @@
                                     <action selector="createAccountButtonPressed:" destination="CqZ-hD-fV2" eventType="touchUpInside" id="Z2u-5D-pSV"/>
                                 </connections>
                             </button>
+                            <view alpha="0.84999999999999987" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OvQ-Ae-Qew" userLabel="Password" customClass="ActivityCardView" customModule="BuddyUp" customModuleProvider="target">
+                                <rect key="frame" x="9" y="349" width="583" height="52"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKd-Gc-r70">
+                                        <rect key="frame" x="51" y="11" width="524" height="30"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_lock" translatesAutoresizingMaskIntoConstraints="NO" id="Ckg-YS-TLI">
+                                        <rect key="frame" x="8" y="8" width="35" height="35"/>
+                                        <animations/>
+                                    </imageView>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="3rK-Lf-hHq"/>
+                                    <constraint firstAttribute="width" constant="583" id="WBO-dg-rsR"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                        <color key="value" red="0.20000000000000001" green="0.48627450979999998" blue="0.5568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -544,17 +544,19 @@
                             <constraint firstItem="qvT-ex-3jy" firstAttribute="leading" secondItem="3SX-vn-Taq" secondAttribute="leadingMargin" constant="-7" id="7Y4-jv-eBj"/>
                             <constraint firstItem="ccp-Jq-qfM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Ybn-sJ-s4I" secondAttribute="bottom" constant="10" id="A0Q-DZ-Wzi"/>
                             <constraint firstAttribute="centerX" secondItem="IyN-mx-mQW" secondAttribute="centerX" id="AyC-T4-5Tc"/>
+                            <constraint firstItem="nWy-zO-ICT" firstAttribute="top" secondItem="qvT-ex-3jy" secondAttribute="bottom" constant="81" id="B24-n5-ibW"/>
                             <constraint firstItem="ccp-Jq-qfM" firstAttribute="leading" secondItem="3SX-vn-Taq" secondAttribute="leadingMargin" id="C9Q-su-Fxf"/>
-                            <constraint firstItem="qvT-ex-3jy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OvQ-Ae-Qew" secondAttribute="bottom" constant="5" id="Cmt-lF-lU6"/>
+                            <constraint firstItem="qvT-ex-3jy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OvQ-Ae-Qew" secondAttribute="bottom" constant="-112" id="Cmt-lF-lU6"/>
                             <constraint firstItem="cwA-VP-vp5" firstAttribute="bottom" secondItem="Vk9-kR-SFB" secondAttribute="bottom" id="DF3-h9-C1A"/>
-                            <constraint firstAttribute="centerY" secondItem="OvQ-Ae-Qew" secondAttribute="centerY" constant="-48" id="H9V-Jf-d8V"/>
-                            <constraint firstAttribute="centerY" secondItem="ccp-Jq-qfM" secondAttribute="centerY" constant="206.5" id="I1e-PN-Hx2"/>
+                            <constraint firstAttribute="centerY" secondItem="OvQ-Ae-Qew" secondAttribute="centerY" constant="-75" id="H9V-Jf-d8V"/>
+                            <constraint firstAttribute="centerY" secondItem="ccp-Jq-qfM" secondAttribute="centerY" constant="215.5" id="I1e-PN-Hx2"/>
                             <constraint firstItem="hj2-JB-d3m" firstAttribute="top" secondItem="kAt-1t-nPY" secondAttribute="bottom" id="J0k-Nn-Yu2"/>
                             <constraint firstAttribute="centerX" secondItem="8uW-rZ-PcS" secondAttribute="centerX" constant="-2" id="LFV-ao-RTw"/>
                             <constraint firstAttribute="centerY" secondItem="kAt-1t-nPY" secondAttribute="centerY" constant="-32" id="OTg-LO-L8k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ccp-Jq-qfM" secondAttribute="trailing" constant="-8" id="OvU-xA-xDm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qvT-ex-3jy" secondAttribute="trailing" constant="-8" id="QBd-ko-YE6"/>
-                            <constraint firstItem="IyN-mx-mQW" firstAttribute="bottom" secondItem="qvT-ex-3jy" secondAttribute="bottom" constant="-120" id="SF5-5w-2Er"/>
+                            <constraint firstItem="IyN-mx-mQW" firstAttribute="bottom" secondItem="qvT-ex-3jy" secondAttribute="bottom" constant="-60" id="SF5-5w-2Er"/>
+                            <constraint firstItem="hj2-JB-d3m" firstAttribute="top" secondItem="nWy-zO-ICT" secondAttribute="bottom" constant="134" id="U5A-y7-5SP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nWy-zO-ICT" secondAttribute="trailing" constant="-8" id="UZW-S3-iVz"/>
                             <constraint firstAttribute="centerX" secondItem="OvQ-Ae-Qew" secondAttribute="centerX" id="VeN-4K-S6g"/>
                             <constraint firstItem="OvQ-Ae-Qew" firstAttribute="leading" secondItem="3SX-vn-Taq" secondAttribute="leadingMargin" constant="-7" id="WmF-ak-sQK"/>
