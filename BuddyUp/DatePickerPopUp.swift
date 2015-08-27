@@ -10,7 +10,7 @@ import UIKit
 
 class DatePickerPopUp: NSObject, UIPopoverPresentationControllerDelegate, DatePickerViewControllerDelgate {
     
-    internal typealias DatePickerPopUpCallBack = (newDate : NSDate, forTextField : UITextField)->()
+    internal typealias DatePickerPopUpCallBack = (newDate : NSDate, forTextField : UITextField) -> ()
     
     var datePickerVC : DatePickerViewController
     var popover : UIPopoverPresentationController?
@@ -62,7 +62,6 @@ class DatePickerPopUp: NSObject, UIPopoverPresentationControllerDelegate, DatePi
             if let _date = date {
                 
                 _dataChanged(newDate: _date, forTextField: textField)
-                
             }
         }
         presented = false

@@ -13,7 +13,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     var startDatePickerPopUp : DatePickerPopUp?
     var endDatePickerPopUp : DatePickerPopUp?
     var activityPickerPopUp : PickerViewPickerPopUp?
-    var customImageChosen: Bool = false
+    var customImageChosen = false
     var customImageFileName = ""
 
     @IBOutlet var activityImageView: PictureImageView!
@@ -49,7 +49,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
     
     // TODO:  This is most likely the wrong function to use due to the pop up.  Need to troubleshoot
     func textFieldDidEndEditing(textField: UITextField) {
-
+        changeDefaultPicture()
     }
     
     // change the image based on the current activity type and if a custom image is selected or not
