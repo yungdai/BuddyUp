@@ -12,23 +12,11 @@ import UIKit
 
     // MARK: Inspectable properties ******************************
     
-    @IBInspectable var viewColour: UIColor = UIColor.grayColor() {
-        didSet {
-            backgroundColor = viewColour
-        }
-    }
+    @IBInspectable var viewColour: UIColor = UIColor.grayColor() 
     
-    @IBInspectable var gradientStartColor: UIColor = UIColor.whiteColor() {
-        didSet{
-            setupView()
-        }
-    }
+    @IBInspectable var gradientStartColor: UIColor = UIColor.whiteColor()
     
-    @IBInspectable var gradientEndColor: UIColor = UIColor.blackColor() {
-        didSet{
-            setupView()
-        }
-    }
+    @IBInspectable var gradientEndColor: UIColor = UIColor.blackColor()
     
     @IBInspectable var isHorizontal: Bool = false {
         didSet{
@@ -36,11 +24,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var roundness: CGFloat = 0.0 {
-        didSet{
-            setupView()
-        }
-    }
+    @IBInspectable var roundness: CGFloat = 0.0
     
     // MARK: Internal functions *********************************
     
