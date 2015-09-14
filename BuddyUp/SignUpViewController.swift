@@ -84,7 +84,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func animateTextField(up: Bool) {
-        var movement = (up ? -kbHeight : kbHeight)
+        let movement = (up ? -kbHeight : kbHeight)
         
         UIView.animateWithDuration(0.3, animations: {
             self.view.frame = CGRectOffset(self.view.frame, 0, movement)
@@ -108,7 +108,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         firstNameField.resignFirstResponder()
     }
     
-    override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         resign()
 
     }
@@ -139,42 +139,42 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         
         // Messaging nil will return 0, so these checks implicitly check for nil text.
-        if count(username) == 0 || count(password) == 0 || count(passwordConfirmation) == 0 {
+        if username.characters.count == 0 || password.characters.count == 0 || passwordConfirmation.characters.count == 0 {
             textError = true
             
             // Set up the keyboard for the first field missing input:
-            if count(username) == 0 {
+            if username.characters.count == 0 {
                 errorText += usernameBlankText
                 usernameField.becomeFirstResponder()
             }
             
-            if count(firstName) == 0 {
+            if firstName.characters.count == 0 {
                 errorText += firstNameBlankText
                 firstNameField.becomeFirstResponder()
             }
             
-            if count(lastName) == 0 {
+            if lastName.characters.count == 0 {
                 errorText += lastNameBlankText
                 lastNameField.becomeFirstResponder()
             }
             
             
-            if count(password) == 0 {
+            if password.characters.count == 0 {
                 passwordField.becomeFirstResponder()
             }
             
-            if count(passwordConfirmation) == 0 {
+            if passwordConfirmation.characters.count == 0 {
                 passwordConfirmationField.becomeFirstResponder()
             }
             
-            if count(emailAddress) == 0 {
+            if emailAddress.characters.count == 0 {
                 errorText += emailBlankText
                 emailAddressField.becomeFirstResponder()
             }
             
             // error text feedback for the password boxes
-           if count(password) == 0 || count(passwordConfirmation) == 0 {
-                if count(username) == 0 {
+           if password.characters.count == 0 || passwordConfirmation.characters.count == 0 {
+                if username.characters.count == 0 {
                     // we need some joining text in the error
                     errorText += jointText
                 }
@@ -207,7 +207,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         parseUser.signUpInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in
             
             if error == nil {
-                println("signed up user to Parse")
+                print("signed up user to Parse")
                 // send them over to the main app
                 // User needs to verify email address before continuing
                 let alertController = UIAlertController(title: "Email address verification",
@@ -225,7 +225,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 
                 self.activityIndicator.stopAnimating()
                 
-                if let message: AnyObject = error!.userInfo!["error"] {
+                if let message: AnyObject = error!.userInfo["error"] {
                     self.errorMessageLabel.text = "\(message)"
                 }
                 return
@@ -244,7 +244,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         // Display sign in / up view controller
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = storyboard.instantiateViewControllerWithIdentifier("Login") as! UIViewController
+        let loginViewController = storyboard.instantiateViewControllerWithIdentifier("Login") 
         self.presentViewController(loginViewController, animated: true, completion: nil)
     }
 }

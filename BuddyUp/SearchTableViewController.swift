@@ -35,7 +35,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         
         query!.findObjectsInBackgroundWithBlock { (results, error) -> Void in
             self.data = (results as? [PFObject])!
-            print("found something")
+            print("found something", terminator: "")
             // if you find the data the reload the screen
             self.tableView.reloadData()
         }
@@ -75,7 +75,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
         let obj = self.data[indexPath.row]
         cell.textLabel!.text = obj["name"] as? String
         return cell
@@ -104,7 +104,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         // as you type you should be able to search at the same time and pull in data with this method
-        search(searchText: searchText)
+        search(searchText)
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {

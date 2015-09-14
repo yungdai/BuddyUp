@@ -78,7 +78,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
                 } else if let userPicture = user["userImage"] as? PFFile {
                     userPicture.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
                         if (error != nil) {
-                            println(error)
+                            print(error)
                             // TODO throw error message
                             return
                         }
@@ -109,11 +109,11 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
             
             user.saveInBackgroundWithBlock({ (sucess, error: NSError?) -> Void in
                 if (error != nil) {
-                    println(error)
+                    print(error)
                     
                 } else {
                     // TODO: give response for saved data
-                    println("saved")
+                    print("saved")
                     
                 }
             })
@@ -125,7 +125,7 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
     
     // choose from the library of photos
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         userImageView.contentMode = .ScaleAspectFill
         userImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
@@ -144,14 +144,14 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         
         
         // select from photo library
-        let photoLibrary = UIAlertAction(title: "Photo Library", style: .Default) { (alert: UIAlertAction!) -> Void in
+        let photoLibrary = UIAlertAction(title: "Photo Library", style: .Default) { (alert: UIAlertAction) -> Void in
             self.imagePicker.delegate = self
             self.imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
             self.imagePicker.allowsEditing = false
             self.presentViewController(self.imagePicker, animated: true, completion: nil)
         }
         
-        let camera = UIAlertAction(title: "Use Camera", style: .Default) { (alert: UIAlertAction!) -> Void in
+        let camera = UIAlertAction(title: "Use Camera", style: .Default) { (alert: UIAlertAction) -> Void in
             self.imagePicker.delegate = self
             self.imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
             self.imagePicker.allowsEditing = false
@@ -159,8 +159,8 @@ class SettingsTableViewController: UITableViewController, UIImagePickerControlle
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
-            (alert: UIAlertAction!) -> Void in
-            println("Cancelled")
+            (alert: UIAlertAction) -> Void in
+            print("Cancelled")
         })
         
         // make it work on an iPad

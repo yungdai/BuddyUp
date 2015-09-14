@@ -224,7 +224,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         activity.saveInBackgroundWithBlock { (success, error: NSError?) -> Void in
             if (error != nil) {
                 // TODO: set up alert
-                println(error)
+                print(error)
             } else {
                 self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
             }
@@ -237,7 +237,7 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
 
     // choose from the library of photos
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         activityImageView.contentMode = .ScaleAspectFit
         activityImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
@@ -257,14 +257,14 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         
         
         // select from photo library
-        let photoLibrary = UIAlertAction(title: "Photo Library", style: .Default) { (alert: UIAlertAction!) -> Void in
+        let photoLibrary = UIAlertAction(title: "Photo Library", style: .Default) { (alert: UIAlertAction) -> Void in
             self.imagePicker.delegate = self
             self.imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
             self.imagePicker.allowsEditing = false
             self.presentViewController(self.imagePicker, animated: true, completion: nil)
         }
         
-        let camera = UIAlertAction(title: "Use Camera", style: .Default) { (alert: UIAlertAction!) -> Void in
+        let camera = UIAlertAction(title: "Use Camera", style: .Default) { (alert: UIAlertAction) -> Void in
             self.imagePicker.delegate = self
             self.imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
             self.imagePicker.allowsEditing = false
@@ -272,8 +272,8 @@ class NewActivityViewController: UIViewController, UITextFieldDelegate, UIImageP
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
-            (alert: UIAlertAction!) -> Void in
-            println("Cancelled")
+            (alert: UIAlertAction) -> Void in
+            print("Cancelled")
         })
         
         // make it work on an iPad

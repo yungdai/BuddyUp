@@ -41,8 +41,8 @@ class PickerViewController: UIViewController, UIPickerViewDataSource, UIPickerVi
     
     @IBAction func okAction(sender: AnyObject) {
         self.dismissViewControllerAnimated(true) {
-            var selectedRow = self.textPicker.selectedRowInComponent(0)
-            var activityString = self.activities[selectedRow]
+            let selectedRow = self.textPicker.selectedRowInComponent(0)
+            let activityString = self.activities[selectedRow]
             self.delegate?.pickerVCDismissed(activityString)
         }
         
