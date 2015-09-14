@@ -1776,7 +1776,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lcf-Cb-Xzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4631" y="-1104"/>
+            <point key="canvasLocation" x="4611" y="-904"/>
         </scene>
         <!--buddyUpTabBarController-->
         <scene sceneID="4tY-CX-4GT">
@@ -1791,8 +1791,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="o4c-s8-ByI" kind="relationship" relationship="viewControllers" id="Z0g-2q-Tde"/>
-                        <segue destination="dAu-CL-9Qv" kind="relationship" relationship="viewControllers" id="jlD-6c-M59"/>
                         <segue destination="Gku-E1-LA2" kind="relationship" relationship="viewControllers" id="f9N-PS-4DJ"/>
+                        <segue destination="dAu-CL-9Qv" kind="relationship" relationship="viewControllers" id="jlD-6c-M59"/>
                         <segue destination="Ew1-Ah-7u1" kind="relationship" relationship="viewControllers" id="nOd-M7-dpZ"/>
                         <segue destination="z7T-Zy-00c" kind="relationship" relationship="viewControllers" id="PDQ-oe-VyY"/>
                         <segue destination="jVG-dX-eYe" kind="relationship" relationship="viewControllers" id="LR9-3H-zIb"/>
@@ -1839,7 +1839,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lbx-6q-Kko" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3819" y="-1104"/>
+            <point key="canvasLocation" x="3671" y="-952"/>
         </scene>
         <!--Buddy Up!-->
         <scene sceneID="fxX-Sq-Fwz">
@@ -1916,6 +1916,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FHt-kP-U4i"/>
-        <segue reference="eQC-UJ-lVX"/>
+        <segue reference="jlD-6c-M59"/>
     </inferredMetricsTieBreakers>
 </document>
