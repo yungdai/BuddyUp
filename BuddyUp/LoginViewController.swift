@@ -125,28 +125,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         // Messaging nil will return 0, so these checks impicity check for nil text.
         
-        if username.characters.count == 0 || password.characters.count == 0 {
+        if username!.characters.count == 0 || password!.characters.count == 0 {
             textError = true
             
             // set up the keyboard for the first field missing input
-            if password.characters.count == 0 {
+            if password!.characters.count == 0 {
                 passwordField.becomeFirstResponder()
             }
             
-            if username.characters.count == 0 {
+            if username!.characters.count == 0 {
                 usernameField.becomeFirstResponder()
             }
         }
         
         // if the username entered text box lenth is 0
-        if username.characters.count == 0 {
+        if username!.characters.count == 0 {
             textError = true
             errorText += noUsernameText
         }
         
-        if password.characters.count == 0 {
+        if password!.characters.count == 0 {
             textError = true
-            if username.characters.count == 0 {
+            if username!.characters.count == 0 {
                 errorText += errorTextJoin
             }
             errorText += noPasswordText
@@ -164,7 +164,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         // log in the user with Parse
-        PFUser.logInWithUsernameInBackground(username, password: password) {
+        PFUser.logInWithUsernameInBackground(username!, password: password!) {
             (user: PFUser?, error: NSError?) -> Void in
             
             // check for email verification

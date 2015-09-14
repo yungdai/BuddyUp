@@ -22,8 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        // register subclasses for parsae
-        Friendship.registerSubclass()
         // User.registerSubclass()
         // Enable storing and querying data from Local Datastore.
         // Remove this line if you don't want to use Local Datastore features or want to use cachePolicy.
@@ -94,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let revealVC = storyBoard.instantiateViewControllerWithIdentifier("buddyUpTabBarController") 
             self.window?.rootViewController = revealVC
         } else {
-            self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as! UIViewController)
+            self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController?)
         }
         return true
     }
