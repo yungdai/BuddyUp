@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="BackgroundView" customModule="BuddyUp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -258,6 +258,22 @@
                             <constraint firstItem="agw-B8-6P8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="tfZ-ph-9Vg"/>
                             <constraint firstItem="11o-aL-bJR" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="zwc-U4-FsH"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="useGradient" value="NO"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="StartColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="EndColor">
+                                <color key="value" red="0.13677874235667545" green="0.29994061827185325" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="NO"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="roundness">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="errorMessage" destination="agw-B8-6P8" id="EmV-YK-uus"/>
@@ -284,18 +300,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-Jq-qfM" userLabel="Error Label">
-                                <rect key="frame" x="0.0" y="83" width="600" height="24"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="JFc-7p-xeO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9vc-9B-Gf3">
-                                <rect key="frame" x="30" y="194" width="540" height="350"/>
+                                <rect key="frame" x="30" y="190" width="540" height="350"/>
                                 <subviews>
                                     <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nW-OF-oI5" userLabel="Username Background" customClass="BackgroundView" customModule="BuddyUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="540" height="50"/>
@@ -622,16 +628,26 @@
                                     <rect key="frame" x="20" y="136" width="360" height="330"/>
                                 </variation>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccp-Jq-qfM" userLabel="Error Label">
+                                <rect key="frame" x="0.0" y="114" width="600" height="24"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="JFc-7p-xeO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ccp-Jq-qfM" firstAttribute="top" secondItem="Ybn-sJ-s4I" secondAttribute="bottom" constant="19" id="OjN-3Q-Sqd"/>
+                            <constraint firstItem="ccp-Jq-qfM" firstAttribute="top" secondItem="Ybn-sJ-s4I" secondAttribute="bottom" constant="50" id="OjN-3Q-Sqd"/>
+                            <constraint firstItem="9vc-9B-Gf3" firstAttribute="top" secondItem="ccp-Jq-qfM" secondAttribute="bottom" constant="52" id="Sc5-4a-JuZ"/>
+                            <constraint firstItem="9vc-9B-Gf3" firstAttribute="centerX" secondItem="3SX-vn-Taq" secondAttribute="centerX" id="d0i-Rz-WQy"/>
                             <constraint firstItem="ccp-Jq-qfM" firstAttribute="width" secondItem="3SX-vn-Taq" secondAttribute="width" id="hTY-rV-Tzy"/>
-                            <constraint firstItem="9vc-9B-Gf3" firstAttribute="centerX" secondItem="3SX-vn-Taq" secondAttribute="centerX" id="hfp-IW-1iR"/>
                             <constraint firstItem="9vc-9B-Gf3" firstAttribute="width" secondItem="3SX-vn-Taq" secondAttribute="width" multiplier="0.9" id="iK1-fp-r7w"/>
                             <constraint firstItem="ccp-Jq-qfM" firstAttribute="centerX" secondItem="3SX-vn-Taq" secondAttribute="centerX" id="uWK-St-YAa"/>
-                            <constraint firstItem="hj2-JB-d3m" firstAttribute="top" secondItem="9vc-9B-Gf3" secondAttribute="bottom" constant="56" id="wh2-yN-LzF"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="StartColor">
@@ -1578,7 +1594,7 @@
         <image name="watchTV" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FHt-kP-U4i"/>
+        <segue reference="N47-ue-Wgg"/>
         <segue reference="jlD-6c-M59"/>
     </inferredMetricsTieBreakers>
 </document>
