@@ -1,5 +1,5 @@
 //
-//  PersonImageView.swift
+//  PictureImageView.swift
 //  BuddyUp
 //
 //  Created by Yung Dai on 2015-06-21.
@@ -10,8 +10,8 @@ import UIKit
 
 @IBDesignable class PictureImageView: UIImageView {
     
-
-    @IBInspectable var cornerRounding: CGFloat = 0 {
+    
+    @IBInspectable var cornerRounding: CGFloat = 50{
         didSet {
             layer.cornerRadius = cornerRounding
             
@@ -21,7 +21,7 @@ import UIKit
     @IBInspectable var borderWidth: CGFloat = 1 {
         didSet {
             layer.borderWidth = borderWidth
-
+            
         }
     }
     
@@ -30,7 +30,7 @@ import UIKit
             layer.contents = customImage?.CGImage
         }
     }
- 
+    
     @IBInspectable var borderColour: UIColor? {
         didSet {
             layer.borderColor = borderColour?.CGColor
@@ -46,7 +46,7 @@ import UIKit
         personImageStyle()
     }
     
-     func personImageStyle() {
+    func personImageStyle() {
         layer.cornerRadius = cornerRounding
         layer.borderWidth = borderWidth
         layer.borderColor = borderColour?.CGColor
@@ -54,5 +54,5 @@ import UIKit
         // binds the masking to the variables above.  This will be true for all images assigned in IB
         layer.masksToBounds = true
     }
-
+    
 }

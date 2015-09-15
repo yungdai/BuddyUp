@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable class TextFieldStyle: UITextField {
-
+    
     @IBInspectable var cornerRounding: CGFloat = 10 {
         didSet {
             layer.cornerRadius = cornerRounding
@@ -45,8 +45,8 @@ import UIKit
         layer.cornerRadius = cornerRounding
         layer.borderWidth = BorderWidth
         layer.borderColor = BorderColour?.CGColor
-
+        
     }
-
-
+    
+    
 }

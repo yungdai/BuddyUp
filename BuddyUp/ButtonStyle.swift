@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable class ButtonStyle: UIButton {
-
+    
     @IBInspectable var cornerRounding: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRounding
@@ -24,14 +24,11 @@ import UIKit
         }
     }
     
-
-    
     @IBInspectable var BorderColour: UIColor? {
         didSet {
             layer.borderColor = BorderColour?.CGColor
         }
     }
-    
     
     override func prepareForInterfaceBuilder() {
         buttonStyle()
