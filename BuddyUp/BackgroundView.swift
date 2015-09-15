@@ -57,6 +57,29 @@ import UIKit
         
     }
     
+    @IBInspectable var cornerRounding: CGFloat = 10 {
+        didSet {
+            layer.cornerRadius = cornerRounding
+            
+        }
+    }
+    
+    @IBInspectable var BorderWidth: CGFloat = 1 {
+        didSet {
+            layer.borderWidth = BorderWidth
+            
+        }
+    }
+    
+    
+    
+    @IBInspectable var BorderColour: UIColor? {
+        didSet {
+            layer.borderColor = BorderColour?.CGColor
+        }
+    }
+
+    
     // Helper to return the main layer as CAGradientLayer
     var gradientLayer: CAGradientLayer {
         return layer as! CAGradientLayer
@@ -81,6 +104,9 @@ import UIKit
     
     func viewStyle() {
         backgroundColor = viewColour
+        layer.borderWidth = BorderWidth
+        layer.borderColor = BorderColour?.CGColor
+        layer.cornerRadius = cornerRounding
         setupView()
     }
     
