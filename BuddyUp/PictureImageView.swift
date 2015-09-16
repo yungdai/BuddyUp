@@ -25,11 +25,7 @@ import UIKit
         }
     }
     
-    @IBInspectable var customImage: UIImage? {
-        didSet {
-            layer.contents = customImage?.CGImage
-        }
-    }
+
     
     @IBInspectable var borderColour: UIColor? {
         didSet {
@@ -50,7 +46,6 @@ import UIKit
         layer.cornerRadius = cornerRounding
         layer.borderWidth = borderWidth
         layer.borderColor = borderColour?.CGColor
-        layer.contents = customImage!.CGImage
         // binds the masking to the variables above.  This will be true for all images assigned in IB
         layer.masksToBounds = true
     }
