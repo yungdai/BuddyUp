@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A05173D1B2600910091ECF5 /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05173C1B2600910091ECF5 /* MainAppViewController.swift */; };
-		1A0F071C1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */; };
-		1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57C1B2883E400AAE935 /* Friendship.swift */; };
 		1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */; };
 		1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D46041B44663F00270C0B /* SearchTableViewController.swift */; };
 		1A3EB67B1B46DC79008A81FE /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */; };
@@ -38,7 +36,6 @@
 		1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07441B2238940086879B /* SignUpViewController.swift */; };
 		1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A07461B2238C90086879B /* LoginViewController.swift */; };
 		1AAB44931B274EF700E96BB5 /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB44921B274EF700E96BB5 /* ActivityModel.swift */; };
-		1ABB8FB71B31E33400102C71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB8FB61B31E33400102C71 /* User.swift */; };
 		1ABB8FBB1B3200BA00102C71 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABB8FBA1B3200BA00102C71 /* APIKeys.swift */; };
 		1ABB90281B33555300102C71 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABB90241B33551000102C71 /* Social.framework */; };
 		1ABB90291B33555F00102C71 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABB90261B33551800102C71 /* CFNetwork.framework */; };
@@ -75,8 +72,6 @@
 
 /* Begin PBXFileReference section */
 		1A05173C1B2600910091ECF5 /* MainAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
-		1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
-		1A15B57C1B2883E400AAE935 /* Friendship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friendship.swift; sourceTree = "<group>"; };
 		1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewController.swift; sourceTree = "<group>"; };
 		1A2D46041B44663F00270C0B /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
@@ -110,7 +105,6 @@
 		1A9A07441B2238940086879B /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		1A9A07461B2238C90086879B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1AAB44921B274EF700E96BB5 /* ActivityModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
-		1ABB8FB61B31E33400102C71 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1ABB8FBA1B3200BA00102C71 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		1ABB90241B33551000102C71 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		1ABB90261B33551800102C71 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -290,7 +284,6 @@
 				1A123D6F1B3A17D900CD9D08 /* Extensions */,
 				1ABB90231B334EAD00102C71 /* Activities */,
 				1A9204F81B373F510046EFE7 /* Element Design Styling */,
-				1ABB90221B334E8800102C71 /* Users and Friendship */,
 				1AD32DED1B2B3A0C00429AEC /* PickerPopUp */,
 				1AAB448C1B27319300E96BB5 /* Data */,
 			);
@@ -343,7 +336,6 @@
 				1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */,
 				1A05173C1B2600910091ECF5 /* MainAppViewController.swift */,
 				1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */,
-				1A0F071B1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift */,
 			);
 			name = "Main App";
 			sourceTree = "<group>";
@@ -355,15 +347,6 @@
 				1A45AB4E1B1F7214008A080C /* ChatViewController.swift */,
 			);
 			name = Settings;
-			sourceTree = "<group>";
-		};
-		1ABB90221B334E8800102C71 /* Users and Friendship */ = {
-			isa = PBXGroup;
-			children = (
-				1ABB8FB61B31E33400102C71 /* User.swift */,
-				1A15B57C1B2883E400AAE935 /* Friendship.swift */,
-			);
-			name = "Users and Friendship";
 			sourceTree = "<group>";
 		};
 		1ABB90231B334EAD00102C71 /* Activities */ = {
@@ -447,8 +430,9 @@
 		1A7246BE1B1E20650020C81E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0710;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Yung Dai";
 				TargetAttributes = {
 					1A7246C51B1E20650020C81E = {
@@ -530,15 +514,12 @@
 				1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */,
 				1A9A07451B2238940086879B /* SignUpViewController.swift in Sources */,
 				1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */,
-				1A15B57D1B2883E400AAE935 /* Friendship.swift in Sources */,
 				1A9A07471B2238C90086879B /* LoginViewController.swift in Sources */,
-				1A0F071C1B1F8DAB00FEB7E3 /* MainMenuTableViewController.swift in Sources */,
 				1A57D08E1B2772EB004B363C /* NewActivityViewController.swift in Sources */,
 				1A57D0901B2789DC004B363C /* SettingsTableViewController.swift in Sources */,
 				1A3EB67F1B473351008A81FE /* LabelStyle.swift in Sources */,
 				1A05173D1B2600910091ECF5 /* MainAppViewController.swift in Sources */,
 				1AAB44931B274EF700E96BB5 /* ActivityModel.swift in Sources */,
-				1ABB8FB71B31E33400102C71 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +584,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -618,7 +600,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -658,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -681,7 +663,9 @@
 					"/Users/yungdai/Downloads/parse-library-1",
 				);
 				INFOPLIST_FILE = BuddyUp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yungdai.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BuddyUp/BuddyUp-Bridging-Header.h";
@@ -704,7 +688,9 @@
 					"/Users/yungdai/Downloads/parse-library-1",
 				);
 				INFOPLIST_FILE = BuddyUp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yungdai.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "BuddyUp/BuddyUp-Bridging-Header.h";
@@ -725,6 +711,7 @@
 				);
 				INFOPLIST_FILE = BuddyUpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yungdai.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuddyUp.app/BuddyUp";
 			};
@@ -740,6 +727,7 @@
 				);
 				INFOPLIST_FILE = BuddyUpTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yungdai.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BuddyUp.app/BuddyUp";
 			};

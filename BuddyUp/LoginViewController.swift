@@ -13,9 +13,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var errorMessage: UILabel!
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
-    
-
-
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var signupButton: UIButton!
     
@@ -31,7 +28,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordField.delegate = self
         
         if PFUser.currentUser()?.sessionToken != nil {
-            println("sending user to the main app screen because he's a current user")
+            print("sending user to the main app screen because he's a current user")
             
             self.performSegueWithIdentifier("mainApp", sender: self)
         } else {
@@ -41,7 +38,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         
         if (FBSDKAccessToken.currentAccessToken() != nil) {
-            println("User is already logged in go to the next viewcontroller")
+            print("User is already logged in go to the next viewcontroller")
             
         }
     }
@@ -83,7 +80,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     func animateTextField(up: Bool) {
-        var movement = (up ? -kbHeight : kbHeight)
+        let movement = (up ? -kbHeight : kbHeight)
         
         UIView.animateWithDuration(0.3, animations: {
             self.view.frame = CGRectOffset(self.view.frame, 0, movement)
@@ -104,7 +101,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    override func touchesCancelled(touches: Set<NSObject>!, withEvent event: UIEvent!) {
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         resign()
     
     }
@@ -128,28 +125,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         // Messaging nil will return 0, so these checks impicity check for nil text.
         
-        if count(username) == 0 || count(password) == 0 {
+        if username!.characters.count == 0 || password!.characters.count == 0 {
             textError = true
             
             // set up the keyboard for the first field missing input
-            if count(password) == 0 {
+            if password!.characters.count == 0 {
                 passwordField.becomeFirstResponder()
             }
             
-            if count(username) == 0 {
+            if username!.characters.count == 0 {
                 usernameField.becomeFirstResponder()
             }
         }
         
         // if the username entered text box lenth is 0
-        if count(username) == 0 {
+        if username!.characters.count == 0 {
             textError = true
             errorText += noUsernameText
         }
         
-        if count(password) == 0 {
+        if password!.characters.count == 0 {
             textError = true
-            if count(username) == 0 {
+            if username!.characters.count == 0 {
                 errorText += errorTextJoin
             }
             errorText += noPasswordText
@@ -167,7 +164,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         // log in the user with Parse
-        PFUser.logInWithUsernameInBackground(username, password: password) {
+        PFUser.logInWithUsernameInBackground(username!, password: password!) {
             (user: PFUser?, error: NSError?) -> Void in
             
             // check for email verification
@@ -183,7 +180,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             user["currentLocation"] = geoPoint
                             user.saveInBackground()
                         }
-                        println("user is logged in and location is updated")
+                        print("user is logged in and location is updated")
                     }
                     self.performSegueWithIdentifier("mainApp", sender: nil)
                 }
@@ -214,12 +211,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         user["currentLocation"] = geoPoint
                         user.saveInBackground()
                     }
-                println("user is logged in and location is updated")
+                print("user is logged in and location is updated")
                 }
                 self.performSegueWithIdentifier("mainApp", sender: nil)
                 
             } else {
-                println("log in failed")
+                print("log in failed")
                 self.errorMessage.text = "Log in failed"
                 return
             }
@@ -234,7 +231,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         // Display sign in / up view controller
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewControllerWithIdentifier("Login") as! UIViewController
+        let viewController = storyboard.instantiateViewControllerWithIdentifier("Login") 
         self.presentViewController(viewController, animated: true, completion: nil)
     }
 
@@ -256,14 +253,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
                 if let parseUser = user {
                     if parseUser.isNew {
-                        println("User signed up and logged in through Facebook!")
+                        print("User signed up and logged in through Facebook!")
                         let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "/me?fields=first_name,friends,gender,email,name,picture.width(300).height(300)", parameters: nil)
                         graphRequest.startWithCompletionHandler({
                             (connection, result, error) -> Void in
                             if (error != nil)
                             {
                                 // display the error message
-                                println("Error: \(error)")
+                                print("Error: \(error)")
                             } else {
                                 // parsing the facebook data from the graph API and saving it to parse
                                 // save the facebook name and email data to parseUser
@@ -292,18 +289,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                     }
                                 }
                                 parseUser.saveInBackground()
-                                println("Parse User Saved")
+                                print("Parse User Saved")
                                 self.performSegueWithIdentifier("mainApp", sender: nil)
                             }
                         })
                     } else {
-                        println("You are already a user, I'll just send you the main page")
+                        print("You are already a user, I'll just send you the main page")
                         
                         // save the user's location to parse before you save the information
                         PFGeoPoint.geoPointForCurrentLocationInBackground { (geoPoint:PFGeoPoint?, error:NSError?) -> Void in
                             if let user = PFUser.currentUser() {
                                 user["currentLocation"] = geoPoint
-                                println("Saving User's Location In Background")
+                                print("Saving User's Location In Background")
                                 user.saveInBackground()
                             }
                             

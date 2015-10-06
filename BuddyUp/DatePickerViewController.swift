@@ -15,7 +15,6 @@ protocol DatePickerViewControllerDelgate : class {
     func datePickerVCDismissed(date : NSDate?)
 }
 
-
 class DatePickerViewController: UIViewController {
 
     @IBOutlet var container: UIView!

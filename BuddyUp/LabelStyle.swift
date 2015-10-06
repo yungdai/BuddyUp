@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable class LabelStyle: UILabel {
-
+    
     @IBInspectable var cornerRounding: CGFloat = 10 {
         didSet {
             layer.cornerRadius = cornerRounding
@@ -48,5 +48,5 @@ import UIKit
         layer.masksToBounds = true
         
     }
-
+    
 }
