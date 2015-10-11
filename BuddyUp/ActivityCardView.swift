@@ -43,6 +43,14 @@ import UIKit
         }
     }
     
+    
+    @IBInspectable var cornerRounding: CGFloat = 10 {
+        didSet {
+            layer.cornerRadius = cornerRounding
+            
+        }
+    }
+    
     // MARK: Internal functions *********************************
     
     // Setup the view appearance
@@ -89,6 +97,7 @@ import UIKit
     
     func viewStyle() {
         backgroundColor = viewColour
+        layer.cornerRadius = cornerRounding
         
     }
 }
