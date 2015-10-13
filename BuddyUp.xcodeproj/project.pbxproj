@@ -663,8 +663,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/yung_dai/Documents/FacebookSDK,
-					"/Users/yung_dai/Downloads/parse-library-1.7.5",
-					"/Users/yungdai/Downloads/parse-library-1",
 				);
 				INFOPLIST_FILE = BuddyUp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -688,8 +686,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/yung_dai/Documents/FacebookSDK,
-					"/Users/yung_dai/Downloads/parse-library-1.7.5",
-					"/Users/yungdai/Downloads/parse-library-1",
 				);
 				INFOPLIST_FILE = BuddyUp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

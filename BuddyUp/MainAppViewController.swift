@@ -18,7 +18,7 @@ class MainAppViewController: UIViewController{
     @IBOutlet var personLabelText: UILabel!
     @IBOutlet var activityTypeLabelText: UILabel!
     @IBOutlet var startTimeLabelText: UILabel!
-    @IBOutlet var endTimeLabelText: UILabel!
+//    @IBOutlet var endTimeLabelText: UILabel!
     @IBOutlet var activityTypeImage: UIImageView!
     @IBOutlet var checkButton: UIButton!
     @IBOutlet var crossButton: UIButton!
@@ -162,9 +162,9 @@ class MainAppViewController: UIViewController{
                 self.startTimeLabelText.text = dateFormat.stringFromDate(startTime)
             }
             
-            if let endTime = activity["endTime"] as? NSDate {
-                self.endTimeLabelText.text = dateFormat.stringFromDate(endTime)
-            }
+//            if let endTime = activity["endTime"] as? NSDate {
+//                self.endTimeLabelText.text = dateFormat.stringFromDate(endTime)
+//            }
             
             if let creatorName = activity["name"] as? String {
                 self.personLabelText.text = creatorName

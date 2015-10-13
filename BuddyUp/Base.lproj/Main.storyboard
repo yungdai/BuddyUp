@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -736,22 +737,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="147"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-Lt-iHD" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
-                                                    <rect key="frame" x="240" y="18" width="120" height="120"/>
-                                                    <animations/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
-                                                            <real key="value" value="60"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="personImage" value="noImage"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="personBorderWidth">
-                                                            <real key="value" value="2"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="personBorderColour">
-                                                            <color key="value" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVz-c5-knv">
                                                     <rect key="frame" x="368" y="59" width="94" height="30"/>
                                                     <animations/>
@@ -764,9 +749,32 @@
                                                         <action selector="addPictureButtonPressed:" destination="xUM-wm-hSN" eventType="touchUpInside" id="clP-Aw-FcZ"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-Lt-iHD" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
+                                                    <rect key="frame" x="240" y="19" width="120" height="120"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Jaf-Lt-iHD" secondAttribute="height" multiplier="1:1" id="ypW-ap-NAc"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
+                                                            <real key="value" value="60"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                                            <color key="value" red="0.2005443335" green="0.1191722756" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.70980392160000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="Jaf-Lt-iHD" firstAttribute="centerX" secondItem="TO7-yP-TgI" secondAttribute="centerX" id="JXa-IV-2um"/>
+                                                <constraint firstItem="Jaf-Lt-iHD" firstAttribute="width" secondItem="TO7-yP-TgI" secondAttribute="width" multiplier="0.37" id="UQA-Ds-AgQ"/>
+                                                <constraint firstItem="Jaf-Lt-iHD" firstAttribute="centerY" secondItem="TO7-yP-TgI" secondAttribute="centerY" id="ftE-iF-sGC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.70980392160000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -778,8 +786,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdE-Ry-OaN">
-                                                    <rect key="frame" x="8" y="15" width="584" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EdE-Ry-OaN">
+                                                    <rect key="frame" x="8" y="15" width="600" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
                                                     <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -788,6 +796,12 @@
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.70980392160000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="EdE-Ry-OaN" firstAttribute="top" secondItem="MZR-Ks-uxo" secondAttribute="topMargin" constant="7" id="SlQ-WS-9FC"/>
+                                                <constraint firstItem="EdE-Ry-OaN" firstAttribute="width" secondItem="MZR-Ks-uxo" secondAttribute="width" id="emH-m8-642"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EdE-Ry-OaN" secondAttribute="bottom" constant="-12" id="o6G-RW-DY1"/>
+                                                <constraint firstItem="EdE-Ry-OaN" firstAttribute="leading" secondItem="MZR-Ks-uxo" secondAttribute="leadingMargin" id="zzd-lO-vYZ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.70980392160000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -823,7 +837,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="28"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajp-Nd-a4M">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Last Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajp-Nd-a4M">
                                                     <rect key="frame" x="8" y="11" width="584" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="17"/>
@@ -833,6 +847,12 @@
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" red="0.090196078430000007" green="0.70980392160000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ajp-Nd-a4M" secondAttribute="bottom" constant="-12" id="4Is-eh-PLb"/>
+                                                <constraint firstItem="ajp-Nd-a4M" firstAttribute="top" secondItem="yYu-1t-SQw" secondAttribute="topMargin" constant="3" id="JfY-1d-LIq"/>
+                                                <constraint firstItem="ajp-Nd-a4M" firstAttribute="leading" secondItem="yYu-1t-SQw" secondAttribute="leadingMargin" id="XOV-fm-L53"/>
+                                                <constraint firstItem="ajp-Nd-a4M" firstAttribute="width" secondItem="yYu-1t-SQw" secondAttribute="width" id="xYk-8r-Q9d"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <color key="backgroundColor" red="0.090196078430000007" green="0.70980392160000005" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -961,7 +981,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Wy-Fb-cNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5283" y="-111"/>
+            <point key="canvasLocation" x="5254" y="-105"/>
         </scene>
         <!--Activities-->
         <scene sceneID="5zh-fM-quC">
@@ -1010,19 +1030,18 @@
                                             <color key="textColor" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="kxc-l9-BiL" customClass="PersonImageView" customModule="BuddyUp" customModuleProvider="target">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="kxc-l9-BiL" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
                                             <rect key="frame" x="21" y="25" width="75" height="75"/>
                                             <animations/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
                                                     <real key="value" value="38"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="personBorderWidth">
-                                                    <real key="value" value="2"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="image" keyPath="personImage" value="noImage"/>
-                                                <userDefinedRuntimeAttribute type="color" keyPath="personBorderColour">
-                                                    <color key="value" red="0.2274509804" green="0.23921568630000001" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                                    <color key="value" red="0.2005443335" green="0.1191722756" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
@@ -1250,7 +1269,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="v1P-n5-3zZ" userLabel="Activity Card Stack">
                                                 <rect key="frame" x="0.0" y="10" width="540" height="373"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="[activity label]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-gV-kSf">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[activity label]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="P5K-gV-kSf">
                                                         <rect key="frame" x="68" y="0.0" width="405" height="65"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="67"/>
@@ -1267,7 +1286,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="yvk-dE-yLQ" userLabel="User Image Stack">
                                                                 <rect key="frame" x="0.0" y="0.0" width="71" height="71"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="DPq-95-9Eb" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="DPq-95-9Eb" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
                                                                         <rect key="frame" x="5" y="0.0" width="60" height="60"/>
                                                                         <animations/>
                                                                         <constraints>
@@ -1486,6 +1505,8 @@
                         <outlet property="activityTypeLabelText" destination="P5K-gV-kSf" id="5qr-9j-Zzk"/>
                         <outlet property="checkButton" destination="YoB-7d-sa4" id="PFJ-iP-owA"/>
                         <outlet property="crossButton" destination="nxI-XN-xYH" id="sfg-XC-mPC"/>
+                        <outlet property="personImage" destination="DPq-95-9Eb" id="PpE-wc-My5"/>
+                        <outlet property="personLabelText" destination="KW1-nU-Ywg" id="mAx-33-xll"/>
                         <outlet property="startTimeLabelText" destination="VWO-FZ-mxh" id="G7K-nY-3mA"/>
                     </connections>
                 </viewController>
