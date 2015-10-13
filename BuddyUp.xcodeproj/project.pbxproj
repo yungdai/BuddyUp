@@ -16,6 +16,7 @@
 		1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */; };
 		1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */; };
 		1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4E1B1F7214008A080C /* ChatViewController.swift */; };
+		1A53ECC81BCD4B29007B6700 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A53ECC71BCD4B29007B6700 /* InfoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1A54CC351B5574BB00A2A586 /* PictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A54CC341B5574BB00A2A586 /* PictureImageView.swift */; };
 		1A57D08E1B2772EB004B363C /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A57D08D1B2772EB004B363C /* NewActivityViewController.swift */; };
 		1A57D0901B2789DC004B363C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A57D08F1B2789DC004B363C /* SettingsTableViewController.swift */; };
@@ -80,6 +81,7 @@
 		1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4E1B1F7214008A080C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		1A53ECC71BCD4B29007B6700 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		1A54CC341B5574BB00A2A586 /* PictureImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureImageView.swift; sourceTree = "<group>"; };
 		1A57D08D1B2772EB004B363C /* NewActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewActivityViewController.swift; sourceTree = "<group>"; };
 		1A57D08F1B2789DC004B363C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */,
 				1A05173C1B2600910091ECF5 /* MainAppViewController.swift */,
 				1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */,
+				1A53ECC71BCD4B29007B6700 /* InfoViewController.swift */,
 			);
 			name = "Main App";
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				1A3EB67D1B46E099008A81FE /* TextFieldStyle.swift in Sources */,
 				1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */,
 				1ACAA3DC1B30B97F00C527CA /* PickerViewPickerPopUp.swift in Sources */,
+				1A53ECC81BCD4B29007B6700 /* InfoViewController.swift in Sources */,
 				1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */,
 				1A54CC351B5574BB00A2A586 /* PictureImageView.swift in Sources */,
 				1AE5DC721B2E2135009585F6 /* DatePickerViewController.swift in Sources */,
