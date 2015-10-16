@@ -70,5 +70,11 @@ class BuddiesTableViewController: UITableViewController {
 
         return cell
     }
+    
+    
+    // MARK: Segment Control code
+    @IBOutlet weak var friendsSegmentControl: UISegmentedControl!
+    
+
 
 }
