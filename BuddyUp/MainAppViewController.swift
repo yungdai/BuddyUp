@@ -98,26 +98,30 @@ class MainAppViewController: UIViewController{
         }
 
         frame = CGRectZero
-        
-        // get all Activity Objects that aren't yours
-        let query = PFQuery(className: "Activity")
-        query.includeKey("createdBy")
-        query.whereKey("createdBy", notEqualTo: PFUser.currentUser()!)
-        
-        
-        // getting the data asynchronusly in the background
-        query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+
+        if PFUser.currentUser()?.sessionToken != nil {
+            // get all Activity Objects that aren't yours
+            let query = PFQuery(className: "Activity")
+            query.includeKey("createdBy")
+            query.whereKey("createdBy", notEqualTo: PFUser.currentUser()!)
             
-            if (error != nil) {
+            
+            // getting the data asynchronusly in the background
+            query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
                 
+                if (error != nil) {
+                    
+                }
+                
+                if let fetchedActivities = result as? [PFObject] {
+                    self.activities = fetchedActivities
+                    self.styleForNextActivity()
+                }
             }
-            
-            if let fetchedActivities = result as? [PFObject] {
-                self.activities = fetchedActivities
-                self.styleForNextActivity()
-            }
+        } else {
+            // Show the signup or login screen
+            return
         }
-        
     }
     
     func getActivites() {

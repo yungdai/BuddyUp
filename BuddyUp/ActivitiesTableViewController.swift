@@ -28,18 +28,23 @@ class ActivitiesTableViewController: UITableViewController {
         refreshControl.addTarget(self, action: ("refreshPage"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
         
-        let query = PFQuery(className: "Activity")
-        query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
-        
-        // getting the data asynchronously in the background
-        query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
-            if let activities = result as? [PFObject] {
-                self.activities = activities
-                self.tableView.reloadData()
+        if PFUser.currentUser()?.sessionToken != nil {
+            print("sending user to the main app screen because he's a current user")
+            let query = PFQuery(className: "Activity")
+            query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
+            
+            // getting the data asynchronously in the background
+            query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+                if let activities = result as? [PFObject] {
+                    self.activities = activities
+                    self.tableView.reloadData()
+                }
             }
+        } else {
+            // Show the signup or login screen
+            return
         }
-        
-        
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -49,17 +54,21 @@ class ActivitiesTableViewController: UITableViewController {
         refreshControl.addTarget(self, action: ("refreshPage"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
         
-        let query = PFQuery(className: "Activity")
-        query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
-        
-        // getting the data asynchronously in the background
-        query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
-            if let activities = result as? [PFObject] {
-                self.activities = activities
-                self.tableView.reloadData()
+        if PFUser.currentUser()?.sessionToken != nil {
+            let query = PFQuery(className: "Activity")
+            query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
+            
+            // getting the data asynchronously in the background
+            query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+                if let activities = result as? [PFObject] {
+                    self.activities = activities
+                    self.tableView.reloadData()
+                }
             }
+        } else {
+            // Show the signup or login screen
+            return
         }
-
     }
     
     func refreshPage() {

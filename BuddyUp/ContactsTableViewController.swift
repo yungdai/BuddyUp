@@ -8,29 +8,62 @@
 
 import UIKit
 
-class ContactsTableViewController: UITableViewController {
+class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var searchBar: UISearchBar!
     
-    var userArray: [String] = []
+    // search variables
+    
+    var searchActive: Bool = false
+    
+    var data: [PFObject] = []
+    var filtered: [PFObject] = []
+
+    
+    var userArray: [PFObject] = []
+    var contactsSection: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+        
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            print("Friends Selected")
+            search()
+        case 1:
+            print("Find Friends Selected")
+            search()
+        default:
+            break;
+        }
+        
+        search()
         
         // set up the refresh controls for this table
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("sortArray"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
         
+        
+    }
+    
+    // searching function
+    func search(searchText: String? = nil){
+        // query the User object
         let query = PFUser.query()
-        query?.whereKey("username", notEqualTo: PFUser.currentUser()!.username!)
-        let users = query?.findObjects()
-        if let _ = users {
-            for user in users! {
-                print(user["name"] as! String)
-                userArray.append(user["name"] as! String)
-                tableView.reloadData()
-            }
+        
+        // search the name column for the text containing the string
+        if(searchText != nil){
+            query!.whereKey("name", containsString: searchText)
+        }
+        
+        query!.findObjectsInBackgroundWithBlock { (results, error) -> Void in
+            self.data = (results as? [PFObject])!
+            print("found something", terminator: "")
+            // if you find the data the reload the screen
+            self.tableView.reloadData()
         }
         
     }
@@ -55,7 +88,18 @@ class ContactsTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            print("Friends Selected")
+            contactsSection = 1
+        case 1:
+            print("Find Friends Selected")
+            contactsSection = 1
+        default:
+            break;
+        }
+        
+        return contactsSection
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,11 +109,60 @@ class ContactsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        var cellName: String!
         
-        // Configure the cell...
-        cell.textLabel?.text = userArray[indexPath.row]
+        // change the cell information based on thw segment control
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            print("Friends Selected")
+            cellName = "friendsCell"
+        case 1:
+            print("Find Friends Selected")
+            cellName = "findFriends"
+           
+        default:
+            break;
+        }
         
+        // deque the cell information
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath)
+
+        // make sure that when you select the cell it doesn't have a style
+        cell.selectionStyle = .None
+        
+        
+        if let friendshipCell = cell as? UserTableViewCell {
+            let user = userArray[indexPath.row]
+            
+            if let name = user["name"] as? String {
+                friendshipCell.name.text = name
+            }
+            
+            if let userPicture = user["photo"] as? String {
+                
+                // parse the photo URL into data for the UIImageView
+                friendshipCell.userImage.image = friendshipCell.userImage.downloadImage(userPicture)
+                
+                
+            } else if let userPicture = user["userImage"] as? PFFile {
+                userPicture.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
+                    if (error != nil) {
+                        print(error)
+                        // TODO throw error message
+                        return
+                    }
+                    
+                    // get the image data
+                    if let newData = data {
+                        friendshipCell.userImage.image = UIImage(data: newData)
+                    }
+                    
+                })
+            }
+        }
+        
+      
         return cell
     }
     

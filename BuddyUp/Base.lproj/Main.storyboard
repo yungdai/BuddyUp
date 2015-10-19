@@ -1657,7 +1657,7 @@
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="friendsSegmentControl" destination="b3k-LQ-XGs" id="ojk-hE-QUw"/>
+                        <outlet property="searchBar" destination="Kdr-1v-aZd" id="1f5-xW-OA9"/>
                         <outlet property="segmentControl" destination="b3k-LQ-XGs" id="Wn5-NJ-I9V"/>
                     </connections>
                 </tableViewController>
