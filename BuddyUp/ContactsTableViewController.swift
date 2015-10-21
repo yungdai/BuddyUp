@@ -13,16 +13,17 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
     
+
+    
     // search variables
     
     var searchActive: Bool = false
-    
-    var data: [PFObject] = []
     var filtered: [PFObject] = []
-
-    
     var userArray: [PFObject] = []
     var contactsSection: Int = 1
+    
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,6 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         switch segmentControl.selectedSegmentIndex {
         case 0:
             print("Friends Selected")
-            search()
         case 1:
             print("Find Friends Selected")
             search()
@@ -39,7 +39,6 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
             break;
         }
         
-        search()
         
         // set up the refresh controls for this table
         let refreshControl = UIRefreshControl()
@@ -49,39 +48,6 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         
     }
     
-    // searching function
-    func search(searchText: String? = nil){
-        // query the User object
-        let query = PFUser.query()
-        
-        // search the name column for the text containing the string
-        if(searchText != nil){
-            query!.whereKey("name", containsString: searchText)
-        }
-        
-        query!.findObjectsInBackgroundWithBlock { (results, error) -> Void in
-            self.data = (results as? [PFObject])!
-            print("found something", terminator: "")
-            // if you find the data the reload the screen
-            self.tableView.reloadData()
-        }
-        
-    }
-    
-    func sortArray() {
-        let sortedAlphabetically = Array(userArray.reverse())
-        for(index,element) in sortedAlphabetically.enumerate() {
-            userArray[index] = element
-        }
-        
-        tableView.reloadData()
-        refreshControl?.endRefreshing()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: - Table view data source
     
@@ -92,9 +58,11 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         case 0:
             print("Friends Selected")
             contactsSection = 1
+ 
         case 1:
             print("Find Friends Selected")
             contactsSection = 1
+ 
         default:
             break;
         }
@@ -148,11 +116,10 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
             } else if let userPicture = user["userImage"] as? PFFile {
                 userPicture.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
                     if (error != nil) {
-                        print(error)
+                        print("There was an error: \(error)")
                         // TODO throw error message
                         return
                     }
-                    
                     // get the image data
                     if let newData = data {
                         friendshipCell.userImage.image = UIImage(data: newData)
@@ -161,8 +128,6 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
                 })
             }
         }
-        
-      
         return cell
     }
     
@@ -178,6 +143,97 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
             break;
         }
     }
+    
+    // MARK: - Search Controls 
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        // stop searching if you stop typing
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        //
+        searchActive = false;
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        // as you type you should be able to search at the same time and pull in data with this method
+        search(searchText)
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        // stop searching if you click the cancel button
+        searchActive = false;
+        
+        // Clear any search criteria
+        searchBar.text = ""
+        
+        // Dismiss the keyboard
+        searchBar.resignFirstResponder()
+        
+        // Force reload of table data
+        self.tableView.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    // searching function
+    func search(searchText: String? = nil){
+        // query the User object
+        let query = PFUser.query()
+        
+        // search the name column for the text containing the string
+        if(searchText != nil){
+            query!.whereKey("name", containsString: searchText)
+        }
+
+        query!.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+            if (error != nil) {
+                print(error)
+            }
+            
+            self.userArray = (result as? [PFObject])!
+            print("found something", terminator: "")
+            self.tableView.reloadData()
+            
+        }
+    }
+    
+    func sortArray() {
+        let sortedAlphabetically = Array(userArray.reverse())
+        for(index,element) in sortedAlphabetically.enumerate() {
+            userArray[index] = element
+        }
+        
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    
+    // MARK: - Adding Friends
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        // change the cell information based on thw segment control
+        switch segmentControl.selectedSegmentIndex {
+        case 0:
+            print("Friends Selected")
+  
+        case 1:
+            print("Find Friends Selected")
+            
+        default:
+            break;
+        }
+    }
+
+
    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

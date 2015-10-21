@@ -142,7 +142,6 @@ class ActivitiesTableViewController: UITableViewController {
                     }
                     
                     if let newData = data{
-                        print("imagehere")
                         activityCell.activityImage.image = UIImage(data: newData)
                     }
                 }

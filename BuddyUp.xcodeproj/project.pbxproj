@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1A05173D1B2600910091ECF5 /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05173C1B2600910091ECF5 /* MainAppViewController.swift */; };
-		1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */; };
 		1A228D851BD5841000C1A74D /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A228D841BD5841000C1A74D /* ContactsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1A2863BB1BD582B4002D941F /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2863BA1BD582B4002D941F /* UserTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D46041B44663F00270C0B /* SearchTableViewController.swift */; };
@@ -77,7 +76,6 @@
 
 /* Begin PBXFileReference section */
 		1A05173C1B2600910091ECF5 /* MainAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
-		1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuddiesTableViewController.swift; sourceTree = "<group>"; };
 		1A228D841BD5841000C1A74D /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		1A2863BA1BD582B4002D941F /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		1A2D46041B44663F00270C0B /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
@@ -404,7 +402,6 @@
 			isa = PBXGroup;
 			children = (
 				1A228D841BD5841000C1A74D /* ContactsTableViewController.swift */,
-				1A15B57E1B28D86200AAE935 /* BuddiesTableViewController.swift */,
 			);
 			name = "Contacts and Friendships";
 			sourceTree = "<group>";
@@ -533,7 +530,6 @@
 				1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */,
 				1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */,
 				1A9204FA1B373F6C0046EFE7 /* ActivityCardView.swift in Sources */,
-				1A15B57F1B28D86200AAE935 /* BuddiesTableViewController.swift in Sources */,
 				1A3EB67B1B46DC79008A81FE /* ButtonStyle.swift in Sources */,
 				9FE143961B3C89130002FD19 /* BackgroundView.swift in Sources */,
 				1AE5DC6E1B2E2118009585F6 /* DateFormat.swift in Sources */,

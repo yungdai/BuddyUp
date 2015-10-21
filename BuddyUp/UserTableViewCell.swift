@@ -14,6 +14,7 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var favourite: UIButton!
     
+    @IBOutlet weak var addFriend: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
