@@ -12,17 +12,14 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
-    
 
-    
-    // search variables
-    
     var searchActive: Bool = false
     var filtered: [PFObject] = []
     var userArray: [PFObject] = []
     var contactsSection: Int = 1
+    var addFriendsButton: UIBarButtonItem!
     
-   
+    
     
     
     override func viewDidLoad() {
@@ -58,10 +55,13 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         case 0:
             print("Friends Selected")
             contactsSection = 1
+            self.navigationItem.rightBarButtonItem!.title = ""
  
         case 1:
             print("Find Friends Selected")
             contactsSection = 1
+            self.navigationItem.rightBarButtonItem!.title = "Add Friends"
+            print("changed")
  
         default:
             break;
@@ -127,6 +127,8 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
                     
                 })
             }
+            
+
         }
         return cell
     }
@@ -137,6 +139,9 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         switch segmentControl.selectedSegmentIndex {
         case 0:
             print("Friends Selected")
+            
+            
+
         case 1:
             print("Find Friends Selected")
         default:
@@ -218,6 +223,10 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
 
     
     // MARK: - Adding Friends
+    
+    private func addFriend() {
+        
+    }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         // change the cell information based on thw segment control
