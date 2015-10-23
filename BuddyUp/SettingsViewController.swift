@@ -19,14 +19,7 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
     // image picker variables
     let imagePicker = UIImagePickerController()
     
-    // user image
-    // TODO impliment enum for the image
-    enum UserImage {
-        case FacebookImage
-        case CustomImage
-        case NoImage
-    }
-    
+   
     @IBAction func logoutButtonPressed(sender: UIButton) {
         PFUser.logOut()
         self.performSegueWithIdentifier("goToLogin", sender: nil)
@@ -95,8 +88,8 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         if let user = PFUser.currentUser() {
             user["first_name"] = firstNameTextField.text
             user["last_name"] = lastNameTextField.text
-            let name = "\(firstNameTextField.text) \(lastNameTextField.text)"
-            user["name"] = name
+            let name = "\(firstNameTextField.text!) \(lastNameTextField.text!)"
+            user["name"] = name as String!
             user["email"] = emailAddressTextField.text
             
             // get the image file name
@@ -115,7 +108,6 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
             
         }
     }
-    
     
     
     // choose from the library of photos
@@ -169,7 +161,6 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
     }
     
     
-    
     // resign they keyboard
     func resign() {
         firstNameTextField.resignFirstResponder()
@@ -177,16 +168,5 @@ class SettingsViewController: UIViewController,UIImagePickerControllerDelegate, 
         emailAddressTextField.resignFirstResponder()
     }
 
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

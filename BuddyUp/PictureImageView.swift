@@ -11,13 +11,7 @@ import UIKit
 @IBDesignable class PictureImageView: UIImageView {
     
     
-    @IBInspectable var cornerRounding: CGFloat = 50{
-        didSet {
-            layer.cornerRadius = cornerRounding
-            
-        }
-    }
-    
+  
     @IBInspectable var borderWidth: CGFloat = 1 {
         didSet {
             layer.borderWidth = borderWidth
@@ -33,15 +27,10 @@ import UIKit
     }
     
     func circlePicture() {
-        
         if (circularPicture) {
             layer.cornerRadius = layer.frame.size.width / 2
             
-        } else {
-            layer.cornerRadius = cornerRounding
-            layer.masksToBounds = true
         }
-        
     }
 
     
