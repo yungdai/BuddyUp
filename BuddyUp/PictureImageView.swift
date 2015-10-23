@@ -13,7 +13,7 @@ import UIKit
     
     @IBInspectable var cornerRounding: CGFloat = 50{
         didSet {
-            layer.cornerRadius = cornerRounding
+            circlePicture()
             
         }
     }
@@ -25,6 +25,22 @@ import UIKit
         }
     }
     
+    @IBInspectable var circularPicture: Bool = false {
+        didSet {
+            circlePicture()
+        }
+    }
+    
+    func circlePicture() {
+        
+        if (circularPicture) {
+            layer.cornerRadius = layer.frame.size.width / 2
+            
+        } else {
+            layer.cornerRadius = cornerRounding
+        }
+        
+    }
 
     
     @IBInspectable var borderColour: UIColor? {
@@ -43,7 +59,7 @@ import UIKit
     }
     
     func personImageStyle() {
-        layer.cornerRadius = cornerRounding
+        circlePicture()
         layer.borderWidth = borderWidth
         layer.borderColor = borderColour?.CGColor
         // binds the masking to the variables above.  This will be true for all images assigned in IB

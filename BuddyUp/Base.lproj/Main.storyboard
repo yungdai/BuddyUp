@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B38b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B38b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -739,11 +739,50 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XbO-lr-Zc8" userLabel="Settings Stack">
                                 <rect key="frame" x="0.0" y="74" width="600" height="420"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="PjE-eB-MqY">
-                                        <rect key="frame" x="30" y="0.0" width="540" height="202"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="ZS2-Ve-zgS">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="13"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9AJ-aP-kbT" userLabel="First Name Text Field">
+                                        <rect key="frame" x="30" y="18" width="540" height="42"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="9jH-4f-qam">
+                                        <rect key="frame" x="0.0" y="65" width="600" height="12"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MEq-QO-pgg" userLabel="Last Name Text Field">
+                                        <rect key="frame" x="30" y="82" width="540" height="42"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="2" translatesAutoresizingMaskIntoConstraints="NO" id="6bv-gh-GgV">
+                                        <rect key="frame" x="0.0" y="129" width="600" height="13"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adE-tw-ceI">
+                                        <rect key="frame" x="30" y="147" width="540" height="42"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="PjE-eB-MqY" userLabel="Image Stack">
+                                        <rect key="frame" x="30" y="194" width="540" height="210"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="eJb-M4-GTp" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="41" width="120" height="120"/>
+                                                <rect key="frame" x="0.0" y="45" width="120" height="120"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="eJb-M4-GTp" secondAttribute="height" multiplier="1:1" id="Qib-8r-cnk"/>
@@ -758,57 +797,22 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
                                                         <color key="value" red="0.2005443335" green="0.1191722756" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="circularPicture" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xcn-jK-42u">
-                                                <rect key="frame" x="129" y="86" width="411" height="30"/>
+                                                <rect key="frame" x="129" y="90" width="411" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Change Photo"/>
                                             </button>
                                         </subviews>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstItem="Xcn-jK-42u" firstAttribute="width" secondItem="PjE-eB-MqY" secondAttribute="width" multiplier="0.8" id="7D1-p5-Nht"/>
+                                        </constraints>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZS2-Ve-zgS">
-                                        <rect key="frame" x="0.0" y="207" width="600" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9AJ-aP-kbT">
-                                        <rect key="frame" x="30" y="233" width="540" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jH-4f-qam">
-                                        <rect key="frame" x="0.0" y="268" width="600" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MEq-QO-pgg">
-                                        <rect key="frame" x="30" y="294" width="540" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bv-gh-GgV">
-                                        <rect key="frame" x="0.0" y="329" width="600" height="21"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adE-tw-ceI">
-                                        <rect key="frame" x="30" y="355" width="540" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWF-hW-9IL">
-                                        <rect key="frame" x="276" y="390" width="48" height="30"/>
+                                        <rect key="frame" x="30" y="409" width="540" height="11"/>
                                         <animations/>
                                         <state key="normal" title="Logout"/>
                                         <connections>
@@ -819,14 +823,28 @@
                                 <animations/>
                                 <constraints>
                                     <constraint firstItem="9jH-4f-qam" firstAttribute="width" secondItem="XbO-lr-Zc8" secondAttribute="width" id="3IR-9h-JgM"/>
+                                    <constraint firstItem="9jH-4f-qam" firstAttribute="height" secondItem="XbO-lr-Zc8" secondAttribute="height" multiplier="0.03" id="3bQ-WR-smJ"/>
                                     <constraint firstItem="eJb-M4-GTp" firstAttribute="width" secondItem="XbO-lr-Zc8" secondAttribute="width" multiplier="0.2" id="6I9-cJ-9rH"/>
+                                    <constraint firstItem="yWF-hW-9IL" firstAttribute="height" secondItem="XbO-lr-Zc8" secondAttribute="height" multiplier="0.1" id="84F-gq-NXX"/>
                                     <constraint firstItem="6bv-gh-GgV" firstAttribute="width" secondItem="XbO-lr-Zc8" secondAttribute="width" id="9Pw-uE-RSF"/>
+                                    <constraint firstItem="PjE-eB-MqY" firstAttribute="height" secondItem="XbO-lr-Zc8" secondAttribute="height" multiplier="0.5" id="Baz-i2-mDQ"/>
+                                    <constraint firstItem="yWF-hW-9IL" firstAttribute="width" secondItem="XbO-lr-Zc8" secondAttribute="width" multiplier="0.9" id="DVY-fQ-Nsw"/>
                                     <constraint firstItem="PjE-eB-MqY" firstAttribute="width" secondItem="XbO-lr-Zc8" secondAttribute="width" multiplier="0.9" id="ENe-I7-bij"/>
                                     <constraint firstItem="9AJ-aP-kbT" firstAttribute="width" secondItem="XbO-lr-Zc8" secondAttribute="width" multiplier="0.9" id="LRM-Nm-emy"/>
                                     <constraint firstItem="MEq-QO-pgg" firstAttribute="width" secondItem="XbO-lr-Zc8" secondAttribute="width" multiplier="0.9" id="UzE-1i-RqE"/>
                                     <constraint firstItem="ZS2-Ve-zgS" firstAttribute="width" secondItem="XbO-lr-Zc8" secondAttribute="width" id="fgT-ow-vNt"/>
+                                    <constraint firstItem="MEq-QO-pgg" firstAttribute="height" secondItem="XbO-lr-Zc8" secondAttribute="height" multiplier="0.1" id="gNc-pf-9ll"/>
+                                    <constraint firstItem="9AJ-aP-kbT" firstAttribute="height" secondItem="XbO-lr-Zc8" secondAttribute="height" multiplier="0.1" id="jMm-bC-uNK"/>
+                                    <constraint firstItem="adE-tw-ceI" firstAttribute="height" secondItem="XbO-lr-Zc8" secondAttribute="height" multiplier="0.1" id="lBE-ON-dju"/>
+                                    <constraint firstItem="6bv-gh-GgV" firstAttribute="height" secondItem="XbO-lr-Zc8" secondAttribute="height" multiplier="0.03" id="n5p-8B-pYV"/>
                                     <constraint firstItem="adE-tw-ceI" firstAttribute="width" secondItem="XbO-lr-Zc8" secondAttribute="width" multiplier="0.9" id="qPd-JA-4Rv"/>
+                                    <constraint firstItem="ZS2-Ve-zgS" firstAttribute="height" secondItem="XbO-lr-Zc8" secondAttribute="height" multiplier="0.03" id="sh9-KO-Ttb"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="84F-gq-NXX"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <animations/>
@@ -911,6 +929,7 @@
                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
                                                     <color key="value" red="0.2005443335" green="0.1191722756" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circularPicture" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tk-i8-SEf" userLabel="Start Time Label">
@@ -1074,6 +1093,7 @@
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
                                                         <color key="value" red="0.2005443335" green="0.1191722756" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="circularPicture" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deJ-BP-ACe">
@@ -1232,6 +1252,7 @@
                                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
                                                                                 <color key="value" red="0.2005443335" green="0.1191722756" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="circularPicture" value="YES"/>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Username]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="KW1-nU-Ywg">
@@ -1516,18 +1537,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="109"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Rh-qE-gpf" userLabel="Friends Stack">
-                                            <rect key="frame" x="28" y="1" width="510" height="107"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9Rh-qE-gpf" userLabel="Friends Stack">
+                                            <rect key="frame" x="29" y="-1" width="510" height="111"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="nwu-v7-x4f" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="10" width="86" height="87"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="nwu-v7-x4f" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="4" width="102" height="102"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="nwu-v7-x4f" secondAttribute="height" multiplier="1:1" id="Edh-Vj-Ib5"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
-                                                            <real key="value" value="25"/>
+                                                            <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="1"/>
@@ -1535,17 +1556,18 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
                                                             <color key="value" red="0.2005443335" green="0.1191722756" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circularPicture" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[name]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvs-w5-Xfe">
-                                                    <rect key="frame" x="91" y="43" width="306" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="[name]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvs-w5-Xfe">
+                                                    <rect key="frame" x="107" y="44" width="306" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx1-nH-eav" userLabel="favouriteStar">
-                                                    <rect key="frame" x="402" y="0.0" width="108" height="107"/>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx1-nH-eav" userLabel="favouriteStar">
+                                                    <rect key="frame" x="418" y="9" width="92" height="92"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Rx1-nH-eav" secondAttribute="height" multiplier="1:1" id="7hg-Sz-TZR"/>
@@ -1555,24 +1577,37 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="nwu-v7-x4f" firstAttribute="width" secondItem="9Rh-qE-gpf" secondAttribute="width" multiplier="0.2" id="Y8t-k7-eUr"/>
+                                                <constraint firstItem="nwu-v7-x4f" firstAttribute="width" secondItem="9Rh-qE-gpf" secondAttribute="width" multiplier="0.2" priority="750" id="Y8t-k7-eUr"/>
                                                 <constraint firstItem="nwu-v7-x4f" firstAttribute="height" secondItem="9Rh-qE-gpf" secondAttribute="height" multiplier="0.8" id="dID-Jj-45Q"/>
                                                 <constraint firstItem="uvs-w5-Xfe" firstAttribute="width" secondItem="9Rh-qE-gpf" secondAttribute="width" multiplier="0.6" id="vwF-7H-r73"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="dID-Jj-45Q"/>
+                                                </mask>
+                                            </variation>
                                         </stackView>
                                     </subviews>
                                     <animations/>
                                     <color key="tintColor" red="0.090196078430000007" green="0.70588235290000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstItem="9Rh-qE-gpf" firstAttribute="centerX" secondItem="W8c-Gz-rNo" secondAttribute="centerX" id="Yw9-ep-2MO"/>
-                                        <constraint firstItem="9Rh-qE-gpf" firstAttribute="centerY" secondItem="W8c-Gz-rNo" secondAttribute="centerY" id="ye5-FE-9CZ"/>
+                                        <constraint firstItem="9Rh-qE-gpf" firstAttribute="centerY" secondItem="W8c-Gz-rNo" secondAttribute="centerY" id="UT8-Ua-QSQ"/>
+                                        <constraint firstItem="9Rh-qE-gpf" firstAttribute="centerX" secondItem="W8c-Gz-rNo" secondAttribute="centerX" id="uNE-hD-1Ml"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <constraints>
                                     <constraint firstItem="nwu-v7-x4f" firstAttribute="height" secondItem="VCx-Aw-rKX" secondAttribute="height" multiplier="0.8" id="5QG-N2-WQp"/>
+                                    <constraint firstItem="9Rh-qE-gpf" firstAttribute="centerY" secondItem="VCx-Aw-rKX" secondAttribute="centerY" id="Irq-Mc-qYU"/>
+                                    <constraint firstItem="9Rh-qE-gpf" firstAttribute="height" secondItem="VCx-Aw-rKX" secondAttribute="height" id="M5e-E9-aCL"/>
                                     <constraint firstItem="9Rh-qE-gpf" firstAttribute="width" secondItem="VCx-Aw-rKX" secondAttribute="width" multiplier="0.85" id="uw8-iX-T9Q"/>
+                                    <constraint firstItem="9Rh-qE-gpf" firstAttribute="centerX" secondItem="VCx-Aw-rKX" secondAttribute="centerX" id="vr0-gN-QeL"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5QG-N2-WQp"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="favourite" destination="Rx1-nH-eav" id="M3W-d7-38F"/>
                                     <outlet property="name" destination="uvs-w5-Xfe" id="htV-gP-NX0"/>
@@ -1597,7 +1632,7 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRounding">
-                                                            <real key="value" value="25"/>
+                                                            <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="1"/>
@@ -1605,6 +1640,7 @@
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
                                                             <color key="value" red="0.2005443335" green="0.1191722756" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circularPicture" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[name]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAx-Zt-MLV">
@@ -1658,6 +1694,9 @@
                             </connections>
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="Add Friends" id="PBi-E4-KLd"/>
+                        <connections>
+                            <outlet property="rightBarButtonItem" destination="PBi-E4-KLd" id="qSs-Ww-LVJ"/>
+                        </connections>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>

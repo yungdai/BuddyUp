@@ -298,7 +298,6 @@ class MainAppViewController: UIViewController{
 
             // save the data for liked activity
             let likedActivity = PFObject(className: "Liked")
-            let user = PFUser.currentUser()
             likedActivity["activityID"] = currentActivityId
             likedActivity["activityLikeUser"] = PFUser.currentUser()
             likedActivity["activityID"] = currentActivityId
