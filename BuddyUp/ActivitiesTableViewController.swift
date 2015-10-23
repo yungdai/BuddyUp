@@ -49,11 +49,6 @@ class ActivitiesTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        // setup the refresh controls for this table
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: ("refreshPage"), forControlEvents: UIControlEvents.ValueChanged)
-        self.refreshControl = refreshControl
-        
         if PFUser.currentUser()?.sessionToken != nil {
             let query = PFQuery(className: "Activity")
             query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
