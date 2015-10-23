@@ -1671,9 +1671,6 @@
                                 <segment title="Friends"/>
                                 <segment title="Find Friends"/>
                             </segments>
-                            <connections>
-                                <action selector="friendshipSegmentChanged:" destination="zAx-9S-17R" eventType="valueChanged" id="Ycp-n9-3e4"/>
-                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <nil key="simulatedStatusBarMetrics"/>

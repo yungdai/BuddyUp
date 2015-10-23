@@ -9,11 +9,11 @@
 import UIKit
 
 class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
-
+    
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
-
-
+    
+    
     var searchActive: Bool = false
     var filtered: [PFObject]? = []
     var userArray: [PFUser]? = []
@@ -72,7 +72,7 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         case 1:
             print("Find Friends Selected")
             cellName = "findFriends"
-           
+            
         default:
             break;
         }
@@ -80,7 +80,7 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         // deque the cell information
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath)
-
+        
         // make sure that when you select the cell it doesn't have a style
         cell.selectionStyle = .None
         
@@ -113,29 +113,13 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
                 })
             }
             
-
+            
         }
         return cell
     }
-    
-    // MARK: - Segment Control
-    
-    @IBAction func friendshipSegmentChanged(sender: UISegmentedControl) {
-        switch segmentControl.selectedSegmentIndex {
-        case 0:
-            print("Friends Selected")
-            self.navigationItem.rightBarButtonItem!.title = nil
-            
 
-        case 1:
-            print("Find Friends Selected")
-            self.navigationItem.rightBarButtonItem!.title = "Add Friends"   
-        default:
-            break;
-        }
-    }
     
-    // MARK: - Search Controls 
+    // MARK: - Search Controls
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
         // stop searching if you stop typing
@@ -179,7 +163,7 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         if(searchText != nil){
             query!.whereKey("name", containsString: searchText)
         }
-
+        
         query!.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
             if (error != nil) {
                 print(error)
@@ -202,30 +186,22 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         refreshControl?.endRefreshing()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     
     // MARK: - Adding Friends
-    
-    private func addFriend() {
-        
-    }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // change the cell information based on thw segment control
         switch segmentControl.selectedSegmentIndex {
         case 0:
             print("Friends Selected")
-  
+            
         case 1:
             print("Find Friends Selected")
             
             let optionMenu = UIAlertController(title: "", message: "Request Freindship with User?", preferredStyle: .ActionSheet)
             let addFriendAction = UIAlertAction(title: "Yes", style: .Default, handler: { (alert: UIAlertAction) -> Void in
- 
+                
                 self.requestFriendship(indexPath)
             })
             
@@ -240,132 +216,94 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
             
             presentViewController(optionMenu, animated: true, completion: nil)
             
-            
         default:
             break;
         }
     }
     
-    private func requestFriendship(index: NSIndexPath) {
+    func requestFriendship(index: NSIndexPath) {
         
         if let users = userArray {
             // get the selection user's in their row
-            let selectedFriend = users[index.row]
-
-
+            let friend: PFUser = users[index.row] as PFUser
+            
+            let selectedFriend: PFUser = friend["objectID"] as! PFUser
             
             // create the friendshipRequest
             let friendship = PFObject(className: "Friendship")
             
-            
             // the friendship asker
             friendship.setObject(PFUser.currentUser()!, forKey: "user")
-            friendship.setObject(selectedFriend, forKey: "friend")
+            friendship.setObject(selectedFriend as PFUser!, forKey: "friend")
             friendship.setObject(NSDate(), forKey: "date")
             friendship["relationshipStatus"] = "Pending"
             friendship["requester"] = true
-            
-        
             friendship.saveInBackground()
             
             // the friendship reciever
-            friendship.setObject(selectedFriend, forKey: "user")
+            friendship.setObject(selectedFriend as PFUser!, forKey: "user")
             friendship.setObject(PFUser.currentUser()!, forKey: "friend")
             friendship.setObject(NSDate(), forKey: "date")
             friendship["relationshipStatus"] = "Pending"
             friendship["requester"] = false
             friendship.saveInBackground()
         }
-//
-//            // row for the user reqeusting in the friendship table
-//            friendship["user"] = PFUser.currentUser()
-//            friendship["friend"] = friend
-//            friendship["relationshipStatus"] = "Pending"
-//            friendship["requester"] = true
-//
-//            
-//            friendship.saveInBackgroundWithBlock({ (success, error: NSError?) -> Void in
-//                if (error != nil) {
-//                    print(error)
-//                } else {
-//                    print("first row of friendship saved")
-//                }
-//            })
-            
-//            // for the requested friend in the friendhips table
-//            friendship["user"] = friend
-//            friendship["friend"] = PFUser.currentUser()
-//            friendship["relationshipStatus"] = "Pending"
-//            friendship["requester"] = false
-//            
-//            friendship.saveInBackgroundWithBlock({ (success, error: NSError?) -> Void in
-//                if (error != nil) {
-//                    print(error)
-//                } else {
-//                    print("second row of friendship saved")
-//                }
-//            })
-//            
-//            
-//        }
+        
+        
         
     }
-
-
-   
+    
+    
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+    // Configure the cell...
+    return cell
     }
     */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    // Return false if you do not want the specified item to be editable.
+    return true
     }
     */
-
+    
     /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    if editingStyle == .Delete {
+    // Delete the row from the data source
+    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    } else if editingStyle == .Insert {
+    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
     }
     */
-
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
     }
     */
-
+    
     /*
     // Override to support conditional rearranging of the table view.
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    // Return false if you do not want the item to be re-orderable.
+    return true
     }
     */
-
+    
     /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
