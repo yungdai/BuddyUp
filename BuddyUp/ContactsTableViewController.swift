@@ -13,9 +13,10 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
 
+
     var searchActive: Bool = false
     var filtered: [PFObject]? = []
-    var userArray: [PFObject]? = []
+    var userArray: [PFUser]? = []
     var contactsSection: Int = 1
     var addFriendsButton: UIBarButtonItem!
     var currentFriendIndex: NSIndexPath?
@@ -184,7 +185,7 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
                 print(error)
             }
             
-            self.userArray = (result as? [PFObject])!
+            self.userArray = (result as? [PFUser])!
             print("found something", terminator: "")
             self.tableView.reloadData()
             
@@ -192,9 +193,9 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func sortArray() {
-        let sortedAlphabetically = Array(userArray.reverse())
+        let sortedAlphabetically = Array(userArray!.reverse())
         for(index,element) in sortedAlphabetically.enumerate() {
-            userArray[index] = element
+            userArray![index] = element
         }
         
         tableView.reloadData()
@@ -213,7 +214,7 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // change the cell information based on thw segment control
         switch segmentControl.selectedSegmentIndex {
         case 0:
@@ -222,18 +223,18 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         case 1:
             print("Find Friends Selected")
             
-            let optionMenu = UIAlertController(title: "Add Friend", message: "Request Freindship with User?", preferredStyle: .ActionSheet)
+            let optionMenu = UIAlertController(title: "", message: "Request Freindship with User?", preferredStyle: .ActionSheet)
             let addFriendAction = UIAlertAction(title: "Yes", style: .Default, handler: { (alert: UIAlertAction) -> Void in
  
                 self.requestFriendship(indexPath)
             })
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (<#UIAlertAction#>) -> Void in
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (alert: UIAlertAction) -> Void in
                 print("Cancelled Action")
             })
             
             // make it work on an iPad
-            optionMenu.popoverPresentationController?.sourceView = tableView as UIView
+            optionMenu.popoverPresentationController?.sourceView = tableView.cellForRowAtIndexPath(indexPath)! as UIView
             optionMenu.addAction(addFriendAction)
             optionMenu.addAction(cancelAction)
             
@@ -250,40 +251,63 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         if let users = userArray {
             // get the selection user's in their row
             let selectedFriend = users[index.row]
-            
-            // get the selected user's objectID
-            let friend = PFObject(withoutDataWithClassName: "User", objectId: selectedFriend.objectId)
-            
+
+
             
             // create the friendshipRequest
             let friendship = PFObject(className: "Friendship")
             
-            // row for the user reqeusting in the friendship table
-            friendship["user"] = PFUser.currentUser()
-            friendship["friend"] = friend
+            
+            // the friendship asker
+            friendship.setObject(PFUser.currentUser()!, forKey: "user")
+            friendship.setObject(selectedFriend, forKey: "friend")
+            friendship.setObject(NSDate(), forKey: "date")
             friendship["relationshipStatus"] = "Pending"
             friendship["requester"] = true
             
-            friendship.saveInBackgroundWithBlock({ (success, error: NSError?) -> Void in
-                if (error != nil) {
-                    print(error)
-                }
-            })
+        
+            friendship.saveInBackground()
             
-            // for the requested friend in the friendhips table
-            friendship["user"] = friend
-            friendship["friend"] = PFUser.currentUser()
+            // the friendship reciever
+            friendship.setObject(selectedFriend, forKey: "user")
+            friendship.setObject(PFUser.currentUser()!, forKey: "friend")
+            friendship.setObject(NSDate(), forKey: "date")
             friendship["relationshipStatus"] = "Pending"
             friendship["requester"] = false
-            
-            friendship.saveInBackgroundWithBlock({ (success, error: NSError?) -> Void in
-                if (error != nil) {
-                    print(error)
-                }
-            })
-            
-            
+            friendship.saveInBackground()
         }
+//
+//            // row for the user reqeusting in the friendship table
+//            friendship["user"] = PFUser.currentUser()
+//            friendship["friend"] = friend
+//            friendship["relationshipStatus"] = "Pending"
+//            friendship["requester"] = true
+//
+//            
+//            friendship.saveInBackgroundWithBlock({ (success, error: NSError?) -> Void in
+//                if (error != nil) {
+//                    print(error)
+//                } else {
+//                    print("first row of friendship saved")
+//                }
+//            })
+            
+//            // for the requested friend in the friendhips table
+//            friendship["user"] = friend
+//            friendship["friend"] = PFUser.currentUser()
+//            friendship["relationshipStatus"] = "Pending"
+//            friendship["requester"] = false
+//            
+//            friendship.saveInBackgroundWithBlock({ (success, error: NSError?) -> Void in
+//                if (error != nil) {
+//                    print(error)
+//                } else {
+//                    print("second row of friendship saved")
+//                }
+//            })
+//            
+//            
+//        }
         
     }
 

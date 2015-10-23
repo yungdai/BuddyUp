@@ -13,7 +13,7 @@ import UIKit
     
     @IBInspectable var cornerRounding: CGFloat = 50{
         didSet {
-            circlePicture()
+            layer.cornerRadius = cornerRounding
             
         }
     }
@@ -28,6 +28,7 @@ import UIKit
     @IBInspectable var circularPicture: Bool = false {
         didSet {
             circlePicture()
+            layer.masksToBounds = true
         }
     }
     
@@ -38,6 +39,7 @@ import UIKit
             
         } else {
             layer.cornerRadius = cornerRounding
+            layer.masksToBounds = true
         }
         
     }
@@ -63,7 +65,7 @@ import UIKit
         layer.borderWidth = borderWidth
         layer.borderColor = borderColour?.CGColor
         // binds the masking to the variables above.  This will be true for all images assigned in IB
-        layer.masksToBounds = true
+        
     }
     
 }

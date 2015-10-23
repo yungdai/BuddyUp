@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1A05173D1B2600910091ECF5 /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05173C1B2600910091ECF5 /* MainAppViewController.swift */; };
-		1A228D851BD5841000C1A74D /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A228D841BD5841000C1A74D /* ContactsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		1A2863BB1BD582B4002D941F /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2863BA1BD582B4002D941F /* UserTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		1A228D851BD5841000C1A74D /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A228D841BD5841000C1A74D /* ContactsTableViewController.swift */; };
+		1A2863BB1BD582B4002D941F /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2863BA1BD582B4002D941F /* UserTableViewCell.swift */; };
 		1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D46041B44663F00270C0B /* SearchTableViewController.swift */; };
 		1A3EB67B1B46DC79008A81FE /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */; };
 		1A3EB67D1B46E099008A81FE /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */; };
@@ -17,7 +17,7 @@
 		1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */; };
 		1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */; };
 		1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4E1B1F7214008A080C /* ChatViewController.swift */; };
-		1A53ECC81BCD4B29007B6700 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A53ECC71BCD4B29007B6700 /* InfoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1A53ECC81BCD4B29007B6700 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A53ECC71BCD4B29007B6700 /* InfoViewController.swift */; };
 		1A54CC351B5574BB00A2A586 /* PictureImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A54CC341B5574BB00A2A586 /* PictureImageView.swift */; };
 		1A57D08E1B2772EB004B363C /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A57D08D1B2772EB004B363C /* NewActivityViewController.swift */; };
 		1A57D0901B2789DC004B363C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A57D08F1B2789DC004B363C /* SettingsTableViewController.swift */; };
@@ -47,8 +47,8 @@
 		1ACAA3E01B30B9C600C527CA /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ACAA3DF1B30B9C600C527CA /* PickerViewController.swift */; };
 		1ACAA3E31B30C7DC00C527CA /* DatePickerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACAA3E11B30C7DC00C527CA /* DatePickerPopUp.xib */; };
 		1ACAA3E41B30C7DC00C527CA /* PickerViewPickerPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ACAA3E21B30C7DC00C527CA /* PickerViewPickerPopUp.xib */; };
-		1AE43BD31BD01A80005FB5EF /* AdventureClubLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE43BD21BD01A80005FB5EF /* AdventureClubLogo.swift */; settings = {ASSET_TAGS = (); }; };
-		1AE5AE561BCD9C480058D54F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5AE551BCD9C480058D54F /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		1AE43BD31BD01A80005FB5EF /* AdventureClubLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE43BD21BD01A80005FB5EF /* AdventureClubLogo.swift */; };
+		1AE5AE561BCD9C480058D54F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5AE551BCD9C480058D54F /* SettingsViewController.swift */; };
 		1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC6B1B2E2118009585F6 /* DatePickerPopUp.swift */; };
 		1AE5DC6E1B2E2118009585F6 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */; };
 		1AE5DC721B2E2135009585F6 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE5DC701B2E2135009585F6 /* DatePickerViewController.swift */; };
