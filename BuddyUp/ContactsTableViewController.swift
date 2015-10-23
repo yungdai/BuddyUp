@@ -124,12 +124,8 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         switch segmentControl.selectedSegmentIndex {
         case 0:
             print("Friends Selected")
-            self.navigationItem.rightBarButtonItem!.title = nil
-            
-
         case 1:
             print("Find Friends Selected")
-            self.navigationItem.rightBarButtonItem!.title = "Add Friends"   
         default:
             break;
         }
@@ -202,10 +198,6 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         refreshControl?.endRefreshing()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     
     // MARK: - Adding Friends
@@ -240,7 +232,6 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
             
             presentViewController(optionMenu, animated: true, completion: nil)
             
-            
         default:
             break;
         }
@@ -250,32 +241,31 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         
         if let users = userArray {
             // get the selection user's in their row
-            let selectedFriend = users[index.row]
-
-
+            let friend: PFUser = (users[index.row] as PFUser)
+            
+            let selectedFriend: PFUser = friend["objectID"] as! PFUser
             
             // create the friendshipRequest
             let friendship = PFObject(className: "Friendship")
             
-            
             // the friendship asker
             friendship.setObject(PFUser.currentUser()!, forKey: "user")
-            friendship.setObject(selectedFriend, forKey: "friend")
+            friendship.setObject(selectedFriend as PFUser!, forKey: "friend")
             friendship.setObject(NSDate(), forKey: "date")
             friendship["relationshipStatus"] = "Pending"
             friendship["requester"] = true
-            
-        
             friendship.saveInBackground()
             
             // the friendship reciever
-            friendship.setObject(selectedFriend, forKey: "user")
+            friendship.setObject(selectedFriend as PFUser!, forKey: "user")
             friendship.setObject(PFUser.currentUser()!, forKey: "friend")
             friendship.setObject(NSDate(), forKey: "date")
             friendship["relationshipStatus"] = "Pending"
             friendship["requester"] = false
             friendship.saveInBackground()
         }
+        
+        
 //
 //            // row for the user reqeusting in the friendship table
 //            friendship["user"] = PFUser.currentUser()
