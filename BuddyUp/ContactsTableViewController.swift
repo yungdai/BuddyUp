@@ -189,35 +189,55 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
   
     // MARK: - Adding Friends
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // change the cell information based on thw segment control
-        switch segmentControl.selectedSegmentIndex {
-        case 0:
-            print("Friends Selected")
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        
+        // adding a normal status for this for now, might need it to be destructive later
+    
+        let addFriend = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Add Friend") { (action: UITableViewRowAction, indexPath: NSIndexPath) -> Void in
             
-        case 1:
-            print("Find Friends Selected")
+            // review the tableview cell back to normal
+            self.editing = false
             
-            let optionMenu = UIAlertController(title: "", message: "Request Freindship with User?", preferredStyle: .ActionSheet)
-            let addFriendAction = UIAlertAction(title: "Yes", style: .Default, handler: { (alert: UIAlertAction) -> Void in
-                self.requestFriendship(indexPath)
-            })
+            self.requestFriendship(indexPath)
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (alert: UIAlertAction) -> Void in
-                print("Cancelled Action")
-            })
-            
-            // make it work on an iPad
-            optionMenu.popoverPresentationController?.sourceView = tableView.cellForRowAtIndexPath(indexPath)! as UIView
-            optionMenu.addAction(addFriendAction)
-            optionMenu.addAction(cancelAction)
-            
-            presentViewController(optionMenu, animated: true, completion: nil)
-            
-        default:
-            break;
         }
+        
+        // change the backgroound colour of the swipe
+        addFriend.backgroundColor = UIColor.yellowColor()
+        
+        return [addFriend]
     }
+    
+//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        // change the cell information based on thw segment control
+//        switch segmentControl.selectedSegmentIndex {
+//        case 0:
+//            print("Friends Selected")
+//            
+//        case 1:
+//            print("Find Friends Selected")
+//            
+//            let optionMenu = UIAlertController(title: "", message: "Request Freindship with User?", preferredStyle: .ActionSheet)
+//            let addFriendAction = UIAlertAction(title: "Yes", style: .Default, handler: { (alert: UIAlertAction) -> Void in
+//                self.requestFriendship(indexPath)
+//            })
+//            
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: { (alert: UIAlertAction) -> Void in
+//                print("Cancelled Action")
+//            })
+//            
+//            // make it work on an iPad
+//            optionMenu.popoverPresentationController?.sourceView = tableView.cellForRowAtIndexPath(indexPath)! as UIView
+//            optionMenu.addAction(addFriendAction)
+//            optionMenu.addAction(cancelAction)
+//            
+//            presentViewController(optionMenu, animated: true, completion: nil)
+//            
+//        default:
+//            break;
+//        }
+//    }
     
     func requestFriendship(index: NSIndexPath) {
         
