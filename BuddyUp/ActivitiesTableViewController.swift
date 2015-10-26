@@ -32,7 +32,7 @@ class ActivitiesTableViewController: UITableViewController {
             print("sending user to the main app screen because he's a current user")
             let query = PFQuery(className: "Activity")
             query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
-            
+            query.fromLocalDatastore()
             // getting the data asynchronously in the background
             query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
                 if let activities = result as? [PFObject] {
@@ -51,6 +51,7 @@ class ActivitiesTableViewController: UITableViewController {
         super.viewWillAppear(true)
         if PFUser.currentUser()?.sessionToken != nil {
             let query = PFQuery(className: "Activity")
+            query.fromLocalDatastore()
             query.whereKey("creator", equalTo: PFUser.currentUser()!.username!)
             
             // getting the data asynchronously in the background
@@ -66,6 +67,8 @@ class ActivitiesTableViewController: UITableViewController {
         }
     }
     
+    
+    // refresh the page to see if there are new activites
     func refreshPage() {
         let query = PFQuery(className: "Activity")
         query.whereKey("creator", equalTo: PFUser.currentUser()!)
@@ -145,7 +148,7 @@ class ActivitiesTableViewController: UITableViewController {
         return cell
     }
     
-    // deleting function
+    // sliding to delete function
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             activities.removeAtIndex(indexPath.row).deleteInBackgroundWithBlock({ (success, error: NSError?) -> Void in
