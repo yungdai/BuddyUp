@@ -12,13 +12,13 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var searchBar: UISearchBar!
-    
+
     
     var searchActive: Bool = false
     var filtered: [PFObject]? = []
     var userArray: [PFUser]? = []
     var contactsSection: Int = 1
-    var addFriendsButton: UIBarButtonItem!
+
     var currentFriendIndex: NSIndexPath?
     
     
@@ -86,34 +86,32 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         
         
         if let friendshipCell = cell as? UserTableViewCell {
-            let user = userArray![indexPath.row]
-            
-            if let name = user["name"] as? String {
-                friendshipCell.name.text = name
-            }
-            
-            if let userPicture = user["photo"] as? String {
+            if let user = userArray![indexPath.row] as PFUser?{
                 
-                // parse the photo URL into data for the UIImageView
-                friendshipCell.userImage.image = friendshipCell.userImage.downloadImage(userPicture)
+                if let name = user["name"] as? String {
+                    friendshipCell.name.text = name
+                }
                 
-                
-            } else if let userPicture = user["userImage"] as? PFFile {
-                userPicture.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
-                    if (error != nil) {
-                        print("There was an error: \(error)")
-                        // TODO throw error message
-                        return
-                    }
-                    // get the image data
-                    if let newData = data {
-                        friendshipCell.userImage.image = UIImage(data: newData)
-                    }
+                if let userPicture = user["photo"] as? String {
                     
-                })
+                    // parse the photo URL into data for the UIImageView
+                    friendshipCell.userImage.image = friendshipCell.userImage.downloadImage(userPicture)
+                    
+                    
+                } else if let userPicture = user["userImage"] as? PFFile {
+                    userPicture.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
+                        if (error != nil) {
+                            print("There was an error: \(error)")
+                            // TODO throw error message
+                            return
+                        }
+                        // get the image data
+                        if let newData = data {
+                            friendshipCell.userImage.image = UIImage(data: newData)
+                        }
+                    })
+                }
             }
-            
-            
         }
         return cell
     }
@@ -157,23 +155,26 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
     // searching function
     func search(searchText: String? = nil){
         // query the User object
-        let query = PFUser.query()
-        
-        // search the name column for the text containing the string
-        if(searchText != nil){
-            query!.whereKey("name", containsString: searchText)
-        }
-        
-        query!.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
-            if (error != nil) {
-                print(error)
+        if let query = PFUser.query() {
+            
+            // search the name column for the text containing the string
+            if(searchText != nil){
+                query.whereKey("name", containsString: searchText)
             }
             
-            self.userArray = (result as? [PFUser])!
-            print("found something", terminator: "")
-            self.tableView.reloadData()
-            
+            query.findObjectsInBackgroundWithBlock { (result: [AnyObject]?, error: NSError?) -> Void in
+                if (error != nil) {
+                    print(error)
+                }
+                
+                self.userArray = (result as? [PFUser])!
+                print("found something", terminator: "")
+                self.tableView.reloadData()
+                
+            }
         }
+        
+
     }
     
     func sortArray() {
@@ -243,30 +244,28 @@ class ContactsTableViewController: UITableViewController, UISearchBarDelegate {
         
         if let users = userArray {
             // get the selection user's in their row
-            let friend: PFUser = users[index.row] as PFUser
-
-            
-            let selectedFriend: PFUser = friend["objectID"] as! PFUser
-            
-            // create the friendshipRequest
-            let friendship = PFObject(className: "Friendship")
-            
-            // the friendship asker
-            friendship.setObject(PFUser.currentUser()!, forKey: "user")
-            friendship.setObject(selectedFriend as PFUser!, forKey: "friend")
-            friendship.setObject(NSDate(), forKey: "date")
-            friendship["relationshipStatus"] = "Pending"
-            friendship["requester"] = true
-            friendship.saveInBackground()
-            
-            // the friendship reciever
-            friendship.setObject(selectedFriend as PFUser!, forKey: "user")
-            friendship.setObject(PFUser.currentUser()!, forKey: "friend")
-            friendship.setObject(NSDate(), forKey: "date")
-            friendship["relationshipStatus"] = "Pending"
-            friendship["requester"] = false
-            friendship.saveInBackground()
+            if let friend: PFUser = users[index.row] as PFUser? {
+                
+                // let selectedFriend: PFUser = friend["objectID"] as! PFUser
+                
+                // create the friendshipRequest
+                if let friendship = PFObject(className: "Friendship") as PFObject? {
+                    // the friendship asker
+                    friendship.setObject(PFUser.currentUser()!, forKey: "user")
+                    friendship.setObject(friend["objectID"] as! PFUser, forKey: "friend")
+                    friendship["relationshipStatus"] = "Pending"
+                    friendship["requester"] = true
+                    friendship.saveInBackground()
+                    
+                    // the friendship reciever
+                    friendship.setObject(friend["objectID"] as! PFUser, forKey: "user")
+                    friendship.setObject(PFUser.currentUser()!, forKey: "friend")
+                    friendship["relationshipStatus"] = "Pending"
+                    friendship["requester"] = false
+                    friendship.saveInBackground()
+                }
+            }
         }
-        
+
     }
 }

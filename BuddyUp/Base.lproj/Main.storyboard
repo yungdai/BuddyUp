@@ -774,7 +774,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="PjE-eB-MqY" userLabel="Image Stack">
+                                    <stackView opaque="NO" alpha="0.14000000000000001" contentMode="scaleToFill" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="PjE-eB-MqY" userLabel="Image Stack">
                                         <rect key="frame" x="0.0" y="228" width="560" height="187"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="eJb-M4-GTp" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
@@ -803,6 +803,7 @@
                                             </button>
                                         </subviews>
                                         <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWF-hW-9IL" customClass="ButtonStyle" customModule="BuddyUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="420" width="560" height="47"/>
@@ -848,7 +849,7 @@
                             </stackView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="XbO-lr-Zc8" secondAttribute="trailing" id="6pQ-eE-MbB"/>
                             <constraint firstItem="XbO-lr-Zc8" firstAttribute="top" secondItem="EvC-aS-lsz" secondAttribute="bottom" constant="10" id="LRd-ES-MmY"/>
@@ -1517,7 +1518,7 @@
         <scene sceneID="mSb-7x-ABV">
             <objects>
                 <tableViewController id="zAx-9S-17R" customClass="ContactsTableViewController" customModule="BuddyUp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" id="eme-RC-hEr">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="22" sectionFooterHeight="22" id="eme-RC-hEr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -1559,14 +1560,14 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[name]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvs-w5-Xfe">
-                                                    <rect key="frame" x="125" y="50" width="260" height="21"/>
+                                                    <rect key="frame" x="125" y="50" width="332" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rx1-nH-eav" userLabel="favouriteStar">
-                                                    <rect key="frame" x="390" y="0.0" width="120" height="120"/>
+                                                    <rect key="frame" x="462" y="36" width="48" height="48"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="Rx1-nH-eav" secondAttribute="height" multiplier="1:1" id="Ths-Or-eef"/>
@@ -1575,6 +1576,9 @@
                                                 </button>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="Rx1-nH-eav" firstAttribute="height" secondItem="9Rh-qE-gpf" secondAttribute="height" multiplier="0.4" id="rCa-n7-3iZ"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <animations/>
@@ -1624,14 +1628,25 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[name]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAx-Zt-MLV">
-                                                    <rect key="frame" x="125" y="50" width="385" height="21"/>
+                                                    <rect key="frame" x="125" y="50" width="332" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAc-hu-gwv">
+                                                    <rect key="frame" x="462" y="36" width="48" height="48"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="bAc-hu-gwv" secondAttribute="height" multiplier="1:1" id="ICB-mj-he9"/>
+                                                    </constraints>
+                                                    <state key="normal" image="AddFriend"/>
+                                                </button>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="bAc-hu-gwv" firstAttribute="height" secondItem="pcR-8p-HDi" secondAttribute="height" multiplier="0.4" id="bFS-aN-M2J"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <animations/>
@@ -1650,6 +1665,7 @@
                                     <constraint firstItem="pcR-8p-HDi" firstAttribute="centerY" secondItem="dNH-ib-lAy" secondAttribute="centerY" id="zNe-hB-n1p"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="addFriendButton" destination="bAc-hu-gwv" id="2T9-3u-a9n"/>
                                     <outlet property="name" destination="CAx-Zt-MLV" id="sI9-2w-24I"/>
                                     <outlet property="userImage" destination="t4C-7V-7Py" id="XIg-nt-jaB"/>
                                 </connections>
@@ -1784,11 +1800,11 @@
             </objects>
             <point key="canvasLocation" x="1333" y="-1713"/>
         </scene>
-        <!--Settings-->
+        <!--Profile Settings-->
         <scene sceneID="T0o-34-Nlp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kv8-qW-doJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings icon" id="3wa-0s-LXu"/>
+                    <tabBarItem key="tabBarItem" title="Profile Settings" image="settings icon" id="3wa-0s-LXu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k2S-Hw-K3u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1806,6 +1822,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AddFriend" width="512" height="512"/>
         <image name="Escape" width="640" height="822"/>
         <image name="Matches" width="37" height="37"/>
         <image name="activities Icon" width="23" height="25"/>
@@ -1819,8 +1836,8 @@
         <image name="icon_user" width="16" height="16"/>
         <image name="info" width="512" height="512"/>
         <image name="noImage" width="480" height="480"/>
-        <image name="settings icon" width="35" height="35"/>
-        <image name="star" width="128" height="128"/>
+        <image name="settings icon" width="29" height="29"/>
+        <image name="star" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N47-ue-Wgg"/>
