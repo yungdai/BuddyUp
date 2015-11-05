@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1A05173D1B2600910091ECF5 /* MainAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A05173C1B2600910091ECF5 /* MainAppViewController.swift */; };
+		1A0BF79E1BE9A2DE009A52B9 /* ImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0BF79D1BE9A2DE009A52B9 /* ImageEffects.swift */; };
 		1A228D851BD5841000C1A74D /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A228D841BD5841000C1A74D /* ContactsTableViewController.swift */; };
 		1A2863BB1BD582B4002D941F /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2863BA1BD582B4002D941F /* UserTableViewCell.swift */; };
 		1A2D46051B44663F00270C0B /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D46041B44663F00270C0B /* SearchTableViewController.swift */; };
 		1A3EB67B1B46DC79008A81FE /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */; };
 		1A3EB67D1B46E099008A81FE /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */; };
 		1A3EB67F1B473351008A81FE /* LabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3EB67E1B473351008A81FE /* LabelStyle.swift */; };
+		1A41783D1BE28D3100C12160 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A41783C1BE28D3100C12160 /* Colors.swift */; };
 		1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */; };
 		1A45AB4D1B1F71F6008A080C /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */; };
 		1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A45AB4E1B1F7214008A080C /* ChatViewController.swift */; };
@@ -76,12 +78,14 @@
 
 /* Begin PBXFileReference section */
 		1A05173C1B2600910091ECF5 /* MainAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppViewController.swift; sourceTree = "<group>"; };
+		1A0BF79D1BE9A2DE009A52B9 /* ImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEffects.swift; sourceTree = "<group>"; };
 		1A228D841BD5841000C1A74D /* ContactsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		1A2863BA1BD582B4002D941F /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		1A2D46041B44663F00270C0B /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		1A3EB67A1B46DC79008A81FE /* ButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		1A3EB67C1B46E099008A81FE /* TextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
 		1A3EB67E1B473351008A81FE /* LabelStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelStyle.swift; sourceTree = "<group>"; };
+		1A41783C1BE28D3100C12160 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		1A45AB4A1B1F71DB008A080C /* ActivitiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4C1B1F71F6008A080C /* MatchesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
 		1A45AB4E1B1F7214008A080C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +198,14 @@
 				1A2D46041B44663F00270C0B /* SearchTableViewController.swift */,
 			);
 			name = "Search Bar";
+			sourceTree = "<group>";
+		};
+		1A41783E1BE28D3E00C12160 /* Blurring Effect */ = {
+			isa = PBXGroup;
+			children = (
+				1A0BF79D1BE9A2DE009A52B9 /* ImageEffects.swift */,
+			);
+			name = "Blurring Effect";
 			sourceTree = "<group>";
 		};
 		1A7246BD1B1E20650020C81E = {
@@ -309,6 +321,8 @@
 		1A9204F81B373F510046EFE7 /* Element Design Styling */ = {
 			isa = PBXGroup;
 			children = (
+				1A41783E1BE28D3E00C12160 /* Blurring Effect */,
+				1A41783C1BE28D3100C12160 /* Colors.swift */,
 				1A54CC341B5574BB00A2A586 /* PictureImageView.swift */,
 				1A9204F91B373F6C0046EFE7 /* ActivityCardView.swift */,
 				9FE143951B3C89130002FD19 /* BackgroundView.swift */,
@@ -522,6 +536,7 @@
 				1ABB8FBB1B3200BA00102C71 /* APIKeys.swift in Sources */,
 				1A3EB67D1B46E099008A81FE /* TextFieldStyle.swift in Sources */,
 				1AE5DC6D1B2E2118009585F6 /* DatePickerPopUp.swift in Sources */,
+				1A41783D1BE28D3100C12160 /* Colors.swift in Sources */,
 				1ACAA3DC1B30B97F00C527CA /* PickerViewPickerPopUp.swift in Sources */,
 				1A53ECC81BCD4B29007B6700 /* InfoViewController.swift in Sources */,
 				1A45AB4B1B1F71DB008A080C /* ActivitiesTableViewController.swift in Sources */,
@@ -530,6 +545,7 @@
 				1A7246CE1B1E20650020C81E /* ViewController.swift in Sources */,
 				1A45AB4F1B1F7214008A080C /* ChatViewController.swift in Sources */,
 				1A9204FA1B373F6C0046EFE7 /* ActivityCardView.swift in Sources */,
+				1A0BF79E1BE9A2DE009A52B9 /* ImageEffects.swift in Sources */,
 				1A3EB67B1B46DC79008A81FE /* ButtonStyle.swift in Sources */,
 				9FE143961B3C89130002FD19 /* BackgroundView.swift in Sources */,
 				1AE5DC6E1B2E2118009585F6 /* DateFormat.swift in Sources */,

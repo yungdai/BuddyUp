@@ -9,6 +9,12 @@
 import UIKit
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
+    
+    // set up the background from the previous view
+    var background: UIImage = UIImage()
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordConfirmationField: UITextField!
@@ -32,6 +38,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backgroundImage.image? = background
         self.activityIndicator.hidden = true
         
         usernameField.delegate = self
@@ -233,7 +241,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         })
     }
     
-    @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
+    @IBAction func cancelButtonPressed(sender: UIButton) {
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     // Sign the current user out of the app

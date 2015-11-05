@@ -29,7 +29,7 @@ import UIKit
     func circlePicture() {
         if (circularPicture) {
             layer.cornerRadius = layer.frame.size.width / 2
-            
+            layer.masksToBounds = true
         }
     }
 
@@ -53,6 +53,7 @@ import UIKit
         circlePicture()
         layer.borderWidth = borderWidth
         layer.borderColor = borderColour?.CGColor
+        layer.masksToBounds = true
         // binds the masking to the variables above.  This will be true for all images assigned in IB
         
     }

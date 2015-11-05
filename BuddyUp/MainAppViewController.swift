@@ -11,8 +11,8 @@ import UIKit
 class MainAppViewController: UIViewController{
     
     let currentUser = PFUser.currentUser()
-    let iPhoneImageDimension:CGFloat = 100.0
-    let iPadImageDimension:CGFloat = 145.0
+    let iPhoneImageDimension: CGFloat = 100.0
+    let iPadImageDimension: CGFloat = 145.0
     
     @IBOutlet var personImage: UIImageView!
     @IBOutlet var personLabelText: UILabel!
@@ -328,6 +328,61 @@ class MainAppViewController: UIViewController{
     
     @IBAction func crossButtonPushed(sender: UIButton) {
         styleForNextActivity()
+    }
+    
+    // show the more info screen
+
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "activityInfo" {
+            // set up the info viewController
+            let infoViewController: InfoViewController = segue.destinationViewController as! InfoViewController
+            
+            // take a screenshot of the currrent viewcontroller and change it to UIImage
+            let screenshot: UIImage = takeScreenshot()
+            
+            // take the screenshot and apply the blur to it
+            let ciimage: CIImage = CIImage(image: screenshot)!
+            let filter: CIFilter = CIFilter(name: "CIGaussianBlur")!
+            
+            
+            // initialising the filter for the CIGaussianBlur
+            filter.setDefaults()
+            filter.setValue(ciimage, forKey: kCIInputImageKey)
+            
+            // this is the value for how much blurring, you can edit the integer value
+            filter.setValue(30, forKey: kCIInputRadiusKey)
+            
+            // apply the final output image
+            let outputImage: CIImage = filter.outputImage!
+            let finalImage: UIImage = UIImage(CIImage: outputImage)
+            
+            infoViewController.background = finalImage
+            
+            UIGraphicsEndImageContext()
+            
+            
+            // Get the new view controller using [segue destinationViewController].
+            // Pass the selected object to the new view controller.
+        }
+        
+    }
+    
+    // function to take the screenshot
+    
+    func takeScreenshot() -> UIImage{
+        
+        let layer = UIApplication.sharedApplication().keyWindow?.layer
+        let scale = UIScreen.mainScreen().scale
+        UIGraphicsBeginImageContextWithOptions(layer!.frame.size, false, scale);
+        
+        layer!.renderInContext(UIGraphicsGetCurrentContext()!)
+        let screenshot = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        print("Taking Screenshit")
+        return screenshot
     }
 }
 

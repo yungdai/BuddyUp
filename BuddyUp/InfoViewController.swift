@@ -9,13 +9,28 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
+    
+    // setup the background from the previous view
+    var background: UIImage = UIImage()
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var userImage: PictureImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var activityLabel: UILabel!
+    @IBOutlet weak var backButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // setup and imageview for the background
+        backgroundImage.image? = background
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func backButtonPushed(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
