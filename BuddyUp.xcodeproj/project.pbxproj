@@ -180,6 +180,7 @@
 			children = (
 				1AE5DC6C1B2E2118009585F6 /* DateFormat.swift */,
 				1A7A47721B39BC5300255F3D /* ImageAsyncFromURL.swift */,
+				1A0BF79D1BE9A2DE009A52B9 /* ImageEffects.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -198,14 +199,6 @@
 				1A2D46041B44663F00270C0B /* SearchTableViewController.swift */,
 			);
 			name = "Search Bar";
-			sourceTree = "<group>";
-		};
-		1A41783E1BE28D3E00C12160 /* Blurring Effect */ = {
-			isa = PBXGroup;
-			children = (
-				1A0BF79D1BE9A2DE009A52B9 /* ImageEffects.swift */,
-			);
-			name = "Blurring Effect";
 			sourceTree = "<group>";
 		};
 		1A7246BD1B1E20650020C81E = {
@@ -321,7 +314,6 @@
 		1A9204F81B373F510046EFE7 /* Element Design Styling */ = {
 			isa = PBXGroup;
 			children = (
-				1A41783E1BE28D3E00C12160 /* Blurring Effect */,
 				1A41783C1BE28D3100C12160 /* Colors.swift */,
 				1A54CC341B5574BB00A2A586 /* PictureImageView.swift */,
 				1A9204F91B373F6C0046EFE7 /* ActivityCardView.swift */,

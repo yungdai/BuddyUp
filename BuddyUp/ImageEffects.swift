@@ -28,7 +28,7 @@ public extension UIImage {
         
     }
     
-    func applyDarkEffect(image: UIImage) -> UIImage? {
+    func applyDarkEffect() -> UIImage? {
      
         let tintColour = UIColor.init(white: 0.11, alpha: 0.73)
         return self.applyBlurWithRadius(20, tintColor: tintColour, saturationDeltaFactor: 1.8, maskImage: nil)!

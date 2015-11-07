@@ -340,9 +340,10 @@ class MainAppViewController: UIViewController{
             let infoViewController: InfoViewController = segue.destinationViewController as! InfoViewController
             
             // take a screenshot of the currrent viewcontroller and change it to UIImage
-            let screenshot: UIImage = takeScreenshot()
+            let screenshot: UIImage = takeScreenshot().applyDarkEffect()!
             
             // take the screenshot and apply the blur to it
+            
             let ciimage: CIImage = CIImage(image: screenshot)!
             let filter: CIFilter = CIFilter(name: "CIGaussianBlur")!
             
@@ -352,7 +353,7 @@ class MainAppViewController: UIViewController{
             filter.setValue(ciimage, forKey: kCIInputImageKey)
             
             // this is the value for how much blurring, you can edit the integer value
-            filter.setValue(30, forKey: kCIInputRadiusKey)
+            filter.setValue(0, forKey: kCIInputRadiusKey)
             
             // apply the final output image
             let outputImage: CIImage = filter.outputImage!
@@ -381,7 +382,7 @@ class MainAppViewController: UIViewController{
         let screenshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        print("Taking Screenshit")
+        print("Taking Screenshot")
         return screenshot
     }
 }

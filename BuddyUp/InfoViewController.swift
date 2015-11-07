@@ -17,7 +17,8 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var userImage: PictureImageView!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var activityLabel: UILabel!
-    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +29,15 @@ class InfoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func backButtonPushed(sender: AnyObject) {
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func doneButtonPressed(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
