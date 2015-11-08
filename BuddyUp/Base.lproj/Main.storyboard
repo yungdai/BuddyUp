@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C31f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1496,12 +1498,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddFriend" translatesAutoresizingMaskIntoConstraints="NO" id="WBy-jh-DKU">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="-20" width="600" height="620"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j32-gN-zvA" userLabel="User Stack">
-                                <rect key="frame" x="20" y="72" width="540" height="120"/>
+                                <rect key="frame" x="30" y="52" width="540" height="120"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="noImage" translatesAutoresizingMaskIntoConstraints="NO" id="6qn-IZ-Vak" customClass="PictureImageView" customModule="BuddyUp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="6" width="108" height="108"/>
@@ -1530,18 +1532,96 @@
                                 </constraints>
                             </stackView>
                             <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3GD-la-Adg" customClass="BackgroundView" customModule="BuddyUp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="207" width="540" height="360"/>
+                                <rect key="frame" x="30" y="187" width="540" height="390"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[Activity Label]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="L3V-TE-g2F">
-                                        <rect key="frame" x="8" y="8" width="115" height="21"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="KUy-28-IlF" userLabel="ActivityStack">
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="390"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="[Activity Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="L3V-TE-g2F">
+                                                <rect key="frame" x="0.0" y="0.0" width="540" height="205"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B9g-cy-HTS" userLabel="StartTime Stack">
+                                                <rect key="frame" x="0.0" y="206" width="540" height="21"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9aM-Sa-tzB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="108" height="21"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StartTimeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dvg-6N-Wtb">
+                                                        <rect key="frame" x="108" y="0.0" width="432" height="21"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstItem="9aM-Sa-tzB" firstAttribute="baseline" secondItem="dvg-6N-Wtb" secondAttribute="firstBaseline" id="7G1-gV-Fbp"/>
+                                                    <constraint firstItem="9aM-Sa-tzB" firstAttribute="width" secondItem="B9g-cy-HTS" secondAttribute="width" multiplier="0.2" id="MEX-ny-Qrc"/>
+                                                    <constraint firstItem="dvg-6N-Wtb" firstAttribute="width" secondItem="B9g-cy-HTS" secondAttribute="width" multiplier="0.8" id="eJI-3O-Zz0"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="7G1-gV-Fbp"/>
+                                                        <exclude reference="MEX-ny-Qrc"/>
+                                                    </mask>
+                                                </variation>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6bU-t3-AVD" userLabel="EndTime Stack">
+                                                <rect key="frame" x="0.0" y="228" width="540" height="21"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AMy-24-WwK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="108" height="21"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EndTimeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HOf-M8-eCh">
+                                                        <rect key="frame" x="108" y="0.0" width="432" height="21"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstItem="HOf-M8-eCh" firstAttribute="width" secondItem="6bU-t3-AVD" secondAttribute="width" multiplier="0.8" id="DG9-xS-y31"/>
+                                                </constraints>
+                                            </stackView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bg4-Th-UK4">
+                                                <rect key="frame" x="0.0" y="250" width="540" height="140"/>
+                                                <animations/>
+                                            </imageView>
+                                        </subviews>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <constraints>
+                                            <constraint firstItem="B9g-cy-HTS" firstAttribute="height" secondItem="KUy-28-IlF" secondAttribute="height" multiplier="0.2" id="CVG-Dk-LFL"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="CVG-Dk-LFL"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="KUy-28-IlF" firstAttribute="centerY" secondItem="3GD-la-Adg" secondAttribute="centerY" id="2LB-Wn-vub"/>
+                                    <constraint firstItem="KUy-28-IlF" firstAttribute="centerX" secondItem="3GD-la-Adg" secondAttribute="centerX" id="eg4-2q-Q8i"/>
+                                    <constraint firstItem="KUy-28-IlF" firstAttribute="height" secondItem="3GD-la-Adg" secondAttribute="height" id="fdP-pu-eUx"/>
+                                    <constraint firstItem="KUy-28-IlF" firstAttribute="width" secondItem="3GD-la-Adg" secondAttribute="width" id="jaV-cd-hur"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="viewColour">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1552,7 +1632,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N2o-xA-Nmu">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <animations/>
                                 <items>
                                     <navigationItem title="Activity Info" id="9fx-6z-9sW">
@@ -1571,32 +1651,35 @@
                             <constraint firstItem="3GD-la-Adg" firstAttribute="width" secondItem="j32-gN-zvA" secondAttribute="width" id="6Fm-OM-0d6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WBy-jh-DKU" secondAttribute="trailing" constant="-20" id="7L9-1z-jAt"/>
                             <constraint firstItem="WBy-jh-DKU" firstAttribute="top" secondItem="cjp-yc-wyR" secondAttribute="bottom" constant="-20" id="KFd-7y-X1C"/>
-                            <constraint firstItem="3GD-la-Adg" firstAttribute="height" secondItem="IzR-FC-OQH" secondAttribute="height" multiplier="0.6" id="Nu8-Mc-D17"/>
+                            <constraint firstItem="3GD-la-Adg" firstAttribute="height" secondItem="IzR-FC-OQH" secondAttribute="height" multiplier="0.65" id="Nu8-Mc-D17"/>
                             <constraint firstItem="WBy-jh-DKU" firstAttribute="leading" secondItem="IzR-FC-OQH" secondAttribute="leadingMargin" constant="-20" id="X4U-Vl-6NZ"/>
                             <constraint firstItem="qa8-YP-7Bu" firstAttribute="top" secondItem="WBy-jh-DKU" secondAttribute="bottom" id="cvf-eV-ptg"/>
+                            <constraint firstItem="3GD-la-Adg" firstAttribute="centerX" secondItem="IzR-FC-OQH" secondAttribute="centerX" id="d7D-EL-cWY"/>
                             <constraint firstItem="N2o-xA-Nmu" firstAttribute="leading" secondItem="IzR-FC-OQH" secondAttribute="leadingMargin" constant="-20" id="eVN-uP-KVv"/>
-                            <constraint firstItem="3GD-la-Adg" firstAttribute="leading" secondItem="j32-gN-zvA" secondAttribute="leading" id="fpg-WL-LZh"/>
                             <constraint firstItem="N2o-xA-Nmu" firstAttribute="top" secondItem="cjp-yc-wyR" secondAttribute="bottom" id="jKM-Jl-a0r"/>
                             <constraint firstItem="j32-gN-zvA" firstAttribute="top" secondItem="N2o-xA-Nmu" secondAttribute="bottom" constant="8" id="l8K-Zj-LCL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="N2o-xA-Nmu" secondAttribute="trailing" constant="-20" id="mBd-Jh-0fo"/>
                             <constraint firstItem="j32-gN-zvA" firstAttribute="width" secondItem="IzR-FC-OQH" secondAttribute="width" multiplier="0.9" id="rUh-8k-K3R"/>
                             <constraint firstItem="3GD-la-Adg" firstAttribute="top" secondItem="j32-gN-zvA" secondAttribute="bottom" constant="15" id="rkL-Me-DQm"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="j32-gN-zvA" secondAttribute="leading" id="tx0-SA-lRk"/>
                             <constraint firstItem="j32-gN-zvA" firstAttribute="height" secondItem="IzR-FC-OQH" secondAttribute="height" multiplier="0.2" id="xI9-ku-pde"/>
+                            <constraint firstItem="j32-gN-zvA" firstAttribute="centerX" secondItem="IzR-FC-OQH" secondAttribute="centerX" id="yiP-Yq-gIh"/>
                         </constraints>
                     </view>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="activityLabel" destination="L3V-TE-g2F" id="7Ey-bF-NUh"/>
+                        <outlet property="activityTypeImage" destination="bg4-Th-UK4" id="5jg-2j-lis"/>
                         <outlet property="backgroundImage" destination="WBy-jh-DKU" id="egU-W6-rOA"/>
                         <outlet property="doneButton" destination="qPf-Id-nnu" id="Cys-ea-evl"/>
+                        <outlet property="endTimeLabelText" destination="HOf-M8-eCh" id="nwX-Ug-0wm"/>
+                        <outlet property="startTimeLabelText" destination="dvg-6N-Wtb" id="L8W-sJ-I38"/>
                         <outlet property="userImage" destination="6qn-IZ-Vak" id="u1C-bk-lPb"/>
                         <outlet property="userName" destination="sm2-L4-PdU" id="1j5-eT-YOx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4t-XN-OyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6274" y="-1793"/>
+            <point key="canvasLocation" x="6340" y="-1828"/>
         </scene>
         <!--Contacts Table View Controller-->
         <scene sceneID="mSb-7x-ABV">

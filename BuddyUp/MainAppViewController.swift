@@ -189,7 +189,6 @@ class MainAppViewController: UIViewController{
                 })
             }
             
-            
             if let activityOwner = activity["createdBy"]?.objectForKey("userImage") as? PFFile {
                 activityOwner.getDataInBackgroundWithBlock({ (data, error: NSError?) -> Void in
                     if (error != nil) {
@@ -198,12 +197,11 @@ class MainAppViewController: UIViewController{
                     }
                     
                     if let newData = data {
-                        self.personImage.image = UIImage(data: newData)                    }
+                        self.personImage.image = UIImage(data: newData)
+                    }
                 })
                 
             }
-            
-            
         }
     }
     
@@ -339,6 +337,8 @@ class MainAppViewController: UIViewController{
             // set up the info viewController
             let infoViewController: InfoViewController = segue.destinationViewController as! InfoViewController
             
+
+            
             // take a screenshot of the currrent viewcontroller and change it to UIImage
             let screenshot: UIImage = takeScreenshot().applyDarkEffect()!
             
@@ -363,9 +363,11 @@ class MainAppViewController: UIViewController{
             
             UIGraphicsEndImageContext()
             
+            // pass activity data object to the next viewcontroller
+            infoViewController.currentActivityIndex = currentActivityIndex
+            infoViewController.activities = activities
             
-            // Get the new view controller using [segue destinationViewController].
-            // Pass the selected object to the new view controller.
+
         }
         
     }
