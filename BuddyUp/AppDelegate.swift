@@ -94,6 +94,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             self.window?.rootViewController = (storyBoard.instantiateInitialViewController() as UIViewController?)
         }
+        
+        // welcome pageViewController code
+        
+//        let pageControl = UIPageControl.appearance()
+//        pageControl.pageIndicatorTintColor = UIColor.lightGrayColor()
+//        pageControl.currentPageIndicatorTintColor = UIColor.blackColor()
+//        pageControl.backgroundColor = UIColor.whiteColor()
+//        
+//        let sliderVC = SliderViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+//        sliderVC.sliderConfig = SliderConfig(bounces: false, defaultSlide: .Two, showDefaultPageIndicator: true, sendDefaultSlideChange: true)
+//        
+//        // Here you can add view controllers at external side
+//        sliderVC.applyController { type in
+//            switch type {
+//            case .One: return FirstViewController()
+//            case .Two: return SecondViewController()
+//            case .Three: return ThirdViewController()
+//            }
+//        }
+//        
+//        sliderVC.didChangedSlide { value in
+//            print("current slide: \(value)")
+//        }
         return true
     }
     

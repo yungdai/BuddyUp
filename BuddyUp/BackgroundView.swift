@@ -32,8 +32,6 @@ import UIKit
         }
     }
     
-    @IBInspectable var roundness: CGFloat = 10.0
-    
     // MARK: Internal functions *********************************
     
     // Setup the view appearance
@@ -42,7 +40,7 @@ import UIKit
         if (useGradient) {
             let colors:Array = [StartColor.CGColor, EndColor.CGColor]
             gradientLayer.colors = colors
-            gradientLayer.cornerRadius = roundness
+            gradientLayer.cornerRadius = cornerRounding
             self.setNeedsDisplay()
         }
         

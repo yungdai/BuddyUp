@@ -10,11 +10,12 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet var errorMessage: UILabel!
-    @IBOutlet var usernameField: UITextField!
-    @IBOutlet var passwordField: UITextField!
-    @IBOutlet var loginButton: UIButton!
-    @IBOutlet var signupButton: UIButton!
+    @IBOutlet weak var errorMessage: UILabel!
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var facebookButton: UIButton!
     
     // keyboard movement upwards value
     var kbHeight: CGFloat!
@@ -41,6 +42,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             print("User is already logged in go to the next viewcontroller")
             
         }
+        
+        // animations for the screen elements
+        
+        
+        
+    }
+    
+    func animateElements() {
+        self.usernameField.alpha = 0
+        self.passwordField.alpha = 0
+        self.loginButton.alpha = 0
+        self.signupButton.alpha = 0
+        
     }
     
     override func viewWillAppear(animated:Bool) {
@@ -61,7 +75,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         } else {
             if let userInfo = notification.userInfo {
-                if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
                     kbHeight = 60.0
                     animateTextField(true)
                     keyboardWasShown = true
